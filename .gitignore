@@ -1,12 +1,18 @@
 # Miscellaneous
 *.class
 *.lock
+!pubspec.lock
 *.log
 *.pyc
 *.swp
 .buildlog/
 .history
 
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
 
 
 # Flutter repo-specific
