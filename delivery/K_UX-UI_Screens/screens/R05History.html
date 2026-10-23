@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>R-05 · History · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">R-05 · History <span class="pg">· Rider App</span></span><a href="R02dReturnPickup.html">← Prev</a><a href="R06CodSummary.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div class="appbar line">
+    <h1 class="title left">History</h1>
+    <button class="iconbtn" type="button" aria-label="Pick a date"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path></svg></button>
+  </div>
+
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;padding:16px;display:flex;flex-direction:column;gap:14px">
+    <p class="t-sm ink2">This week: <b>58 delivered</b> · 1 failed</p>
+
+    <section aria-labelledby="r05-today" style="display:flex;flex-direction:column;gap:8px">
+      <h2 id="r05-today" class="t-over">Today · 2 jobs</h2>
+      <div class="card" style="overflow:hidden"><div class="list">
+        <a href="#" class="li"><span class="t-xs muted num" style="width:58px;flex:none">10:05 AM</span><span class="li-main"><span class="li-title">#K-10237</span><span class="li-sub">Toul Kork</span></span><span style="display:flex;flex-direction:column;align-items:flex-end;gap:4px"><span class="pill p-green">Delivered</span><span class="t-xs muted">Paid</span></span></a>
+        <a href="#" class="li"><span class="t-xs muted num" style="width:58px;flex:none">9:40 AM</span><span class="li-main"><span class="li-title">#K-10240</span><span class="li-sub">Sen Sok</span></span><span style="display:flex;flex-direction:column;align-items:flex-end;gap:4px"><span class="pill p-green">Delivered</span><span class="t-xs strong">$126.50 cash</span></span></a>
+      </div></div>
+    </section>
+
+    <section aria-labelledby="r05-yday" style="display:flex;flex-direction:column;gap:8px">
+      <h2 id="r05-yday" class="t-over">Yesterday · 9 jobs</h2>
+      <div class="card" style="overflow:hidden"><div class="list">
+        <a href="#" class="li"><span class="t-xs muted num" style="width:58px;flex:none">7:12 PM</span><span class="li-main"><span class="li-title">#K-10221</span><span class="li-sub">Toul Kork</span></span><span style="display:flex;flex-direction:column;align-items:flex-end;gap:4px"><span class="pill p-green">Delivered</span><span class="t-xs strong">$35.00 cash</span></span></a>
+        <a href="#" class="li"><span class="t-xs muted num" style="width:58px;flex:none">6:30 PM</span><span class="li-main"><span class="li-title">#K-10219</span><span class="li-sub">Sen Sok · customer not home</span></span><span style="display:flex;flex-direction:column;align-items:flex-end;gap:4px"><span class="pill p-red">Failed</span><span class="t-xs muted">Returned to store</span></span></a>
+        <a href="#" class="li"><span class="t-xs muted num" style="width:58px;flex:none">5:48 PM</span><span class="li-main"><span class="li-title">#K-10216</span><span class="li-sub">Boeung Kak</span></span><span style="display:flex;flex-direction:column;align-items:flex-end;gap:4px"><span class="pill p-green">Delivered</span><span class="t-xs muted">Paid</span></span></a>
+        <a href="#" class="li"><span class="t-xs muted num" style="width:58px;flex:none">4:55 PM</span><span class="li-main"><span class="li-title">#K-10212</span><span class="li-sub">Toul Kork</span></span><span style="display:flex;flex-direction:column;align-items:flex-end;gap:4px"><span class="pill p-green">Delivered</span><span class="t-xs strong">$18.00 cash</span></span></a>
+        <button type="button" class="li" style="justify-content:center;color:#0272B6;font-weight:700;font-size:14px;min-height:48px">Show 5 more</button>
+      </div></div>
+    </section>
+  </main>
+
+  <div style="flex:none;height:80px"><div class="dc-imp">
+
+<nav class="k botnav" aria-label="Rider navigation" style="width:390px;grid-template-columns:repeat(4,minmax(0,1fr));font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5z"></path><path d="m3 8 9 5 9-5M12 13v8"></path></svg><span>Jobs</span><span class="badge blue">4</span></a>
+  <a href="#" class="navi is-on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><span>History</span></a>
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle><path d="M6 12h.01M18 12h.01"></path></svg><span>Cash</span></a>
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span>Account</span></a>
+</nav>
+</div></div>
+</div>
+</div></div></body></html>

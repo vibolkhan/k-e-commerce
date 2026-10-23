@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>S-06 · Complete profile · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">S-06 · Complete profile <span class="pg">· Onboarding &amp; Account</span></span><a href="S05cOtpLocked.html">← Prev</a><a href="S06bAccountBlocked.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone white" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div class="appbar" style="padding:0 16px">
+    <div style="flex:1 1 auto;display:flex;flex-direction:column;gap:6px">
+      <span class="t-xs muted" style="font-weight:700">Almost done</span>
+      <div class="progress" role="progressbar" aria-label="Sign-up progress" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="height:6px"><span style="width:90%"></span></div>
+    </div>
+  </div>
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;padding:20px 24px 16px;display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <h1 class="t-h1" style="font-size:28px;line-height:36px">What should we call you?</h1>
+      <p class="t-body muted">Your name appears on orders, receipts and delivery labels.</p>
+    </div>
+    <div class="field">
+      <label class="label" for="s06-name">Full name</label>
+      <input class="input is-focus" id="s06-name" autocomplete="name" value="Dara Sok">
+    </div>
+    <div class="field">
+      <label class="label" for="s06-email">Email <span class="opt">(optional)</span></label>
+      <input class="input" id="s06-email" type="email" autocomplete="email" placeholder="name@example.com" aria-describedby="s06-email-help">
+      <p class="help" id="s06-email-help">For receipts. We never share it.</p>
+    </div>
+    <label class="check"><input type="checkbox" checked>Email me receipts and order updates</label>
+  </main>
+  <div class="actionbar" style="border-top:0;padding:12px 24px 36px">
+    <button class="btn btn-primary btn-block btn-lg" type="button">Continue</button>
+  </div>
+</div>
+</div></div></body></html>

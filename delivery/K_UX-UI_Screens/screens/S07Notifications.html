@@ -1,0 +1,58 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>S-07 · Notification inbox · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">S-07 · Notification inbox <span class="pg">· Onboarding &amp; Account</span></span><a href="S08gDeleteConfirm.html">← Prev</a><a href="C01Home.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div class="appbar">
+    <button class="iconbtn" type="button" aria-label="Back"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></button>
+    <h1 class="title left">Notifications</h1>
+    <button class="btn btn-ghost btn-sm" type="button" style="height:44px">Mark all read</button>
+  </div>
+  <div class="tabs fill" role="tablist" aria-label="Filter notifications" style="flex:none">
+    <button class="tab is-on" type="button" role="tab" aria-selected="true">All<span class="count">3</span></button>
+    <button class="tab" type="button" role="tab" aria-selected="false">Orders</button>
+    <button class="tab" type="button" role="tab" aria-selected="false">Quotes</button>
+    <button class="tab" type="button" role="tab" aria-selected="false">Chat</button>
+  </div>
+  <main role="tabpanel" aria-label="All notifications" style="flex:1 1 auto;min-height:0;overflow:hidden;display:flex;flex-direction:column">
+    <p class="t-over" style="padding:16px 16px 8px">Today</p>
+    <div class="list" style="border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0">
+      <a href="#" class="li" style="align-items:flex-start;padding:14px 16px">
+        <span class="li-ic" style="background:#ECFDF5;color:#047857"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg></span>
+        <span class="li-main"><span class="strong" style="font-size:15px">K Support replied</span><span class="t-sm" style="color:#334155">Sophea: Your rider is about 5 minutes away.</span><span class="t-xs muted">1:50 PM</span></span>
+        <span class="udot" style="margin-top:6px" role="img" aria-label="Unread"></span>
+      </a>
+      <a href="#" class="li" style="align-items:flex-start;padding:14px 16px">
+        <span class="li-ic" style="background:#E0F2FE;color:#025A91"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg></span>
+        <span class="li-main"><span class="strong" style="font-size:15px">Your order is on the way</span><span class="t-sm" style="color:#334155">#K-10248 · Vuthy is delivering it. Arriving in about 18 min.</span><span class="t-xs muted">1:42 PM</span></span>
+        <span class="udot" style="margin-top:6px" role="img" aria-label="Unread"></span>
+      </a>
+      <a href="#" class="li" style="align-items:flex-start;padding:14px 16px">
+        <span class="li-ic" style="background:#ECFDF5;color:#047857"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg></span>
+        <span class="li-main"><span class="strong" style="font-size:15px">Payment received</span><span class="t-sm" style="color:#334155">We got $92.00 by KHQR for #K-10248. Your order is confirmed.</span><span class="t-xs muted">10:26 AM</span></span>
+        <span class="udot" style="margin-top:6px" role="img" aria-label="Unread"></span>
+      </a>
+    </div>
+    <p class="t-over" style="padding:20px 16px 8px">Earlier</p>
+    <div class="list" style="border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0">
+      <a href="#" class="li" style="align-items:flex-start;padding:14px 16px">
+        <span class="li-ic" style="background:#FFF7ED;color:#B45309"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg></span>
+        <span class="li-main"><span class="semi" style="font-size:15px">Return window closes in 2 days</span><span class="t-sm muted">#K-10231 · Request a return until Sat 24 Oct, 5:30 PM.</span><span class="t-xs muted">Yesterday</span></span>
+      </a>
+      <a href="#" class="li" style="align-items:flex-start;padding:14px 16px">
+        <span class="li-ic" style="background:#FFF7ED;color:#B45309"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg></span>
+        <span class="li-main"><span class="semi" style="font-size:15px">How were your sneakers?</span><span class="t-sm muted">Rate Running Sneakers Air and help other shoppers.</span><span class="t-xs muted">Yesterday</span></span>
+      </a>
+      <a href="#" class="li" style="align-items:flex-start;padding:14px 16px">
+        <span class="li-ic"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5z"></path><path d="m3 8 9 5 9-5M12 13v8"></path></svg></span>
+        <span class="li-main"><span class="semi" style="font-size:15px">Order delivered</span><span class="t-sm muted">#K-10231 was delivered at 5:30 PM and received by Dara Sok.</span><span class="t-xs muted">21 Oct</span></span>
+      </a>
+    </div>
+  </main>
+</div>
+</div></div></body></html>

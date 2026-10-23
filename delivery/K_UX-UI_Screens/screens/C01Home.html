@@ -1,0 +1,110 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C-01 · Home · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">C-01 · Home <span class="pg">· Shop</span></span><a href="S07Notifications.html">← Prev</a><a href="C02Categories.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone" style="height:1500px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <header style="flex:none;background:#FFFFFF;padding:10px 16px 14px;display:flex;flex-direction:column;gap:10px;border-bottom:1px solid #E2E8F0">
+    <div style="display:flex;align-items:center;gap:10px">
+      <svg viewBox="0 0 48 48" width="34" height="34" role="img" aria-label="K"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#0EA5E9"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#0EA5E9" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      <button type="button" style="flex:1 1 auto;min-width:0;height:44px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;border:0;background:transparent;padding:0;text-align:left">
+        <span class="t-xs muted">Deliver to</span>
+        <span style="display:flex;align-items:center;gap:4px;font-size:15px;line-height:20px;font-weight:800">Home · Toul Kork<svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></span>
+      </button>
+      <a href="#" class="iconbtn soft" aria-label="Notifications, 3 unread"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span class="dot"></span></a>
+    </div>
+    <label class="inputbox search"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><input type="search" placeholder="Search products and brands" aria-label="Search products and brands"></label>
+  </header>
+
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;padding:16px;display:flex;flex-direction:column;gap:20px">
+    <section aria-label="Promotion" style="position:relative;flex:none;border-radius:20px;background:#0272B6;color:#FFFFFF;padding:18px 20px 16px;overflow:hidden;display:flex;flex-direction:column;gap:8px">
+      <div aria-hidden="true" style="position:absolute;right:-26px;top:22px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.12);display:grid;place-items:center"><svg class="ic s80" viewBox="0 0 24 24" style="color:#FFFFFF"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg></div>
+      <span class="pill p-white" style="position:relative">Same-day delivery</span>
+      <h2 style="position:relative;font-size:22px;line-height:28px;font-weight:800;max-width:220px">Order by 3 PM, get it today</h2>
+      <p style="position:relative;font-size:13px;line-height:18px;max-width:200px">Free delivery on orders over $50 in Phnom Penh.</p>
+      <div style="position:relative;display:flex;align-items:center;justify-content:space-between;margin-top:4px">
+        <a href="#" class="btn btn-white btn-sm">Shop now</a>
+        <span aria-hidden="true" style="display:flex;gap:6px;margin-right:4px"><span style="width:18px;height:6px;border-radius:3px;background:#FFFFFF"></span><span style="width:6px;height:6px;border-radius:3px;background:rgba(255,255,255,.5)"></span><span style="width:6px;height:6px;border-radius:3px;background:rgba(255,255,255,.5)"></span></span>
+      </div>
+    </section>
+
+    <div class="banner info" style="flex:none;align-items:center">
+      <svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+      <span style="flex:1">Order within <b>4h 35m</b> for delivery today</span>
+      <a href="#" class="link ink t-sm">Details</a>
+    </div>
+
+    <section style="flex:none;display:flex;flex-direction:column;gap:12px" aria-labelledby="c01-cat">
+      <div class="sechead"><h2 id="c01-cat">Shop by category</h2><a href="#" class="link t-sm">See all</a></div>
+      <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 8px">
+        <a href="#" style="display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:#0F172A"><span class="tA" style="width:64px;height:64px;border-radius:20px;display:grid;place-items:center"><svg class="ic s28" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"></rect><path d="M11 18h2"></path></svg></span><span class="t-xs semi">Electronics</span></a>
+        <a href="#" style="display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:#0F172A"><span class="tF" style="width:64px;height:64px;border-radius:20px;display:grid;place-items:center"><svg class="ic s28" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg></span><span class="t-xs semi">Audio</span></a>
+        <a href="#" style="display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:#0F172A"><span class="tB" style="width:64px;height:64px;border-radius:20px;display:grid;place-items:center"><svg class="ic s28" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 6.6 16 4a4 4 0 0 1-8 0L3.6 6.6a1 1 0 0 0-.5 1.2l.9 3.2a1 1 0 0 0 1.2.7L7 11v9a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-9l1.8.7a1 1 0 0 0 1.2-.7l.9-3.2a1 1 0 0 0-.5-1.2z"></path></svg></span><span class="t-xs semi">Fashion</span></a>
+        <a href="#" style="display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:#0F172A"><span class="tD" style="width:64px;height:64px;border-radius:20px;display:grid;place-items:center"><svg class="ic s28" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"></path><path d="M9 5V3h6v2M8 14h8v4H8z"></path></svg></span><span class="t-xs semi">Bags</span></a>
+        <a href="#" style="display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:#0F172A"><span class="tC" style="width:64px;height:64px;border-radius:20px;display:grid;place-items:center"><svg class="ic s28" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l3 7H5z"></path><path d="M12 10v8M8 21h8M12 18v3"></path></svg></span><span class="t-xs semi">Home</span></a>
+        <a href="#" style="display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:#0F172A"><span class="tE" style="width:64px;height:64px;border-radius:20px;display:grid;place-items:center"><svg class="ic s28" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v7a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"></path><path d="M2 10h20M8 6a4 4 0 0 1 8 0v4H8zM12 2v2"></path></svg></span><span class="t-xs semi">Kitchen</span></a>
+        <a href="#" style="display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:#0F172A"><span class="tG" style="width:64px;height:64px;border-radius:20px;display:grid;place-items:center"><svg class="ic s28" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2h4v3l1.5 2.5V20a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2V7.5L10 5z"></path><path d="M8.5 11h7"></path></svg></span><span class="t-xs semi">Sports</span></a>
+        <a href="#" style="display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:#0F172A"><span class="tA" style="width:64px;height:64px;border-radius:20px;display:grid;place-items:center"><svg class="ic s28" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"></path></svg></span><span class="t-xs semi">Office</span></a>
+      </div>
+    </section>
+
+    <section style="flex:none;display:flex;flex-direction:column;gap:12px" aria-labelledby="c01-best">
+      <div class="sechead"><h2 id="c01-best">Best sellers</h2><a href="#" class="link t-sm">See all</a></div>
+      <div style="display:flex;gap:12px;margin-right:-16px;overflow:hidden">
+        <article class="pcard" style="width:156px;flex:none">
+          <div class="pimg tA"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg><button class="heart" type="button" aria-label="Save Wireless Headphones Pro"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button></div>
+          <div class="pc-body"><p class="pc-name">Wireless Headphones Pro</p><p class="pc-rate"><svg class="ic star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>4.6 <span class="muted">(128)</span></p><p class="pc-price">$49.00</p><p class="pc-khr">≈ KHR 200,900</p></div>
+        </article>
+        <article class="pcard" style="width:156px;flex:none">
+          <div class="pimg tE"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h12v9a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"></path><path d="M16 9h2a3 3 0 0 1 0 6h-2M8 3v2M12 3v2"></path></svg><button class="heart is-on" type="button" aria-label="Remove Ceramic Coffee Mug Set from wishlist"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button></div>
+          <div class="pc-body"><p class="pc-name">Ceramic Coffee Mug Set (4 pcs)</p><p class="pc-rate"><svg class="ic star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>4.8 <span class="muted">(152)</span></p><p class="pc-price">$18.00</p><p class="pc-khr">≈ KHR 73,800</p></div>
+        </article>
+        <article class="pcard" style="width:156px;flex:none">
+          <div class="pimg tG"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2h4v3l1.5 2.5V20a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2V7.5L10 5z"></path><path d="M8.5 11h7"></path></svg><button class="heart" type="button" aria-label="Save Stainless Water Bottle"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button></div>
+          <div class="pc-body"><p class="pc-name">Stainless Water Bottle 750 ml</p><p class="pc-rate"><svg class="ic star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>4.6 <span class="muted">(310)</span></p><p class="pc-price">$12.50</p><p class="pc-khr">≈ KHR 51,250</p></div>
+        </article>
+      </div>
+    </section>
+
+    <a href="#" class="tint" style="flex:none;display:flex;align-items:center;gap:14px;padding:14px 16px;text-decoration:none;color:#0F172A">
+      <span style="width:44px;height:44px;border-radius:14px;background:#FFFFFF;display:grid;place-items:center;color:#025A91;flex:none"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M2 13h20"></path></svg></span>
+      <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span class="strong" style="font-size:15px">Buying for a business?</span><span class="t-sm" style="color:#475569">Request bulk quotes and pay by bank transfer.</span></span>
+      <svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true" style="color:#025A91"><path d="m9 18 6-6-6-6"></path></svg>
+    </a>
+
+    <section style="flex:none;display:flex;flex-direction:column;gap:12px" aria-labelledby="c01-new">
+      <div class="sechead"><h2 id="c01-new">New arrivals</h2><a href="#" class="link t-sm">See all</a></div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+        <article class="pcard">
+          <div class="pimg tB"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="3"></rect><path d="M9 6l.6-3h4.8l.6 3M9 18l.6 3h4.8l.6-3M12 9.5V12l1.5 1.5"></path></svg><span class="pill p-violet soldout">New</span><button class="heart" type="button" aria-label="Save Smart Watch Active 2"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button></div>
+          <div class="pc-body"><p class="pc-name">Smart Watch Active 2</p><p class="pc-rate"><svg class="ic star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>4.4 <span class="muted">(86)</span></p><p class="pc-price">$79.00</p><p class="pc-khr">≈ KHR 323,900</p></div>
+        </article>
+        <article class="pcard">
+          <div class="pimg tF"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"></rect><circle cx="12" cy="14" r="4"></circle><path d="M12 6h.01"></path></svg><span class="pill p-violet soldout">New</span><button class="heart" type="button" aria-label="Save Bluetooth Speaker Mini"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button></div>
+          <div class="pc-body"><p class="pc-name">Bluetooth Speaker Mini</p><p class="pc-rate"><svg class="ic star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>4.5 <span class="muted">(77)</span></p><p class="pc-price">$29.00</p><p class="pc-khr">≈ KHR 118,900</p></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div style="flex:none;height:80px"><div class="dc-imp">
+
+<nav class="k botnav" aria-label="Main navigation" style="width:390px;grid-template-columns:repeat(5,minmax(0,1fr));font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <a href="#" class="navi is-on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M10 21v-6h4v6"></path></svg><span>Home</span></a>
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg><span>Categories</span></a>
+  
+    <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l1 14H5L6 7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg><span>Cart</span><span class="badge">3</span></a>
+  
+  
+  
+    <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 7h6M9 11h6M9 15h4"></path></svg><span>Orders</span></a>
+  
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span>Account</span></a>
+</nav>
+</div></div>
+</div>
+</div></div></body></html>

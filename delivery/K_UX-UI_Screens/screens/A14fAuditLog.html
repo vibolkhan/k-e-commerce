@@ -1,0 +1,102 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A-14 · Settings · Audit log · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">A-14 · Settings · Audit log <span class="pg">· Admin · Desktop</span></span><a href="A14eInviteStaff.html">← Prev</a><a href="M01Dashboard.html">Next →</a></nav>
+<div class="stage fluid"><div class="frame">
+
+<div class="k adm" style="min-height:900px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <aside class="side"><div class="dc-imp">
+
+<nav class="k" aria-label="Admin sections" style="width:100%;min-width:224px;padding:20px 12px 24px;display:flex;flex-direction:column;gap:2px;background:#FFFFFF;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div style="display:flex;align-items:center;gap:10px;padding:0 8px 16px">
+    <div class="appicon" style="width:36px;height:36px;border-radius:10px"><svg viewBox="0 0 48 48" width="24" height="24" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+    <div style="display:flex;flex-direction:column"><span style="font-size:16px;line-height:20px;font-weight:800">K Admin</span><span class="t-xs muted">Phnom Penh store</span></div>
+  </div>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"></rect><rect x="14" y="3" width="7" height="5" rx="1.5"></rect><rect x="14" y="12" width="7" height="9" rx="1.5"></rect><rect x="3" y="16" width="7" height="5" rx="1.5"></rect></svg>Dashboard</a>
+  <p class="t-over" style="padding:14px 12px 6px">Sales</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 7h6M9 11h6M9 15h4"></path></svg>Orders<span class="badge">12</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"></rect><path d="M9 2h6v4H9zM9 11h6M9 15h6"></path></svg>RFQs &amp; quotes<span class="badge blue">3</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg>Returns<span class="badge blue">3</span></a>
+  <p class="t-over" style="padding:14px 12px 6px">Catalog</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"></path><circle cx="7.5" cy="7.5" r="1.5"></circle></svg>Products</a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5z"></path><path d="m3 8 9 5 9-5M12 13v8"></path></svg>Inventory<span class="badge">5</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg>Content</a>
+  <p class="t-over" style="padding:14px 12px 6px">People</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"></circle><path d="M2 21a7 7 0 0 1 14 0"></path><path d="M16 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"></path></svg>Customers<span class="badge blue">1</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="17.5" r="3.5"></circle><circle cx="18.5" cy="17.5" r="3.5"></circle><path d="M12 17.5V14l-3-3 4-3 2 3h3"></path><circle cx="15" cy="5" r="1"></circle></svg>Riders</a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>Reviews<span class="badge blue">4</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>Support chat<span class="badge">2</span></a>
+  <p class="t-over" style="padding:14px 12px 6px">Insights</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M7 16v-4M12 16V8M17 16v-7"></path></svg>Reports</a>
+  <a href="#" class="navlink is-on"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.08a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.08a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Settings</a>
+</nav>
+</div></aside>
+  <div class="adm-main">
+    <div class="dc-imp">
+
+<header class="k" style="width:100%;min-height:72px;display:flex;align-items:center;gap:16px;padding:12px 32px;background:#FFFFFF;border-bottom:1px solid #E2E8F0;flex-wrap:wrap;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <label class="inputbox search" style="flex:1 1 320px;max-width:520px;height:42px">
+    <svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+    <input type="search" placeholder="Search orders, customers, products, RFQs" aria-label="Search the back office">
+    <span class="t-xs" style="color:#475569;border:1px solid #CBD5E1;border-radius:6px;padding:1px 6px;background:#fff">/</span>
+  </label>
+  <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
+    <span class="pill p-amber lg"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Same-day cut-off in 4h 35m</span>
+    <button class="iconbtn" type="button" aria-label="Help"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.5 2.5 0 0 1 4.9.7c0 1.8-2.4 2.3-2.4 3.8M12 17h.01"></path></svg></button>
+    <button class="iconbtn" type="button" aria-label="Notifications, 8 new"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span class="badge">8</span></button>
+    <button type="button" style="display:flex;align-items:center;gap:10px;border:0;background:transparent;padding:4px 8px 4px 4px;border-radius:12px;height:48px" aria-label="Account menu">
+      <span class="avatar" style="width:36px;height:36px;font-size:13px">CL</span>
+      <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.2"><span style="font-size:14px;font-weight:700">Chenda Lim</span><span class="t-xs muted">Operations admin</span></span>
+      <svg class="ic s18 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+    </button>
+  </div>
+</header>
+</div>
+    <main class="adm-body">
+      <div class="pagehead"><div style="display:flex;flex-direction:column;gap:4px"><p class="crumbs">Store setup</p><h1>Settings</h1></div></div>
+      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start">
+        <nav class="card" aria-label="Settings sections" style="flex:1 1 220px;max-width:260px;padding:8px;display:flex;flex-direction:column;gap:2px">
+          <a href="#" class="navlink"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Delivery zones</a>
+          <a href="#" class="navlink"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"></path></svg>Payments</a>
+          <a href="#" class="navlink"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Store &amp; rules</a>
+          <a href="#" class="navlink"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"></circle><path d="M2 21a7 7 0 0 1 14 0"></path><path d="M16 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"></path></svg>Staff &amp; roles</a>
+          <a href="#" class="navlink is-on" aria-current="page"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h5"></path></svg>Audit log</a>
+        </nav>
+
+        <section class="panel" aria-labelledby="a14f-title" style="flex:999 1 560px;min-width:0">
+          <div class="panel-head"><div style="display:flex;flex-direction:column;gap:2px"><h2 id="a14f-title">Audit log</h2><span class="t-xs muted">Every change to orders, money, stock and settings, kept for 2 years</span></div><button class="btn btn-outline btn-sm" type="button"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M4 20h16"></path></svg>Export</button></div>
+          <div class="toolbar" style="padding:14px 20px;border-bottom:1px solid #E2E8F0">
+            <label class="inputbox search" style="flex:1 1 220px;max-width:300px;height:40px"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><input type="search" placeholder="Order, product or customer" aria-label="Search the audit log"></label>
+            <span class="inputbox" style="width:auto;height:40px;color:#0F172A;gap:8px"><span class="t-xs muted">Staff</span><select aria-label="Staff" style="border:0;background:transparent;font-weight:600;outline:none"><option>Everyone</option></select></span>
+            <span class="inputbox" style="width:auto;height:40px;color:#0F172A;gap:8px"><span class="t-xs muted">Action</span><select aria-label="Action type" style="border:0;background:transparent;font-weight:600;outline:none"><option>All actions</option></select></span>
+            <span class="inputbox" style="width:auto;height:40px;color:#0F172A;gap:8px"><span class="t-xs muted">Date</span><select aria-label="Date range" style="border:0;background:transparent;font-weight:600;outline:none"><option>Last 7 days</option></select></span>
+          </div>
+          <div class="tablewrap">
+            <table class="table">
+              <thead><tr><th>Time</th><th>Staff</th><th>Action</th><th>Item</th><th>Change</th></tr></thead>
+              <tbody>
+                <tr><td>Today, 10:58 AM</td><td><span style="display:flex;align-items:center;gap:8px"><span class="avatar sm grey">K</span>System</span></td><td>Bank slip uploaded</td><td class="semi">#K-10263</td><td>slip_K-10263.jpg · by Mekong Desk Co.</td></tr>
+                <tr><td>Today, 9:12 AM</td><td><span style="display:flex;align-items:center;gap:8px"><span class="avatar sm">CL</span>Chenda Lim</span></td><td>Price changed</td><td class="semi">Wireless Headphones Pro</td><td><span class="muted strike">$52.00</span> → <span class="semi">$49.00</span></td></tr>
+                <tr><td>Today, 9:05 AM</td><td><span style="display:flex;align-items:center;gap:8px"><span class="avatar sm">SP</span>Sophea Mao</span></td><td>Return approved</td><td class="semi">RET-0087 · #K-10231</td><td>Pickup today, 3–6 PM</td></tr>
+                <tr><td>Today, 8:30 AM</td><td><span style="display:flex;align-items:center;gap:8px"><span class="avatar sm">CL</span>Chenda Lim</span></td><td>Zone fee changed</td><td class="semi">Toul Kork</td><td><span class="muted strike">$2.00</span> → <span class="semi">$1.50</span></td></tr>
+                <tr><td>Today, 8:02 AM</td><td><span style="display:flex;align-items:center;gap:8px"><span class="avatar sm">CL</span>Chenda Lim</span></td><td>Business approved</td><td class="semi">Angkor Print House</td><td><span class="pill p-green">Verified</span></td></tr>
+                <tr><td>21 Oct, 6:20 PM</td><td><span style="display:flex;align-items:center;gap:8px"><span class="avatar sm">CL</span>Chenda Lim</span></td><td>Rider assigned</td><td class="semi">#K-10262</td><td>→ Vuthy Kim</td></tr>
+                <tr><td>21 Oct, 5:02 PM</td><td><span style="display:flex;align-items:center;gap:8px"><span class="avatar sm green">VK</span>Visal Keo</span></td><td>Stock adjusted</td><td class="semi">Smart Watch Active 2 · Grey</td><td>Count correction <span class="muted strike">7</span> → <span class="semi">6</span></td></tr>
+                <tr><td>21 Oct, 4:12 PM</td><td><span style="display:flex;align-items:center;gap:8px"><span class="avatar sm violet">DC</span>Dalin Chhay</span></td><td>Quote sent</td><td class="semi">RFQ-0312</td><td>$2,260.50 · valid until 5 Nov</td></tr>
+                <tr><td>18 Oct, 2:14 PM</td><td><span style="display:flex;align-items:center;gap:8px"><span class="avatar sm">SP</span>Sophea Mao</span></td><td>Refund recorded</td><td class="semi">#K-10215</td><td><span class="pill p-violet">$25.50 · KHQR transfer</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;border-top:1px solid #E2E8F0;flex-wrap:wrap">
+            <span class="t-sm muted">Entries can’t be edited or deleted.</span>
+            <span style="display:flex;align-items:center;gap:8px"><span class="t-sm muted">1–9 of 1,208</span><button class="iconbtn outline" type="button" aria-label="Previous page" disabled><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></button><button class="iconbtn outline" type="button" aria-label="Next page"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></button></span>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+</div></div></body></html>

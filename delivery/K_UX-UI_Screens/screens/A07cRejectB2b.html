@@ -1,0 +1,176 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A-07 · Reject verification (modal) · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">A-07 · Reject verification (modal) <span class="pg">· Admin · Desktop</span></span><a href="A07bB2bVerification.html">← Prev</a><a href="A07dBlockConfirm.html">Next →</a></nav>
+<div class="stage fluid"><div class="frame">
+
+<div class="k overlay-page" style="height:900px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div class="base" aria-hidden="true"><div class="dc-imp">
+
+<div class="k adm" style="min-height:1050px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <aside class="side"><div class="dc-imp">
+
+<nav class="k" aria-label="Admin sections" style="width:100%;min-width:224px;padding:20px 12px 24px;display:flex;flex-direction:column;gap:2px;background:#FFFFFF;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div style="display:flex;align-items:center;gap:10px;padding:0 8px 16px">
+    <div class="appicon" style="width:36px;height:36px;border-radius:10px"><svg viewBox="0 0 48 48" width="24" height="24" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+    <div style="display:flex;flex-direction:column"><span style="font-size:16px;line-height:20px;font-weight:800">K Admin</span><span class="t-xs muted">Phnom Penh store</span></div>
+  </div>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"></rect><rect x="14" y="3" width="7" height="5" rx="1.5"></rect><rect x="14" y="12" width="7" height="9" rx="1.5"></rect><rect x="3" y="16" width="7" height="5" rx="1.5"></rect></svg>Dashboard</a>
+  <p class="t-over" style="padding:14px 12px 6px">Sales</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 7h6M9 11h6M9 15h4"></path></svg>Orders<span class="badge">12</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"></rect><path d="M9 2h6v4H9zM9 11h6M9 15h6"></path></svg>RFQs &amp; quotes<span class="badge blue">3</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg>Returns<span class="badge blue">3</span></a>
+  <p class="t-over" style="padding:14px 12px 6px">Catalog</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"></path><circle cx="7.5" cy="7.5" r="1.5"></circle></svg>Products</a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5z"></path><path d="m3 8 9 5 9-5M12 13v8"></path></svg>Inventory<span class="badge">5</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg>Content</a>
+  <p class="t-over" style="padding:14px 12px 6px">People</p>
+  <a href="#" class="navlink is-on"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"></circle><path d="M2 21a7 7 0 0 1 14 0"></path><path d="M16 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"></path></svg>Customers<span class="badge blue">1</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="17.5" r="3.5"></circle><circle cx="18.5" cy="17.5" r="3.5"></circle><path d="M12 17.5V14l-3-3 4-3 2 3h3"></path><circle cx="15" cy="5" r="1"></circle></svg>Riders</a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>Reviews<span class="badge blue">4</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>Support chat<span class="badge">2</span></a>
+  <p class="t-over" style="padding:14px 12px 6px">Insights</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M7 16v-4M12 16V8M17 16v-7"></path></svg>Reports</a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.08a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.08a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Settings</a>
+</nav>
+</div></aside>
+  <div class="adm-main">
+    <div class="dc-imp">
+
+<header class="k" style="width:100%;min-height:72px;display:flex;align-items:center;gap:16px;padding:12px 32px;background:#FFFFFF;border-bottom:1px solid #E2E8F0;flex-wrap:wrap;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <label class="inputbox search" style="flex:1 1 320px;max-width:520px;height:42px">
+    <svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+    <input type="search" placeholder="Search orders, customers, products, RFQs" aria-label="Search the back office">
+    <span class="t-xs" style="color:#475569;border:1px solid #CBD5E1;border-radius:6px;padding:1px 6px;background:#fff">/</span>
+  </label>
+  <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
+    <span class="pill p-amber lg"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Same-day cut-off in 4h 35m</span>
+    <button class="iconbtn" type="button" aria-label="Help"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.5 2.5 0 0 1 4.9.7c0 1.8-2.4 2.3-2.4 3.8M12 17h.01"></path></svg></button>
+    <button class="iconbtn" type="button" aria-label="Notifications, 8 new"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span class="badge">8</span></button>
+    <button type="button" style="display:flex;align-items:center;gap:10px;border:0;background:transparent;padding:4px 8px 4px 4px;border-radius:12px;height:48px" aria-label="Account menu">
+      <span class="avatar" style="width:36px;height:36px;font-size:13px">CL</span>
+      <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.2"><span style="font-size:14px;font-weight:700">Chenda Lim</span><span class="t-xs muted">Operations admin</span></span>
+      <svg class="ic s18 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+    </button>
+  </div>
+</header>
+</div>
+    <main class="adm-body">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#" style="color:#64748B;text-decoration:none">Customers</a><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg><a href="#" style="color:#64748B;text-decoration:none">Pending verification</a><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg><span style="color:#0F172A">Sovann Trading Co.</span></nav>
+      <div class="pagehead" style="align-items:center">
+        <div style="display:flex;align-items:center;gap:16px">
+          <span class="avatar lg amber">ST</span>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><h1>Sovann Trading Co.</h1><span class="pill dot p-amber">Pending verification</span></div>
+            <p class="t-sm muted">Submitted today, 9:30 AM · Business buyer request</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start">
+        <div style="flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:24px">
+          <section class="panel" aria-labelledby="a07b-co">
+            <div class="panel-head"><h2 id="a07b-co">Company details</h2><span class="t-xs muted">As entered by the customer</span></div>
+            <dl class="panel-body" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:16px 32px">
+              <div style="display:flex;flex-direction:column;gap:4px"><dt class="t-xs muted">Company name</dt><dd class="semi">Sovann Trading Co.</dd></div>
+              <div style="display:flex;flex-direction:column;gap:4px"><dt class="t-xs muted">VAT TIN</dt><dd class="semi num">K002-200567891</dd></div>
+              <div style="display:flex;flex-direction:column;gap:4px"><dt class="t-xs muted">Business address</dt><dd class="semi">#42, St. 63, BKK1, Phnom Penh</dd></div>
+              <div style="display:flex;flex-direction:column;gap:4px"><dt class="t-xs muted">Contact person</dt><dd class="semi">Lina Sok</dd></div>
+              <div style="display:flex;flex-direction:column;gap:4px"><dt class="t-xs muted">Contact phone</dt><dd class="semi" style="display:flex;align-items:center;gap:8px">+855 12 909 334<span class="pill p-green">Verified</span></dd></div>
+              <div style="display:flex;flex-direction:column;gap:4px"><dt class="t-xs muted">Account created</dt><dd class="semi">22 Oct 2026, 9:12 AM</dd></div>
+            </dl>
+          </section>
+
+          <section class="panel" aria-labelledby="a07b-doc">
+            <div class="panel-head">
+              <h2 id="a07b-doc">Business licence</h2>
+              <div class="toolbar">
+                <span class="t-sm muted">sovann_licence.jpg · 2.4 MB</span>
+                <button class="btn btn-outline btn-sm" type="button"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5M8 11h6M11 8v6"></path></svg>Zoom</button>
+                <button class="btn btn-outline btn-sm" type="button"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M4 20h16"></path></svg>Download</button>
+              </div>
+            </div>
+            <div class="panel-body" style="background:#F1F5F9;border-radius:0 0 16px 16px;display:flex;justify-content:center;padding:28px">
+              <figure role="img" aria-label="Preview of the uploaded business licence image" style="width:min(420px,100%);aspect-ratio:3/4;background:#FFFFFF;border-radius:6px;box-shadow:0 8px 24px rgba(15,23,42,.10);padding:36px 32px;display:flex;flex-direction:column;gap:14px">
+                <div style="display:flex;justify-content:space-between;align-items:center"><div class="skel" style="height:14px;width:45%"></div><div style="width:52px;height:52px;border-radius:50%;border:3px solid #FCA5A5;opacity:.8"></div></div>
+                <div class="skel" style="height:20px;width:70%;align-self:center;margin:8px 0"></div>
+                <div class="skel" style="height:10px;width:100%"></div>
+                <div class="skel" style="height:10px;width:92%"></div>
+                <div class="skel" style="height:10px;width:96%"></div>
+                <div class="skel" style="height:10px;width:60%"></div>
+                <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px"><div class="skel" style="height:10px"></div><div class="skel" style="height:10px"></div><div class="skel" style="height:10px"></div><div class="skel" style="height:10px"></div><div class="skel" style="height:10px"></div><div class="skel" style="height:10px"></div></div>
+                <div style="margin-top:auto;display:flex;justify-content:flex-end"><div style="width:120px;border-bottom:2px solid #CBD5E1;height:28px"></div></div>
+              </figure>
+            </div>
+          </section>
+        </div>
+
+        <div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:16px">
+          <section class="panel" aria-labelledby="a07b-check">
+            <div class="panel-head"><h2 id="a07b-check">Checklist</h2><span class="t-sm semi">3 of 4</span></div>
+            <div class="panel-body" style="display:flex;flex-direction:column;gap:2px">
+              <label class="check"><input type="checkbox"><span style="display:flex;flex-direction:column"><span class="semi">Company name matches licence</span><span class="t-xs muted">Check by hand against the image</span></span></label>
+              <label class="check"><input type="checkbox" checked><span style="display:flex;flex-direction:column"><span class="semi">TIN format is valid</span><span class="t-xs muted">Auto-checked</span></span></label>
+              <label class="check"><input type="checkbox" checked><span style="display:flex;flex-direction:column"><span class="semi">Address is in Cambodia</span><span class="t-xs muted">Auto-checked</span></span></label>
+              <label class="check"><input type="checkbox" checked><span style="display:flex;flex-direction:column"><span class="semi">Contact phone verified</span><span class="t-xs muted">OTP confirmed 9:12 AM</span></span></label>
+            </div>
+          </section>
+
+          <section class="panel" aria-labelledby="a07b-hist">
+            <div class="panel-head"><h2 id="a07b-hist">History</h2></div>
+            <div class="panel-body">
+              <ol class="tl">
+                <li class="tl-item done"><span class="tl-dot"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true" style="stroke-width:3"><path d="M20 6 9 17l-5-5"></path></svg></span><div><p class="tl-title">Account created</p><p class="tl-sub">Today, 9:12 AM</p></div></li>
+                <li class="tl-item done"><span class="tl-dot"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true" style="stroke-width:3"><path d="M20 6 9 17l-5-5"></path></svg></span><div><p class="tl-title">Verification submitted</p><p class="tl-sub">Today, 9:30 AM · licence uploaded</p></div></li>
+                <li class="tl-item now"><span class="tl-dot"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true" style="stroke-width:2.6"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><div><p class="tl-title">Waiting for review</p><p class="tl-sub">Target: within 1 business day</p></div></li>
+              </ol>
+            </div>
+          </section>
+
+          <div class="banner info"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg><span>Approving turns on business buying: retail prices are hidden, quote requests and bank transfer are enabled.</span></div>
+        </div>
+      </div>
+
+      <section class="panel" aria-label="Decision" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px;flex-wrap:wrap">
+        <p class="t-sm" style="color:#334155">The customer is notified by push and email either way.</p>
+        <div class="toolbar">
+          <button class="btn btn-danger-outline" type="button">Reject</button>
+          <button class="btn btn-primary" type="button"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Approve business</button>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+</div></div>
+  <div class="scrim"></div>
+  <div class="modal" role="alertdialog" aria-modal="true" aria-labelledby="a07c-title" aria-describedby="a07c-desc">
+    <div class="modal-head">
+      <span class="dlg-icon bad" style="width:40px;height:40px"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m15 9-6 6M9 9l6 6"></path></svg></span>
+      <h2 id="a07c-title">Reject verification · Sovann Trading Co.</h2>
+      <button class="iconbtn" type="button" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+    </div>
+    <div class="modal-body">
+      <p id="a07c-desc" class="t-sm" style="color:#334155">The account stays a retail customer. Pick the main reason — it is shown to the customer with your message.</p>
+      <fieldset style="border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:8px">
+        <legend class="label" style="padding:0;margin-bottom:8px">Reason</legend>
+        <label class="opt is-on"><input type="radio" name="a07c-reason" checked><span class="semi">TIN doesn’t match the licence</span></label>
+        <label class="opt"><input type="radio" name="a07c-reason"><span class="semi">Licence image is unreadable</span></label>
+        <label class="opt"><input type="radio" name="a07c-reason"><span class="semi">Business is not registered</span></label>
+        <label class="opt"><input type="radio" name="a07c-reason"><span class="semi">Other</span></label>
+      </fieldset>
+      <div class="field">
+        <label class="label" for="a07c-msg">Message to customer</label>
+        <textarea class="textarea" id="a07c-msg" style="min-height:110px">We couldn’t verify your business. The VAT TIN on your form (K002-200567891) doesn’t match the business licence you uploaded. Please check the TIN and submit again.</textarea>
+        <p class="help">They can edit their details and resubmit from the app.</p>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-outline" type="button">Cancel</button>
+      <button class="btn btn-danger" type="button">Reject verification</button>
+    </div>
+  </div>
+</div>
+</div></div></body></html>

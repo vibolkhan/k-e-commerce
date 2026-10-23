@@ -1,0 +1,74 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C-08 · Address editor · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">C-08 · Address editor <span class="pg">· Cart &amp; Checkout</span></span><a href="C08AddressList.html">← Prev</a><a href="C08bDeleteAddressConfirm.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone white" style="height:1000px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <header class="appbar line">
+    <a href="#" class="iconbtn" aria-label="Back"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+    <h1 class="title">Add address</h1>
+    <span class="spacer"></span>
+  </header>
+
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;display:flex;flex-direction:column">
+    <div class="map" style="flex:none;height:280px">
+      <svg viewBox="0 0 390 280" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Map with a pin on #24, St. 315, Toul Kork">
+        <rect x="262" y="-10" width="150" height="100" rx="18" fill="#DCFCE7"></rect>
+        <rect x="-20" y="200" width="120" height="100" rx="18" fill="#DCFCE7"></rect>
+        <path d="M-10 228 C80 214 150 238 230 196 S330 140 400 150" stroke="#CFE6F5" stroke-width="20" fill="none"></path>
+        <g stroke="#FFFFFF" stroke-linecap="round" fill="none"><path d="M-10 58 H400" stroke-width="12"></path><path d="M70 -10 V290" stroke-width="12"></path><path d="M-10 150 H400" stroke-width="8"></path><path d="M210 -10 L262 290" stroke-width="8"></path><path d="M150 -10 V290" stroke-width="5"></path><path d="M320 -10 V290" stroke-width="5"></path><path d="M-10 108 H210" stroke-width="5"></path></g>
+        <ellipse cx="195" cy="152" rx="9" ry="3.5" fill="rgba(15,23,42,.22)"></ellipse>
+        <g transform="translate(195 150)"><path d="M0 0c-10-12-16-19-16-27a16 16 0 0 1 32 0c0 8-6 15-16 27z" fill="#0272B6"></path><circle cx="0" cy="-27" r="6" fill="#FFFFFF"></circle></g>
+      </svg>
+      <label class="inputbox" style="position:absolute;left:12px;right:12px;top:12px;height:46px;box-shadow:0 4px 14px rgba(15,23,42,.12);border-color:transparent">
+        <svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+        <input type="search" placeholder="Search street or place" aria-label="Search street or place">
+      </label>
+      <span class="pill p-white" style="position:absolute;left:12px;bottom:14px;height:32px;box-shadow:0 2px 8px rgba(15,23,42,.14)"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9 2 12l3 3M9 5l3-3 3 3M15 19l-3 3-3-3M19 9l3 3-3 3M2 12h20M12 2v20"></path></svg>Move the map to place the pin</span>
+      <button class="chip" type="button" style="position:absolute;right:12px;bottom:8px;height:44px;box-shadow:0 2px 8px rgba(15,23,42,.14);border-color:transparent;color:#025A91"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><circle cx="12" cy="12" r="8"></circle><path d="M12 2v2M12 20v2M2 12h2M20 12h2"></path></svg>Use current location</button>
+    </div>
+
+    <form style="padding:16px;display:flex;flex-direction:column;gap:14px">
+      <fieldset style="border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:8px">
+        <legend class="label" style="padding:0;margin-bottom:8px">Label</legend>
+        <div role="radiogroup" aria-label="Address label" style="display:flex;gap:8px">
+          <button class="chip is-on" type="button" role="radio" aria-checked="true" style="height:44px"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M10 21v-6h4v6"></path></svg>Home</button>
+          <button class="chip" type="button" role="radio" aria-checked="false" style="height:44px"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M2 13h20"></path></svg>Office</button>
+          <button class="chip" type="button" role="radio" aria-checked="false" style="height:44px">Other</button>
+        </div>
+      </fieldset>
+      <div class="field">
+        <label class="label" for="c08a-street">House no. &amp; street</label>
+        <input class="input" id="c08a-street" value="#24, St. 315">
+      </div>
+      <div class="field">
+        <label class="label" for="c08a-detail">Floor, gate or landmark <span style="font-weight:500;color:#64748B">(optional)</span></label>
+        <input class="input" id="c08a-detail" value="Blue gate, 2nd floor">
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+        <div class="field">
+          <label class="label" for="c08a-name">Recipient name</label>
+          <input class="input" id="c08a-name" value="Dara Sok">
+        </div>
+        <div class="field">
+          <label class="label" for="c08a-phone">Phone</label>
+          <div class="inputbox" style="padding:0 12px;gap:8px"><span class="prefix" style="padding-right:8px">+855</span><input id="c08a-phone" value="12 345 678" inputmode="tel"></div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px"><label for="c08a-default" class="semi">Set as default address</label><input class="switch" id="c08a-default" type="checkbox" checked></div>
+      <div class="banner ok" style="align-items:center">
+        <svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg>
+        <span><b>Same-day delivery available here</b> · Toul Kork zone</span>
+      </div>
+    </form>
+  </main>
+
+  <div class="actionbar">
+    <button class="btn btn-primary btn-block btn-lg" type="button">Save address</button>
+  </div>
+</div>
+</div></div></body></html>

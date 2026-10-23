@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>S-04 · Account blocked (dialog) · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">S-04 · Account blocked (dialog) <span class="pg">· Onboarding &amp; Account</span></span><a href="S06CompleteProfile.html">← Prev</a><a href="S08Account.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden"><div class="dc-imp">
+
+<div class="k phone white" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div class="appbar">
+    <button class="iconbtn" type="button" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+  </div>
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;padding:8px 24px 16px;display:flex;flex-direction:column;gap:20px">
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <h1 class="t-h1" style="font-size:28px;line-height:36px">Sign in to K</h1>
+      <p class="t-body muted">Check out faster, track orders and save favourites.</p>
+    </div>
+    <div class="seg" role="tablist" aria-label="Sign-in method">
+      <button class="is-on" type="button" role="tab" aria-selected="true">Phone</button>
+      <button type="button" role="tab" aria-selected="false">Email</button>
+    </div>
+    <div class="field">
+      <label class="label" for="s04-phone">Phone number</label>
+      <div class="inputbox is-focus"><span class="prefix">+855</span><input id="s04-phone" type="tel" inputmode="tel" autocomplete="tel" value="12 345 678" aria-describedby="s04-help"></div>
+      <p class="help" id="s04-help">We’ll text you a 6-digit code.</p>
+    </div>
+    <button class="btn btn-primary btn-block btn-lg" type="button">Continue</button>
+    <div style="display:flex;align-items:center;gap:12px" class="t-sm muted"><span class="divider" style="flex:1 1 0;width:auto"></span>or<span class="divider" style="flex:1 1 0;width:auto"></span></div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <button class="btn btn-outline btn-block" type="button">Continue with Google</button>
+      <button class="btn btn-outline btn-block" type="button">Continue with Apple</button>
+    </div>
+  </main>
+  <p class="t-xs muted" style="flex:none;padding:0 32px 32px;text-align:center">By continuing you agree to our <a href="#" class="link">Terms</a> and <a href="#" class="link">Privacy Policy</a>.</p>
+</div>
+</div></div>
+  <div class="scrim"></div>
+  <div class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="s06b-title" aria-describedby="s06b-body">
+    <span class="dlg-icon bad"><svg class="ic s28" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M5.6 5.6l12.8 12.8"></path></svg></span>
+    <h2 id="s06b-title">This account is unavailable</h2>
+    <p id="s06b-body">Please contact our support team to restore access.</p>
+    <div class="dlg-actions">
+      <button class="btn btn-outline" type="button">Close</button>
+      <button class="btn btn-primary" type="button">Contact support</button>
+    </div>
+  </div>
+</div>
+</div></div></body></html>

@@ -1,0 +1,79 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C-11 · Orders · Completed · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">C-11 · Orders · Completed <span class="pg">· Orders &amp; Support</span></span><a href="C11Orders.html">← Prev</a><a href="C11bOrdersCancelled.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <header class="appbar">
+    <h1 class="title left">My orders</h1>
+    <button class="iconbtn" type="button" aria-label="Search orders"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></button>
+  </header>
+  <div class="tabs fill" role="tablist" aria-label="Order status" style="flex:none">
+    <button class="tab" type="button" role="tab" aria-selected="false">Active<span class="count">2</span></button>
+    <button class="tab is-on" type="button" role="tab" aria-selected="true">Completed</button>
+    <button class="tab" type="button" role="tab" aria-selected="false">Cancelled</button>
+  </div>
+
+  <main role="tabpanel" aria-label="Completed orders" style="flex:1 1 auto;min-height:0;overflow:hidden;padding:16px;display:flex;flex-direction:column;gap:12px">
+    <article class="card" style="padding:16px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="display:flex;flex-direction:column;gap:2px"><p class="strong">#K-10231</p><p class="t-xs muted">Delivered Wed 21 Oct, 5:30 PM</p></div>
+        <span class="pill dot p-green">Delivered</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="pimg tG" style="width:56px;border-radius:12px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 17v-4l3-1 2-5 3 1-1 3 4 2 6 1a3 3 0 0 1 3 3 1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"></path><path d="M2 17h20M10 11l1.5-1M12 12l1.5-1"></path></svg></div>
+        <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span class="semi" style="font-size:14px">Running Sneakers Air</span><span class="t-xs muted">Size 42 · Cash on delivery</span></div>
+        <span class="strong">$59.00</span>
+      </div>
+      <div class="banner info" style="align-items:center;padding:10px 12px"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg><span>Returns open until <b>Sat 24 Oct, 5:30 PM</b></span></div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">
+        <a href="#" class="btn btn-tonal" style="height:44px;padding:0 8px;font-size:14px">Write review</a>
+        <a href="#" class="btn btn-outline" style="height:44px;padding:0 8px;font-size:14px">Return</a>
+        <a href="#" class="btn btn-outline" style="height:44px;padding:0 8px;font-size:14px">Reorder</a>
+      </div>
+    </article>
+
+    <article class="card" style="padding:16px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="display:flex;flex-direction:column;gap:2px"><p class="strong">#K-10198</p><p class="t-xs muted">Delivered Mon 12 Oct · KHQR paid</p></div>
+        <span class="pill dot p-green">Delivered</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="pimg tB" style="width:56px;border-radius:12px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 6.6 16 4a4 4 0 0 1-8 0L3.6 6.6a1 1 0 0 0-.5 1.2l.9 3.2a1 1 0 0 0 1.2.7L7 11v9a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-9l1.8.7a1 1 0 0 0 1.2-.7l.9-3.2a1 1 0 0 0-.5-1.2z"></path></svg></div>
+        <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span class="semi" style="font-size:14px">Cotton Crew T-Shirt × 3</span><span class="t-xs muted">White, Navy, Sky · size M</span></div>
+        <span class="strong">$31.20</span>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <span style="display:flex;align-items:center;gap:6px" class="t-sm">
+          <span class="stars" aria-hidden="true"><svg class="ic s16 star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg><svg class="ic s16 star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg><svg class="ic s16 star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg><svg class="ic s16 star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg><svg class="ic s16 star" viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg></span>
+          <span class="semi">You rated 5★</span>
+        </span>
+        <a href="#" class="btn btn-outline" style="height:44px">Reorder</a>
+      </div>
+      <p class="t-xs muted">Return window closed on 15 Oct.</p>
+    </article>
+
+    <p class="t-sm muted" style="text-align:center;padding:8px 0">That’s all your completed orders from the last 6 months.</p>
+  </main>
+
+  <div style="flex:none;height:80px"><div class="dc-imp">
+
+<nav class="k botnav" aria-label="Main navigation" style="width:390px;grid-template-columns:repeat(5,minmax(0,1fr));font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M10 21v-6h4v6"></path></svg><span>Home</span></a>
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg><span>Categories</span></a>
+  
+    <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l1 14H5L6 7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg><span>Cart</span><span class="badge">3</span></a>
+  
+  
+  
+    <a href="#" class="navi is-on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 7h6M9 11h6M9 15h4"></path></svg><span>Orders</span></a>
+  
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span>Account</span></a>
+</nav>
+</div></div>
+</div>
+</div></div></body></html>

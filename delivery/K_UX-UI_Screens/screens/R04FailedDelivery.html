@@ -1,0 +1,54 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>R-04 · Failed delivery · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">R-04 · Failed delivery <span class="pg">· Rider App</span></span><a href="R03bDelivered.html">← Prev</a><a href="R04aFailedConfirm.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone white" style="height:1000px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div class="appbar line">
+    <a href="#" class="iconbtn" aria-label="Back"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+    <h1 class="title left">Delivery failed · #K-10255</h1>
+  </div>
+
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;padding:16px;display:flex;flex-direction:column;gap:18px">
+    <p class="t-sm muted">Piseth Chea · Boeung Kak · collect $58.00</p>
+
+    <fieldset style="border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:10px">
+      <legend class="t-h3" style="padding:0;margin-bottom:10px">What happened?</legend>
+      <div class="list" style="border:1px solid #E2E8F0;border-radius:14px;overflow:hidden">
+        <label class="li" style="cursor:pointer;background:#F0F9FF"><span class="li-main"><span class="li-title">Customer not home</span></span><input type="radio" name="r04-reason" checked></label>
+        <label class="li" style="cursor:pointer"><span class="li-main"><span class="li-title">Wrong address</span></span><input type="radio" name="r04-reason"></label>
+        <label class="li" style="cursor:pointer"><span class="li-main"><span class="li-title">Customer refused</span></span><input type="radio" name="r04-reason"></label>
+        <label class="li" style="cursor:pointer"><span class="li-main"><span class="li-title">Can’t reach by phone</span></span><input type="radio" name="r04-reason"></label>
+        <label class="li" style="cursor:pointer"><span class="li-main"><span class="li-title">Other</span></span><input type="radio" name="r04-reason"></label>
+      </div>
+    </fieldset>
+
+    <div class="card" style="padding:12px 12px 12px 14px;display:flex;align-items:center;gap:12px">
+      <span class="li-ic" style="width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:#F1F5F9;color:#334155;flex:none"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg></span>
+      <div style="flex:1 1 auto;min-width:0;display:flex;flex-direction:column"><span class="semi">Called 2 times</span><span class="t-sm muted">1:10 PM, 1:14 PM · no answer</span></div>
+      <button class="btn btn-outline btn-sm" type="button" style="height:44px">Call again</button>
+    </div>
+
+    <section style="display:flex;flex-direction:column;gap:8px" aria-labelledby="r04-photo">
+      <h2 id="r04-photo" class="label">Photo of the address <span class="opt">(required)</span></h2>
+      <div style="display:flex;gap:10px">
+        <div class="thumb tB" style="width:96px;height:96px"><svg class="ic s32" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M10 21v-6h4v6"></path></svg></div>
+        <button type="button" class="drop" style="width:96px;height:96px;padding:8px" aria-label="Add another photo"><svg class="ic s24" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"></path><circle cx="12" cy="13.5" r="3.5"></circle></svg><span class="t-xs">Add</span></button>
+      </div>
+    </section>
+
+    <div class="field">
+      <label class="label" for="r04-note">Note for the store</label>
+      <textarea class="textarea" id="r04-note" style="min-height:88px">Gate locked, no answer. Neighbour says the customer is back after 6 PM.</textarea>
+    </div>
+  </main>
+
+  <div class="actionbar">
+    <button class="btn btn-danger btn-lg btn-block" type="button">Mark as failed</button>
+  </div>
+</div>
+</div></div></body></html>

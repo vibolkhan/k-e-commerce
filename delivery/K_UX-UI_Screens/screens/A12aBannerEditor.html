@@ -1,0 +1,143 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A-12 · Banner editor (modal) · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">A-12 · Banner editor (modal) <span class="pg">· Admin · Desktop</span></span><a href="A12Content.html">← Prev</a><a href="A13Reports.html">Next →</a></nav>
+<div class="stage fluid"><div class="frame">
+
+<div class="k overlay-page" style="height:900px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div class="base" aria-hidden="true"><div class="dc-imp">
+
+<div class="k adm" style="min-height:900px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <aside class="side"><div class="dc-imp">
+
+<nav class="k" aria-label="Admin sections" style="width:100%;min-width:224px;padding:20px 12px 24px;display:flex;flex-direction:column;gap:2px;background:#FFFFFF;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div style="display:flex;align-items:center;gap:10px;padding:0 8px 16px">
+    <div class="appicon" style="width:36px;height:36px;border-radius:10px"><svg viewBox="0 0 48 48" width="24" height="24" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+    <div style="display:flex;flex-direction:column"><span style="font-size:16px;line-height:20px;font-weight:800">K Admin</span><span class="t-xs muted">Phnom Penh store</span></div>
+  </div>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"></rect><rect x="14" y="3" width="7" height="5" rx="1.5"></rect><rect x="14" y="12" width="7" height="9" rx="1.5"></rect><rect x="3" y="16" width="7" height="5" rx="1.5"></rect></svg>Dashboard</a>
+  <p class="t-over" style="padding:14px 12px 6px">Sales</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 7h6M9 11h6M9 15h4"></path></svg>Orders<span class="badge">12</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"></rect><path d="M9 2h6v4H9zM9 11h6M9 15h6"></path></svg>RFQs &amp; quotes<span class="badge blue">3</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg>Returns<span class="badge blue">3</span></a>
+  <p class="t-over" style="padding:14px 12px 6px">Catalog</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"></path><circle cx="7.5" cy="7.5" r="1.5"></circle></svg>Products</a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5z"></path><path d="m3 8 9 5 9-5M12 13v8"></path></svg>Inventory<span class="badge">5</span></a>
+  <a href="#" class="navlink is-on"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg>Content</a>
+  <p class="t-over" style="padding:14px 12px 6px">People</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"></circle><path d="M2 21a7 7 0 0 1 14 0"></path><path d="M16 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"></path></svg>Customers<span class="badge blue">1</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="17.5" r="3.5"></circle><circle cx="18.5" cy="17.5" r="3.5"></circle><path d="M12 17.5V14l-3-3 4-3 2 3h3"></path><circle cx="15" cy="5" r="1"></circle></svg>Riders</a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>Reviews<span class="badge blue">4</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>Support chat<span class="badge">2</span></a>
+  <p class="t-over" style="padding:14px 12px 6px">Insights</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M7 16v-4M12 16V8M17 16v-7"></path></svg>Reports</a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.08a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.08a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Settings</a>
+</nav>
+</div></aside>
+  <div class="adm-main">
+    <div class="dc-imp">
+
+<header class="k" style="width:100%;min-height:72px;display:flex;align-items:center;gap:16px;padding:12px 32px;background:#FFFFFF;border-bottom:1px solid #E2E8F0;flex-wrap:wrap;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <label class="inputbox search" style="flex:1 1 320px;max-width:520px;height:42px">
+    <svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+    <input type="search" placeholder="Search orders, customers, products, RFQs" aria-label="Search the back office">
+    <span class="t-xs" style="color:#475569;border:1px solid #CBD5E1;border-radius:6px;padding:1px 6px;background:#fff">/</span>
+  </label>
+  <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
+    <span class="pill p-amber lg"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Same-day cut-off in 4h 35m</span>
+    <button class="iconbtn" type="button" aria-label="Help"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.5 2.5 0 0 1 4.9.7c0 1.8-2.4 2.3-2.4 3.8M12 17h.01"></path></svg></button>
+    <button class="iconbtn" type="button" aria-label="Notifications, 8 new"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span class="badge">8</span></button>
+    <button type="button" style="display:flex;align-items:center;gap:10px;border:0;background:transparent;padding:4px 8px 4px 4px;border-radius:12px;height:48px" aria-label="Account menu">
+      <span class="avatar" style="width:36px;height:36px;font-size:13px">CL</span>
+      <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.2"><span style="font-size:14px;font-weight:700">Chenda Lim</span><span class="t-xs muted">Operations admin</span></span>
+      <svg class="ic s18 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+    </button>
+  </div>
+</header>
+</div>
+    <main class="adm-body">
+      <div class="pagehead">
+        <div style="display:flex;flex-direction:column;gap:4px"><p class="crumbs">Catalog</p><h1>Content</h1></div>
+        <div class="toolbar">
+          <button class="btn btn-primary" type="button"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>New banner</button>
+        </div>
+      </div>
+
+      <section class="panel" aria-label="Home screen banners">
+        <div class="tabs" role="tablist" aria-label="Content type" style="border-radius:16px 16px 0 0;padding:0 12px">
+          <button class="tab is-on" type="button" role="tab" aria-selected="true">Banners<span class="count">4</span></button>
+          <button class="tab" type="button" role="tab" aria-selected="false">Collections<span class="count">3</span></button>
+          <button class="tab" type="button" role="tab" aria-selected="false">Pages<span class="count">5</span></button>
+        </div>
+        <div class="tablewrap">
+          <table class="table">
+            <thead><tr><th style="width:56px">Order</th><th>Preview</th><th>Title</th><th>Audience</th><th>Links to</th><th>Schedule</th><th>Status</th><th><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Actions</span></th></tr></thead>
+            <tbody>
+              <tr><td><button class="iconbtn" type="button" aria-label="Drag to reorder: Order by 3 PM, get it today" style="width:36px;height:36px;color:#64748B"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="6" r="1"></circle><circle cx="15" cy="6" r="1"></circle><circle cx="9" cy="12" r="1"></circle><circle cx="15" cy="12" r="1"></circle><circle cx="9" cy="18" r="1"></circle><circle cx="15" cy="18" r="1"></circle></svg></button></td><td><span style="width:96px;height:40px;border-radius:8px;background:#0272B6;color:#FFFFFF;font-size:10px;font-weight:800;line-height:12px;padding:6px 8px;display:block">Order by 3 PM, get it today</span></td><td class="strong">Order by 3 PM, get it today</td><td>All shoppers</td><td>Collection · Best sellers</td><td>Always on</td><td><span class="pill dot p-green">Live</span></td><td class="r"><span style="display:inline-flex;gap:4px"><a href="#" class="btn btn-ghost btn-sm">Edit</a><button class="iconbtn" type="button" aria-label="More actions" style="width:36px;height:36px"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.2"></circle><circle cx="12" cy="12" r="1.2"></circle><circle cx="19" cy="12" r="1.2"></circle></svg></button></span></td></tr>
+              <tr><td><button class="iconbtn" type="button" aria-label="Drag to reorder: Buying in bulk? Request a quote" style="width:36px;height:36px;color:#64748B"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="6" r="1"></circle><circle cx="15" cy="6" r="1"></circle><circle cx="9" cy="12" r="1"></circle><circle cx="15" cy="12" r="1"></circle><circle cx="9" cy="18" r="1"></circle><circle cx="15" cy="18" r="1"></circle></svg></button></td><td><span style="width:96px;height:40px;border-radius:8px;background:#0F172A;color:#FFFFFF;font-size:10px;font-weight:800;line-height:12px;padding:6px 8px;display:block">Buying in bulk? Request a quote</span></td><td class="strong">Buying in bulk? Request a quote</td><td><span class="pill p-violet">Business buyers</span></td><td>Page · Quote request</td><td>Always on</td><td><span class="pill dot p-green">Live</span></td><td class="r"><span style="display:inline-flex;gap:4px"><a href="#" class="btn btn-ghost btn-sm">Edit</a><button class="iconbtn" type="button" aria-label="More actions" style="width:36px;height:36px"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.2"></circle><circle cx="12" cy="12" r="1.2"></circle><circle cx="19" cy="12" r="1.2"></circle></svg></button></span></td></tr>
+              <tr><td><button class="iconbtn" type="button" aria-label="Drag to reorder: Back to school" style="width:36px;height:36px;color:#64748B"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="6" r="1"></circle><circle cx="15" cy="6" r="1"></circle><circle cx="9" cy="12" r="1"></circle><circle cx="15" cy="12" r="1"></circle><circle cx="9" cy="18" r="1"></circle><circle cx="15" cy="18" r="1"></circle></svg></button></td><td><span style="width:96px;height:40px;border-radius:8px;background:#FFEDD5;color:#9A3412;font-size:10px;font-weight:800;line-height:12px;padding:6px 8px;display:block">Back to school</span></td><td class="strong">Back to school</td><td>All shoppers</td><td>Collection · Office essentials</td><td>1 Nov – 15 Nov</td><td><span class="pill dot p-blue">Scheduled</span></td><td class="r"><span style="display:inline-flex;gap:4px"><a href="#" class="btn btn-ghost btn-sm">Edit</a><button class="iconbtn" type="button" aria-label="More actions" style="width:36px;height:36px"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.2"></circle><circle cx="12" cy="12" r="1.2"></circle><circle cx="19" cy="12" r="1.2"></circle></svg></button></span></td></tr>
+              <tr><td></td><td><span style="width:96px;height:40px;border-radius:8px;background:#E2E8F0;color:#475569;font-size:10px;font-weight:800;line-height:12px;padding:6px 8px;display:block">Rainy season essentials</span></td><td class="strong">Rainy season essentials</td><td>All shoppers</td><td>Collection · Rainy season</td><td>1 Sep – 15 Oct</td><td><span class="pill dot p-gray">Ended</span></td><td class="r"><span style="display:inline-flex;gap:4px"><a href="#" class="btn btn-ghost btn-sm">Duplicate</a><button class="iconbtn" type="button" aria-label="More actions" style="width:36px;height:36px"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.2"></circle><circle cx="12" cy="12" r="1.2"></circle><circle cx="19" cy="12" r="1.2"></circle></svg></button></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="banner info"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg><span>Live banners rotate on the app and web home screen in this order. Business buyers only see banners for their audience, and never retail prices.</span></div>
+    </main>
+  </div>
+</div>
+</div></div>
+  <div class="scrim"></div>
+  <div class="modal wide" role="dialog" aria-modal="true" aria-labelledby="a12a-title" style="top:40px">
+    <div class="modal-head">
+      <h2 id="a12a-title">Edit banner</h2>
+      <span class="pill dot p-green">Live</span>
+      <button class="iconbtn" type="button" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+    </div>
+    <div class="modal-body" style="flex-direction:row;flex-wrap:wrap;gap:24px">
+      <div style="flex:999 1 340px;min-width:0;display:flex;flex-direction:column;gap:14px">
+        <div class="field">
+          <span class="label">Background image</span>
+          <div class="drop" style="flex-direction:row;justify-content:flex-start;gap:14px;padding:12px;text-align:left">
+            <span class="thumb" style="width:96px;height:56px;background:#0272B6;color:#FFFFFF"><svg class="ic s28" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg></span>
+            <span style="display:flex;flex-direction:column;gap:2px;flex:1"><span class="semi">same-day-truck.png</span><span class="t-xs muted">1080 × 600 · 214 KB</span></span>
+            <button class="btn btn-outline btn-sm" type="button">Replace</button>
+          </div>
+        </div>
+        <div class="field"><label class="label" for="a12a-t">Title</label><input class="input" id="a12a-t" value="Order by 3 PM, get it today"></div>
+        <div class="field"><label class="label" for="a12a-s">Subtitle</label><input class="input" id="a12a-s" value="Free delivery on orders over $50 in Phnom Penh."></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),1fr));gap:14px">
+          <div class="field"><label class="label" for="a12a-b">Button label</label><input class="input" id="a12a-b" value="Shop now"></div>
+          <div class="field"><label class="label" for="a12a-l">Links to</label><select class="input" id="a12a-l"><option>Collection · Best sellers</option><option>Collection · New arrivals</option><option>Collection · Office essentials</option><option>Category · Audio</option></select></div>
+          <div class="field"><label class="label" for="a12a-a">Audience</label><select class="input" id="a12a-a"><option>All shoppers</option><option>Retail customers only</option><option>Business buyers only</option></select></div>
+          <div class="field"><label class="label" for="a12a-p">Badge</label><input class="input" id="a12a-p" value="Same-day delivery"></div>
+          <div class="field"><label class="label" for="a12a-st">Starts</label><input class="input" id="a12a-st" value="Always on"></div>
+          <div class="field"><label class="label" for="a12a-en">Ends</label><input class="input" id="a12a-en" placeholder="No end date"></div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px"><label for="a12a-live" class="semi">Show on home screen</label><input class="switch" id="a12a-live" type="checkbox" checked></div>
+      </div>
+
+      <div style="flex:1 1 300px;max-width:340px;display:flex;flex-direction:column;gap:10px">
+        <span class="label">Preview · phone</span>
+        <div class="greybox" style="padding:16px">
+          <div aria-label="Banner preview" role="img" style="position:relative;border-radius:20px;background:#0272B6;color:#FFFFFF;padding:18px 20px 16px;overflow:hidden;display:flex;flex-direction:column;gap:8px">
+            <div aria-hidden="true" style="position:absolute;right:-26px;top:22px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.12);display:grid;place-items:center"><svg class="ic s56" viewBox="0 0 24 24" style="color:#FFFFFF"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg></div>
+            <span class="pill p-white" style="position:relative;align-self:flex-start">Same-day delivery</span>
+            <span style="position:relative;font-size:21px;line-height:27px;font-weight:800;max-width:200px">Order by 3 PM, get it today</span>
+            <span style="position:relative;font-size:13px;line-height:18px;max-width:190px">Free delivery on orders over $50 in Phnom Penh.</span>
+            <span class="btn btn-white btn-sm" style="position:relative;align-self:flex-start;margin-top:4px">Shop now</span>
+          </div>
+        </div>
+        <p class="help">Keep titles under 32 characters so they fit on small phones.</p>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-outline" type="button">Cancel</button>
+      <button class="btn btn-primary" type="button">Save banner</button>
+    </div>
+  </div>
+</div>
+</div></div></body></html>

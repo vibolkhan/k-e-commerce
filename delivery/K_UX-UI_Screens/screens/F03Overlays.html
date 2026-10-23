@@ -1,0 +1,103 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Overlays &amp; feedback · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">Overlays &amp; feedback <span class="pg">· Foundations</span></span><a href="F02Components.html">← Prev</a><a href="CmpBottomNav.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:1440px;max-width:100%">
+
+<div class="k" style="width:1440px;height:1200px;background:#FFFFFF;padding:64px 80px;display:flex;flex-direction:column;gap:32px;overflow:hidden;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <header style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px">
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <p class="sg-title">Overlays &amp; feedback</p>
+      <h1 style="font-size:40px;line-height:48px;font-weight:800;letter-spacing:-.025em">Dialogs, sheets, toasts, notifications</h1>
+    </div>
+    <p class="sg-sub" style="max-width:520px">Confirm before anything that costs money, removes data or cancels work. Sheets for choices, toasts for quick results, push for what happens while the app is closed.</p>
+  </header>
+
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px">
+    <figure style="display:flex;flex-direction:column;gap:12px">
+      <div style="position:relative;height:520px;border-radius:24px;overflow:hidden;background:#F8FAFC;border:1px solid #E2E8F0">
+        <div style="padding:20px;display:flex;flex-direction:column;gap:14px"><div class="skel" style="height:22px;width:50%"></div><div class="skel" style="height:220px;border-radius:16px"></div><div class="skel" style="height:14px;width:70%"></div><div class="skel" style="height:14px;width:40%"></div></div>
+        <div class="scrim"></div>
+        <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="f3-d1">
+          <span class="dlg-icon"><svg class="ic s28" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+          <h2 id="f3-d1">Leave payment?</h2>
+          <p>Your order is held for 14:32. If it isn’t paid in time, it is cancelled and the items go back on sale.</p>
+          <div class="dlg-actions"><button class="btn btn-outline" type="button">Leave</button><button class="btn btn-primary" type="button">Stay and pay</button></div>
+        </div>
+      </div>
+      <figcaption class="t-sm" style="color:#334155"><b>Confirm dialog.</b> Icon, short title, one-sentence consequence, two actions. The safe choice is the primary button.</figcaption>
+    </figure>
+
+    <figure style="display:flex;flex-direction:column;gap:12px">
+      <div style="position:relative;height:520px;border-radius:24px;overflow:hidden;background:#F8FAFC;border:1px solid #E2E8F0">
+        <div style="padding:20px;display:flex;flex-direction:column;gap:14px"><div class="skel" style="height:22px;width:40%"></div><div class="skel" style="height:90px;border-radius:16px"></div><div class="skel" style="height:90px;border-radius:16px"></div><div class="skel" style="height:90px;border-radius:16px"></div></div>
+        <div class="scrim"></div>
+        <div class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="f3-d2">
+          <span class="dlg-icon bad"><svg class="ic s28" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 15h10l1-15"></path><path d="M10 11v6M14 11v6"></path></svg></span>
+          <h2 id="f3-d2">Remove from cart?</h2>
+          <p>Wireless Headphones Pro will be removed from your cart.</p>
+          <div class="dlg-actions"><button class="btn btn-outline" type="button">Keep it</button><button class="btn btn-danger" type="button">Remove</button></div>
+          <button class="btn btn-ghost btn-sm" type="button" style="align-self:center">Move to wishlist instead</button>
+        </div>
+      </div>
+      <figcaption class="t-sm" style="color:#334155"><b>Destructive confirm.</b> Red icon and red action, and the action names what happens — never just “OK”.</figcaption>
+    </figure>
+
+    <figure style="display:flex;flex-direction:column;gap:12px">
+      <div style="position:relative;height:520px;border-radius:24px;overflow:hidden;background:#F8FAFC;border:1px solid #E2E8F0">
+        <div style="padding:20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px"><div class="skel" style="height:150px;border-radius:16px"></div><div class="skel" style="height:150px;border-radius:16px"></div><div class="skel" style="height:150px;border-radius:16px"></div><div class="skel" style="height:150px;border-radius:16px"></div></div>
+        <div class="scrim"></div>
+        <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="f3-s1">
+          <span class="grab"></span>
+          <div class="sheet-head"><h2 id="f3-s1">Sort by</h2><button class="iconbtn soft" type="button" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></button></div>
+          <div class="list" style="border:1px solid #E2E8F0;border-radius:14px;overflow:hidden">
+            <label class="li"><span class="li-main"><span class="li-title">Most popular</span></span><input type="radio" name="f3sort" checked></label>
+            <label class="li"><span class="li-main"><span class="li-title">Newest</span></span><input type="radio" name="f3sort"></label>
+            <label class="li"><span class="li-main"><span class="li-title">Price: low to high</span></span><input type="radio" name="f3sort"></label>
+          </div>
+        </div>
+      </div>
+      <figcaption class="t-sm" style="color:#334155"><b>Bottom sheet.</b> Grab handle, title, close button. Used for filters, options, pickers and short forms.</figcaption>
+    </figure>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <p class="t-label">Toasts · bottom, 4 seconds</p>
+      <div class="toast" style="position:relative;left:auto;right:auto;bottom:auto"><svg class="ic t-ok" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg><span style="flex:1">Added to cart</span><a href="#" class="act">View cart</a></div>
+      <div class="toast" style="position:relative;left:auto;right:auto;bottom:auto"><svg class="ic t-info" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 15h10l1-15"></path></svg><span style="flex:1">Item removed</span><button class="act" type="button">Undo</button></div>
+      <div class="toast" style="position:relative;left:auto;right:auto;bottom:auto"><svg class="ic t-bad" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m15 9-6 6M9 9l6 6"></path></svg><span style="flex:1">No connection. We’ll retry automatically.</span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <p class="t-label">Push notifications · app closed</p>
+      <div class="push">
+        <span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <span class="p-main"><span class="p-top"><span>K</span><span>now</span></span><span class="p-title">Your order is on the way</span><span class="p-body">Vuthy is delivering #K-10248. Arriving in about 18 min.</span></span>
+      </div>
+      <div class="push">
+        <span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+        <span class="p-main"><span class="p-top"><span>K</span><span>9:41 AM</span></span><span class="p-title">Your quote is ready</span><span class="p-body">RFQ-0312 · $2,260.50 · valid until 5 Nov. Review and accept.</span></span>
+      </div>
+      <p class="help">Title says what happened; body adds the order number and the next step. Tapping opens the related screen.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <p class="t-label">In-app banner · app open</p>
+      <div class="push" style="border-radius:16px;box-shadow:0 8px 24px rgba(15,23,42,.10)">
+        <span class="p-icon" style="background:#E0F2FE;color:#025A91;border-radius:12px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg></span>
+        <span class="p-main"><span class="p-title">Out for delivery</span><span class="p-body">#K-10248 · Track your rider live</span></span>
+        <a href="#" class="btn btn-tonal btn-sm" style="align-self:center">Track</a>
+      </div>
+      <p class="t-label" style="margin-top:8px">Blocking progress</p>
+      <div style="position:relative;height:150px;border-radius:20px;overflow:hidden;background:#F8FAFC;border:1px solid #E2E8F0">
+        <div class="scrim" style="background:rgba(255,255,255,.7)"></div>
+        <div class="card shadow" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:18px 22px;display:flex;align-items:center;gap:14px;border-radius:16px">
+          <span class="spinner blue" style="width:24px;height:24px"></span><span class="semi">Confirming your payment…</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div></div></body></html>

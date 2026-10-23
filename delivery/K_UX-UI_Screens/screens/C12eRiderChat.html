@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C-12 · Chat with rider · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">C-12 · Chat with rider <span class="pg">· Orders &amp; Support</span></span><a href="C12dRiderContact.html">← Prev</a><a href="C13CancelSheet.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone white" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <header class="appbar line" style="gap:8px">
+    <a href="#" class="iconbtn" aria-label="Back"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+    <span class="avatar sm green">VK</span>
+    <div style="flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.25">
+      <h1 style="font-size:16px;font-weight:800" class="ellipsis">Vuthy · Your rider</h1>
+      <span class="t-xs muted" style="display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#047857"></span>Online · 2BK-4821</span>
+    </div>
+    <a href="#" class="iconbtn" aria-label="Call Vuthy"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg></a>
+  </header>
+  <div style="flex:none;padding:10px 16px;border-bottom:1px solid #E2E8F0;background:#FFFFFF">
+    <a href="#" class="tint" style="display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:12px;text-decoration:none;color:#0F172A;min-height:44px">
+      <svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true" style="color:#025A91"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg>
+      <span class="t-sm semi" style="flex:1">#K-10248 · Out for delivery</span>
+      <span class="t-xs" style="color:#475569">~18 min</span>
+    </a>
+  </div>
+
+  <main aria-label="Messages" style="flex:1 1 auto;min-height:0;overflow:hidden;background:#F8FAFC;padding:16px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px">
+    <p class="sysmsg">Today</p>
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:4px"><p class="bubble them">Hi Dara, I’ve picked up your order and I’m on my way.</p><span class="bubble-meta">Vuthy · 1:44 PM</span></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px"><p class="bubble me">Great, thank you!</p><span class="bubble-meta">1:45 PM</span></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:4px"><p class="bubble them">I’m at the blue gate on St. 315.</p><span class="bubble-meta">Vuthy · 1:58 PM</span></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px"><p class="bubble me">Coming down now!</p><span class="bubble-meta">1:58 PM · Read</span></div>
+    <p class="t-xs" style="color:#475569;text-align:center;margin-top:6px">This chat closes when your order is delivered.</p>
+  </main>
+
+  <div style="flex:none;display:flex;gap:8px;padding:10px 16px 4px;overflow:hidden;background:#FFFFFF;border-top:1px solid #E2E8F0" role="group" aria-label="Quick replies">
+    <button class="chip" type="button" style="height:44px">I’m coming</button>
+    <button class="chip" type="button" style="height:44px">Leave it with the guard</button>
+    <button class="chip" type="button" style="height:44px">Call me</button>
+  </div>
+  <div class="composer" style="border-top:0">
+    <button class="iconbtn" type="button" aria-label="Attach a photo"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.4 11-8.5 8.5a5.5 5.5 0 0 1-7.8-7.8l8.5-8.5a3.7 3.7 0 0 1 5.2 5.2l-8.5 8.5a1.8 1.8 0 0 1-2.6-2.6l7.8-7.8"></path></svg></button>
+    <label class="inputbox search" style="flex:1;height:44px;border-radius:22px"><input placeholder="Message Vuthy" aria-label="Message Vuthy"></label>
+    <button class="iconbtn" type="button" aria-label="Send" style="background:#0272B6;color:#FFFFFF;border-radius:50%"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4z"></path><path d="M22 2 11 13"></path></svg></button>
+  </div>
+</div>
+</div></div></body></html>

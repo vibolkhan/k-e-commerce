@@ -1,0 +1,74 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>B-04 · Quotes · Closed · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">B-04 · Quotes · Closed <span class="pg">· Business Buyer (B2B)</span></span><a href="B04aQuotesAccepted.html">← Prev</a><a href="B05RfqInReview.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <header style="flex:none;background:#FFFFFF;display:flex;flex-direction:column">
+    <div class="appbar">
+      <h1 class="title left">Quotes</h1>
+      <button class="iconbtn" type="button" aria-label="Search quotes"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></button>
+    </div>
+    <div style="padding:0 16px 8px">
+      <div class="seg" role="tablist" aria-label="Show">
+        <button type="button" role="tab" aria-selected="true" class="is-on">Quotes</button>
+        <button type="button" role="tab" aria-selected="false">Orders</button>
+      </div>
+    </div>
+    <div class="tabs fill" role="tablist" aria-label="Quote status">
+      <button class="tab" type="button" role="tab" aria-selected="false">Open<span class="count">3</span></button>
+      <button class="tab" type="button" role="tab" aria-selected="false">Accepted</button>
+      <button class="tab is-on" type="button" role="tab" aria-selected="true">Closed</button>
+    </div>
+  </header>
+
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;padding:16px;display:flex;flex-direction:column;gap:12px">
+    <article class="card" style="padding:16px;display:flex;flex-direction:column;gap:10px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="strong" style="font-size:16px">RFQ-0298</span><span class="pill dot p-gray">Expired</span></div>
+      <p class="t-sm muted">Expired 15 Oct · 2 items · 80 units</p>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+        <span class="t-xs muted">The quote wasn’t accepted in time</span>
+        <a href="#" class="btn btn-tonal btn-sm">Request again</a>
+      </div>
+    </article>
+
+    <article class="card" style="padding:16px;display:flex;flex-direction:column;gap:10px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="strong" style="font-size:16px">RFQ-0301</span><span class="pill dot p-red">Rejected</span></div>
+      <p class="t-sm muted">Rejected by you 9 Oct · 3 items</p>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+        <span class="t-xs muted">Reason: Price too high</span>
+        <a href="#" class="btn btn-outline btn-sm">View</a>
+      </div>
+    </article>
+
+    <article class="card" style="padding:16px;display:flex;flex-direction:column;gap:10px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="strong" style="font-size:16px">RFQ-0290</span><span class="pill dot p-gray">Cancelled</span></div>
+      <p class="t-sm muted">Cancelled by you 28 Sep · 1 item</p>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+        <span class="t-xs muted">Cancelled before a quote was sent</span>
+        <a href="#" class="btn btn-outline btn-sm">View</a>
+      </div>
+    </article>
+  </main>
+
+  <div style="flex:none;height:80px"><div class="dc-imp">
+
+<nav class="k botnav" aria-label="Main navigation" style="width:390px;grid-template-columns:repeat(5,minmax(0,1fr));font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M10 21v-6h4v6"></path></svg><span>Home</span></a>
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg><span>Categories</span></a>
+  
+  
+    <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"></rect><path d="M9 2h6v4H9zM9 11h6M9 15h6"></path></svg><span>Quote list</span><span class="badge blue">3</span></a>
+  
+  
+    <a href="#" class="navi is-on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 7h6M9 11h6M9 15h4"></path></svg><span>Orders &amp; quotes</span></a>
+  
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span>Account</span></a>
+</nav>
+</div></div>
+</div>
+</div></div></body></html>

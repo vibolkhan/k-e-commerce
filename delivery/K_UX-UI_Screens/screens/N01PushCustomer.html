@@ -1,0 +1,133 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Push · Customer &amp; business buyer · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">Push · Customer &amp; business buyer <span class="pg">· Notifications</span></span><a href="W07QuoteDetail.html">← Prev</a><a href="N02PushStaff.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:1440px;max-width:100%">
+
+<div class="k" style="width:1440px;height:1250px;background:#FFFFFF;padding:56px 80px;display:flex;flex-direction:column;gap:28px;overflow:hidden;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <header style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px">
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <p class="sg-title">Notifications</p>
+      <h1 class="sg-h">Push notifications — customer &amp; business buyer</h1>
+    </div>
+    <p class="sg-sub" style="max-width:440px">Title says what happened; body adds the order number and next step. Tapping opens the screen shown.</p>
+  </header>
+
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;align-items:start">
+    <!-- column 1 -->
+    <section style="display:flex;flex-direction:column;gap:12px" aria-labelledby="n01-orders">
+      <p class="t-label" id="n01-orders">Orders</p>
+      <figure style="display:flex;flex-direction:column;gap:6px">
+        <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K</span><span>9:10 AM</span></span><span class="p-title">Order confirmed</span><span class="p-body">#K-10250 · Pay $36.50 in cash when it arrives today by 8 PM.</span></span></div>
+        <figcaption class="t-xs muted">Opens: C-12 Order detail</figcaption>
+      </figure>
+      <figure style="display:flex;flex-direction:column;gap:6px">
+        <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K</span><span>10:26 AM</span></span><span class="p-title">Payment received</span><span class="p-body">We got $92.00 by KHQR for #K-10248. Your order is confirmed.</span></span></div>
+        <figcaption class="t-xs muted">Opens: C-12 Order detail</figcaption>
+      </figure>
+      <figure style="display:flex;flex-direction:column;gap:6px">
+        <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K</span><span>11:02 AM</span></span><span class="p-title">Payment time ran out</span><span class="p-body">#K-10261 wasn’t paid within 15 minutes, so we released the items. Tap to try again.</span></span></div>
+        <figcaption class="t-xs muted">Opens: C-09 Payment expired</figcaption>
+      </figure>
+      <figure style="display:flex;flex-direction:column;gap:6px">
+        <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K</span><span>11:30 AM</span></span><span class="p-title">We’re packing your order</span><span class="p-body">#K-10248 is being packed. We’ll let you know when it leaves the store.</span></span></div>
+        <figcaption class="t-xs muted">Opens: C-12 Order detail</figcaption>
+      </figure>
+      <figure style="display:flex;flex-direction:column;gap:6px">
+        <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K</span><span>1:42 PM</span></span><span class="p-title">Your order is on the way</span><span class="p-body">Vuthy is delivering #K-10248. Arriving in about 18 min.</span></span></div>
+        <figcaption class="t-xs muted">Opens: C-12 Live tracking</figcaption>
+      </figure>
+      <figure style="display:flex;flex-direction:column;gap:6px">
+        <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K</span><span>2:01 PM</span></span><span class="p-title">Delivered</span><span class="p-body">#K-10248 was delivered at 2:01 PM. Returns are open until Sun 25 Oct.</span></span></div>
+        <figcaption class="t-xs muted">Opens: C-12 Order delivered</figcaption>
+      </figure>
+      <figure style="display:flex;flex-direction:column;gap:6px">
+        <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K</span><span>1:15 PM</span></span><span class="p-title">We couldn’t deliver your order</span><span class="p-body">Our rider couldn’t reach you for #K-10259. We’ll call to arrange a new time.</span></span></div>
+        <figcaption class="t-xs muted">Opens: C-12 Order detail</figcaption>
+      </figure>
+    </section>
+
+    <!-- column 2 -->
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <section style="display:flex;flex-direction:column;gap:12px" aria-labelledby="n01-after">
+        <p class="t-label" id="n01-after">After delivery</p>
+        <figure style="display:flex;flex-direction:column;gap:6px">
+          <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K</span><span>Yesterday</span></span><span class="p-title">How were your sneakers?</span><span class="p-body">Rate Running Sneakers Air from #K-10231 and help other shoppers.</span></span></div>
+          <figcaption class="t-xs muted">Opens: C-15 Write review</figcaption>
+        </figure>
+        <figure style="display:flex;flex-direction:column;gap:6px">
+          <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K</span><span>9:05 AM</span></span><span class="p-title">Return approved</span><span class="p-body">A rider will pick up your sneakers today, 3–6 PM. Please have $2.00 ready for the return fee.</span></span></div>
+          <figcaption class="t-xs muted">Opens: C-14 Return status</figcaption>
+        </figure>
+        <figure style="display:flex;flex-direction:column;gap:6px">
+          <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K</span><span>Mon</span></span><span class="p-title">Return not approved</span><span class="p-body">RET-0079 was requested after the 3-day return window. Tap to see details.</span></span></div>
+          <figcaption class="t-xs muted">Opens: C-14 Return status</figcaption>
+        </figure>
+        <figure style="display:flex;flex-direction:column;gap:6px">
+          <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K</span><span>now</span></span><span class="p-title">Refund sent</span><span class="p-body">$59.00 for return RET-0087 (#K-10231) is on its way to you.</span></span></div>
+          <figcaption class="t-xs muted">Opens: C-14 Return status</figcaption>
+        </figure>
+      </section>
+      <section style="display:flex;flex-direction:column;gap:12px" aria-labelledby="n01-chat">
+        <p class="t-label" id="n01-chat">Support</p>
+        <figure style="display:flex;flex-direction:column;gap:6px">
+          <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K</span><span>1:50 PM</span></span><span class="p-title">K Support replied</span><span class="p-body">Sophea: Your rider is about 5 minutes away.</span></span></div>
+          <figcaption class="t-xs muted">Opens: C-17 Support chat</figcaption>
+        </figure>
+      </section>
+      <section style="display:flex;flex-direction:column;gap:12px" aria-labelledby="n01-biz">
+        <p class="t-label" id="n01-biz">Business account</p>
+        <figure style="display:flex;flex-direction:column;gap:6px">
+          <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K</span><span>11:20 AM</span></span><span class="p-title">Your business account is active</span><span class="p-body">Mekong Desk Co., Ltd. is verified. You can now request quotes.</span></span></div>
+          <figcaption class="t-xs muted">Opens: B-01 Business account active</figcaption>
+        </figure>
+        <figure style="display:flex;flex-direction:column;gap:6px">
+          <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K</span><span>11:20 AM</span></span><span class="p-title">We couldn’t verify your business</span><span class="p-body">The VAT TIN doesn’t match your licence. Tap to edit and resubmit.</span></span></div>
+          <figcaption class="t-xs muted">Opens: B-01 Verification rejected</figcaption>
+        </figure>
+      </section>
+    </div>
+
+    <!-- column 3 -->
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <section style="display:flex;flex-direction:column;gap:12px" aria-labelledby="n01-quotes">
+        <p class="t-label" id="n01-quotes">Quotes · business buyers</p>
+        <figure style="display:flex;flex-direction:column;gap:6px">
+          <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K</span><span>21 Oct</span></span><span class="p-title">Your quote is ready</span><span class="p-body">RFQ-0312 · $2,260.50 · valid until 5 Nov. Review and accept.</span></span></div>
+          <figcaption class="t-xs muted">Opens: B-05 Quote detail</figcaption>
+        </figure>
+        <figure style="display:flex;flex-direction:column;gap:6px">
+          <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K</span><span>now</span></span><span class="p-title">Quote updated</span><span class="p-body">Sales sent version 2 of RFQ-0309. Check the new prices.</span></span></div>
+          <figcaption class="t-xs muted">Opens: B-05 Quote detail</figcaption>
+        </figure>
+        <figure style="display:flex;flex-direction:column;gap:6px">
+          <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K</span><span>4 Nov</span></span><span class="p-title">Quote expires tomorrow</span><span class="p-body">RFQ-0312 is valid until 5 Nov. Accept it to keep these prices.</span></span></div>
+          <figcaption class="t-xs muted">Opens: B-05 Quote detail</figcaption>
+        </figure>
+      </section>
+      <section style="display:flex;flex-direction:column;gap:12px" aria-labelledby="n01-bank">
+        <p class="t-label" id="n01-bank">Bank transfer</p>
+        <figure style="display:flex;flex-direction:column;gap:6px">
+          <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K</span><span>2:30 PM</span></span><span class="p-title">Payment confirmed</span><span class="p-body">We confirmed your bank transfer for #K-10263. Your order is being prepared.</span></span></div>
+          <figcaption class="t-xs muted">Opens: C-12 Order detail</figcaption>
+        </figure>
+        <figure style="display:flex;flex-direction:column;gap:6px">
+          <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K</span><span>2:30 PM</span></span><span class="p-title">Transfer slip rejected</span><span class="p-body">The amount on your slip doesn’t match #K-10263. Please upload a new slip by 8 Nov.</span></span></div>
+          <figcaption class="t-xs muted">Opens: B-06 Slip rejected</figcaption>
+        </figure>
+      </section>
+      <aside class="tint" style="padding:18px 20px;display:flex;flex-direction:column;gap:10px" aria-label="Writing rules">
+        <p class="t-h3">Writing a push</p>
+        <ul style="display:flex;flex-direction:column;gap:8px">
+          <li class="t-sm" style="display:flex;gap:10px;color:#334155"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true" style="color:#025A91;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg>Title: what happened, in a few words.</li>
+          <li class="t-sm" style="display:flex;gap:10px;color:#334155"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true" style="color:#025A91;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg>Body: the order or quote number, then the next step.</li>
+          <li class="t-sm" style="display:flex;gap:10px;color:#334155"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true" style="color:#025A91;margin-top:1px"><path d="M20 6 9 17l-5-5"></path></svg>Each push also lands in the in-app inbox (S-07).</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</div>
+</div></div></body></html>

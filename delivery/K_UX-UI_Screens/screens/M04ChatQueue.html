@@ -1,0 +1,58 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin mobile · Chat queue · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">Admin mobile · Chat queue <span class="pg">· Admin · Mobile</span></span><a href="M03BankSlip.html">← Prev</a><a href="M04aChat.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div style="flex:none;background:#FFFFFF">
+    <div class="appbar">
+      <h1 class="title left">Support chat</h1>
+      <button class="iconbtn" type="button" aria-label="Search conversations"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></button>
+    </div>
+    <div class="tabs fill" role="tablist" aria-label="Conversations">
+      <button class="tab is-on" type="button" role="tab" aria-selected="true">Unassigned<span class="count">2</span></button>
+      <button class="tab" type="button" role="tab" aria-selected="false">Mine<span class="count">3</span></button>
+      <button class="tab" type="button" role="tab" aria-selected="false">Resolved</button>
+    </div>
+  </div>
+
+  <main role="tabpanel" aria-label="Unassigned" style="flex:1 1 auto;min-height:0;overflow:hidden;padding:12px 16px 16px;display:flex;flex-direction:column;gap:12px">
+    <p class="t-xs muted" style="display:flex;align-items:center;gap:6px"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Oldest waiting: 14 min · target first reply under 5 min</p>
+    <div class="card" style="overflow:hidden"><div class="list">
+      <a href="#" class="li" style="align-items:flex-start;padding:14px 16px">
+        <span class="avatar">DS</span>
+        <span class="li-main" style="gap:4px">
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span class="li-title">Dara Sok</span><span class="t-xs muted">2 min</span></span>
+          <span style="display:flex;align-items:center;gap:6px"><span class="pill p-gray" style="height:22px;font-size:11px">#K-10248</span><span class="t-xs muted">Out for delivery</span></span>
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span class="t-sm ink2 ellipsis">Can he call me when he’s at the gate?</span><span class="badge">1</span></span>
+        </span>
+      </a>
+      <a href="#" class="li" style="align-items:flex-start;padding:14px 16px">
+        <span class="avatar amber">MO</span>
+        <span class="li-main" style="gap:4px">
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span class="li-title">Malis Ouk</span><span class="t-xs c-bad semi">14 min</span></span>
+          <span style="display:flex;align-items:center;gap:6px"><span class="pill p-gray" style="height:22px;font-size:11px">#K-10259</span><span class="t-xs muted">Failed delivery</span></span>
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span class="t-sm ink2 ellipsis">Can you deliver again after 6 PM today?</span><span class="badge">2</span></span>
+        </span>
+      </a>
+    </div></div>
+
+    <p class="t-sm muted" style="text-align:center;padding:8px 24px">Replying to a chat assigns it to you. It then moves to <b>Mine</b>.</p>
+  </main>
+
+  <div style="flex:none;height:80px"><div class="dc-imp">
+
+<nav class="k botnav" aria-label="Admin navigation" style="width:390px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"></rect><rect x="14" y="3" width="7" height="5" rx="1.5"></rect><rect x="14" y="12" width="7" height="9" rx="1.5"></rect><rect x="3" y="16" width="7" height="5" rx="1.5"></rect></svg><span>Dashboard</span></a>
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 7h6M9 11h6M9 15h4"></path></svg><span>Orders</span><span class="badge">12</span></a>
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"></rect><path d="M9 2h6v4H9zM9 11h6M9 15h6"></path></svg><span>RFQs</span></a>
+  <a href="#" class="navi is-on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><span>Chat</span><span class="badge">2</span></a>
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.2"></circle><circle cx="12" cy="12" r="1.2"></circle><circle cx="19" cy="12" r="1.2"></circle></svg><span>More</span></a>
+</nav>
+</div></div>
+</div>
+</div></div></body></html>

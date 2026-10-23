@@ -1,0 +1,136 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A-14 · Edit zone (modal) · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">A-14 · Edit zone (modal) <span class="pg">· Admin · Desktop</span></span><a href="A14Settings.html">← Prev</a><a href="A14bPayments.html">Next →</a></nav>
+<div class="stage fluid"><div class="frame">
+
+<div class="k overlay-page" style="height:900px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div class="base" aria-hidden="true"><div class="dc-imp">
+
+<div class="k adm" style="min-height:1000px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <aside class="side"><div class="dc-imp">
+
+<nav class="k" aria-label="Admin sections" style="width:100%;min-width:224px;padding:20px 12px 24px;display:flex;flex-direction:column;gap:2px;background:#FFFFFF;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div style="display:flex;align-items:center;gap:10px;padding:0 8px 16px">
+    <div class="appicon" style="width:36px;height:36px;border-radius:10px"><svg viewBox="0 0 48 48" width="24" height="24" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+    <div style="display:flex;flex-direction:column"><span style="font-size:16px;line-height:20px;font-weight:800">K Admin</span><span class="t-xs muted">Phnom Penh store</span></div>
+  </div>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"></rect><rect x="14" y="3" width="7" height="5" rx="1.5"></rect><rect x="14" y="12" width="7" height="9" rx="1.5"></rect><rect x="3" y="16" width="7" height="5" rx="1.5"></rect></svg>Dashboard</a>
+  <p class="t-over" style="padding:14px 12px 6px">Sales</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 7h6M9 11h6M9 15h4"></path></svg>Orders<span class="badge">12</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"></rect><path d="M9 2h6v4H9zM9 11h6M9 15h6"></path></svg>RFQs &amp; quotes<span class="badge blue">3</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg>Returns<span class="badge blue">3</span></a>
+  <p class="t-over" style="padding:14px 12px 6px">Catalog</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"></path><circle cx="7.5" cy="7.5" r="1.5"></circle></svg>Products</a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5z"></path><path d="m3 8 9 5 9-5M12 13v8"></path></svg>Inventory<span class="badge">5</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg>Content</a>
+  <p class="t-over" style="padding:14px 12px 6px">People</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"></circle><path d="M2 21a7 7 0 0 1 14 0"></path><path d="M16 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"></path></svg>Customers<span class="badge blue">1</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="17.5" r="3.5"></circle><circle cx="18.5" cy="17.5" r="3.5"></circle><path d="M12 17.5V14l-3-3 4-3 2 3h3"></path><circle cx="15" cy="5" r="1"></circle></svg>Riders</a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>Reviews<span class="badge blue">4</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>Support chat<span class="badge">2</span></a>
+  <p class="t-over" style="padding:14px 12px 6px">Insights</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M7 16v-4M12 16V8M17 16v-7"></path></svg>Reports</a>
+  <a href="#" class="navlink is-on"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.08a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.08a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Settings</a>
+</nav>
+</div></aside>
+  <div class="adm-main">
+    <div class="dc-imp">
+
+<header class="k" style="width:100%;min-height:72px;display:flex;align-items:center;gap:16px;padding:12px 32px;background:#FFFFFF;border-bottom:1px solid #E2E8F0;flex-wrap:wrap;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <label class="inputbox search" style="flex:1 1 320px;max-width:520px;height:42px">
+    <svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+    <input type="search" placeholder="Search orders, customers, products, RFQs" aria-label="Search the back office">
+    <span class="t-xs" style="color:#475569;border:1px solid #CBD5E1;border-radius:6px;padding:1px 6px;background:#fff">/</span>
+  </label>
+  <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
+    <span class="pill p-amber lg"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Same-day cut-off in 4h 35m</span>
+    <button class="iconbtn" type="button" aria-label="Help"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.5 2.5 0 0 1 4.9.7c0 1.8-2.4 2.3-2.4 3.8M12 17h.01"></path></svg></button>
+    <button class="iconbtn" type="button" aria-label="Notifications, 8 new"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span class="badge">8</span></button>
+    <button type="button" style="display:flex;align-items:center;gap:10px;border:0;background:transparent;padding:4px 8px 4px 4px;border-radius:12px;height:48px" aria-label="Account menu">
+      <span class="avatar" style="width:36px;height:36px;font-size:13px">CL</span>
+      <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.2"><span style="font-size:14px;font-weight:700">Chenda Lim</span><span class="t-xs muted">Operations admin</span></span>
+      <svg class="ic s18 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+    </button>
+  </div>
+</header>
+</div>
+    <main class="adm-body">
+      <div class="pagehead"><div style="display:flex;flex-direction:column;gap:4px"><p class="crumbs">Store setup</p><h1>Settings</h1></div></div>
+      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start">
+        <nav class="card" aria-label="Settings sections" style="flex:1 1 220px;max-width:260px;padding:8px;display:flex;flex-direction:column;gap:2px">
+          <a href="#" class="navlink is-on" aria-current="page"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Delivery zones</a>
+          <a href="#" class="navlink"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"></path></svg>Payments</a>
+          <a href="#" class="navlink"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Store &amp; rules</a>
+          <a href="#" class="navlink"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"></circle><path d="M2 21a7 7 0 0 1 14 0"></path><path d="M16 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"></path></svg>Staff &amp; roles</a>
+          <a href="#" class="navlink"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h5"></path></svg>Audit log</a>
+        </nav>
+
+        <div style="flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:24px">
+          <section class="panel" aria-labelledby="a14-zones">
+            <div class="panel-head"><div style="display:flex;flex-direction:column;gap:2px"><h2 id="a14-zones">Delivery zones</h2><span class="t-xs muted">Fees, same-day delivery and cash-on-delivery limits per area</span></div><button class="btn btn-primary btn-sm" type="button"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>Add zone</button></div>
+            <div class="map" style="height:300px;border-bottom:1px solid #E2E8F0">
+              <svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Map of Phnom Penh delivery zones: Sen Sok, Toul Kork, Boeung Kak, Daun Penh, BKK1 active; Chbar Ampov paused">
+                <path d="M690 -10 C720 80 700 160 760 310" stroke="#CFE6F5" stroke-width="30" fill="none"></path>
+                <g stroke="#FFFFFF" stroke-linecap="round" fill="none"><path d="M-10 110 H810" stroke-width="10"></path><path d="M330 -10 V310" stroke-width="10"></path><path d="M-10 210 H810" stroke-width="6"></path><path d="M520 -10 L560 310" stroke-width="6"></path><path d="M160 -10 V310" stroke-width="4"></path></g>
+                <polygon points="60,30 250,40 260,130 150,170 50,120" fill="#BAE6FD" fill-opacity=".55" stroke="#0272B6" stroke-width="2"></polygon>
+                <polygon points="250,40 420,30 470,130 360,160 260,130" fill="#38BDF8" fill-opacity=".30" stroke="#0272B6" stroke-width="2.5"></polygon>
+                <polygon points="420,30 560,40 540,110 470,130" fill="#7DD3FC" fill-opacity=".40" stroke="#0272B6" stroke-width="2"></polygon>
+                <polygon points="560,40 680,30 700,140 600,170 540,110" fill="#0EA5E9" fill-opacity=".22" stroke="#0272B6" stroke-width="2"></polygon>
+                <polygon points="400,170 540,150 600,170 590,270 420,270" fill="#0272B6" fill-opacity=".16" stroke="#0272B6" stroke-width="2"></polygon>
+                <polygon points="715,150 790,140 795,270 725,280" fill="#94A3B8" fill-opacity=".25" stroke="#64748B" stroke-width="2" stroke-dasharray="6 5"></polygon>
+                <g font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="13" font-weight="700" fill="#0C4A6E" text-anchor="middle"><text x="150" y="100">Sen Sok</text><text x="355" y="100">Toul Kork</text><text x="500" y="80">Boeung Kak</text><text x="620" y="105">Daun Penh</text><text x="505" y="220">BKK1</text></g>
+                <text x="755" y="214" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="12" font-weight="700" fill="#334155" text-anchor="middle">Chbar Ampov</text>
+              </svg>
+              <span class="pill p-white" style="position:absolute;left:16px;bottom:16px;box-shadow:0 1px 3px rgba(15,23,42,.15)">Drag a zone’s corners to reshape it</span>
+            </div>
+            <div class="tablewrap">
+              <table class="table">
+                <thead><tr><th>Zone</th><th class="r">Delivery fee</th><th class="r">Free over</th><th>Same-day</th><th>Cash on delivery</th><th class="r">COD limit</th><th>Status</th><th><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Actions</span></th></tr></thead>
+                <tbody>
+                  <tr><td class="semi">Toul Kork</td><td class="r num">$1.50</td><td class="r num">$50.00</td><td><span class="pill p-green">On</span></td><td><span class="pill p-green">On</span></td><td class="r num">$200.00</td><td><span class="pill dot p-green">Active</span></td><td class="r"><button class="btn btn-ghost btn-sm" type="button">Edit</button></td></tr>
+                  <tr><td class="semi">Daun Penh</td><td class="r num">$1.50</td><td class="r num">$50.00</td><td><span class="pill p-green">On</span></td><td><span class="pill p-green">On</span></td><td class="r num">$200.00</td><td><span class="pill dot p-green">Active</span></td><td class="r"><button class="btn btn-ghost btn-sm" type="button">Edit</button></td></tr>
+                  <tr><td class="semi">BKK1</td><td class="r num">$1.50</td><td class="r num">$50.00</td><td><span class="pill p-green">On</span></td><td><span class="pill p-green">On</span></td><td class="r num">$300.00</td><td><span class="pill dot p-green">Active</span></td><td class="r"><button class="btn btn-ghost btn-sm" type="button">Edit</button></td></tr>
+                  <tr><td class="semi">Sen Sok</td><td class="r num">$1.50</td><td class="r num">$50.00</td><td><span class="pill p-green">On</span></td><td><span class="pill p-green">On</span></td><td class="r num">$200.00</td><td><span class="pill dot p-green">Active</span></td><td class="r"><button class="btn btn-ghost btn-sm" type="button">Edit</button></td></tr>
+                  <tr><td class="semi">Boeung Kak</td><td class="r num">$1.50</td><td class="r num">$50.00</td><td><span class="pill p-green">On</span></td><td><span class="pill p-green">On</span></td><td class="r num">$200.00</td><td><span class="pill dot p-green">Active</span></td><td class="r"><button class="btn btn-ghost btn-sm" type="button">Edit</button></td></tr>
+                  <tr><td class="semi">Chbar Ampov</td><td class="r num">$2.50</td><td class="r num">$60.00</td><td><span class="pill p-gray">Off</span></td><td><span class="pill p-green">On</span></td><td class="r num">$200.00</td><td><span class="pill dot p-gray">Paused</span></td><td class="r"><button class="btn btn-ghost btn-sm" type="button">Edit</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <div class="banner info"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg><span>Addresses outside every active zone can’t check out — customers see “We don’t deliver here yet” and can choose another address.</span></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</div></div>
+  <div class="scrim"></div>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="a14a-title" style="top:56px">
+    <div class="modal-head">
+      <h2 id="a14a-title">Edit zone · Toul Kork</h2>
+      <button class="iconbtn" type="button" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field"><label class="label" for="a14a-name">Zone name</label><input class="input" id="a14a-name" value="Toul Kork"></div>
+      <div class="fgrid">
+        <div class="field"><label class="label" for="a14a-fee">Delivery fee</label><span class="inputbox" style="color:#0F172A"><span class="t-sm muted">$</span><input id="a14a-fee" value="1.50" inputmode="decimal"></span></div>
+        <div class="field"><label class="label" for="a14a-free">Free delivery over</label><span class="inputbox" style="color:#0F172A"><span class="t-sm muted">$</span><input id="a14a-free" value="50.00" inputmode="decimal"></span></div>
+      </div>
+      <div class="divider"></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px"><label for="a14a-same" style="display:flex;flex-direction:column"><span class="semi">Same-day delivery</span><span class="t-xs muted">Orders before the 3:00 PM cut-off arrive today</span></label><input class="switch" id="a14a-same" type="checkbox" checked></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px"><label for="a14a-cod" style="display:flex;flex-direction:column"><span class="semi">Cash on delivery</span><span class="t-xs muted">Riders collect cash in this zone</span></label><input class="switch" id="a14a-cod" type="checkbox" checked></div>
+      <div class="field"><label class="label" for="a14a-limit">Cash-on-delivery limit per order</label><span class="inputbox is-focus" style="color:#0F172A"><span class="t-sm muted">$</span><input id="a14a-limit" value="200.00" inputmode="decimal"></span><p class="help">Above this total, customers pay with KHQR. Store default is $200.</p></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px"><label for="a14a-active" style="display:flex;flex-direction:column"><span class="semi">Zone active</span><span class="t-xs muted">Pausing stops new orders to this area</span></label><input class="switch" id="a14a-active" type="checkbox" checked></div>
+      <div class="banner info"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg><span>Changes apply to new checkouts. Orders already placed keep their fee.</span></div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-outline" type="button">Cancel</button>
+      <button class="btn btn-primary" type="button">Save zone</button>
+    </div>
+  </div>
+</div>
+</div></div></body></html>

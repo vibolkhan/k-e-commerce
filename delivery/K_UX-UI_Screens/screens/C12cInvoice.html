@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C-12 · Invoice · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">C-12 · Invoice <span class="pg">· Orders &amp; Support</span></span><a href="C12bOrderDelivered.html">← Prev</a><a href="C12dRiderContact.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone" style="background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <header class="appbar line">
+    <a href="#" class="iconbtn" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></a>
+    <h1 class="title">Invoice</h1>
+    <button class="iconbtn" type="button" aria-label="Download invoice"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M4 20h16"></path></svg></button>
+    <button class="iconbtn" type="button" aria-label="Share invoice"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"></path></svg></button>
+  </header>
+
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;padding:20px 16px;display:flex;flex-direction:column">
+    <article aria-label="Tax invoice INV-2026-10248" style="background:#FFFFFF;border-radius:6px;box-shadow:0 8px 24px rgba(15,23,42,.12);padding:20px 18px;display:flex;flex-direction:column;gap:14px;font-size:12px;line-height:17px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+        <div style="display:flex;align-items:center;gap:8px">
+          <svg viewBox="0 0 48 48" width="28" height="28" role="img" aria-label="K"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#0EA5E9"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#0EA5E9" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <div style="display:flex;flex-direction:column"><span class="strong" style="font-size:13px">K Store</span><span class="muted">VAT TIN [Seller VAT TIN]</span></div>
+        </div>
+        <div style="text-align:right;display:flex;flex-direction:column"><span class="heavy" style="font-size:16px;line-height:22px">Tax invoice</span><span class="muted">INV-2026-10248</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:10px 12px;background:#F8FAFC;border-radius:8px">
+        <div style="display:flex;flex-direction:column"><span class="muted">Date</span><span class="semi">22 Oct 2026</span></div>
+        <div style="display:flex;flex-direction:column"><span class="muted">Order</span><span class="semi">#K-10248</span></div>
+        <div style="display:flex;flex-direction:column"><span class="muted">Currency</span><span class="semi">USD</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <span class="t-over" style="font-size:10px;line-height:14px">Bill to</span>
+        <span class="semi">Dara Sok · +855 12 345 678</span>
+        <span style="color:#334155">#24, St. 315, Boeung Kak 1, Toul Kork, Phnom Penh</span>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 36px 64px;gap:8px;padding:6px 0;border-bottom:1px solid #CBD5E1" class="semi"><span>Item</span><span style="text-align:right">Qty</span><span style="text-align:right">Amount</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 36px 64px;gap:8px;padding:7px 0;border-bottom:1px solid #E2E8F0"><span>Wireless Headphones Pro, Black</span><span class="num" style="text-align:right">1</span><span class="num" style="text-align:right">$49.00</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 36px 64px;gap:8px;padding:7px 0;border-bottom:1px solid #E2E8F0"><span>Ceramic Coffee Mug Set (4 pcs)</span><span class="num" style="text-align:right">1</span><span class="num" style="text-align:right">$18.00</span></div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 36px 64px;gap:8px;padding:7px 0;border-bottom:1px solid #E2E8F0"><span>Stainless Water Bottle 750 ml</span><span class="num" style="text-align:right">2</span><span class="num" style="text-align:right">$25.00</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:5px;align-self:flex-end;width:200px">
+        <div style="display:flex;justify-content:space-between"><span class="muted">Subtotal excl. VAT</span><span class="num">$83.64</span></div>
+        <div style="display:flex;justify-content:space-between"><span class="muted">VAT 10%</span><span class="num">$8.36</span></div>
+        <div style="display:flex;justify-content:space-between"><span class="muted">Delivery</span><span class="num">$0.00</span></div>
+        <div style="display:flex;justify-content:space-between;border-top:1px solid #CBD5E1;padding-top:6px;font-size:14px" class="heavy"><span>Total</span><span class="num">$92.00</span></div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px dashed #CBD5E1;padding-top:12px">
+        <span class="pill p-green">Paid · KHQR</span>
+        <span class="muted">22 Oct 2026, 10:26 AM</span>
+      </div>
+    </article>
+    <p class="t-xs" style="color:#475569;text-align:center;margin-top:12px">Page 1 of 1 · PDF, 84 KB</p>
+  </main>
+
+  <div class="actionbar">
+    <button class="btn btn-primary btn-block" type="button"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M4 20h16"></path></svg>Download PDF</button>
+  </div>
+</div>
+</div></div></body></html>

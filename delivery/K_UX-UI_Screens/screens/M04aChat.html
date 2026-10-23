@@ -1,0 +1,55 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin mobile · Conversation · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">Admin mobile · Conversation <span class="pg">· Admin · Mobile</span></span><a href="M04ChatQueue.html">← Prev</a><a href="M05More.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone white" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div class="appbar line">
+    <a href="#" class="iconbtn" aria-label="Back to chat queue"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+    <span class="avatar sm">DS</span>
+    <div style="flex:1 1 auto;min-width:0;display:flex;flex-direction:column;padding-left:6px">
+      <h1 style="font-size:16px;line-height:20px;font-weight:800">Dara Sok</h1>
+      <p class="t-xs muted ellipsis">#K-10248 · Out for delivery</p>
+    </div>
+    <button class="btn btn-ghost btn-sm" type="button" style="height:44px">Resolve</button>
+  </div>
+
+  <div style="flex:none;padding:10px 16px;border-bottom:1px solid #E2E8F0;background:#FFFFFF">
+    <div class="banner info" style="align-items:center;padding:8px 8px 8px 12px">
+      <svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>
+      <span style="flex:1"><b>Unassigned</b> — reply to take this chat.</span>
+      <button class="btn btn-tonal btn-sm" type="button" style="height:36px">Assign to me</button>
+    </div>
+  </div>
+
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;padding:16px;display:flex;flex-direction:column;gap:10px;background:#F8FAFC">
+    <p class="sysmsg">Today · 11:02 AM</p>
+    <div class="bubble them">Hi, where is my rider? Order #K-10248</div>
+    <p class="bubble-meta">Dara · 11:02 AM</p>
+    <div class="bubble me">Your rider Vuthy is on the way. He should arrive in about 18 minutes.</div>
+    <p class="bubble-meta" style="align-self:flex-end">Auto-reply · 11:02 AM</p>
+    <a href="#" class="card" style="align-self:stretch;padding:10px 12px;display:flex;align-items:center;gap:10px;text-decoration:none;color:#0F172A">
+      <span class="li-ic" style="width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:#E0F2FE;color:#025A91;flex:none"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg></span>
+      <span style="flex:1;min-width:0;display:flex;flex-direction:column"><span class="t-sm semi">#K-10248 · Out for delivery</span><span class="t-xs muted">Vuthy Kim · ETA 18 min · $92.00 paid</span></span>
+      <svg class="ic s18 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+    </a>
+    <div class="bubble them">Can he call me when he’s at the gate? It’s the blue one.</div>
+    <p class="bubble-meta">Dara · 11:04 AM</p>
+  </main>
+
+  <div class="chips" style="flex:none;padding:10px 16px;background:#FFFFFF;border-top:1px solid #E2E8F0">
+    <button class="chip" type="button">Ask the rider to call</button>
+    <button class="chip" type="button">Share live tracking</button>
+    <button class="chip" type="button">Thanks!</button>
+  </div>
+  <div class="composer" style="border-top:0;padding-top:4px">
+    <button class="iconbtn" type="button" aria-label="Attach a photo or file"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.4 11-8.5 8.5a5.5 5.5 0 0 1-7.8-7.8l8.5-8.5a3.7 3.7 0 0 1 5.2 5.2l-8.5 8.5a1.8 1.8 0 0 1-2.6-2.6l7.8-7.8"></path></svg></button>
+    <label class="inputbox" style="flex:1 1 auto;height:44px;border-radius:22px"><input type="text" placeholder="Write a reply…" aria-label="Write a reply"></label>
+    <button class="iconbtn" type="button" aria-label="Send" style="background:#0272B6;color:#FFFFFF;border-radius:50%"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4z"></path><path d="M22 2 11 13"></path></svg></button>
+  </div>
+</div>
+</div></div></body></html>

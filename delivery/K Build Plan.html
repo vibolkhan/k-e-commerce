@@ -1,0 +1,566 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>K Build Plan</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column — summary + "next up" on top, phase map, then the ordered feature list with expandable prompts. */
+:root{
+  --bg:#F6F8FB;--surface:#FFFFFF;--fg:#0F172A;--fg2:#334155;--muted:#5B6B80;--line:#DCE3EC;
+  --accent:#0272B6;--accent-ink:#025A91;--accent-soft:#E0F2FE;--brand:#0EA5E9;
+  --ok:#047857;--ok-soft:#E3F7EE;--warn:#A4500A;--warn-soft:#FFF3E3;--bad:#B42318;--bad-soft:#FDECEA;--vio:#6D28D9;--vio-soft:#F1ECFE;
+  --code-bg:#0F1B2D;--code-fg:#DCE8F7;
+  --f-ui:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B1220;--surface:#111A2B;--fg:#E7EEF7;--fg2:#C3CFDE;--muted:#93A3B8;--line:#24324A;
+  --accent:#5CC2F5;--accent-ink:#8FD6F8;--accent-soft:#0F2A40;--brand:#38BDF8;
+  --ok:#5DD3A2;--ok-soft:#0E2C22;--warn:#F5B969;--warn-soft:#33240F;--bad:#F59A92;--bad-soft:#3A1715;--vio:#C4B2FB;--vio-soft:#251B44;
+  --code-bg:#070D18;--code-fg:#DCE8F7;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B1220;--surface:#111A2B;--fg:#E7EEF7;--fg2:#C3CFDE;--muted:#93A3B8;--line:#24324A;
+  --accent:#5CC2F5;--accent-ink:#8FD6F8;--accent-soft:#0F2A40;--brand:#38BDF8;
+  --ok:#5DD3A2;--ok-soft:#0E2C22;--warn:#F5B969;--warn-soft:#33240F;--bad:#F59A92;--bad-soft:#3A1715;--vio:#C4B2FB;--vio-soft:#251B44;
+  --code-bg:#070D18;--code-fg:#DCE8F7;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);font-size:15px;line-height:1.5;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:980px;margin:0 auto;padding-block:32px 64px;display:flex;flex-direction:column;gap:28px}
+h1,h2,h3{margin:0;text-wrap:balance}
+h1{font-size:30px;line-height:1.2;font-weight:800;letter-spacing:-.02em}
+h2{font-size:19px;font-weight:800}
+p{margin:0}
+a{color:var(--accent-ink)}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:8px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
+.muted{color:var(--muted)}
+.head{display:flex;flex-direction:column;gap:10px}
+.lede{color:var(--fg2);max-width:66ch}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:12px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.stat b{font-size:24px;font-weight:800;font-variant-numeric:tabular-nums}
+.bar{height:8px;border-radius:4px;background:var(--line);overflow:hidden}.bar>span{display:block;height:100%;background:var(--ok);border-radius:4px;transition:width .3s}
+.next{background:var(--accent-soft);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.next .t{flex:1 1 260px;min-width:0;display:flex;flex-direction:column;gap:2px}
+.btn{border:1px solid transparent;border-radius:10px;padding:9px 14px;font-weight:700;font-size:14px;display:inline-flex;gap:8px;align-items:center;text-decoration:none;background:var(--surface);border-color:var(--line);color:var(--fg)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+:root[data-theme="dark"] .btn.primary{color:#04121F}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.primary{color:#04121F}}
+.map{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(170px,100%),1fr));gap:10px}
+.lane{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.lane h3{font-size:13px;font-weight:800;display:flex;justify-content:space-between;gap:8px}
+.lane .chips{display:flex;flex-wrap:wrap;gap:6px}
+.fchip{font-family:var(--f-mono);font-size:12px;border-radius:7px;padding:3px 7px;text-decoration:none;border:1px solid var(--line);color:var(--fg2);background:var(--bg)}
+.fchip.done{background:var(--ok-soft);color:var(--ok);border-color:transparent}
+.fchip.doing{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:700;color:var(--fg2)}
+.chip[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent-ink);border-color:transparent}
+.list{display:flex;flex-direction:column;gap:10px}
+.phase-h{margin-top:14px;display:flex;align-items:baseline;gap:10px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;scroll-margin-top:16px}
+.card.is-done{opacity:.78}
+.card.target{box-shadow:0 0 0 3px var(--brand)}
+.row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:14px 16px}
+.id{font-family:var(--f-mono);font-weight:500;font-size:13px;color:var(--accent-ink);background:var(--accent-soft);border-radius:8px;padding:4px 8px}
+.title{display:flex;flex-direction:column;gap:4px;min-width:0}
+.title strong{font-size:16px}
+.meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12px}
+.pill{border-radius:999px;padding:2px 9px;font-weight:800;font-size:11.5px;letter-spacing:.02em}
+.p0{background:var(--bad-soft);color:var(--bad)}.p1{background:var(--warn-soft);color:var(--warn)}.p2{background:var(--accent-soft);color:var(--accent-ink)}
+.size{background:var(--bg);color:var(--fg2);border:1px solid var(--line)}
+.blocked{background:var(--vio-soft);color:var(--vio)}
+.status{border:1px solid var(--line);border-radius:10px;padding:7px 10px;font-weight:700;font-size:13px;background:var(--surface);color:var(--fg)}
+.toggle{background:none;border:0;padding:6px;border-radius:8px;color:var(--muted);display:inline-flex}
+.toggle svg{transition:transform .2s}.card.open .toggle svg{transform:rotate(180deg)}
+.detail{border-top:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:14px}
+.links{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px}
+.links .lbl{font-weight:700;color:var(--muted);margin-right:2px}
+.goal{color:var(--fg2);max-width:70ch}
+.prompt{position:relative;background:var(--code-bg);color:var(--code-fg);border-radius:12px;padding:16px;font-family:var(--f-mono);font-size:12.5px;line-height:1.6;white-space:pre-wrap;word-break:break-word;max-height:420px;overflow:auto}
+.ptools{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:12px;font-weight:700;font-size:14px}
+.sync{font-size:12px}
+@media (max-width:560px){.row{grid-template-columns:auto minmax(0,1fr)}.row .ctrl{grid-column:1/-1;display:flex;gap:8px;justify-content:space-between}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="head">
+    <p class="eyebrow">K E-Commerce · Development plan</p>
+    <h1>Build plan: 42 features, in build order</h1>
+    <p class="lede">Each feature has a ready-to-paste Claude Code prompt. Features are ordered by priority and dependency: start at F01 and only begin a feature when everything it needs is done. Every prompt already includes the shared project context, so one copy is all you need.</p>
+    <p class="sync muted" id="sync">Progress: saving on this device…</p>
+  </header>
+
+  <section class="summary" aria-label="Progress summary">
+    <div class="stat"><span class="muted">Done</span><b id="s-done">0 / 42</b><div class="bar" aria-hidden="true"><span id="s-bar" style="width:0%"></span></div></div>
+    <div class="stat"><span class="muted">In progress</span><b id="s-doing">0</b></div>
+    <div class="stat"><span class="muted">Ready to start</span><b id="s-ready">1</b></div>
+    <div class="stat"><span class="muted">Must-have (P0) left</span><b id="s-p0">0</b></div>
+  </section>
+
+  <section class="next" aria-labelledby="next-h" id="next-box">
+    <div class="t"><span class="eyebrow">Next up</span><h2 id="next-h">—</h2><p class="muted" id="next-why"></p></div>
+    <a class="btn primary" id="next-open" href="#F01">Open prompt</a>
+  </section>
+
+  <section aria-labelledby="map-h" style="display:flex;flex-direction:column;gap:12px">
+    <h2 id="map-h">Dependency map</h2>
+    <p class="muted">Phases run left to right. Green is done, amber is in progress. Click a feature to jump to it.</p>
+    <div class="map" id="map"></div>
+  </section>
+
+  <section aria-labelledby="list-h" style="display:flex;flex-direction:column;gap:12px">
+    <h2 id="list-h">Features</h2>
+    <div class="filters" role="group" aria-label="Filter features">
+      <button class="chip" data-f="all" aria-pressed="true">All</button>
+      <button class="chip" data-f="ready" aria-pressed="false">Ready to start</button>
+      <button class="chip" data-f="todo" aria-pressed="false">Not done</button>
+      <button class="chip" data-f="p0" aria-pressed="false">P0 only</button>
+      <button class="chip" data-f="done" aria-pressed="false">Done</button>
+    </div>
+    <div class="list" id="list"></div>
+  </section>
+
+  <section aria-labelledby="ctx-h" style="display:flex;flex-direction:column;gap:10px">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap"><h2 id="ctx-h">CLAUDE.md (put in your repo root once)</h2><button class="btn primary" id="copymd" type="button">Copy CLAUDE.md</button></div>
+    <p class="muted" style="margin:0">Each prompt only says “Follow CLAUDE.md”, so save this file at the root of the k-e-commerce repo before F01. Claude Code reads it automatically.</p>
+    <pre class="prompt" id="ctx"></pre>
+  </section>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script>
+const CLAUDE_MD = `# K E-Commerce — project guide for Claude Code
+
+## Workflow
+- Work on the \`dev\` branch. Docs you produce go in \`delivery/<feature-name>/\`.
+- For every task: read the docs and screens it lists, post a short plan and your assumptions, then build, then finish with a summary — what was built, how to test it, anything left or blocked.
+- Build plan: tasks F01–F42 come from the "K Build Plan" tracker. Only build what the current task asks.
+
+## Source of truth
+- PRD: \`delivery/prd/K_E-Commerce_PRD_v1.0.docx\` (requirement IDs like CHK-04)
+- App flow: \`delivery/app-flow/K_E-Commerce_App_Flow_v1.0.docx\` (flows F0–F14, screen IDs, business rules)
+- UI design: "K E-Commerce UX/UI Design" canvas + \`K_UX-UI_Screens\` export (screen IDs match the tasks). Design tokens: \`k-ui.css\`.
+- Read docs with: \`pandoc -t markdown <file>.docx\`
+
+## Stack
+- Flutter (Dart ^3.11), one codebase with role-based entry: customer app (iOS/Android/web), admin back-office (web + mobile), rider app.
+- Riverpod for state; go_router for routing with role guards.
+- Supabase: Postgres with Row-Level Security on every table; Auth (phone OTP, email, Google, Apple); Storage; Realtime; Edge Functions (TypeScript) for anything involving money, stock or status changes.
+- Firebase Cloud Messaging for push.
+
+## Market rules
+- Cambodia only. Prices in USD incl. 10% VAT; KHR shown at the rate in settings (default 4,100).
+- Same-day delivery cut-off 3:00 PM (UTC+7, server time); deliveries 9 AM–8 PM.
+- Payments: Bakong KHQR and cash on delivery (COD limit $200/order, per-zone override). Bank transfer for business buyers only. ABA PayWay is next phase — keep payment providers behind an interface.
+- Stock is held 15 minutes for unpaid KHQR orders.
+- Returns within 3 days; $2.00 return fee paid by the customer.
+- Business buyers never see retail prices — they buy through quote requests (RFQ).
+
+## Design
+- Clean and airy. Primary #0272B6 (buttons/links), brand sky #0EA5E9 (logo only), ink #0F172A, background #F8FAFC, lines #E2E8F0.
+- Radius 12 inputs/buttons, 16 cards, 24 sheets. Font Plus Jakarta Sans (Khmer: Kantumruy Pro).
+- Touch targets ≥ 44 px, text contrast ≥ 4.5:1. Every destructive or money action asks for confirmation.
+
+## Engineering rules
+- Feature-first folders: \`lib/features/<feature>/{data,domain,presentation}\`; shared UI in \`lib/core/ui\`.
+- All user-facing strings in ARB files (English + Khmer); no hard-coded copy.
+- The client never decides money, stock or order status — call an Edge Function and validate on the server.
+- Add/extend SQL migrations in \`supabase/migrations\` with RLS policies and tests for them.
+- Write unit + widget tests for what you build; run \`flutter analyze\` and \`flutter test\` until clean.
+- Keep commits small with clear messages. Don't touch features outside the current task except to fix what you break.
+`;
+const CONTEXT = `Follow CLAUDE.md in the repo root (project rules, stack, market rules, design, docs). Read the docs and screens listed below, post a short plan, then build, then summarise.`;
+
+const PHASES = [
+ {id:"A",name:"Foundation"},{id:"B",name:"Catalog & admin base"},{id:"C",name:"Buy & pay"},
+ {id:"D",name:"Fulfil & deliver"},{id:"E",name:"Business buyers"},{id:"F",name:"After-sales & engagement"},{id:"G",name:"Operate & launch"}];
+
+const F = [
+ {id:"F01",ph:"A",p:"P0",s:"M",t:"App architecture & project setup",deps:[],scr:"—",req:"PRD §8",
+  goal:"Turn the counter template into a production skeleton everything else plugs into.",
+  task:`- Replace the counter template (and its widget test) with an app shell: ProviderScope, go_router with placeholder routes per role (customer, business, rider, admin), error and loading pages.
+- Set up folders lib/core/{config,router,ui,utils,l10n} and lib/features/.
+- Environment config for dev/staging/prod (Supabase URL/anon key via --dart-define; never commit secrets).
+- Add packages: flutter_riverpod, go_router, supabase_flutter, intl, flutter_localizations; pin versions.
+- Lints: keep flutter_lints, add a few strict rules (prefer_const, avoid_print).
+- CI (GitHub Actions): flutter analyze + flutter test on PRs to main.
+Done when: app runs on iOS, Android and web showing the shell; CI is green.`},
+ {id:"F02",ph:"A",p:"P0",s:"L",t:"Design system in Flutter",deps:["F01"],scr:"Foundations: Brand, Components, Overlays",req:"Design",
+  goal:"Code the K design system once so every screen is assembled from the same parts.",
+  task:`- ThemeData + ThemeExtension with the tokens (colours, radii, shadows, spacing 4/8/12/16/24/32/48) and the type scale (Display 32, H1 24, H2 20, H3 17, Body 15, Small 13, Caption 12) in Plus Jakarta Sans; Kantumruy Pro fallback for Khmer.
+- Widgets in lib/core/ui: KButton (primary, tonal, outline, ghost, danger; sm/md/lg; loading), KTextField (prefix, error, help), KOtpField, KChip, KSegmented, KTabs with counts, KStatusPill (order/payment/quote/return mappings from the Components board), KCard, KListRow, KQtyStepper, KProductCard (retail + business "Price on quote" variants), KTimeline, KEmptyState, KBanner (info/warn/bad/ok), KToast, KBottomSheet, KConfirmDialog (neutral + destructive), KBottomNav (customer/guest/business, rider, admin), KAppBar, K logo widget.
+- A hidden /design-gallery route showing every widget, plus golden tests for the main ones.
+Done when: the gallery matches the Components and Overlays boards in light mode.`},
+ {id:"F03",ph:"A",p:"P0",s:"S",t:"Languages, currency & formatting",deps:["F01"],scr:"S-02, S-08c",req:"INT-03, PAY-05",
+  goal:"Khmer and English from day one, with money always shown the K way.",
+  task:`- flutter gen-l10n with app_en.arb and app_km.arb; locale stored per user (device for guests).
+- Money helpers: formatUsd(\$49.00), formatKhr(≈ KHR 200,900) using a rate provider (reads settings, default 4,100), tabular figures.
+- Date/time helpers in Asia/Phnom_Penh ("Today, Thu 22 Oct", "by 8:00 PM").
+- Unit tests for formatting and rate conversion.
+Done when: switching language updates all strings live; prices show USD + KHR.`},
+ {id:"F04",ph:"A",p:"P0",s:"L",t:"Supabase schema, RLS & seed data",deps:["F01"],scr:"—",req:"PRD §9 data model",
+  goal:"Create the whole database once, safely, so features don't fight over tables later.",
+  task:`- Migrations for the PRD data model: profiles, business_profiles, addresses, categories, products, product_variants, prices, warehouses/stock (with reserved), carts, orders, order_items, payments, refunds, delivery_zones (polygon), deliveries, rider_locations, rfqs, rfq_items, quotes, quote_items, returns, reviews, wishlists, conversations, messages, notifications, device_tokens, banners, collections, settings (key/value: cut-off, rates, limits), audit_logs, staff roles.
+- Enums for every status in the design (order, payment, RFQ, return, delivery, verification, review).
+- RLS: customers see only their rows; riders only assigned deliveries; staff by role (super_admin, sales, support, catalog); business buyers never get price rows for retail.
+- Seed script with the sample catalogue, zones and settings used in the design.
+- SQL tests (pgTAP or supabase test) for the key RLS rules.
+Done when: supabase db reset builds everything and RLS tests pass.`},
+ {id:"F05",ph:"A",p:"P0",s:"L",t:"Sign-in & accounts",deps:["F02","F03","F04"],scr:"S-04, S-04b, S-05, S-05b, S-05c, S-06, S-06b",req:"AUTH-01–04, AUTH-06",
+  goal:"Let people sign in by phone, email, Google or Apple, and return to what they were doing.",
+  task:`- Phone OTP (+855 default), 6-digit code, 5-minute expiry, resend after 60 s, 5 wrong tries → 15-minute lock (S-05c dialog).
+- Email/password with error states (S-04b); Google and Apple sign-in using their official buttons.
+- New users complete their name (S-06); profiles row created by a trigger with role=customer.
+- Blocked accounts see S-06b and cannot continue.
+- "Return to intended action": sign-in triggered from checkout/RFQ/wishlist/review/chat returns there with state kept.
+Done when: all flows work against Supabase Auth; widget tests cover OTP errors and lockout.`},
+ {id:"F06",ph:"A",p:"P0",s:"M",t:"Launch, role routing & account area",deps:["F05"],scr:"S-01, S-02, S-03a–c, S-08, S-08a, S-08b, S-08c, S-08e, S-08f, S-08g",req:"App Flow F0, AUTH-07",
+  goal:"Open the right home for each role and give users a complete account area.",
+  task:`- Splash → language (first launch) → intro slides → home, per App Flow F0.
+- go_router guards: guest/customer → Customer Home, business buyer → business home, rider → Rider Home, staff → Admin Dashboard; users can never open another role's routes.
+- Account (S-08), guest account (S-08a), edit profile (S-08b), language sheet (S-08c), sign-out confirm (S-08e), delete account with confirm (S-08f/g) via an Edge Function that anonymises data but keeps invoices.
+Done when: each test user lands on the right home; deleting an account signs out and removes personal data.`},
+ {id:"F07",ph:"A",p:"P0",s:"M",t:"Push notifications & inbox",deps:["F05"],scr:"S-07, S-08d, N-01, N-02, N-03",req:"NOT-01, NOT-02",
+  goal:"One notification pipeline every later feature can call.",
+  task:`- FCM setup (iOS APNs + Android + web); store device_tokens per user.
+- Edge Function notify(user_ids, type, data) that writes a notifications row and sends push with deep links (orders, quotes, chat).
+- Inbox S-07 with tabs All/Orders/Quotes/Chat, unread dots, mark all read; badge counts.
+- Notification settings S-08d (per channel switches; payment/security messages always on).
+- In-app banner when the app is open (N-03a pattern).
+Done when: a test push opens the right screen on all platforms and appears in the inbox.`},
+
+ {id:"F08",ph:"B",p:"P0",s:"M",t:"Admin back-office shell & staff roles",deps:["F06"],scr:"Admin sidebar & top bar, A-14d, A-14e, M-05",req:"ADM-09, AUTH-06",
+  goal:"The admin frame every back-office screen sits in, with permissions enforced.",
+  task:`- Responsive admin layout: sidebar (with badges), top bar (search, cut-off countdown, notifications, profile); mobile admin bottom nav (Dashboard, Orders, RFQs, Chat, More).
+- Staff & roles screen (A-14d) with the permission matrix; invite staff modal (A-14e) via Edge Function sending email/SMS invites.
+- Route + RLS checks per role (super_admin, sales, support, catalog).
+Done when: each staff role sees only its sections and the server rejects anything else.`},
+ {id:"F09",ph:"B",p:"P0",s:"L",t:"Catalog management (admin)",deps:["F08","F04"],scr:"A-05, A-05a, A-05b, A-05c, A-05d, A-05e",req:"ADM-02, CAT-01, CAT-07",
+  goal:"Staff can create and maintain the whole product catalogue.",
+  task:`- Product list with tabs All/Active/Draft/Archived, search, filters, bulk actions.
+- Product editor tabs: General (EN/KM names & descriptions, missing-translation flags, highlights, specs, category, brand, tags, visibility), Variants & pricing (options, variants, SKU, USD price, KHR preview, stock, business-quote switch + minimum quantity), Images (Supabase Storage, ordering, main image, alt text required).
+- CSV import wizard (upload → map columns → review errors → import) as an Edge Function.
+- Archive confirm (A-05e); every price change written to audit_logs.
+Done when: a product created in admin appears in the app with correct prices and images.`},
+ {id:"F10",ph:"B",p:"P0",s:"M",t:"Inventory & stock reservation",deps:["F09"],scr:"A-06, A-06a",req:"ADM-03, CAT-05, CHK-04",
+  goal:"Stock that is always right, even when many people check out at once.",
+  task:`- Inventory screen with low/out-of-stock filters and summary tiles; adjust-stock modal with reason + audit log.
+- Database functions (called only from Edge Functions): reserve_stock(order), release_stock(order), commit_stock(order) using row locks; scheduled job releases unpaid KHQR reservations after 15 minutes.
+- Low-stock alert → notify catalog staff.
+- Concurrency test: two simultaneous orders for the last unit — only one succeeds.
+Done when: available = on hand − reserved is correct under load tests.`},
+ {id:"F11",ph:"B",p:"P0",s:"L",t:"Home, categories & product list",deps:["F02","F03","F09"],scr:"C-01, C-02, C-03, C-03a, C-03b",req:"CAT-02, CAT-04, CAT-06",
+  goal:"Browsing that feels fast and shows the same-day promise everywhere.",
+  task:`- Customer Home (C-01): location pill, search entry, banners, live cut-off countdown ("Order within 4h 35m"), categories, best sellers, business-buyer promo, new arrivals.
+- Categories (C-02) with left rail; product list (C-03) with chips, filters sheet (price range, brand, rating, in stock, same-day) and sort sheet.
+- Paginated queries, image caching, skeleton loading, empty states.
+Done when: browsing works for guests and signed-in users on phone and web.`},
+ {id:"F12",ph:"B",p:"P0",s:"M",t:"Search",deps:["F11"],scr:"C-04, C-04a, C-04b",req:"CAT-03",
+  goal:"Find products in Khmer or English, even with typos.",
+  task:`- Postgres full-text + pg_trgm search across EN/KM names, brand, category; ranked results; suggestions after 2 characters.
+- Search screen with recent searches (per user) and popular categories; results with filters; no-results screen with "Did you mean".
+- Results return in under 1 s for typical queries (measure and log).
+Done when: "hedfones" suggests headphones and Khmer queries return results.`},
+ {id:"F13",ph:"B",p:"P0",s:"M",t:"Product detail",deps:["F11"],scr:"C-05, C-05a, C-05b, C-05c, C-05d, C-05e",req:"CAT-01, CAT-05",
+  goal:"A product page with everything needed to decide, in three tabs.",
+  task:`- Gallery with full-screen viewer (C-05e), stock pill, rating link, price USD + KHR, colour swatches (out-of-stock disabled), delivery card with live cut-off.
+- Tabs: Description, Specifications, Reviews (summary bars + list; data from F32 later — show empty state until then).
+- Choose-options sheet (C-05c) with quantity limits; "Added to cart" toast (C-05d).
+- "You may also like" row.
+Done when: all three tab screens match the design and variant changes update price/stock.`},
+ {id:"F14",ph:"B",p:"P1",s:"S",t:"Home content: banners & collections",deps:["F11","F08"],scr:"A-12, A-12a",req:"ADM-08, CAT-06",
+  goal:"Marketing can change the home screen without a release.",
+  task:`- Admin Content screen: banners (schedule, audience retail/business, link target, order), collections, static pages.
+- Banner editor modal with live phone preview; images in Storage.
+- App reads only live, scheduled-for-now banners for the viewer's audience.
+Done when: a banner scheduled in admin appears on Home at its start time.`},
+
+ {id:"F15",ph:"C",p:"P0",s:"M",t:"Addresses & delivery zones",deps:["F05","F08"],scr:"C-08, C-08a, C-08b, C-07c, A-14, A-14a",req:"AUTH-04, CHK-03, ADM-09",
+  goal:"Know where we deliver, what it costs and whether COD is allowed.",
+  task:`- Address book and editor with map pin, current location, labels, default switch; delete confirm.
+- Zone polygons (PostGIS) with fee, free-delivery threshold, same-day on/off, COD on/off, COD limit, active/paused.
+- Admin Delivery zones screen (map + table) and edit-zone modal.
+- Edge Function quote_delivery(address, subtotal) → zone, fee, same-day eligibility, COD allowed; out-of-zone dialog (C-07c).
+Done when: an address outside every zone cannot check out and fees match the zone.`},
+ {id:"F16",ph:"C",p:"P0",s:"M",t:"Cart",deps:["F13","F10"],scr:"C-06, C-06a, C-06b, C-06c",req:"CHK-01",
+  goal:"A cart that follows the user across devices and is honest about stock.",
+  task:`- Cart for guests (local) merged into the account cart on sign-in; syncs across devices.
+- Free-delivery progress, cut-off strip, quantity stepper, remove confirm with "Move to wishlist".
+- Stock-changed state (C-06c): quantity reduced, unavailable items blocked until removed.
+- Bottom-nav cart badge.
+Done when: cart survives sign-in and shows stock changes made in admin.`},
+ {id:"F17",ph:"C",p:"P0",s:"L",t:"Checkout & order creation",deps:["F16","F15"],scr:"C-07, C-07a, C-07b, C-07d, W-05",req:"CHK-02–05, PAY-03",
+  goal:"Turn a cart into an order with the right date, fee and payment option.",
+  task:`- Checkout: address sheet, delivery date (server decides: before 3 PM → today, after → next delivery day, holidays skipped), time slots, items, payment method (KHQR / COD; COD hidden above the limit — C-07d), note, summary with VAT included.
+- Edge Function create_order: re-checks stock and prices, reserves stock, creates order (Pending payment for KHQR, Confirmed for COD), returns next step.
+- Idempotency key so double taps never create two orders.
+Done when: orders are created correctly for both payment methods, including the after-3-PM case.`},
+ {id:"F18",ph:"C",p:"P0",s:"L",t:"KHQR payment",deps:["F17"],scr:"C-09, C-09a, C-09b, W-05a",req:"PAY-01, PAY-04, PAY-07",
+  goal:"Fast, safe KHQR payments that confirm on their own.",
+  task:`- PaymentProvider interface (KHQR now, ABA PayWay later).
+- Edge Function create_khqr(order): dynamic KHQR for the exact amount with 15-minute expiry (Bakong KHQR spec; merchant config from settings).
+- Confirmation via callback and server-side polling; verify amount and reference; mark Paid and Confirmed; notify.
+- Pay screen: QR, timer, save/share QR, waiting state; leave-payment confirm; expired screen with retry (re-checks stock) or cancel.
+- Handle mismatched or duplicate payments by flagging the order for refund.
+Done when: sandbox payments confirm automatically and expired QRs release stock.`},
+ {id:"F19",ph:"C",p:"P0",s:"L",t:"Order confirmation, orders & cancellation",deps:["F18"],scr:"C-10, C-10b, C-11, C-11a, C-11b, C-12, C-13, C-13a",req:"ORD-01–03, ORD-06",
+  goal:"Customers always know where their order is and can cancel early.",
+  task:`- Success screens for KHQR and COD.
+- Orders with tabs Active / Completed / Cancelled; order detail with live status timeline (Realtime), items, payment, delivery, help.
+- Cancel (reason sheet + confirm) allowed only before packing — enforced in an Edge Function that releases stock and creates a refund task for paid orders.
+- Reorder adds available items at current prices.
+Done when: status changes made by staff appear live and cancellation rules hold server-side.`},
+
+ {id:"F20",ph:"D",p:"P0",s:"L",t:"Admin orders & fulfilment",deps:["F19","F08"],scr:"A-02, A-02a, A-02c, A-02d, M-02, M-02a",req:"ADM-04, PAY-06",
+  goal:"Staff can move every order from Confirmed to Ready quickly.",
+  task:`- Orders list with status tabs and counts, filters, bulk actions (print packing slips, assign rider).
+- Order detail: items, payment, customer, delivery, activity log, internal notes; actions Start packing → Mark ready.
+- Packing slip print view; cancel & refund modal (full/partial, method, reference, restock) with audit log.
+- Same flows on admin mobile.
+Done when: an order can be fully processed from web and phone, with every action logged.`},
+ {id:"F21",ph:"D",p:"P0",s:"L",t:"Rider app: jobs, duty & pickup",deps:["F20"],scr:"R-01, R-01a, R-01b, R-01c, R-02, R-02a, R-07, A-02b, M-02b",req:"RID-01–03, ADM-04",
+  goal:"Riders get clear jobs and admins can assign them.",
+  task:`- Assign-rider modal/sheet listing on-duty riders in the zone with load and distance.
+- Rider Home: on/off duty (confirm when jobs remain), To do / Done, job cards with payment pills; new-job alert with sound.
+- Job detail with masked customer contact, items checklist; confirm pickup → Out for delivery.
+- Rider account screen.
+Done when: assigning a ready order rings the rider's phone and pickup updates the customer's order.`},
+ {id:"F22",ph:"D",p:"P0",s:"M",t:"Live tracking & rider contact",deps:["F21"],scr:"C-12a, C-12d, C-12e, R-02b, R-02c",req:"ORD-02, RID-05, CHT-03",
+  goal:"Customers watch their rider arrive; riders keep working with bad signal.",
+  task:`- Rider location sharing only while Out for delivery (≈15 s interval, battery-aware), stopped on delivery; old points pruned.
+- Customer tracking map with ETA, rider card, call (masked) and chat with rider.
+- Rider "on the way" screen with navigate (opens Maps), Delivered / Failed actions.
+- Offline queue: status updates saved locally and synced (R-02c banner).
+Done when: tracking updates live and an offline delivery confirmation syncs later.`},
+ {id:"F23",ph:"D",p:"P0",s:"M",t:"Proof of delivery & failed delivery",deps:["F21"],scr:"R-03, R-03a, R-03b, R-04, R-04a, A-02e",req:"RID-04, ORD-01",
+  goal:"Every delivery ends with proof, and failures get resolved.",
+  task:`- Proof of delivery: photo (Storage), recipient name, cash collected for COD; mismatch dialog requires a note.
+- Failed delivery: reason, required photo, call log, confirm.
+- Admin resolve-failed-delivery modal: reschedule, reassign or cancel & refund, message to customer.
+Done when: delivered and failed states update the order, customer and admin views.`},
+ {id:"F24",ph:"D",p:"P0",s:"M",t:"Cash on delivery reconciliation & riders admin",deps:["F23"],scr:"R-05, R-06, R-06a, A-08, A-08a, A-08b, A-08c",req:"ADM-07, RID-06",
+  goal:"Every dollar of cash collected is accounted for each day.",
+  task:`- Rider history and cash summary; hand-over confirm.
+- Admin Riders list (status, jobs, cash held) and add-rider modal with SMS invite.
+- COD reconciliation tab: expected vs reported vs received, differences flagged; confirm hand-over modal with counted amount.
+Done when: end-of-day cash per rider reconciles to zero difference or is flagged.`},
+
+ {id:"F25",ph:"E",p:"P0",s:"M",t:"Business account upgrade & verification",deps:["F05","F08"],scr:"B-01, B-01a–e, A-07b, A-07c",req:"AUTH-05, ADM-06",
+  goal:"Companies can apply, and staff verify them.",
+  task:`- Upgrade form (company, VAT TIN format check, address, contact, licence upload) with submit confirm; pending, rejected (with reason + resubmit) and approved screens.
+- Admin verification page with document preview and checklist; reject modal with message.
+- On approval: role → business buyer, retail cart cleared (with notice), push + email.
+Done when: approval switches the user to the business experience on next launch.`},
+ {id:"F26",ph:"E",p:"P0",s:"M",t:"Business catalog mode & quote list",deps:["F25","F13"],scr:"B-00, B-00a, B-00b, B-02, B-02a",req:"CAT-07, Q8",
+  goal:"Business buyers browse without retail prices and build a quote list.",
+  task:`- Business home and product detail: no prices anywhere ("Price on quote"), minimum quantities, business bottom nav.
+- Add-to-quote sheet with minimum validation; quote list (like a cart) with quantity rules.
+- Server-side: price queries return nothing for business buyers (RLS), not just hidden in UI.
+Done when: no API response or screen shows a retail price to a business account.`},
+ {id:"F27",ph:"E",p:"P0",s:"M",t:"Submit & track quote requests (RFQ)",deps:["F26"],scr:"B-03, B-03a, B-03b, B-03c, B-04, B-04a, B-04b, B-05, B-05a, W-06",req:"RFQ-01, RFQ-04",
+  goal:"Buyers send a request and always know its status.",
+  task:`- Submit RFQ: address, required-by date picker (from tomorrow), notes, attachments, confirm, success.
+- Quotes list with tabs Open / Accepted / Closed (and Quotes | Orders switch), RFQ detail timeline, cancel request confirm.
+- Notify sales on submit with an SLA timestamp (quote due in 1 business day).
+Done when: an RFQ appears in admin within seconds and the buyer sees status changes live.`},
+ {id:"F28",ph:"E",p:"P0",s:"L",t:"Admin RFQs & quote editor",deps:["F27","F08"],scr:"A-04, A-04a, A-04b",req:"RFQ-02, RFQ-05",
+  goal:"Sales turn a request into a priced quote fast.",
+  task:`- RFQ list with status tabs, due/overdue pills and assignee.
+- Quote editor: unit prices with retail reference, line totals, delivery fee, VAT 10%, total, valid-until, terms, versions, message thread; send confirm.
+- Edge Function send_quote: freezes a version, renders the quote PDF (Storage), push + email to buyer.
+Done when: sending a quote produces a PDF and the buyer sees "Quote ready".`},
+ {id:"F29",ph:"E",p:"P0",s:"M",t:"Accept, reject, revise & expire quotes",deps:["F28"],scr:"B-05b, B-05c, B-05d, B-05e, B-05f, B-05g, W-07",req:"RFQ-03, RFQ-06",
+  goal:"Buyers decide on quotes and accepted quotes become orders.",
+  task:`- Quote detail with lines, totals, terms, PDF; messages with sales.
+- Accept sheet: choose KHQR / COD / bank transfer → Edge Function accept_quote creates an order at quoted prices (only before valid-until).
+- Reject (reason) and revision request (topics + note) flows; scheduled job expires quotes and notifies 24 h before.
+Done when: accepted quotes create correct orders and expired quotes can't be accepted.`},
+ {id:"F30",ph:"E",p:"P0",s:"M",t:"Bank transfer & slip review",deps:["F29","F18"],scr:"B-06, B-06a, B-06b, B-06c, A-03, M-03",req:"Q6",
+  goal:"Business buyers pay by transfer and staff confirm it.",
+  task:`- Bank transfer screen with copyable bank details (from settings), required reference, deadline (quote expiry + 3 days), slip upload.
+- Awaiting-confirmation and slip-rejected states with re-upload.
+- Admin/mobile slip review: image zoom, amount on slip, reference check, confirm or reject with reason.
+- Scheduled job cancels unpaid orders after the deadline.
+Done when: confirming a slip moves the order to Confirmed and notifies the buyer.`},
+
+ {id:"F31",ph:"F",p:"P1",s:"L",t:"Returns & refunds",deps:["F23","F19"],scr:"C-14, C-14a, C-14b, R-02d, A-09, A-09a, A-09b, A-09c",req:"ORD-05, PAY-06",
+  goal:"Returns within 3 days, with the customer paying the $2 return fee.",
+  task:`- Return request (items, reason, photos, fee notice) only within 3 days of delivery (server check); confirm; status timeline.
+- Admin returns list/detail with window check; approve & schedule pickup (creates a rider return-pickup job); reject.
+- Rider return pickup: checklist, collect fee in cash for COD orders.
+- Inspection and refund modal (amount minus fee unless collected in cash), restock option.
+Done when: a return flows from request to refund with stock and money correct.`},
+ {id:"F32",ph:"F",p:"P0",s:"M",t:"Reviews & wishlist",deps:["F19","F13"],scr:"C-15, C-15a, C-16, C-16a, C-05b, A-10, A-10a",req:"REV-01–03, WSH-01",
+  goal:"Verified reviews and a synced wishlist.",
+  task:`- Write review only for delivered items (one per product per order); photos; pending moderation toast.
+- Admin moderation: approve, hide, public reply; rating averages updated by trigger.
+- Wishlist with heart toggles everywhere, wishlist screen, move to cart; review reminder push 2 days after delivery.
+Done when: an approved review shows on the product's Reviews tab with the new average.`},
+ {id:"F33",ph:"F",p:"P0",s:"L",t:"Support chat",deps:["F07","F19"],scr:"C-17, C-17a, C-17b, C-17c, A-11, M-04, M-04a",req:"CHT-01, CHT-02",
+  goal:"Real-time help linked to orders.",
+  task:`- Help & support home (FAQ search, topics, conversations); start chat with order picker.
+- Realtime messages with images, typing indicator, push when the app is closed.
+- Agent console (web 3-pane, mobile): queue tabs, assign to me, quick replies, customer context, resolve; customer can reopen for 7 days.
+Done when: customer and agent chat live across devices and resolved chats reopen within 7 days only.`},
+ {id:"F34",ph:"F",p:"P1",s:"M",t:"Invoices & emails",deps:["F19","F28"],scr:"C-12c, N-04, N-05",req:"ORD-04",
+  goal:"Proper VAT invoices and transactional emails.",
+  task:`- Invoice PDF (seller details and VAT TIN from settings, VAT breakdown) generated by an Edge Function; viewer with download/share.
+- Email templates for order confirmed and quote ready (layouts N-04/N-05) via your email provider; plain-text versions.
+Done when: every paid order has an invoice and the two emails send with correct totals.`},
+ {id:"F35",ph:"F",p:"P0",s:"M",t:"Notification events wiring",deps:["F07","F29","F31","F33"],scr:"N-01, N-02, N-03",req:"NOT-01, App Flow §6",
+  goal:"Every event in the notification matrix fires exactly once.",
+  task:`- Go through the App Flow notification matrix and the N-01/N-02 boards; wire each event to notify() from the Edge Function or trigger that causes it.
+- Deep-link every push to its screen; respect user settings; de-duplicate.
+- An integration test per event type.
+Done when: the matrix checklist is fully ticked in tests.`},
+
+ {id:"F36",ph:"G",p:"P0",s:"M",t:"Customers admin",deps:["F08"],scr:"A-07, A-07a, A-07d",req:"ADM-06",
+  goal:"Staff can find and manage any customer.",
+  task:`- Customers list with tabs All / Business / Pending verification / Blocked and search.
+- Customer detail tabs: Overview (KPIs, recent orders), Orders, Addresses, Notes.
+- Block customer confirm (blocks sign-in and new orders; open orders continue).
+Done when: blocking takes effect immediately on the customer's next request.`},
+ {id:"F37",ph:"G",p:"P0",s:"M",t:"Admin dashboard & notifications panel",deps:["F20","F28"],scr:"A-01, A-01a, M-01",req:"ADM-01",
+  goal:"One screen showing what needs attention now.",
+  task:`- KPIs (sales, orders, open RFQs, awaiting payment), needs-attention list with deep links, orders by status, 7-day sales chart, top products, recent orders.
+- Notifications dropdown panel; mobile dashboard.
+- Queries via database views; refresh with Realtime.
+Done when: numbers match the orders table for a test day.`},
+ {id:"F38",ph:"G",p:"P1",s:"M",t:"Reports & exports",deps:["F37"],scr:"A-13",req:"ADM-11",
+  goal:"Sales, payments, COD, stock and RFQ reports with export.",
+  task:`- Report tabs with date range; revenue by day chart (retail line + business bars), category table, payment mix.
+- CSV and Excel export via Edge Function.
+Done when: exported totals equal on-screen totals.`},
+ {id:"F39",ph:"G",p:"P0",s:"M",t:"Settings: payments, store rules & audit log",deps:["F08"],scr:"A-14b, A-14c, A-14f",req:"ADM-09, ADM-10",
+  goal:"Owners change business rules without a release, and every change is traceable.",
+  task:`- Payments settings: KHQR merchant config, QR expiry, COD default limit, business COD switch, bank transfer details, exchange rate (with who/when), ABA PayWay shown as next phase.
+- Store & rules: cut-off, delivery hours/days, holidays, stock hold, cancellation rule, return window/fee, chat reopen, OTP limits.
+- Audit log viewer (read-only, filters, export). Audit writes for all sensitive actions across features.
+Done when: changing the cut-off in settings changes checkout behaviour immediately.`},
+ {id:"F40",ph:"G",p:"P1",s:"M",t:"Admin on mobile",deps:["F37","F33","F30"],scr:"M-01–M-05",req:"Admin on mobile + web",
+  goal:"The on-the-go admin tasks work well on a phone.",
+  task:`- Polish mobile layouts for dashboard, orders, order detail with assign sheet, bank slip review, chat queue and conversation, More menu.
+- Verify touch targets, sheets and back navigation on Android and iOS.
+Done when: the 8 Admin · Mobile boards are matched on a real phone.`},
+ {id:"F41",ph:"G",p:"P0",s:"L",t:"Desktop web store",deps:["F19","F29"],scr:"W-01–W-07, Web header & footer",req:"PRD §4.1",
+  goal:"The customer web store looks right on desktop, not just stretched mobile.",
+  task:`- Responsive breakpoints: desktop header (categories, search, deliver-to, account, cart/quote list), footer.
+- Desktop layouts for home, product list with filter sidebar, product detail, cart, checkout with KHQR modal, business quote request and quote detail.
+- Keyboard navigation and focus states; SEO-friendly titles for web.
+Done when: the 8 web boards are matched at 1440 px and still work at tablet widths.`},
+ {id:"F42",ph:"G",p:"P0",s:"L",t:"Hardening & launch",deps:["F35","F39","F41","F24","F32"],scr:"All",req:"PRD §7, §11",
+  goal:"Ship v1 safely.",
+  task:`- Performance: cold start < 3 s mid-range Android, list/search < 1 s p95; fix the slowest screens.
+- Security review: RLS audit, Edge Function input validation, payment callback signatures, secrets.
+- Accessibility pass (contrast, labels, 44 px targets) and Khmer layout check on every screen.
+- Crash reporting, logs and alerts on payment failures.
+- End-to-end test of the main flows (retail KHQR, retail COD, business RFQ → bank transfer, return).
+- App Store / Play submission checklist (Sign in with Apple, account deletion, privacy labels).
+Done when: all main flows pass end-to-end and the store builds are submitted.`}
+];
+
+const byId = Object.fromEntries(F.map(f => [f.id, f]));
+F.forEach(f => f.unlocks = F.filter(g => g.deps.includes(f.id)).map(g => g.id));
+const fullPrompt = f => `${CONTEXT}\n\nTASK ${f.id} — ${f.t}  (priority ${f.p}, size ${f.s})\nGoal: ${f.goal}\nRequires (should already be built): ${f.deps.length ? f.deps.map(d => d + ' ' + byId[d].t).join('; ') : 'nothing — this is the first task'}\nScreens: ${f.scr}\nRequirements: ${f.req}\n\nBuild:\n${f.task}`;
+
+let status = {};      // id -> "todo" | "doing" | "done"
+let filter = "all";
+let store = null;     // shared db collection (if available)
+const st = id => status[id] || "todo";
+const ready = f => st(f.id) !== "done" && f.deps.every(d => st(d) === "done");
+
+function loadLocal(){ try { status = JSON.parse(localStorage.getItem("k-build-status") || "{}"); } catch(e) { status = {}; } }
+function saveLocal(){ try { localStorage.setItem("k-build-status", JSON.stringify(status)); } catch(e) {} }
+
+function toast(msg){ const t = document.getElementById("toast"); t.textContent = msg; t.hidden = false; clearTimeout(toast._t); toast._t = setTimeout(() => t.hidden = true, 1800); }
+
+function el(tag, attrs = {}, kids = []){ const e = document.createElement(tag); for (const [k,v] of Object.entries(attrs)) { if (k === "text") e.textContent = v; else if (k.startsWith("on")) e.addEventListener(k.slice(2), v); else e.setAttribute(k, v); } (Array.isArray(kids) ? kids : [kids]).forEach(c => c && e.append(c)); return e; }
+const fchip = id => el("a", {class: "fchip " + (st(id) === "todo" ? "" : st(id)), href: "#" + id, title: byId[id].t, text: id});
+
+function render(){
+  const done = F.filter(f => st(f.id) === "done").length;
+  document.getElementById("s-done").textContent = `${done} / ${F.length}`;
+  document.getElementById("s-bar").style.width = (done / F.length * 100) + "%";
+  document.getElementById("s-doing").textContent = F.filter(f => st(f.id) === "doing").length;
+  document.getElementById("s-ready").textContent = F.filter(ready).length;
+  document.getElementById("s-p0").textContent = F.filter(f => f.p === "P0" && st(f.id) !== "done").length;
+
+  const nx = F.find(f => st(f.id) === "doing") || F.find(ready);
+  const box = document.getElementById("next-box");
+  if (nx) { box.hidden = false; document.getElementById("next-h").textContent = `${nx.id} · ${nx.t}`; document.getElementById("next-why").textContent = st(nx.id) === "doing" ? "In progress — finish this one first." : (nx.deps.length ? `Ready: ${nx.deps.join(", ")} done.` : "Start here: nothing needs to be built before it."); document.getElementById("next-open").href = "#" + nx.id; }
+  else box.hidden = true;
+
+  const map = document.getElementById("map"); map.replaceChildren();
+  PHASES.forEach(ph => { const fs = F.filter(f => f.ph === ph.id); const d = fs.filter(f => st(f.id) === "done").length;
+    map.append(el("div", {class: "lane"}, [el("h3", {}, [el("span", {text: ph.id + " · " + ph.name}), el("span", {class: "muted", text: d + "/" + fs.length})]), el("div", {class: "chips"}, fs.map(f => fchip(f.id)))])); });
+
+  const list = document.getElementById("list"); list.replaceChildren();
+  const open = new Set([...document.querySelectorAll(".card.open")].map(c => c.id));
+  PHASES.forEach(ph => {
+    const fs = F.filter(f => f.ph === ph.id).filter(f => filter === "all" || (filter === "ready" && ready(f)) || (filter === "todo" && st(f.id) !== "done") || (filter === "p0" && f.p === "P0") || (filter === "done" && st(f.id) === "done"));
+    if (!fs.length) return;
+    list.append(el("div", {class: "phase-h"}, [el("h2", {text: `Phase ${ph.id} · ${ph.name}`}), el("span", {class: "muted", text: fs.length + " features"})]));
+    fs.forEach(f => list.append(card(f, open.has(f.id))));
+  });
+}
+
+function card(f, isOpen){
+  const s = st(f.id);
+  const blocked = s !== "done" && !f.deps.every(d => st(d) === "done");
+  const sel = el("select", {class: "status", "aria-label": `Status of ${f.id}`, onchange: e => setStatus(f.id, e.target.value)},
+    [["todo","To do"],["doing","In progress"],["done","Done"]].map(([v,l]) => { const o = el("option", {value: v, text: l}); if (v === s) o.selected = true; return o; }));
+  const tog = el("button", {class: "toggle", "aria-expanded": String(isOpen), "aria-label": (isOpen ? "Hide" : "Show") + " prompt for " + f.id, onclick: () => { const c = document.getElementById(f.id); const o = !c.classList.contains("open"); c.classList.toggle("open", o); c.querySelector(".detail").hidden = !o; tog.setAttribute("aria-expanded", String(o)); }});
+  tog.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+  const meta = el("div", {class: "meta"}, [el("span", {class: "pill " + f.p.toLowerCase(), text: f.p}), el("span", {class: "pill size", text: "Size " + f.s}), blocked ? el("span", {class: "pill blocked", text: "Waiting on " + f.deps.filter(d => st(d) !== "done").join(", ")}) : null, el("span", {class: "muted", text: f.scr})]);
+  const pre = el("pre", {class: "prompt", text: fullPrompt(f)});
+  const copy = el("button", {class: "btn primary", onclick: async () => { try { await navigator.clipboard.writeText(fullPrompt(f)); toast("Prompt copied"); } catch(e) { const r = document.createRange(); r.selectNodeContents(pre); const s2 = getSelection(); s2.removeAllRanges(); s2.addRange(r); toast("Selected — press Ctrl/Cmd+C"); } }, text: "Copy prompt"});
+  const start = s === "todo" ? el("button", {class: "btn", onclick: () => setStatus(f.id, "doing"), text: "Mark in progress"}) : null;
+  const detail = el("div", {class: "detail"}, [
+    el("p", {class: "goal", text: f.goal}),
+    el("div", {class: "links"}, [el("span", {class: "lbl", text: "Needs"}), ...(f.deps.length ? f.deps.map(fchip) : [el("span", {class: "muted", text: "nothing"})])]),
+    el("div", {class: "links"}, [el("span", {class: "lbl", text: "Unlocks"}), ...(f.unlocks.length ? f.unlocks.map(fchip) : [el("span", {class: "muted", text: "release"})])]),
+    el("div", {class: "ptools"}, [copy, start, el("span", {class: "muted", text: "Paste into Claude Code at the repo root."})]),
+    pre]);
+  detail.hidden = !isOpen;
+  return el("article", {class: "card" + (isOpen ? " open" : "") + (s === "done" ? " is-done" : ""), id: f.id}, [
+    el("div", {class: "row"}, [el("span", {class: "id", text: f.id}), el("div", {class: "title"}, [el("strong", {text: f.t}), meta]), el("div", {class: "ctrl", style: "display:flex;gap:8px;align-items:center"}, [sel, tog])]),
+    detail]);
+}
+
+async function setStatus(id, v){
+  status[id] = v; saveLocal(); render(); focusCard(id, false);
+  toast(`${id} · ${v === "done" ? "Done" : v === "doing" ? "In progress" : "To do"}`);
+  if (store) { try { await store.doc(id).set({status: v, at: new Date().toISOString()}); } catch(e) { setSync("Couldn’t save to the shared tracker — saved on this device."); } }
+}
+function setSync(t){ document.getElementById("sync").textContent = t; }
+
+function focusCard(id, openIt = true){
+  const c = document.getElementById(id); if (!c) return;
+  if (openIt && !c.classList.contains("open")) c.querySelector(".toggle").click();
+  document.querySelectorAll(".card.target").forEach(x => x.classList.remove("target"));
+  c.classList.add("target");
+}
+function fromHash(){ const id = (location.hash || "").slice(1); if (byId[id]) { if (filter !== "all") setFilter("all"); focusCard(id); document.getElementById(id).scrollIntoView({block: "start", behavior: "smooth"}); } }
+function setFilter(v){ filter = v; document.querySelectorAll(".chip[data-f]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.f === v))); render(); }
+
+document.getElementById("ctx").textContent = CLAUDE_MD;
+document.getElementById("copymd").onclick = async () => { try { await navigator.clipboard.writeText(CLAUDE_MD); toast("CLAUDE.md copied"); } catch(e) { const r = document.createRange(); r.selectNodeContents(document.getElementById("ctx")); const s2 = getSelection(); s2.removeAllRanges(); s2.addRange(r); toast("Selected — press Ctrl/Cmd+C"); } };
+document.querySelectorAll(".chip[data-f]").forEach(b => b.addEventListener("click", () => setFilter(b.dataset.f)));
+window.addEventListener("hashchange", fromHash);
+loadLocal(); render(); fromHash();
+
+(async () => {
+  const db = window.claude && window.claude.use ? await window.claude.use("db") : null;
+  if (!db) { setSync("Progress is saved in this browser."); return; }
+  store = db.collection("progress");
+  setSync("Progress is shared with everyone who can open this page.");
+  store.onSnapshot(snap => {
+    const next = {}; snap.docs.forEach(d => { const v = d.data(); if (v && v.status) next[d.id] = v.status; });
+    status = Object.assign({}, status, next); saveLocal(); render();
+  }, () => setSync("Live sync stopped — progress is saved in this browser."));
+})();
+</script>
+
+</body></html>

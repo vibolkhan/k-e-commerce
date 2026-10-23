@@ -1,0 +1,142 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A-08 · Add rider (modal) · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">A-08 · Add rider (modal) <span class="pg">· Admin · Desktop</span></span><a href="A08bConfirmHandOver.html">← Prev</a><a href="A09Returns.html">Next →</a></nav>
+<div class="stage fluid"><div class="frame">
+
+<div class="k overlay-page" style="height:900px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div class="base" aria-hidden="true"><div class="dc-imp">
+
+<div class="k adm" style="min-height:900px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <aside class="side"><div class="dc-imp">
+
+<nav class="k" aria-label="Admin sections" style="width:100%;min-width:224px;padding:20px 12px 24px;display:flex;flex-direction:column;gap:2px;background:#FFFFFF;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div style="display:flex;align-items:center;gap:10px;padding:0 8px 16px">
+    <div class="appicon" style="width:36px;height:36px;border-radius:10px"><svg viewBox="0 0 48 48" width="24" height="24" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+    <div style="display:flex;flex-direction:column"><span style="font-size:16px;line-height:20px;font-weight:800">K Admin</span><span class="t-xs muted">Phnom Penh store</span></div>
+  </div>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"></rect><rect x="14" y="3" width="7" height="5" rx="1.5"></rect><rect x="14" y="12" width="7" height="9" rx="1.5"></rect><rect x="3" y="16" width="7" height="5" rx="1.5"></rect></svg>Dashboard</a>
+  <p class="t-over" style="padding:14px 12px 6px">Sales</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 7h6M9 11h6M9 15h4"></path></svg>Orders<span class="badge">12</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"></rect><path d="M9 2h6v4H9zM9 11h6M9 15h6"></path></svg>RFQs &amp; quotes<span class="badge blue">3</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg>Returns<span class="badge blue">3</span></a>
+  <p class="t-over" style="padding:14px 12px 6px">Catalog</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"></path><circle cx="7.5" cy="7.5" r="1.5"></circle></svg>Products</a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5z"></path><path d="m3 8 9 5 9-5M12 13v8"></path></svg>Inventory<span class="badge">5</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg>Content</a>
+  <p class="t-over" style="padding:14px 12px 6px">People</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"></circle><path d="M2 21a7 7 0 0 1 14 0"></path><path d="M16 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"></path></svg>Customers<span class="badge blue">1</span></a>
+  <a href="#" class="navlink is-on"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="17.5" r="3.5"></circle><circle cx="18.5" cy="17.5" r="3.5"></circle><path d="M12 17.5V14l-3-3 4-3 2 3h3"></path><circle cx="15" cy="5" r="1"></circle></svg>Riders</a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>Reviews<span class="badge blue">4</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>Support chat<span class="badge">2</span></a>
+  <p class="t-over" style="padding:14px 12px 6px">Insights</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M7 16v-4M12 16V8M17 16v-7"></path></svg>Reports</a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.08a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.08a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Settings</a>
+</nav>
+</div></aside>
+  <div class="adm-main">
+    <div class="dc-imp">
+
+<header class="k" style="width:100%;min-height:72px;display:flex;align-items:center;gap:16px;padding:12px 32px;background:#FFFFFF;border-bottom:1px solid #E2E8F0;flex-wrap:wrap;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <label class="inputbox search" style="flex:1 1 320px;max-width:520px;height:42px">
+    <svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+    <input type="search" placeholder="Search orders, customers, products, RFQs" aria-label="Search the back office">
+    <span class="t-xs" style="color:#475569;border:1px solid #CBD5E1;border-radius:6px;padding:1px 6px;background:#fff">/</span>
+  </label>
+  <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
+    <span class="pill p-amber lg"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Same-day cut-off in 4h 35m</span>
+    <button class="iconbtn" type="button" aria-label="Help"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.5 2.5 0 0 1 4.9.7c0 1.8-2.4 2.3-2.4 3.8M12 17h.01"></path></svg></button>
+    <button class="iconbtn" type="button" aria-label="Notifications, 8 new"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span class="badge">8</span></button>
+    <button type="button" style="display:flex;align-items:center;gap:10px;border:0;background:transparent;padding:4px 8px 4px 4px;border-radius:12px;height:48px" aria-label="Account menu">
+      <span class="avatar" style="width:36px;height:36px;font-size:13px">CL</span>
+      <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.2"><span style="font-size:14px;font-weight:700">Chenda Lim</span><span class="t-xs muted">Operations admin</span></span>
+      <svg class="ic s18 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+    </button>
+  </div>
+</header>
+</div>
+    <main class="adm-body">
+      <div class="pagehead">
+        <div style="display:flex;flex-direction:column;gap:4px"><p class="crumbs">People</p><h1>Riders</h1></div>
+        <div class="toolbar">
+          <button class="btn btn-primary" type="button"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>Add rider</button>
+        </div>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Rider sections" style="background:transparent;padding:0">
+        <button class="tab is-on" type="button" role="tab" aria-selected="true">Riders<span class="count">4</span></button>
+        <button class="tab" type="button" role="tab" aria-selected="false">COD reconciliation<span class="count" style="background:#FEF2F2;color:#B91C1C">1</span></button>
+      </div>
+
+      <section class="grid-auto" aria-label="Rider summary" style="grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr))">
+        <div class="kpi"><span class="k-label">On duty now</span><span class="k-num">3 <span style="font-size:16px;color:#64748B;font-weight:700">of 4</span></span><span class="k-foot">Rotha Meas is off duty</span></div>
+        <div class="kpi"><span class="k-label">Active jobs</span><span class="k-num">11</span><span class="k-foot">Incl. 1 return pickup</span></div>
+        <div class="kpi"><span class="k-label">Delivered today</span><span class="k-num">11</span><span class="k-foot">1 failed delivery</span></div>
+      </section>
+
+      <section class="panel" aria-label="Rider list">
+        <div class="toolbar" style="padding:16px 20px;border-bottom:1px solid #E2E8F0">
+          <label class="inputbox" style="flex:1 1 260px;max-width:380px"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><input type="search" placeholder="Search name or phone" aria-label="Search riders"></label>
+          <select class="input" style="width:auto;flex:none" aria-label="Zone"><option>All zones</option><option>Toul Kork</option><option>Sen Sok</option><option>Daun Penh</option><option>BKK1</option><option>Boeung Kak</option></select>
+          <div style="display:flex;gap:8px" role="group" aria-label="Status"><button class="chip is-on" type="button" aria-pressed="true">All</button><button class="chip" type="button" aria-pressed="false">On duty · 3</button><button class="chip" type="button" aria-pressed="false">Off duty · 1</button></div>
+        </div>
+        <div class="tablewrap">
+          <table class="table">
+            <thead><tr><th>Rider</th><th>Zones</th><th>Status</th><th class="r">Active jobs</th><th class="r">Delivered today</th><th class="r">Cash holding</th><th>Last location</th><th><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Actions</span></th></tr></thead>
+            <tbody>
+              <tr><td><span style="display:flex;align-items:center;gap:12px"><span class="avatar sm green">VK</span><span><span class="strong">Vuthy Kim</span><span class="sub">+855 11 482 377 · 2BK-4821</span></span></span></td><td>Toul Kork, Sen Sok</td><td><span class="pill dot p-green">On duty</span></td><td class="r num">3</td><td class="r num">3</td><td class="r num strong">$185.50</td><td>2 min ago</td><td class="r"><a href="#" class="btn btn-ghost btn-sm">View</a></td></tr>
+              <tr><td><span style="display:flex;align-items:center;gap:12px"><span class="avatar sm">SL</span><span><span class="strong">Sokun Ly</span><span class="sub">+855 92 315 640 · 2AX-1190</span></span></span></td><td>Daun Penh, BKK1</td><td><span class="pill dot p-green">On duty</span></td><td class="r num">2</td><td class="r num">5</td><td class="r"><span class="num strong">$0.00</span><span class="sub c-ok" style="font-weight:600">All handed over</span></td><td>1 min ago</td><td class="r"><a href="#" class="btn btn-ghost btn-sm">View</a></td></tr>
+              <tr><td><span style="display:flex;align-items:center;gap:12px"><span class="avatar sm amber">KP</span><span><span class="strong">Kosal Phan</span><span class="sub">+855 77 208 913 · 2CF-7754</span></span></span></td><td>Boeung Kak</td><td><span class="pill dot p-green">On duty</span></td><td class="r num">6</td><td class="r num">3</td><td class="r"><span class="num strong">$0.00</span><span class="sub c-bad" style="font-weight:600">$4.00 short at hand-over</span></td><td>4 min ago</td><td class="r"><a href="#" class="btn btn-ghost btn-sm">View</a></td></tr>
+              <tr><td><span style="display:flex;align-items:center;gap:12px"><span class="avatar sm grey">RM</span><span><span class="strong">Rotha Meas</span><span class="sub">+855 10 774 526 · 2BB-3068</span></span></span></td><td>Toul Kork</td><td><span class="pill dot p-gray">Off duty</span></td><td class="r num">0</td><td class="r num">0</td><td class="r num">$0.00</td><td class="muted">Yesterday, 8:12 PM</td><td class="r"><a href="#" class="btn btn-ghost btn-sm">View</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="banner info"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg><span>Riders share their location only while a delivery is out. Off-duty riders can’t be assigned new jobs.</span></div>
+    </main>
+  </div>
+</div>
+</div></div>
+  <div class="scrim"></div>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="a08c-title">
+    <div class="modal-head">
+      <h2 id="a08c-title">Add rider</h2>
+      <button class="iconbtn" type="button" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field">
+        <label class="label" for="a08c-name">Full name</label>
+        <input class="input" id="a08c-name" value="Sophal Nhem">
+      </div>
+      <div class="field">
+        <label class="label" for="a08c-phone">Phone number</label>
+        <div class="inputbox is-focus"><span class="prefix">+855</span><input id="a08c-phone" value="96 552 018" inputmode="tel"></div>
+        <p class="help">The rider signs in to the K app with this number.</p>
+      </div>
+      <fieldset style="border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:8px">
+        <legend class="label" style="padding:0;margin-bottom:8px">Delivery zones</legend>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="chip is-on" type="button" aria-pressed="true"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Toul Kork</button>
+          <button class="chip is-on" type="button" aria-pressed="true"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Sen Sok</button>
+          <button class="chip" type="button" aria-pressed="false">Daun Penh</button>
+          <button class="chip" type="button" aria-pressed="false">BKK1</button>
+          <button class="chip" type="button" aria-pressed="false">Boeung Kak</button>
+        </div>
+      </fieldset>
+      <div class="field">
+        <label class="label" for="a08c-plate">Vehicle plate</label>
+        <input class="input" id="a08c-plate" value="2BK-6702">
+      </div>
+      <label class="check"><input type="checkbox" checked><span style="display:flex;flex-direction:column"><span class="semi">Send sign-in invite by SMS</span><span class="t-xs muted">The rider starts as off duty until they sign in.</span></span></label>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-outline" type="button">Cancel</button>
+      <button class="btn btn-primary" type="button">Add rider</button>
+    </div>
+  </div>
+</div>
+</div></div></body></html>

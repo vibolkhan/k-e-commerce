@@ -1,0 +1,53 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C-04 · Search (typing) · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">C-04 · Search (typing) <span class="pg">· Shop</span></span><a href="C03bSortSheet.html">← Prev</a><a href="C04aSearchResults.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone white" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <header class="appbar line" style="height:68px;gap:6px;padding:0 6px 0 16px">
+    <label class="inputbox search is-focus" style="flex:1 1 auto;height:46px;background:#FFFFFF;border-color:#0272B6;box-shadow:0 0 0 3px #E0F2FE;color:#334155;padding-right:0">
+      <svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+      <input type="search" value="head" aria-label="Search products and brands" autocomplete="off">
+      <button class="iconbtn" type="button" aria-label="Clear search" style="color:#64748B"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m15 9-6 6M9 9l6 6"></path></svg></button>
+    </label>
+    <button class="btn btn-ghost" type="button" style="padding:0 10px;height:44px">Cancel</button>
+  </header>
+
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;display:flex;flex-direction:column">
+    <ul class="list" aria-label="Suggestions">
+      <li><a href="#" class="li" style="min-height:52px"><svg class="ic s20 muted" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><span class="li-main"><span style="font-weight:400">head<b style="font-weight:800">phones</b></span></span><svg class="ic s20 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 17 7 7M7 15V7h8"></path></svg></a></li>
+      <li><a href="#" class="li" style="min-height:52px"><svg class="ic s20 muted" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><span class="li-main"><span style="font-weight:400">head<b style="font-weight:800">phones</b> <span class="muted">in Audio</span></span></span><svg class="ic s20 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 17 7 7M7 15V7h8"></path></svg></a></li>
+      <li><a href="#" class="li" style="min-height:52px"><svg class="ic s20 muted" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><span class="li-main"><span style="font-weight:400">head<b style="font-weight:800">phone case</b></span></span><svg class="ic s20 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 17 7 7M7 15V7h8"></path></svg></a></li>
+      <li><a href="#" class="li" style="min-height:52px"><svg class="ic s20 muted" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><span class="li-main"><span style="font-weight:400">head<b style="font-weight:800">band</b></span></span><svg class="ic s20 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 17 7 7M7 15V7h8"></path></svg></a></li>
+      <li><a href="#" class="li" style="min-height:64px"><span class="pimg tA" style="width:44px;border-radius:10px;flex:none"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg></span><span class="li-main"><span class="li-title">Wireless <b style="font-weight:800">Head</b>phones Pro</span><span class="li-sub">$49.00 · Audio</span></span><svg class="ic s20 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></a></li>
+    </ul>
+    <div class="thick" style="border-top:1px solid #E2E8F0"></div>
+
+    <section aria-labelledby="c04-recent" style="padding:16px;display:flex;flex-direction:column;gap:12px">
+      <div class="sechead"><h2 id="c04-recent">Recent searches</h2><button class="link t-sm" type="button" style="height:44px">Clear</button></div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <a href="#" class="chip"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>rice cooker</a>
+        <a href="#" class="chip"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>water bottle</a>
+        <a href="#" class="chip"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>backpack</a>
+        <a href="#" class="chip"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>desk lamp</a>
+      </div>
+    </section>
+
+    <section aria-labelledby="c04-popular" style="padding:0 16px 16px;display:flex;flex-direction:column;gap:12px">
+      <div class="sechead"><h2 id="c04-popular">Popular categories</h2></div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <a href="#" class="chip"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg>Audio</a>
+        <a href="#" class="chip"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v7a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"></path><path d="M2 10h20M8 6a4 4 0 0 1 8 0v4H8zM12 2v2"></path></svg>Kitchen</a>
+        <a href="#" class="chip"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"></path></svg>Office</a>
+        <a href="#" class="chip"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2h4v3l1.5 2.5V20a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2V7.5L10 5z"></path><path d="M8.5 11h7"></path></svg>Sports</a>
+        <a href="#" class="chip"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"></path><path d="M9 5V3h6v2M8 14h8v4H8z"></path></svg>Bags</a>
+        <a href="#" class="chip"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 6.6 16 4a4 4 0 0 1-8 0L3.6 6.6a1 1 0 0 0-.5 1.2l.9 3.2a1 1 0 0 0 1.2.7L7 11v9a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-9l1.8.7a1 1 0 0 0 1.2-.7l.9-3.2a1 1 0 0 0-.5-1.2z"></path></svg>Fashion</a>
+      </div>
+    </section>
+  </main>
+</div>
+</div></div></body></html>

@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C-09 · Payment expired · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">C-09 · Payment expired <span class="pg">· Cart &amp; Checkout</span></span><a href="C09aKhqrLeave.html">← Prev</a><a href="C10OrderSuccess.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone white" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <header class="appbar">
+    <button class="iconbtn" type="button" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+    <h1 class="title">Pay with KHQR</h1>
+    <span class="spacer"></span>
+  </header>
+
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;padding:32px 16px 16px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+    <span class="dlg-icon warn" style="width:88px;height:88px"><svg class="ic s40" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+    <h2 class="t-h1" role="alert">Payment time expired</h2>
+    <p class="t-body" style="color:#334155;max-width:310px">We released the items in #K-10248. Try again and we’ll check stock first.</p>
+
+    <section class="card pad" aria-label="Order summary" style="width:100%;text-align:left;display:flex;flex-direction:column;gap:12px;margin-top:8px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span class="strong">#K-10248</span><span class="pill p-gray">KHQR expired</span></div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="display:flex;gap:6px;flex:none">
+          <span class="pimg tA" style="width:44px;border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg></span>
+          <span class="pimg tE" style="width:44px;border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h12v9a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"></path><path d="M16 9h2a3 3 0 0 1 0 6h-2M8 3v2M12 3v2"></path></svg></span>
+          <span class="pimg tA" style="width:44px;border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2h4v3l1.5 2.5V20a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2V7.5L10 5z"></path><path d="M8.5 11h7"></path></svg></span>
+        </span>
+        <span class="t-sm" style="color:#334155">3 items · 4 units</span>
+      </div>
+      <div class="divider"></div>
+      <dl style="display:flex;flex-direction:column;gap:6px">
+        <div class="kv"><dt>Delivery</dt><dd>Today by 8:00 PM</dd></div>
+        <div class="kv total"><dt>Total</dt><dd class="num">$92.00</dd></div>
+      </dl>
+    </section>
+    <p class="t-xs muted" style="display:flex;gap:6px;align-items:center"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>No money was taken from your account.</p>
+  </main>
+
+  <div class="actionbar" style="flex-direction:column;align-items:stretch;gap:10px">
+    <button class="btn btn-primary btn-lg" type="button"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"></path><path d="M21 3v5h-5"></path></svg>Try again</button>
+    <button class="btn btn-outline" type="button">Cancel order</button>
+  </div>
+</div>
+</div></div></body></html>

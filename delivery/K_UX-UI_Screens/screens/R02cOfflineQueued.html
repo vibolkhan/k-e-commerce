@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>R-02 · Offline, update queued · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">R-02 · Offline, update queued <span class="pg">· Rider App</span></span><a href="R02bOnTheWay.html">← Prev</a><a href="R03ProofOfDelivery.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden"><div class="dc-imp">
+
+<div class="k phone white" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div class="map" style="flex:none;height:430px">
+    <svg viewBox="0 0 390 430" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Map: your route to Dara Sok, 2.1 km">
+      <rect x="250" y="-10" width="160" height="120" rx="20" fill="#DCFCE7"></rect>
+      <rect x="-10" y="310" width="110" height="90" rx="18" fill="#DCFCE7"></rect>
+      <path d="M-10 250 C90 232 150 268 230 226 S340 172 400 186" stroke="#CFE6F5" stroke-width="22" fill="none"></path>
+      <g stroke="#FFFFFF" stroke-linecap="round" fill="none"><path d="M-10 60 H400" stroke-width="12"></path><path d="M70 -10 V440" stroke-width="12"></path><path d="M-10 170 H400" stroke-width="8"></path><path d="M210 -10 L265 440" stroke-width="8"></path><path d="M150 -10 V440" stroke-width="5"></path><path d="M320 -10 V440" stroke-width="5"></path><path d="M-10 300 H400" stroke-width="5"></path><path d="M-10 370 H400" stroke-width="8"></path></g>
+      <path d="M70 400 V170 H150" stroke="#0272B6" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M150 170 H232 L248 300 H320" stroke="#0272B6" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.1 11"></path>
+      <circle cx="150" cy="170" r="13" fill="#0272B6" stroke="#FFFFFF" stroke-width="4"></circle>
+      <g transform="translate(320 300)"><path d="M0 0c-9-11-14-17-14-24a14 14 0 0 1 28 0c0 7-5 13-14 24z" fill="#0F172A"></path><circle cx="0" cy="-24" r="5" fill="#FFFFFF"></circle></g>
+    </svg>
+    <div style="position:absolute;left:12px;right:12px;top:12px;display:flex;align-items:center;gap:8px">
+      <a href="#" class="iconbtn white" aria-label="Back to job"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+      <span style="flex:1"></span>
+      <span class="pill dot p-green lg" style="box-shadow:0 1px 3px rgba(15,23,42,.15)">Sharing live location</span>
+    </div>
+  </div>
+
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;padding:16px;display:flex;flex-direction:column;gap:12px">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+      <span class="pill dot p-ink lg">Out for delivery</span>
+      <span class="t-sm muted">#K-10248 · picked up 1:42 PM</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:2px">
+      <h1 class="t-h2">Dara Sok · #24, St. 315</h1>
+      <p style="display:flex;align-items:baseline;gap:8px"><span style="font-size:28px;line-height:34px;font-weight:800">18 min</span><span class="t-body muted">· 2.1 km</span></p>
+    </div>
+    <div style="display:flex;gap:10px">
+      <a href="#" class="btn btn-outline" style="flex:1 1 auto"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 19-9-9 19-2-8z"></path></svg>Navigate</a>
+      <button class="iconbtn outline" type="button" aria-label="Call Dara Sok" style="width:48px;height:48px"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg></button>
+      <button class="iconbtn outline" type="button" aria-label="Chat with Dara Sok" style="width:48px;height:48px"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg></button>
+    </div>
+    <div class="banner info"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><span>Blue gate — call when outside. <b>Paid by KHQR</b>, nothing to collect.</span></div>
+  </main>
+
+  <div class="actionbar">
+    <button class="btn btn-danger-outline btn-lg" type="button" style="flex:0 0 120px">Failed</button>
+    <button class="btn btn-primary btn-lg" type="button" style="flex:1 1 auto"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Delivered</button>
+  </div>
+</div>
+</div></div>
+  <div class="banner warn" role="status" style="position:absolute;left:16px;right:16px;top:68px;align-items:center;font-size:14px;line-height:20px;box-shadow:0 8px 24px rgba(15,23,42,.14)">
+    <svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="m2 2 20 20"></path><path d="M8.5 16.5a5 5 0 0 1 7 0"></path><path d="M5 12.9a10 10 0 0 1 5.2-2.7"></path><path d="M19 12.9a10 10 0 0 0-2-1.5"></path><path d="M2 8.8a15 15 0 0 1 4.2-2.6"></path><path d="M22 8.8A15 15 0 0 0 10.7 5"></path><path d="M12 20h.01"></path></svg>
+    <span style="flex:1"><b>No signal.</b> 1 update saved on this phone — it will sync automatically.</span>
+  </div>
+</div>
+</div></div></body></html>

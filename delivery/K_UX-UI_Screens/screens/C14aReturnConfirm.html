@@ -1,0 +1,91 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C-14 · Submit return (confirm) · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">C-14 · Submit return (confirm) <span class="pg">· Orders &amp; Support</span></span><a href="C14ReturnRequest.html">← Prev</a><a href="C14bReturnStatus.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden"><div class="dc-imp">
+
+<div class="k phone white" style="height:1250px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <header class="appbar line">
+    <a href="#" class="iconbtn" aria-label="Back"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+    <h1 class="title">Request a return</h1>
+    <span class="spacer"></span>
+  </header>
+
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;padding:16px;display:flex;flex-direction:column;gap:18px">
+    <div class="banner warn" style="align-items:center"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><span>Return window closes <b>Sat 24 Oct, 5:30 PM</b></span></div>
+
+    <section style="display:flex;flex-direction:column;gap:10px" aria-labelledby="c14-items">
+      <div style="display:flex;justify-content:space-between;align-items:baseline"><h2 id="c14-items" class="t-h3">Item to return</h2><span class="t-xs muted">#K-10231 · delivered 21 Oct</span></div>
+      <label class="opt is-on" style="align-items:center">
+        <input type="checkbox" checked aria-label="Return Running Sneakers Air">
+        <span class="pimg tG" style="width:56px;flex:none;border-radius:12px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 17v-4l3-1 2-5 3 1-1 3 4 2 6 1a3 3 0 0 1 3 3 1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"></path><path d="M2 17h20M10 11l1.5-1M12 12l1.5-1"></path></svg></span>
+        <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span class="semi" style="font-size:14px">Running Sneakers Air</span><span class="t-xs" style="color:#475569">Size 42 · $59.00</span></span>
+        <span class="t-sm semi" style="color:#334155">Qty 1</span>
+      </label>
+    </section>
+
+    <div class="field">
+      <label class="label" for="c14-reason">Reason</label>
+      <div class="inputbox" style="color:#0F172A"><input id="c14-reason" value="Wrong size" readonly><svg class="ic s20 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></div>
+    </div>
+
+    <div class="field">
+      <label class="label" for="c14-more">Tell us more</label>
+      <textarea class="textarea" id="c14-more">The shoes run small for me. I’d like to return them and order a size 43.</textarea>
+      <p class="help" style="text-align:right">71 / 500</p>
+    </div>
+
+    <section style="display:flex;flex-direction:column;gap:10px" aria-labelledby="c14-photos">
+      <div style="display:flex;justify-content:space-between;align-items:baseline"><h2 id="c14-photos" class="label">Photos</h2><span class="help">Up to 5 photos</span></div>
+      <div style="display:flex;gap:10px">
+        <div class="thumb tG"><svg class="ic s28" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg><button type="button" aria-label="Remove photo 1" style="position:absolute;top:2px;right:2px;width:28px;height:28px;border-radius:50%;border:0;background:rgba(15,23,42,.72);color:#FFFFFF;display:grid;place-items:center;padding:0"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></button></div>
+        <div class="thumb tB"><svg class="ic s28" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg><button type="button" aria-label="Remove photo 2" style="position:absolute;top:2px;right:2px;width:28px;height:28px;border-radius:50%;border:0;background:rgba(15,23,42,.72);color:#FFFFFF;display:grid;place-items:center;padding:0"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></button></div>
+        <button type="button" class="drop" style="width:72px;height:72px;padding:0;gap:2px" aria-label="Add a photo"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"></path><circle cx="12" cy="13.5" r="3.5"></circle></svg><span class="t-xs semi">Add</span></button>
+      </div>
+    </section>
+
+    <section class="card" style="padding:14px 16px;display:flex;gap:12px;align-items:flex-start" aria-label="Return delivery fee">
+      <span style="width:40px;height:40px;border-radius:12px;background:#FFF7ED;color:#B45309;display:grid;place-items:center;flex:none"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle><path d="M6 12h.01M18 12h.01"></path></svg></span>
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <p class="semi" style="font-size:14px">Return delivery fee $2.00 — paid by you</p>
+        <p class="t-sm muted">This order was paid in cash, so our rider collects $2.00 at pickup.</p>
+      </div>
+    </section>
+
+    <section class="greybox" style="padding:14px 16px;display:flex;flex-direction:column;gap:8px" aria-label="Refund summary">
+      <div class="kv"><span class="k-key" style="color:#475569">Item</span><span class="k-val num">$59.00</span></div>
+      <div class="kv"><span class="k-key" style="color:#475569">Return fee</span><span class="k-val">$2.00 in cash at pickup</span></div>
+      <div class="divider" style="background:#CBD5E1"></div>
+      <div class="kv total"><span>Refund</span><span class="num">$59.00</span></div>
+      <p class="t-xs" style="color:#475569">For cash orders, our team contacts you to arrange the refund after inspection.</p>
+    </section>
+  </main>
+
+  <div class="actionbar">
+    <button class="btn btn-primary btn-block" type="button">Submit request</button>
+  </div>
+</div>
+</div></div>
+  <div class="scrim"></div>
+  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="c14a-title" aria-describedby="c14a-desc">
+    <span class="dlg-icon"><svg class="ic s28" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg></span>
+    <h2 id="c14a-title">Submit return request?</h2>
+    <p id="c14a-desc">After we approve, a rider picks up the item. Have $2.00 ready for the return fee.</p>
+    <div class="greybox" style="padding:12px 14px;display:flex;flex-direction:column;gap:6px">
+      <div class="kv"><span class="k-key" style="color:#475569">Item</span><span class="k-val">Running Sneakers Air</span></div>
+      <div class="kv"><span class="k-key" style="color:#475569">Reason</span><span class="k-val">Wrong size</span></div>
+      <div class="kv"><span class="k-key" style="color:#475569">Refund</span><span class="k-val num">$59.00</span></div>
+    </div>
+    <div class="dlg-actions">
+      <button class="btn btn-outline" type="button" style="padding:0 10px;font-size:14px">Back</button>
+      <button class="btn btn-primary" type="button" style="padding:0 10px;font-size:14px">Submit request</button>
+    </div>
+  </div>
+</div>
+</div></div></body></html>

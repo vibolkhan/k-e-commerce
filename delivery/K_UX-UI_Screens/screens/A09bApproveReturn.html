@@ -1,0 +1,185 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A-09 · Approve &amp; schedule pickup (modal) · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">A-09 · Approve &amp; schedule pickup (modal) <span class="pg">· Admin · Desktop</span></span><a href="A09aReturnDetail.html">← Prev</a><a href="A09cRefund.html">Next →</a></nav>
+<div class="stage fluid"><div class="frame">
+
+<div class="k overlay-page" style="height:900px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div class="base" aria-hidden="true"><div class="dc-imp">
+
+<div class="k adm" style="min-height:1150px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <aside class="side"><div class="dc-imp">
+
+<nav class="k" aria-label="Admin sections" style="width:100%;min-width:224px;padding:20px 12px 24px;display:flex;flex-direction:column;gap:2px;background:#FFFFFF;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div style="display:flex;align-items:center;gap:10px;padding:0 8px 16px">
+    <div class="appicon" style="width:36px;height:36px;border-radius:10px"><svg viewBox="0 0 48 48" width="24" height="24" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+    <div style="display:flex;flex-direction:column"><span style="font-size:16px;line-height:20px;font-weight:800">K Admin</span><span class="t-xs muted">Phnom Penh store</span></div>
+  </div>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"></rect><rect x="14" y="3" width="7" height="5" rx="1.5"></rect><rect x="14" y="12" width="7" height="9" rx="1.5"></rect><rect x="3" y="16" width="7" height="5" rx="1.5"></rect></svg>Dashboard</a>
+  <p class="t-over" style="padding:14px 12px 6px">Sales</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 7h6M9 11h6M9 15h4"></path></svg>Orders<span class="badge">12</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"></rect><path d="M9 2h6v4H9zM9 11h6M9 15h6"></path></svg>RFQs &amp; quotes<span class="badge blue">3</span></a>
+  <a href="#" class="navlink is-on"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg>Returns<span class="badge blue">3</span></a>
+  <p class="t-over" style="padding:14px 12px 6px">Catalog</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"></path><circle cx="7.5" cy="7.5" r="1.5"></circle></svg>Products</a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5z"></path><path d="m3 8 9 5 9-5M12 13v8"></path></svg>Inventory<span class="badge">5</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg>Content</a>
+  <p class="t-over" style="padding:14px 12px 6px">People</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"></circle><path d="M2 21a7 7 0 0 1 14 0"></path><path d="M16 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"></path></svg>Customers<span class="badge blue">1</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="17.5" r="3.5"></circle><circle cx="18.5" cy="17.5" r="3.5"></circle><path d="M12 17.5V14l-3-3 4-3 2 3h3"></path><circle cx="15" cy="5" r="1"></circle></svg>Riders</a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>Reviews<span class="badge blue">4</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>Support chat<span class="badge">2</span></a>
+  <p class="t-over" style="padding:14px 12px 6px">Insights</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M7 16v-4M12 16V8M17 16v-7"></path></svg>Reports</a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.08a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.08a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Settings</a>
+</nav>
+</div></aside>
+  <div class="adm-main">
+    <div class="dc-imp">
+
+<header class="k" style="width:100%;min-height:72px;display:flex;align-items:center;gap:16px;padding:12px 32px;background:#FFFFFF;border-bottom:1px solid #E2E8F0;flex-wrap:wrap;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <label class="inputbox search" style="flex:1 1 320px;max-width:520px;height:42px">
+    <svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+    <input type="search" placeholder="Search orders, customers, products, RFQs" aria-label="Search the back office">
+    <span class="t-xs" style="color:#475569;border:1px solid #CBD5E1;border-radius:6px;padding:1px 6px;background:#fff">/</span>
+  </label>
+  <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
+    <span class="pill p-amber lg"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Same-day cut-off in 4h 35m</span>
+    <button class="iconbtn" type="button" aria-label="Help"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.5 2.5 0 0 1 4.9.7c0 1.8-2.4 2.3-2.4 3.8M12 17h.01"></path></svg></button>
+    <button class="iconbtn" type="button" aria-label="Notifications, 8 new"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span class="badge">8</span></button>
+    <button type="button" style="display:flex;align-items:center;gap:10px;border:0;background:transparent;padding:4px 8px 4px 4px;border-radius:12px;height:48px" aria-label="Account menu">
+      <span class="avatar" style="width:36px;height:36px;font-size:13px">CL</span>
+      <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.2"><span style="font-size:14px;font-weight:700">Chenda Lim</span><span class="t-xs muted">Operations admin</span></span>
+      <svg class="ic s18 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+    </button>
+  </div>
+</header>
+</div>
+    <main class="adm-body">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#" style="color:#64748B;text-decoration:none">Returns</a><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg><span style="color:#0F172A">RET-0087</span></nav>
+      <div class="pagehead" style="align-items:center">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><h1>Return RET-0087</h1><span class="pill dot p-amber">Requested</span></div>
+          <p class="t-sm muted">Order #K-10231 · Dara Sok · requested 21 Oct, 8:12 PM</p>
+        </div>
+        <div class="toolbar">
+          <button class="btn btn-danger-outline" type="button">Reject return</button>
+          <button class="btn btn-primary" type="button"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg>Approve &amp; schedule pickup</button>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start">
+        <div style="flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:24px">
+          <div class="banner ok" style="align-items:center"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg><span>Requested <b>1 day after delivery</b> — within the 3-day window (closes Sat 24 Oct, 5:30 PM).</span></div>
+
+          <section class="panel" aria-labelledby="a09a-item">
+            <div class="panel-head"><h2 id="a09a-item">Item to return</h2></div>
+            <div class="panel-body" style="display:flex;gap:16px;align-items:center">
+              <div class="pimg tG" style="width:88px;flex:none;border-radius:14px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 17v-4l3-1 2-5 3 1-1 3 4 2 6 1a3 3 0 0 1 3 3 1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"></path><path d="M2 17h20M10 11l1.5-1M12 12l1.5-1"></path></svg></div>
+              <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px"><p class="t-h3">Running Sneakers Air</p><p class="t-sm muted">Size 42 · Qty 1 · SKU RS-AIR-42</p></div>
+              <p class="t-h3 num">$59.00</p>
+            </div>
+          </section>
+
+          <section class="panel" aria-labelledby="a09a-reason">
+            <div class="panel-head"><h2 id="a09a-reason">Reason from customer</h2><span class="pill p-gray">Wrong size</span></div>
+            <div class="panel-body" style="display:flex;flex-direction:column;gap:14px">
+              <blockquote class="greybox" style="margin:0;padding:14px 16px;font-size:15px;line-height:22px">“Too small, fits like a 41.”</blockquote>
+              <div style="display:flex;gap:12px;flex-wrap:wrap" aria-label="Customer photos">
+                <button type="button" class="thumb tG" style="width:120px;height:120px;border:0;padding:0" aria-label="Open photo 1 of 2"><svg class="ic s40" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 17v-4l3-1 2-5 3 1-1 3 4 2 6 1a3 3 0 0 1 3 3 1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"></path><path d="M2 17h20"></path></svg></button>
+                <button type="button" class="thumb tB" style="width:120px;height:120px;border:0;padding:0" aria-label="Open photo 2 of 2"><svg class="ic s40" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg></button>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" aria-labelledby="a09a-money">
+            <div class="panel-head"><h2 id="a09a-money">Payment &amp; refund</h2></div>
+            <dl class="panel-body" style="display:flex;flex-direction:column;gap:12px">
+              <div class="kv"><dt>Original payment</dt><dd>Cash on delivery · $59.00 paid 21 Oct</dd></div>
+              <div class="kv"><dt>Return delivery fee</dt><dd>$2.00 · rider collects in cash at pickup</dd></div>
+              <div class="divider"></div>
+              <div class="kv total"><dt>Refund to customer</dt><dd class="num">$59.00</dd></div>
+              <p class="help">The refund is recorded after the item is picked up and inspected.</p>
+            </dl>
+          </section>
+        </div>
+
+        <div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:16px">
+          <section class="panel" aria-labelledby="a09a-cust">
+            <div class="panel-head"><h2 id="a09a-cust">Customer</h2><a href="#" class="link t-sm">Open</a></div>
+            <div class="panel-body" style="display:flex;gap:12px;align-items:center">
+              <span class="avatar">DS</span>
+              <div style="display:flex;flex-direction:column;gap:2px"><p class="semi">Dara Sok</p><p class="t-sm muted">+855 12 345 678 · 14 orders · 1 return</p></div>
+            </div>
+          </section>
+
+          <section class="panel" aria-labelledby="a09a-order">
+            <div class="panel-head"><h2 id="a09a-order">Original order</h2><a href="#" class="link t-sm">#K-10231</a></div>
+            <dl class="panel-body" style="display:flex;flex-direction:column;gap:10px">
+              <div class="kv"><dt>Delivered</dt><dd>21 Oct, 5:30 PM</dd></div>
+              <div class="kv"><dt>Rider</dt><dd>Vuthy Kim</dd></div>
+              <div class="kv"><dt>Address</dt><dd>Home · Toul Kork</dd></div>
+              <div class="kv"><dt>Status</dt><dd><span class="pill dot p-green">Delivered</span></dd></div>
+            </dl>
+          </section>
+
+          <section class="panel" aria-labelledby="a09a-tl">
+            <div class="panel-head"><h2 id="a09a-tl">Timeline</h2></div>
+            <div class="panel-body">
+              <ol class="tl">
+                <li class="tl-item done"><span class="tl-dot"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true" style="stroke-width:3"><path d="M20 6 9 17l-5-5"></path></svg></span><div><p class="tl-title">Delivered</p><p class="tl-sub">21 Oct, 5:30 PM</p></div></li>
+                <li class="tl-item done"><span class="tl-dot"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true" style="stroke-width:3"><path d="M20 6 9 17l-5-5"></path></svg></span><div><p class="tl-title">Return requested</p><p class="tl-sub">21 Oct, 8:12 PM · 2 photos</p></div></li>
+                <li class="tl-item now"><span class="tl-dot"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true" style="stroke-width:2.6"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><div><p class="tl-title">Review</p><p class="tl-sub">Waiting for staff approval</p></div></li>
+                <li class="tl-item todo"><span class="tl-dot"></span><div><p class="tl-title">Pickup</p></div></li>
+                <li class="tl-item todo"><span class="tl-dot"></span><div><p class="tl-title">Inspection &amp; refund</p></div></li>
+              </ol>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+</div></div>
+  <div class="scrim"></div>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="a09b-title">
+    <div class="modal-head">
+      <h2 id="a09b-title">Approve RET-0087 and schedule pickup</h2>
+      <button class="iconbtn" type="button" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+    </div>
+    <div class="modal-body">
+      <div style="display:flex;gap:12px;align-items:center" class="greybox" role="group" aria-label="Return item">
+        <div class="pimg tG" style="width:48px;flex:none;border-radius:10px;margin:10px 0 10px 12px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 17v-4l3-1 2-5 3 1-1 3 4 2 6 1a3 3 0 0 1 3 3 1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"></path><path d="M2 17h20"></path></svg></div>
+        <div style="display:flex;flex-direction:column"><span class="semi">Running Sneakers Air · size 42</span><span class="t-sm" style="color:#475569">Dara Sok · Home · #24, St. 315, Toul Kork</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:16px">
+        <div class="field">
+          <label class="label" for="a09b-date">Pickup date</label>
+          <select class="input" id="a09b-date"><option>Today, Thu 22 Oct</option><option>Fri 23 Oct</option><option>Sat 24 Oct</option></select>
+        </div>
+        <div class="field">
+          <label class="label" for="a09b-slot">Time slot</label>
+          <select class="input" id="a09b-slot"><option>3–6 PM</option><option>12–3 PM</option><option>6–8 PM</option></select>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label" for="a09b-rider">Rider <span class="opt">(optional)</span></label>
+        <select class="input" id="a09b-rider"><option>Vuthy Kim · on duty · Toul Kork</option><option>Assign later</option></select>
+        <p class="help">Unassigned pickups appear in the orders queue for dispatch.</p>
+      </div>
+      <div class="banner info" style="align-items:center"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle><path d="M6 12h.01M18 12h.01"></path></svg><span>The rider collects the <b>$2.00</b> return fee in cash.</span></div>
+      <div class="field">
+        <span class="label">Message to customer</span>
+        <div class="tint" style="padding:12px 14px;font-size:14px;line-height:20px;color:#0C4A6E">Your return for #K-10231 is approved. A rider will pick it up today, 3–6 PM. Please have the shoes in their box and $2.00 for the return fee.</div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-outline" type="button">Cancel</button>
+      <button class="btn btn-primary" type="button"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Approve return</button>
+    </div>
+  </div>
+</div>
+</div></div></body></html>

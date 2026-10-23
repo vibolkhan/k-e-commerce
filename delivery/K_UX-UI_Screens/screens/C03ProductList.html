@@ -1,0 +1,77 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C-03 · Product list · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">C-03 · Product list <span class="pg">· Shop</span></span><a href="C02Categories.html">← Prev</a><a href="C03aFilterSheet.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone" style="height:1100px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <header class="appbar">
+    <a href="#" class="iconbtn" aria-label="Back"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+    <h1 class="title left">Audio</h1>
+    <a href="#" class="iconbtn" aria-label="Search in Audio"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></a>
+    <a href="#" class="iconbtn" aria-label="Cart, 3 items"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l1 14H5L6 7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg><span class="badge">3</span></a>
+  </header>
+  <div style="flex:none;background:#FFFFFF;border-bottom:1px solid #E2E8F0;padding:4px 0 12px 16px">
+    <div class="chips" role="toolbar" aria-label="Filter and sort">
+      <button class="chip is-on" type="button"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11M18 6h3M3 12h5M12 12h9M3 18h13M20 18h1"></path><circle cx="16" cy="6" r="2"></circle><circle cx="10" cy="12" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg>Filters<span class="count">1</span></button>
+      <button class="chip" type="button">Sort: Popular<svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
+      <button class="chip is-on" type="button" aria-pressed="true"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>In stock</button>
+      <button class="chip" type="button" aria-pressed="false">Under $50</button>
+      <button class="chip" type="button" aria-pressed="false" aria-label="Rated 4 stars and up"><svg class="ic s14 star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>4 &amp; up</button>
+    </div>
+  </div>
+
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;padding:12px 16px 16px;display:flex;flex-direction:column;gap:12px">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+      <p class="t-sm semi" style="color:#334155">24 products</p>
+      <p class="t-xs muted" style="display:flex;align-items:center;gap:6px"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg>All ship same day</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+      <article class="pcard">
+        <div class="pimg tA"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg><button class="heart" type="button" aria-label="Save Wireless Headphones Pro, Black"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button></div>
+        <div class="pc-body"><p class="pc-name">Wireless Headphones Pro · Black</p><p class="pc-rate"><svg class="ic star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>4.6 <span class="muted">(128)</span></p><p class="pc-price">$49.00</p><p class="pc-khr">≈ KHR 200,900</p></div>
+      </article>
+      <article class="pcard">
+        <div class="pimg tF"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"></rect><circle cx="12" cy="14" r="4"></circle><path d="M12 6h.01"></path></svg><button class="heart is-on" type="button" aria-label="Remove Bluetooth Speaker Mini from wishlist"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button></div>
+        <div class="pc-body"><p class="pc-name">Bluetooth Speaker Mini</p><p class="pc-rate"><svg class="ic star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>4.5 <span class="muted">(77)</span></p><p class="pc-price">$29.00</p><p class="pc-khr">≈ KHR 118,900</p></div>
+      </article>
+      <article class="pcard">
+        <div class="pimg tB"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="3"></rect><path d="M9 6l.6-3h4.8l.6 3M9 18l.6 3h4.8l.6-3M12 9.5V12l1.5 1.5"></path></svg><button class="heart" type="button" aria-label="Save Smart Watch Active 2"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button></div>
+        <div class="pc-body"><p class="pc-name">Smart Watch Active 2</p><p class="pc-rate"><svg class="ic star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>4.4 <span class="muted">(86)</span></p><p class="pc-price">$79.00</p><p class="pc-khr">≈ KHR 323,900</p></div>
+      </article>
+      <article class="pcard">
+        <div class="pimg tE"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"></rect><path d="M11 18h2"></path></svg><button class="heart" type="button" aria-label="Save Clear Phone Case"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button></div>
+        <div class="pc-body"><p class="pc-name">Clear Phone Case</p><p class="pc-rate"><svg class="ic star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>4.3 <span class="muted">(52)</span></p><p class="pc-price">$8.00</p><p class="pc-khr">≈ KHR 32,800</p></div>
+      </article>
+      <article class="pcard">
+        <div class="pimg tB"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg><button class="heart" type="button" aria-label="Save Wireless Headphones Pro, White"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button></div>
+        <div class="pc-body"><p class="pc-name">Wireless Headphones Pro · White</p><p class="pc-rate"><svg class="ic star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>4.6 <span class="muted">(128)</span></p><p class="pc-price">$49.00</p><p class="pc-khr">≈ KHR 200,900</p></div>
+      </article>
+      <article class="pcard" aria-label="Wireless Headphones Pro, Sky — out of stock">
+        <div class="pimg tA" style="filter:grayscale(1);opacity:.55"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg></div>
+        <span class="pill p-gray" style="position:absolute;left:8px;top:8px">Out of stock</span>
+        <div class="pc-body"><p class="pc-name" style="color:#475569">Wireless Headphones Pro · Sky</p><p class="pc-rate"><svg class="ic star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>4.6 <span class="muted">(128)</span></p><p class="pc-price" style="color:#475569">$49.00</p><p class="pc-khr">Back soon</p></div>
+      </article>
+    </div>
+  </main>
+
+  <div style="flex:none;height:80px"><div class="dc-imp">
+
+<nav class="k botnav" aria-label="Main navigation" style="width:390px;grid-template-columns:repeat(5,minmax(0,1fr));font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M10 21v-6h4v6"></path></svg><span>Home</span></a>
+  <a href="#" class="navi is-on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg><span>Categories</span></a>
+  
+    <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l1 14H5L6 7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg><span>Cart</span><span class="badge">3</span></a>
+  
+  
+  
+    <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 7h6M9 11h6M9 15h4"></path></svg><span>Orders</span></a>
+  
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span>Account</span></a>
+</nav>
+</div></div>
+</div>
+</div></div></body></html>

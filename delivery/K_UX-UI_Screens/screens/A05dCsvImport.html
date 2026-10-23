@@ -1,0 +1,161 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A-05 · Import CSV (modal) · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">A-05 · Import CSV (modal) <span class="pg">· Admin · Desktop</span></span><a href="A05cProductImages.html">← Prev</a><a href="A05eArchiveConfirm.html">Next →</a></nav>
+<div class="stage fluid"><div class="frame">
+
+<div class="k overlay-page" style="height:900px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div class="base" aria-hidden="true"><div class="dc-imp">
+
+<div class="k adm" style="min-height:1000px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <aside class="side"><div class="dc-imp">
+
+<nav class="k" aria-label="Admin sections" style="width:100%;min-width:224px;padding:20px 12px 24px;display:flex;flex-direction:column;gap:2px;background:#FFFFFF;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div style="display:flex;align-items:center;gap:10px;padding:0 8px 16px">
+    <div class="appicon" style="width:36px;height:36px;border-radius:10px"><svg viewBox="0 0 48 48" width="24" height="24" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+    <div style="display:flex;flex-direction:column"><span style="font-size:16px;line-height:20px;font-weight:800">K Admin</span><span class="t-xs muted">Phnom Penh store</span></div>
+  </div>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"></rect><rect x="14" y="3" width="7" height="5" rx="1.5"></rect><rect x="14" y="12" width="7" height="9" rx="1.5"></rect><rect x="3" y="16" width="7" height="5" rx="1.5"></rect></svg>Dashboard</a>
+  <p class="t-over" style="padding:14px 12px 6px">Sales</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 7h6M9 11h6M9 15h4"></path></svg>Orders<span class="badge">12</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"></rect><path d="M9 2h6v4H9zM9 11h6M9 15h6"></path></svg>RFQs &amp; quotes<span class="badge blue">3</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg>Returns<span class="badge blue">3</span></a>
+  <p class="t-over" style="padding:14px 12px 6px">Catalog</p>
+  <a href="#" class="navlink is-on"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"></path><circle cx="7.5" cy="7.5" r="1.5"></circle></svg>Products</a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5z"></path><path d="m3 8 9 5 9-5M12 13v8"></path></svg>Inventory<span class="badge">5</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-5-5L5 21"></path></svg>Content</a>
+  <p class="t-over" style="padding:14px 12px 6px">People</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"></circle><path d="M2 21a7 7 0 0 1 14 0"></path><path d="M16 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"></path></svg>Customers<span class="badge blue">1</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="17.5" r="3.5"></circle><circle cx="18.5" cy="17.5" r="3.5"></circle><path d="M12 17.5V14l-3-3 4-3 2 3h3"></path><circle cx="15" cy="5" r="1"></circle></svg>Riders</a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>Reviews<span class="badge blue">4</span></a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>Support chat<span class="badge">2</span></a>
+  <p class="t-over" style="padding:14px 12px 6px">Insights</p>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M7 16v-4M12 16V8M17 16v-7"></path></svg>Reports</a>
+  <a href="#" class="navlink "><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.08a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.08a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Settings</a>
+</nav>
+</div></aside>
+  <div class="adm-main">
+    <div class="dc-imp">
+
+<header class="k" style="width:100%;min-height:72px;display:flex;align-items:center;gap:16px;padding:12px 32px;background:#FFFFFF;border-bottom:1px solid #E2E8F0;flex-wrap:wrap;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <label class="inputbox search" style="flex:1 1 320px;max-width:520px;height:42px">
+    <svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+    <input type="search" placeholder="Search orders, customers, products, RFQs" aria-label="Search the back office">
+    <span class="t-xs" style="color:#475569;border:1px solid #CBD5E1;border-radius:6px;padding:1px 6px;background:#fff">/</span>
+  </label>
+  <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
+    <span class="pill p-amber lg"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Same-day cut-off in 4h 35m</span>
+    <button class="iconbtn" type="button" aria-label="Help"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.5 2.5 0 0 1 4.9.7c0 1.8-2.4 2.3-2.4 3.8M12 17h.01"></path></svg></button>
+    <button class="iconbtn" type="button" aria-label="Notifications, 8 new"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span class="badge">8</span></button>
+    <button type="button" style="display:flex;align-items:center;gap:10px;border:0;background:transparent;padding:4px 8px 4px 4px;border-radius:12px;height:48px" aria-label="Account menu">
+      <span class="avatar" style="width:36px;height:36px;font-size:13px">CL</span>
+      <span style="display:flex;flex-direction:column;align-items:flex-start;line-height:1.2"><span style="font-size:14px;font-weight:700">Chenda Lim</span><span class="t-xs muted">Operations admin</span></span>
+      <svg class="ic s18 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+    </button>
+  </div>
+</header>
+</div>
+    <main class="adm-body">
+      <div class="pagehead">
+        <div style="display:flex;flex-direction:column;gap:4px"><p class="crumbs">Catalog</p><h1>Products</h1></div>
+        <div class="toolbar">
+          <button class="btn btn-outline" type="button"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"></path><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"></path></svg>Import CSV</button>
+          <button class="btn btn-outline" type="button"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M4 20h16"></path></svg>Export</button>
+          <a href="#" class="btn btn-primary"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>Add product</a>
+        </div>
+      </div>
+
+      <section class="panel">
+        <div class="tabs" role="tablist" aria-label="Product status" style="background:transparent;padding:0 12px;border-radius:16px 16px 0 0">
+          <button class="tab is-on" type="button" role="tab" aria-selected="true">All<span class="count">248</span></button>
+          <button class="tab" type="button" role="tab" aria-selected="false">Active<span class="count">231</span></button>
+          <button class="tab" type="button" role="tab" aria-selected="false">Draft<span class="count">12</span></button>
+          <button class="tab" type="button" role="tab" aria-selected="false">Archived<span class="count">5</span></button>
+        </div>
+        <div class="toolbar" style="padding:16px 20px;border-bottom:1px solid #E2E8F0">
+          <label class="inputbox search" style="flex:1 1 280px;max-width:380px;height:40px"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><input type="search" placeholder="Search name or SKU" aria-label="Search products"></label>
+          <label class="inputbox" style="width:auto;height:40px;color:#0F172A;gap:8px"><span class="t-xs muted">Category</span><select aria-label="Category" style="border:0;background:transparent;font-weight:600;outline:none"><option>All categories</option></select></label>
+          <label class="inputbox" style="width:auto;height:40px;color:#0F172A;gap:8px"><span class="t-xs muted">Stock</span><select aria-label="Stock level" style="border:0;background:transparent;font-weight:600;outline:none"><option>Any</option></select></label>
+          <button class="chip" type="button" aria-pressed="false"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"></rect><path d="M9 2h6v4H9zM9 11h6M9 15h6"></path></svg>Quote enabled</button>
+          <span class="t-sm muted" style="margin-left:auto">Showing 9 of 248</span>
+        </div>
+        <div class="tablewrap">
+          <table class="table">
+            <thead><tr><th style="width:44px"><input type="checkbox" aria-label="Select all products"></th><th>Product</th><th>Category</th><th class="r">Variants</th><th class="r">Price</th><th>Stock</th><th>Quotes</th><th>Status</th><th>Updated</th><th><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Actions</span></th></tr></thead>
+            <tbody>
+              <tr><td><input type="checkbox" aria-label="Select Wireless Headphones Pro"></td><td><span style="display:flex;align-items:center;gap:12px"><span class="pimg tA" style="width:40px;border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg></span><span><span class="semi">Wireless Headphones Pro</span><span class="sub">HP-PRO · Sonora</span></span></span></td><td>Audio</td><td class="r num">3</td><td class="r num">$49.00</td><td><span class="pill p-amber">52 · 1 out</span></td><td><span class="pill p-violet">Min 5</span></td><td><span class="pill dot p-green">Active</span></td><td>Today<span class="sub">Chenda</span></td><td class="r"><a href="#" class="btn btn-ghost btn-sm">Edit</a></td></tr>
+              <tr><td><input type="checkbox" aria-label="Select Smart Watch Active 2"></td><td><span style="display:flex;align-items:center;gap:12px"><span class="pimg tB" style="width:40px;border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="3"></rect><path d="M9 6l.6-3h4.8l.6 3M9 18l.6 3h4.8l.6-3M12 9.5V12l1.5 1.5"></path></svg></span><span><span class="semi">Smart Watch Active 2</span><span class="sub">SW-ACT2 · Nimbus</span></span></span></td><td>Wearables</td><td class="r num">2</td><td class="r num">$79.00</td><td><span class="pill p-green">64</span></td><td><span class="pill p-gray">Off</span></td><td><span class="pill dot p-green">Active</span></td><td>20 Oct<span class="sub">Visal</span></td><td class="r"><a href="#" class="btn btn-ghost btn-sm">Edit</a></td></tr>
+              <tr><td><input type="checkbox" aria-label="Select Running Sneakers Air"></td><td><span style="display:flex;align-items:center;gap:12px"><span class="pimg tG" style="width:40px;border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 17v-4l3-1 2-5 3 1-1 3 4 2 6 1a3 3 0 0 1 3 3 1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"></path><path d="M2 17h20M10 11l1.5-1M12 12l1.5-1"></path></svg></span><span><span class="semi">Running Sneakers Air</span><span class="sub">SNK-AIR · K Basics</span></span></span></td><td>Fashion</td><td class="r num">6</td><td class="r num">$59.00</td><td><span class="pill p-green">88</span></td><td><span class="pill p-gray">Off</span></td><td><span class="pill dot p-green">Active</span></td><td>18 Oct<span class="sub">Visal</span></td><td class="r"><a href="#" class="btn btn-ghost btn-sm">Edit</a></td></tr>
+              <tr><td><input type="checkbox" aria-label="Select Everyday Backpack 22L"></td><td><span style="display:flex;align-items:center;gap:12px"><span class="pimg tD" style="width:40px;border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"></path><path d="M9 5V3h6v2M8 14h8v4H8z"></path></svg></span><span><span class="semi">Everyday Backpack 22L</span><span class="sub">BAG-22L · K Basics</span></span></span></td><td>Bags</td><td class="r num">3</td><td class="r num">$35.00</td><td><span class="pill p-green">120</span></td><td><span class="pill p-violet">Min 10</span></td><td><span class="pill dot p-green">Active</span></td><td>15 Oct<span class="sub">Visal</span></td><td class="r"><a href="#" class="btn btn-ghost btn-sm">Edit</a></td></tr>
+              <tr><td><input type="checkbox" aria-label="Select Ceramic Coffee Mug Set"></td><td><span style="display:flex;align-items:center;gap:12px"><span class="pimg tE" style="width:40px;border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h12v9a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"></path><path d="M16 9h2a3 3 0 0 1 0 6h-2M8 3v2M12 3v2"></path></svg></span><span><span class="semi">Ceramic Coffee Mug Set (4 pcs)</span><span class="sub">MUG-4 · K Basics</span></span></span></td><td>Kitchen</td><td class="r num">2</td><td class="r num">$18.00</td><td><span class="pill p-green">210</span></td><td><span class="pill p-violet">Min 10</span></td><td><span class="pill dot p-green">Active</span></td><td>12 Oct<span class="sub">Chenda</span></td><td class="r"><a href="#" class="btn btn-ghost btn-sm">Edit</a></td></tr>
+              <tr class="is-sel"><td><input type="checkbox" aria-label="Select LED Desk Lamp" checked></td><td><span style="display:flex;align-items:center;gap:12px"><span class="pimg tF" style="width:40px;border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l3 7H5z"></path><path d="M12 10v8M8 21h8M12 18v3"></path></svg></span><span><span class="semi">LED Desk Lamp</span><span class="sub">LMP-LED · Nimbus</span></span></span></td><td>Home &amp; living</td><td class="r num">1</td><td class="r num">$24.00</td><td><span class="pill p-amber">4 · low</span></td><td><span class="pill p-violet">Min 5</span></td><td><span class="pill dot p-green">Active</span></td><td>9 Oct<span class="sub">Visal</span></td><td class="r"><a href="#" class="btn btn-ghost btn-sm">Edit</a></td></tr>
+              <tr><td><input type="checkbox" aria-label="Select A4 Copy Paper"></td><td><span style="display:flex;align-items:center;gap:12px"><span class="pimg tC" style="width:40px;border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"></path></svg></span><span><span class="semi">A4 Copy Paper 80 gsm (500 sheets)</span><span class="sub">PAP-A4-80 · K Basics</span></span></span></td><td>Office</td><td class="r num">2</td><td class="r num">$5.20</td><td><span class="pill p-green">1,480</span></td><td><span class="pill p-violet">Min 20</span></td><td><span class="pill dot p-green">Active</span></td><td>8 Oct<span class="sub">Dalin</span></td><td class="r"><a href="#" class="btn btn-ghost btn-sm">Edit</a></td></tr>
+              <tr><td><input type="checkbox" aria-label="Select Bluetooth Speaker Mini"></td><td><span style="display:flex;align-items:center;gap:12px"><span class="pimg tF" style="width:40px;border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"></rect><circle cx="12" cy="14" r="4"></circle><path d="M12 6h.01"></path></svg></span><span><span class="semi">Bluetooth Speaker Mini</span><span class="sub">SPK-MINI · Sonora</span></span></span></td><td>Audio</td><td class="r num">2</td><td class="r num">$29.00</td><td><span class="pill p-red">Out of stock</span></td><td><span class="pill p-gray">Off</span></td><td><span class="pill dot p-green">Active</span></td><td>5 Oct<span class="sub">Visal</span></td><td class="r"><a href="#" class="btn btn-ghost btn-sm">Edit</a></td></tr>
+              <tr><td><input type="checkbox" aria-label="Select Rice Cooker 1.8 L"></td><td><span style="display:flex;align-items:center;gap:12px"><span class="pimg tD" style="width:40px;border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v7a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"></path><path d="M2 10h20M8 6a4 4 0 0 1 8 0v4H8zM12 2v2"></path></svg></span><span><span class="semi">Rice Cooker 1.8 L</span><span class="sub">RCK-18 · Nimbus</span></span></span></td><td>Kitchen</td><td class="r num">1</td><td class="r num">$45.00</td><td><span class="pill p-gray">Not stocked</span></td><td><span class="pill p-gray">Off</span></td><td><span class="pill dot p-gray">Draft</span></td><td>Yesterday<span class="sub">Visal</span></td><td class="r"><a href="#" class="btn btn-ghost btn-sm">Edit</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;border-top:1px solid #E2E8F0;flex-wrap:wrap">
+          <span class="t-sm muted">1 selected · <button class="link" type="button">Archive</button> · <button class="link" type="button">Change category</button></span>
+          <span style="display:flex;align-items:center;gap:8px"><span class="t-sm muted">1–9 of 248</span><button class="iconbtn outline" type="button" aria-label="Previous page" disabled><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></button><button class="iconbtn outline" type="button" aria-label="Next page"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></button></span>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+</div></div>
+  <div class="scrim"></div>
+  <div class="modal wide" role="dialog" aria-modal="true" aria-labelledby="a05d-title" style="top:48px">
+    <div class="modal-head">
+      <h2 id="a05d-title">Import products</h2>
+      <button class="iconbtn" type="button" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+    </div>
+    <div class="modal-body" style="gap:18px">
+      <ol aria-label="Import steps" style="display:flex;align-items:center;gap:12px">
+        <li style="display:flex;align-items:center;gap:8px"><span style="width:28px;height:28px;border-radius:50%;background:#0272B6;color:#fff;display:grid;place-items:center"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true" style="stroke-width:3"><path d="M20 6 9 17l-5-5"></path></svg></span><span class="t-sm semi">Upload</span></li>
+        <li aria-hidden="true" style="flex:1;height:2px;background:#0272B6;border-radius:1px"></li>
+        <li style="display:flex;align-items:center;gap:8px" aria-current="step"><span style="width:28px;height:28px;border-radius:50%;border:2px solid #0272B6;color:#0272B6;display:grid;place-items:center;font-size:13px;font-weight:800;box-shadow:0 0 0 4px #E0F2FE">2</span><span class="t-sm strong">Match columns</span></li>
+        <li aria-hidden="true" style="flex:1;height:2px;background:#E2E8F0;border-radius:1px"></li>
+        <li style="display:flex;align-items:center;gap:8px"><span style="width:28px;height:28px;border-radius:50%;border:2px solid #E2E8F0;color:#64748B;display:grid;place-items:center;font-size:13px;font-weight:800">3</span><span class="t-sm muted semi">Review &amp; import</span></li>
+      </ol>
+
+      <div class="filechip">
+        <span class="f-ic" style="background:#ECFDF5;color:#047857">CSV</span>
+        <span style="flex:1;min-width:0;display:flex;flex-direction:column"><span class="semi">products_oct.csv</span><span class="t-xs muted">120 rows · 7 columns · uploaded just now</span></span>
+        <button class="btn btn-ghost btn-sm" type="button">Replace file</button>
+      </div>
+
+      <div class="tablewrap" style="border:1px solid #E2E8F0;border-radius:14px">
+        <table class="table">
+          <thead><tr><th>Column in your file</th><th>Example value</th><th>Import as</th></tr></thead>
+          <tbody>
+            <tr><td class="semi">name</td><td class="muted">Wireless Headphones Pro</td><td><span class="inputbox" style="height:36px;color:#0F172A;max-width:260px"><input value="Name (English)" aria-label="Import name as" readonly><svg class="ic s16 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></span></td></tr>
+            <tr><td class="semi">name_km</td><td class="muted">(empty in 84 rows)</td><td><span class="inputbox" style="height:36px;color:#0F172A;max-width:260px"><input value="Name (Khmer)" aria-label="Import name_km as" readonly><svg class="ic s16 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></span></td></tr>
+            <tr><td class="semi">sku</td><td class="muted">HP-PRO-BLK</td><td><span class="inputbox" style="height:36px;color:#0F172A;max-width:260px"><input value="SKU" aria-label="Import sku as" readonly><svg class="ic s16 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></span></td></tr>
+            <tr><td class="semi">price_usd</td><td class="muted">49.00</td><td><span class="inputbox" style="height:36px;color:#0F172A;max-width:260px"><input value="Price (USD, incl. VAT)" aria-label="Import price_usd as" readonly><svg class="ic s16 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></span></td></tr>
+            <tr><td class="semi">qty</td><td class="muted">12</td><td><span class="inputbox" style="height:36px;color:#0F172A;max-width:260px"><input value="On hand" aria-label="Import qty as" readonly><svg class="ic s16 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></span></td></tr>
+            <tr><td class="semi">category</td><td class="muted">Audio</td><td><span class="inputbox" style="height:36px;color:#0F172A;max-width:260px"><input value="Category" aria-label="Import category as" readonly><svg class="ic s16 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></span></td></tr>
+            <tr><td class="semi">supplier_code</td><td class="muted">SUP-0193</td><td><span class="inputbox" style="height:36px;color:#475569;max-width:260px"><input value="Don’t import" aria-label="Import supplier_code as" readonly><svg class="ic s16 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="banner bad" style="flex-direction:column;gap:6px">
+        <span style="display:flex;gap:10px;align-items:center"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg><b>3 rows have errors and will be skipped</b></span>
+        <ul style="display:flex;flex-direction:column;gap:2px;padding-left:30px;list-style:disc">
+          <li>Row 14: price is empty</li>
+          <li>Row 37: SKU “MUG-4-SND” already exists</li>
+          <li>Row 88: unknown category “Gadgets”</li>
+        </ul>
+      </div>
+    </div>
+    <div class="modal-foot" style="justify-content:space-between">
+      <button class="btn btn-ghost" type="button"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M4 20h16"></path></svg>Error report</button>
+      <span style="display:flex;gap:12px"><button class="btn btn-outline" type="button">Back</button><button class="btn btn-primary" type="button">Continue with 117 rows</button></span>
+    </div>
+  </div>
+</div>
+</div></div></body></html>

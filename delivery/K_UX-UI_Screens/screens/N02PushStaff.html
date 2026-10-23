@@ -1,0 +1,77 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Push · Rider &amp; admin · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">Push · Rider &amp; admin <span class="pg">· Notifications</span></span><a href="N01PushCustomer.html">← Prev</a><a href="N03InAppPatterns.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:1440px;max-width:100%">
+
+<div class="k" style="width:1440px;height:800px;background:#FFFFFF;padding:56px 80px;display:flex;flex-direction:column;gap:28px;overflow:hidden;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <header style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px">
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <p class="sg-title">Notifications</p>
+      <h1 class="sg-h">Push notifications — rider &amp; admin</h1>
+    </div>
+    <p class="sg-sub" style="max-width:460px">Riders and staff use the same K app, so pushes carry the K icon. New jobs also play a sound; admin pushes add a badge on the matching menu.</p>
+  </header>
+
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;align-items:start">
+    <section style="display:flex;flex-direction:column;gap:12px" aria-labelledby="n02-rider">
+      <p class="t-label" id="n02-rider">Rider app</p>
+      <figure style="display:flex;flex-direction:column;gap:6px">
+        <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K · Rider</span><span>now</span></span><span class="p-title">New delivery assigned</span><span class="p-body">#K-10264 · Toul Kork · 1.4 km · paid. Tap to view the job.</span></span></div>
+        <figcaption class="t-xs muted">Opens: R-01 New job alert · plays a sound</figcaption>
+      </figure>
+      <figure style="display:flex;flex-direction:column;gap:6px">
+        <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K · Rider</span><span>9:10 AM</span></span><span class="p-title">Return pickup assigned</span><span class="p-body">Collect sneakers from Dara Sok (#K-10231) today, 3–6 PM. Collect $2.00 fee.</span></span></div>
+        <figcaption class="t-xs muted">Opens: R-02 Return pickup job</figcaption>
+      </figure>
+      <figure style="display:flex;flex-direction:column;gap:6px">
+        <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K · Rider</span><span>12:40 PM</span></span><span class="p-title">Job moved to another rider</span><span class="p-body">#K-10255 was reassigned by Chenda. Your job list is updated.</span></span></div>
+        <figcaption class="t-xs muted">Opens: R-01 Jobs</figcaption>
+      </figure>
+    </section>
+
+    <section style="display:flex;flex-direction:column;gap:12px" aria-labelledby="n02-admin1">
+      <p class="t-label" id="n02-admin1">Admin · sales &amp; payments</p>
+      <figure style="display:flex;flex-direction:column;gap:6px">
+        <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K · Admin</span><span>now</span></span><span class="p-title">New order #K-10264</span><span class="p-body">Dara Sok · $92.00 · KHQR paid · Toul Kork, today.</span></span></div>
+        <figcaption class="t-xs muted">Opens: A-02 Order detail</figcaption>
+      </figure>
+      <figure style="display:flex;flex-direction:column;gap:6px">
+        <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K · Admin</span><span>10:42 AM</span></span><span class="p-title">New quote request</span><span class="p-body">Mekong Desk Co. sent RFQ-0315 · 3 items. Quote due within 1 business day.</span></span></div>
+        <figcaption class="t-xs muted">Opens: A-04 RFQ &amp; quote editor</figcaption>
+      </figure>
+      <figure style="display:flex;flex-direction:column;gap:6px">
+        <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K · Admin</span><span>10:58 AM</span></span><span class="p-title">Bank slip to confirm</span><span class="p-body">Mekong Desk Co. uploaded a slip for #K-10263 · $2,260.50.</span></span></div>
+        <figcaption class="t-xs muted">Opens: A-03 Bank transfer review</figcaption>
+      </figure>
+      <figure style="display:flex;flex-direction:column;gap:6px">
+        <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K · Admin</span><span>Yesterday</span></span><span class="p-title">Return requested</span><span class="p-body">RET-0087 · Running Sneakers Air (#K-10231) · reason: wrong size.</span></span></div>
+        <figcaption class="t-xs muted">Opens: A-09 Return detail</figcaption>
+      </figure>
+    </section>
+
+    <section style="display:flex;flex-direction:column;gap:12px" aria-labelledby="n02-admin2">
+      <p class="t-label" id="n02-admin2">Admin · operations</p>
+      <figure style="display:flex;flex-direction:column;gap:6px">
+        <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K · Admin</span><span>9:48 AM</span></span><span class="p-title">Business verification request</span><span class="p-body">Sovann Trading Co. submitted its licence and VAT TIN.</span></span></div>
+        <figcaption class="t-xs muted">Opens: A-07 Business verification</figcaption>
+      </figure>
+      <figure style="display:flex;flex-direction:column;gap:6px">
+        <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K · Admin</span><span>8:30 AM</span></span><span class="p-title">Low stock</span><span class="p-body">Wireless Headphones Pro (Black) has 12 left. Low-stock level is 15.</span></span></div>
+        <figcaption class="t-xs muted">Opens: A-06 Inventory</figcaption>
+      </figure>
+      <figure style="display:flex;flex-direction:column;gap:6px">
+        <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K · Admin</span><span>1:15 PM</span></span><span class="p-title">Delivery failed</span><span class="p-body">#K-10259 · customer not home · reported by Vuthy Kim.</span></span></div>
+        <figcaption class="t-xs muted">Opens: A-02 Resolve failed delivery</figcaption>
+      </figure>
+      <figure style="display:flex;flex-direction:column;gap:6px">
+        <div class="push"><span class="p-icon"><svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#fff"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="p-main"><span class="p-top"><span>K · Admin</span><span>1:46 PM</span></span><span class="p-title">Chat waiting</span><span class="p-body">Dara Sok has waited 4 min for a reply about #K-10248.</span></span></div>
+        <figcaption class="t-xs muted">Opens: A-11 Support chat</figcaption>
+      </figure>
+    </section>
+  </div>
+</div>
+</div></div></body></html>

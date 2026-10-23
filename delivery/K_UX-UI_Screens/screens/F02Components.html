@@ -1,0 +1,301 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Components · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">Components <span class="pg">· Foundations</span></span><a href="Main.html">← Prev</a><a href="F03Overlays.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:1440px;max-width:100%">
+
+<div class="k" style="width:1440px;height:2200px;background:#F8FAFC;padding:64px 80px;display:flex;flex-direction:column;gap:32px;overflow:hidden;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <header style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px">
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <p class="sg-title">Components</p>
+      <h1 style="font-size:40px;line-height:48px;font-weight:800;letter-spacing:-.025em">Building blocks</h1>
+    </div>
+    <p class="sg-sub" style="max-width:560px">Every screen is assembled from these parts, styled by one shared stylesheet. Change a token once and every artboard follows.</p>
+  </header>
+
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start">
+    <!-- column 1 -->
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <section class="card" style="padding:24px;display:flex;flex-direction:column;gap:14px">
+        <p class="sg-title">Buttons</p>
+        <button class="btn btn-primary btn-block" type="button">Primary · Place order</button>
+        <button class="btn btn-tonal btn-block" type="button">Tonal · Add to quote</button>
+        <button class="btn btn-outline btn-block" type="button">Outline · Change address</button>
+        <div style="display:flex;gap:12px">
+          <button class="btn btn-ghost" type="button" style="flex:1">Ghost</button>
+          <button class="btn btn-danger" type="button" style="flex:1">Delete</button>
+          <button class="btn btn-danger-outline" type="button" style="flex:1">Cancel order</button>
+        </div>
+        <div style="display:flex;gap:12px">
+          <button class="btn btn-primary" type="button" disabled style="flex:1">Disabled</button>
+          <button class="btn btn-primary" type="button" style="flex:1" aria-label="Placing order"><span class="spinner"></span>Placing…</button>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center">
+          <button class="btn btn-primary btn-lg" type="button">Large 56</button>
+          <button class="btn btn-primary" type="button">Medium 48</button>
+          <button class="btn btn-primary btn-sm" type="button">Small 36</button>
+        </div>
+        <p class="help">Small buttons only inside cards and tables; each still has a 44 px tap area.</p>
+      </section>
+
+      <section class="card" style="padding:24px;display:flex;flex-direction:column;gap:14px">
+        <p class="sg-title">Text fields</p>
+        <div class="field">
+          <label class="label" for="f2-phone">Phone number</label>
+          <div class="inputbox is-focus"><span class="prefix">+855</span><input id="f2-phone" value="12 345 678" inputmode="tel"></div>
+        </div>
+        <div class="field">
+          <label class="label" for="f2-name">Full name</label>
+          <input class="input" id="f2-name" value="Dara Sok">
+        </div>
+        <div class="field">
+          <label class="label" for="f2-tin">VAT TIN</label>
+          <input class="input is-error" id="f2-tin" value="K001-10023" aria-invalid="true" aria-describedby="f2-tin-err">
+          <p class="errtext" id="f2-tin-err"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg>Enter the full 14-character TIN, e.g. K001-100234567</p>
+        </div>
+        <div class="field">
+          <label class="label" for="f2-sel">Return reason</label>
+          <div class="inputbox" style="color:#0F172A"><input id="f2-sel" value="Item arrived damaged" readonly><svg class="ic s20 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></div>
+        </div>
+        <div class="field">
+          <label class="label" for="f2-note">Note to rider <span class="opt">(optional)</span></label>
+          <textarea class="textarea" id="f2-note" placeholder="Gate code, landmark, best time to call"></textarea>
+        </div>
+        <label class="inputbox search"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><input type="search" placeholder="Search products" aria-label="Search products"></label>
+        <div class="field">
+          <label class="label" for="f2-dis">Phone (verified)</label>
+          <input class="input" id="f2-dis" value="+855 12 345 678" disabled>
+        </div>
+      </section>
+
+      <section class="card" style="padding:24px;display:flex;flex-direction:column;gap:14px">
+        <p class="sg-title">Code, choices &amp; toggles</p>
+        <div class="otp" role="group" aria-label="6-digit code">
+          <input value="4" aria-label="Digit 1"><input value="8" aria-label="Digit 2"><input value="2" aria-label="Digit 3"><input value="9" aria-label="Digit 4"><input class="is-focus" value="" aria-label="Digit 5"><input value="" aria-label="Digit 6">
+        </div>
+        <label class="opt is-on"><input type="radio" name="f2pay" checked><span class="opt-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"></path></svg></span><span style="display:flex;flex-direction:column"><span class="semi">KHQR</span><span class="t-sm muted">Pay with any Cambodian banking app</span></span></label>
+        <label class="opt"><input type="radio" name="f2pay"><span class="opt-ic"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle><path d="M6 12h.01M18 12h.01"></path></svg></span><span style="display:flex;flex-direction:column"><span class="semi">Cash on delivery</span><span class="t-sm muted">Pay the rider when it arrives</span></span></label>
+        <label class="check"><input type="checkbox" checked>Send me order updates by email</label>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px"><label for="f2-sw" class="semi">Order updates</label><input class="switch" id="f2-sw" type="checkbox" checked></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px"><label for="f2-sw2" class="semi">Review reminders</label><input class="switch" id="f2-sw2" type="checkbox"></div>
+      </section>
+
+      <section class="card" style="padding:24px;display:flex;flex-direction:column;gap:14px">
+        <p class="sg-title">Map &amp; KHQR placeholders</p>
+        <div class="map" style="height:200px;border-radius:16px">
+          <svg viewBox="0 0 390 200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Map: rider on the way to the delivery address">
+            <rect x="262" y="-10" width="150" height="86" rx="18" fill="#DCFCE7"></rect>
+            <path d="M-10 160 C80 150 140 170 220 132 S330 74 400 84" stroke="#CFE6F5" stroke-width="20" fill="none"></path>
+            <g stroke="#FFFFFF" stroke-linecap="round" fill="none"><path d="M-10 40 H400" stroke-width="12"></path><path d="M60 -10 V210" stroke-width="12"></path><path d="M-10 110 H400" stroke-width="8"></path><path d="M200 -10 L250 210" stroke-width="8"></path><path d="M140 -10 V210" stroke-width="5"></path><path d="M320 -10 V210" stroke-width="5"></path></g>
+            <path d="M60 182 V110 H132" stroke="#0272B6" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M132 110 H222 L236 158 H318" stroke="#0272B6" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.1 10"></path>
+            <circle cx="132" cy="110" r="12" fill="#0272B6" stroke="#FFFFFF" stroke-width="4"></circle>
+            <g transform="translate(318 158)"><path d="M0 0c-9-11-14-17-14-24a14 14 0 0 1 28 0c0 7-5 13-14 24z" fill="#0F172A"></path><circle cx="0" cy="-24" r="5" fill="#FFFFFF"></circle></g>
+          </svg>
+        </div>
+        <div style="display:flex;gap:16px;align-items:center">
+          <div class="qr" style="width:150px;flex:none">
+            <svg viewBox="0 0 29 29" shape-rendering="crispEdges" role="img" aria-label="KHQR code">
+              <defs><pattern id="kqr" width="6" height="5" patternUnits="userSpaceOnUse"><path d="M0 0h1v1H0zM2 0h2v1H2zM5 0h1v2H5zM1 1h2v1H1zM0 2h1v2H0zM3 2h1v1H3zM2 3h2v1H2zM5 3h1v1H5zM1 4h1v1H1zM4 4h1v1H4z" fill="#0F172A"></path></pattern></defs>
+              <rect width="29" height="29" fill="url(#kqr)"></rect>
+              <path d="M0 0h8v8H0zM21 0h8v8h-8zM0 21h8v8H0z" fill="#FFFFFF"></path>
+              <path d="M0 0h7v7H0zM1 1v5h5V1zM2 2h3v3H2zM22 0h7v7h-7zM23 1v5h5V1zM24 2h3v3h-3zM0 22h7v7H0zM1 23v5h5v-5zM2 24h3v3H2z" fill="#0F172A" fill-rule="evenodd"></path>
+              <rect x="11" y="11" width="7" height="7" rx="1.2" fill="#FFFFFF"></rect>
+              <rect x="12.4" y="12.6" width="1.2" height="3.8" rx=".6" fill="#0EA5E9"></rect><path d="M16.6 12.6 14.6 14.5 16.6 16.4" fill="none" stroke="#0EA5E9" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <p class="t-sm" style="color:#334155">Maps and QR codes are drawn placeholders. Production uses the map SDK and the real dynamic KHQR from the payment service.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- column 2 -->
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <section class="card" style="padding:24px;display:flex;flex-direction:column;gap:14px">
+        <p class="sg-title">Status pills</p>
+        <p class="t-label">Order</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px"><span class="pill dot p-amber">Pending payment</span><span class="pill dot p-amber">Awaiting bank transfer</span><span class="pill dot p-blue">Confirmed</span><span class="pill dot p-blue">Packing</span><span class="pill dot p-blue">Ready</span><span class="pill dot p-ink">Out for delivery</span><span class="pill dot p-green">Delivered</span><span class="pill dot p-red">Failed delivery</span><span class="pill dot p-gray">Cancelled</span><span class="pill dot p-gray">Returned</span></div>
+        <p class="t-label">Payment</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px"><span class="pill p-green">Paid</span><span class="pill p-amber">Waiting for KHQR</span><span class="pill p-amber">Awaiting confirmation</span><span class="pill p-gray">Cash on delivery</span><span class="pill p-gray">Expired</span><span class="pill p-red">Slip rejected</span><span class="pill p-violet">Refunded</span></div>
+        <p class="t-label">Quote request</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px"><span class="pill dot p-gray">Submitted</span><span class="pill dot p-blue">In review</span><span class="pill dot p-violet">Quote ready</span><span class="pill dot p-amber">Revision requested</span><span class="pill dot p-green">Accepted</span><span class="pill dot p-red">Rejected</span><span class="pill dot p-gray">Expired</span></div>
+        <p class="t-label">Return · business · review · rider job</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px"><span class="pill p-amber">Return requested</span><span class="pill p-blue">Pickup scheduled</span><span class="pill p-green">Refunded</span><span class="pill p-amber">Pending verification</span><span class="pill p-green">Verified business</span><span class="pill p-amber">Pending review</span><span class="pill p-gray">Hidden</span><span class="pill p-blue">Assigned</span><span class="pill p-violet">Return pickup</span></div>
+      </section>
+
+      <section class="card" style="padding:24px;display:flex;flex-direction:column;gap:14px">
+        <p class="sg-title">Product cards</p>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+          <article class="pcard">
+            <div class="pimg tA"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg><button class="heart is-on" type="button" aria-label="Remove from wishlist"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></button></div>
+            <div class="pc-body"><p class="pc-name">Wireless Headphones Pro</p><p class="pc-rate"><svg class="ic star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>4.6 <span class="muted">(128)</span></p><p class="pc-price">$49.00</p><p class="pc-khr">≈ KHR 200,900</p></div>
+          </article>
+          <article class="pcard">
+            <div class="pimg tC"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"></path></svg></div>
+            <div class="pc-body"><p class="pc-name">A4 Copy Paper, 80 gsm (500 sheets)</p><p class="pc-rate"><svg class="ic star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>4.7 <span class="muted">(64)</span></p><p class="pc-quote">Price on quote</p><p class="pc-khr">Min. 20 reams</p></div>
+          </article>
+        </div>
+        <p class="help">Left: retail card with wishlist. Right: business-buyer card — prices are never shown, only “Price on quote” and the minimum quantity.</p>
+        <p class="t-label">Sample catalogue used in mockups</p>
+        <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px">
+          <div style="display:flex;flex-direction:column;gap:4px"><div class="pimg tA" style="border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg></div><span class="t-xs">Headphones $49</span></div>
+          <div style="display:flex;flex-direction:column;gap:4px"><div class="pimg tB" style="border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="3"></rect><path d="M9 6l.6-3h4.8l.6 3M9 18l.6 3h4.8l.6-3M12 9.5V12l1.5 1.5"></path></svg></div><span class="t-xs">Smart watch $79</span></div>
+          <div style="display:flex;flex-direction:column;gap:4px"><div class="pimg tG" style="border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 17v-4l3-1 2-5 3 1-1 3 4 2 6 1a3 3 0 0 1 3 3 1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"></path><path d="M2 17h20M10 11l1.5-1M12 12l1.5-1"></path></svg></div><span class="t-xs">Sneakers $59</span></div>
+          <div style="display:flex;flex-direction:column;gap:4px"><div class="pimg tD" style="border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"></path><path d="M9 5V3h6v2M8 14h8v4H8z"></path></svg></div><span class="t-xs">Backpack $35</span></div>
+          <div style="display:flex;flex-direction:column;gap:4px"><div class="pimg tE" style="border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h12v9a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"></path><path d="M16 9h2a3 3 0 0 1 0 6h-2M8 3v2M12 3v2"></path></svg></div><span class="t-xs">Mug set $18</span></div>
+          <div style="display:flex;flex-direction:column;gap:4px"><div class="pimg tF" style="border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l3 7H5z"></path><path d="M12 10v8M8 21h8M12 18v3"></path></svg></div><span class="t-xs">Desk lamp $24</span></div>
+          <div style="display:flex;flex-direction:column;gap:4px"><div class="pimg tA" style="border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2h4v3l1.5 2.5V20a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2V7.5L10 5z"></path><path d="M8.5 11h7"></path></svg></div><span class="t-xs">Bottle $12.50</span></div>
+          <div style="display:flex;flex-direction:column;gap:4px"><div class="pimg tB" style="border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 6.6 16 4a4 4 0 0 1-8 0L3.6 6.6a1 1 0 0 0-.5 1.2l.9 3.2a1 1 0 0 0 1.2.7L7 11v9a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-9l1.8.7a1 1 0 0 0 1.2-.7l.9-3.2a1 1 0 0 0-.5-1.2z"></path></svg></div><span class="t-xs">T-shirt $9.90</span></div>
+          <div style="display:flex;flex-direction:column;gap:4px"><div class="pimg tF" style="border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3"></rect><circle cx="12" cy="14" r="4"></circle><path d="M12 6h.01"></path></svg></div><span class="t-xs">Speaker $29</span></div>
+          <div style="display:flex;flex-direction:column;gap:4px"><div class="pimg tC" style="border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"></path></svg></div><span class="t-xs">A4 paper $5.20</span></div>
+          <div style="display:flex;flex-direction:column;gap:4px"><div class="pimg tD" style="border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v7a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"></path><path d="M2 10h20M8 6a4 4 0 0 1 8 0v4H8zM12 2v2"></path></svg></div><span class="t-xs">Rice cooker $45</span></div>
+          <div style="display:flex;flex-direction:column;gap:4px"><div class="pimg tE" style="border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"></rect><path d="M11 18h2"></path></svg></div><span class="t-xs">Phone case $8</span></div>
+        </div>
+      </section>
+
+      <section class="card" style="padding:24px;display:flex;flex-direction:column;gap:14px">
+        <p class="sg-title">Cart line, quantity &amp; rating</p>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <div class="pimg tE" style="width:80px;flex:none;border-radius:12px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h12v9a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"></path><path d="M16 9h2a3 3 0 0 1 0 6h-2M8 3v2M12 3v2"></path></svg></div>
+          <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px">
+            <p class="semi clamp2" style="font-size:14px;line-height:19px">Ceramic Coffee Mug Set (4 pcs)</p>
+            <p class="t-xs muted">Colour: Sand</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:4px"><span class="strong">$18.00</span>
+              <div class="qty" role="group" aria-label="Quantity"><button type="button" aria-label="Decrease"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path></svg></button><span class="qv">1</span><button type="button" aria-label="Increase"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></button></div>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <div class="stars" role="img" aria-label="Rated 4 out of 5">
+            <svg class="ic s20 star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg><svg class="ic s20 star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg><svg class="ic s20 star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg><svg class="ic s20 star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg><svg class="ic s20 star-off" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"></path></svg>
+          </div>
+          <span class="t-sm semi">4.0</span><span class="t-sm muted">· 128 reviews</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:10px"><span class="price">$49.00</span><span class="t-sm muted">≈ KHR 200,900</span></div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;justify-content:space-between" class="t-sm"><span class="semi c-ok">Free delivery unlocked</span><span class="muted">$92.00 / $50.00</span></div>
+          <div class="progress ok"><span style="width:100%"></span></div>
+        </div>
+      </section>
+
+      <section class="card" style="padding:24px;display:flex;flex-direction:column;gap:12px">
+        <p class="sg-title">Inline banners</p>
+        <div class="banner info"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><span>Order within <b>4h 35m</b> for delivery today.</span></div>
+        <div class="banner warn"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4M12 17h.01"></path></svg><span>Return delivery ($2.00) is paid by you.</span></div>
+        <div class="banner bad"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m15 9-6 6M9 9l6 6"></path></svg><span>Desk lamp is now out of stock. Remove it to continue.</span></div>
+        <div class="banner ok"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg><span>Payment received. Your order is confirmed.</span></div>
+      </section>
+    </div>
+
+    <!-- column 3 -->
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <section class="card" style="padding:10px;display:flex;flex-direction:column;gap:12px">
+        <p class="sg-title" style="padding:14px 14px 0">App bars</p>
+        <div class="appbar line" style="border:1px solid #E2E8F0;border-radius:14px">
+          <button class="iconbtn" type="button" aria-label="Back"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></button>
+          <h2 class="title">Checkout</h2>
+          <span class="spacer"></span>
+        </div>
+        <div class="appbar" style="border:1px solid #E2E8F0;border-radius:14px">
+          <button class="iconbtn" type="button" aria-label="Back"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></button>
+          <h2 class="title left">Audio</h2>
+          <button class="iconbtn" type="button" aria-label="Search"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></button>
+          <button class="iconbtn" type="button" aria-label="Cart, 3 items"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l1 14H5L6 7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg><span class="badge">3</span></button>
+        </div>
+      </section>
+
+      <section class="card" style="padding:10px;display:flex;flex-direction:column;gap:10px">
+        <p class="sg-title" style="padding:14px 14px 0">Bottom navigation · shared component</p>
+        <p class="t-xs muted" style="padding:0 14px">Customer</p>
+        <div style="border:1px solid #E2E8F0;border-radius:14px;overflow:hidden;height:80px"><div class="dc-imp">
+
+<nav class="k botnav" aria-label="Main navigation" style="width:390px;grid-template-columns:repeat(5,minmax(0,1fr));font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <a href="#" class="navi is-on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M10 21v-6h4v6"></path></svg><span>Home</span></a>
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg><span>Categories</span></a>
+  
+    <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l1 14H5L6 7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg><span>Cart</span><span class="badge">3</span></a>
+  
+  
+  
+    <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 7h6M9 11h6M9 15h4"></path></svg><span>Orders</span></a>
+  
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span>Account</span></a>
+</nav>
+</div></div>
+        <p class="t-xs muted" style="padding:0 14px">Business buyer</p>
+        <div style="border:1px solid #E2E8F0;border-radius:14px;overflow:hidden;height:80px"><div class="dc-imp">
+
+<nav class="k botnav" aria-label="Main navigation" style="width:390px;grid-template-columns:repeat(5,minmax(0,1fr));font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M10 21v-6h4v6"></path></svg><span>Home</span></a>
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg><span>Categories</span></a>
+  
+  
+    <a href="#" class="navi is-on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"></rect><path d="M9 2h6v4H9zM9 11h6M9 15h6"></path></svg><span>Quote list</span><span class="badge blue">4</span></a>
+  
+  
+    <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 7h6M9 11h6M9 15h4"></path></svg><span>Orders &amp; quotes</span></a>
+  
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span>Account</span></a>
+</nav>
+</div></div>
+        <p class="t-xs muted" style="padding:0 14px">Guest</p>
+        <div style="border:1px solid #E2E8F0;border-radius:14px;overflow:hidden;height:80px"><div class="dc-imp">
+
+<nav class="k botnav" aria-label="Main navigation" style="width:390px;grid-template-columns:repeat(4,minmax(0,1fr));font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M10 21v-6h4v6"></path></svg><span>Home</span></a>
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg><span>Categories</span></a>
+  
+    <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l1 14H5L6 7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg><span>Cart</span></a>
+  
+  
+  
+  <a href="#" class="navi is-on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span>Account</span></a>
+</nav>
+</div></div>
+      </section>
+
+      <section class="card" style="padding:0;overflow:hidden">
+        <p class="sg-title" style="padding:24px 24px 12px">List rows</p>
+        <div class="list">
+          <a href="#" class="li"><span class="li-ic"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span><span class="li-main"><span class="li-title">Addresses</span><span class="li-sub">2 saved · Home is default</span></span><svg class="ic s20 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></a>
+          <a href="#" class="li"><span class="li-ic"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg></span><span class="li-main"><span class="li-title">Language</span><span class="li-sub">English</span></span><svg class="ic s20 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></a>
+        </div>
+        <div style="padding:16px 24px 24px">
+          <article class="card" style="padding:14px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="strong">#K-10248</span><span class="pill dot p-ink">Out for delivery</span></div>
+            <p class="t-sm muted">Today, 10:24 AM · 3 items · KHQR paid</p>
+            <div style="display:flex;justify-content:space-between;align-items:center"><span class="strong">$92.00</span><a href="#" class="btn btn-tonal btn-sm">Track order</a></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="card" style="padding:24px;display:flex;flex-direction:column;gap:14px">
+        <p class="sg-title">Status timeline</p>
+        <ol class="tl">
+          <li class="tl-item done"><span class="tl-dot"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true" style="stroke-width:3"><path d="M20 6 9 17l-5-5"></path></svg></span><div><p class="tl-title">Order placed</p><p class="tl-sub">Today, 10:24 AM</p></div></li>
+          <li class="tl-item done"><span class="tl-dot"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true" style="stroke-width:3"><path d="M20 6 9 17l-5-5"></path></svg></span><div><p class="tl-title">Payment confirmed</p><p class="tl-sub">KHQR · 10:26 AM</p></div></li>
+          <li class="tl-item now"><span class="tl-dot"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true" style="stroke-width:2.6"><path d="M21 8 12 3 3 8v8l9 5 9-5z"></path></svg></span><div><p class="tl-title">Packing</p><p class="tl-sub">Your items are being packed</p></div></li>
+          <li class="tl-item todo"><span class="tl-dot"></span><div><p class="tl-title">Out for delivery</p></div></li>
+          <li class="tl-item todo"><span class="tl-dot"></span><div><p class="tl-title">Delivered</p></div></li>
+        </ol>
+      </section>
+
+      <section class="card" style="padding:24px;display:flex;flex-direction:column;gap:12px">
+        <p class="sg-title">Empty state, avatars &amp; loading</p>
+        <div class="empty" style="padding:8px 8px 16px">
+          <div class="art" style="width:96px;height:96px"><svg class="ic s40" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></div>
+          <p class="t-h3">No saved items yet</p>
+          <p class="t-sm muted">Tap the heart on any product to save it here.</p>
+          <a href="#" class="btn btn-tonal btn-sm">Browse products</a>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px"><span class="avatar">DS</span><span class="avatar amber">SC</span><span class="avatar green">VK</span><span class="avatar violet">SP</span><span class="avatar grey">CL</span><span class="badge">3</span><span class="badge blue">12</span><span class="udot"></span></div>
+        <div style="display:flex;gap:12px;align-items:center"><div class="skel" style="width:64px;height:64px;border-radius:12px"></div><div style="flex:1;display:flex;flex-direction:column;gap:8px"><div class="skel" style="height:12px;width:80%"></div><div class="skel" style="height:12px;width:50%"></div></div></div>
+      </section>
+    </div>
+  </div>
+</div>
+</div></div></body></html>

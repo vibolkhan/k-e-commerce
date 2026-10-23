@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>S-04 · Sign in (email, error) · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">S-04 · Sign in (email, error) <span class="pg">· Onboarding &amp; Account</span></span><a href="S04SignIn.html">← Prev</a><a href="S05Otp.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone white" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div class="appbar">
+    <button class="iconbtn" type="button" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+  </div>
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;padding:8px 24px 16px;display:flex;flex-direction:column;gap:20px">
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <h1 class="t-h1" style="font-size:28px;line-height:36px">Sign in to K</h1>
+      <p class="t-body muted">Check out faster, track orders and save favourites.</p>
+    </div>
+    <div class="seg" role="tablist" aria-label="Sign-in method">
+      <button type="button" role="tab" aria-selected="false">Phone</button>
+      <button class="is-on" type="button" role="tab" aria-selected="true">Email</button>
+    </div>
+    <div class="field">
+      <label class="label" for="s04b-email">Email</label>
+      <input class="input" id="s04b-email" type="email" autocomplete="email" value="dara.sok@example.com">
+    </div>
+    <div class="field">
+      <label class="label" for="s04b-pass">Password</label>
+      <div class="inputbox is-error" style="padding-right:4px">
+        <input id="s04b-pass" type="password" autocomplete="current-password" value="sunrise2024" aria-invalid="true" aria-describedby="s04b-err">
+        <button class="iconbtn" type="button" aria-label="Show password" style="width:40px;height:40px;color:#334155"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg></button>
+      </div>
+      <p class="errtext" id="s04b-err"><svg class="ic s16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16h.01"></path></svg>Incorrect email or password. 4 tries left.</p>
+    </div>
+    <div style="display:flex;justify-content:flex-end;margin-top:-8px"><a href="#" class="link t-sm" style="min-height:44px;display:flex;align-items:center">Forgot password?</a></div>
+    <button class="btn btn-primary btn-block btn-lg" type="button">Sign in</button>
+    <p class="t-sm" style="text-align:center;color:#334155">New to K? <a href="#" class="link">Create an account</a></p>
+  </main>
+  <p class="t-xs muted" style="flex:none;padding:0 32px 32px;text-align:center">By continuing you agree to our <a href="#" class="link">Terms</a> and <a href="#" class="link">Privacy Policy</a>.</p>
+</div>
+</div></div></body></html>

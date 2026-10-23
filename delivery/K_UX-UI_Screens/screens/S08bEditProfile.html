@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>S-08 · Edit profile · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">S-08 · Edit profile <span class="pg">· Onboarding &amp; Account</span></span><a href="S08aGuestAccount.html">← Prev</a><a href="S08cLanguageSheet.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone white" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div class="appbar line">
+    <button class="iconbtn" type="button" aria-label="Back"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></button>
+    <h1 class="title">Edit profile</h1>
+    <span class="spacer"></span>
+  </div>
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;padding:24px 24px 16px;display:flex;flex-direction:column;gap:20px">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+      <div style="position:relative">
+        <span class="avatar" style="width:96px;height:96px;font-size:32px">DS</span>
+        <button type="button" aria-label="Change photo" style="position:absolute;right:-6px;bottom:-6px;width:44px;height:44px;border-radius:50%;border:3px solid #FFFFFF;background:#0272B6;color:#FFFFFF;display:grid;place-items:center;padding:0"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"></path><circle cx="12" cy="13.5" r="3.5"></circle></svg></button>
+      </div>
+      <button class="btn btn-ghost btn-sm" type="button" style="height:44px">Change photo</button>
+    </div>
+    <div class="field">
+      <label class="label" for="s08b-name">Full name</label>
+      <input class="input" id="s08b-name" autocomplete="name" value="Dara Sok">
+    </div>
+    <div class="field">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+        <label class="label" for="s08b-phone">Phone number</label>
+        <span class="pill p-green"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true" style="stroke-width:2.6"><path d="M20 6 9 17l-5-5"></path></svg>Verified</span>
+      </div>
+      <div class="inputbox is-disabled" style="padding-right:6px">
+        <input id="s08b-phone" value="+855 12 345 678" readonly aria-describedby="s08b-phone-help">
+        <button class="btn btn-ghost btn-sm" type="button" style="height:40px">Change</button>
+      </div>
+      <p class="help" id="s08b-phone-help">To change your number we’ll text a code to the new one.</p>
+    </div>
+    <div class="field">
+      <label class="label" for="s08b-email">Email</label>
+      <input class="input" id="s08b-email" type="email" autocomplete="email" value="dara.sok@example.com">
+    </div>
+  </main>
+  <div class="actionbar">
+    <button class="btn btn-primary btn-block btn-lg" type="button">Save changes</button>
+  </div>
+</div>
+</div></div></body></html>

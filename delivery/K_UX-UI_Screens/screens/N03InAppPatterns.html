@@ -1,0 +1,124 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>In-app notifications · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">In-app notifications <span class="pg">· Notifications</span></span><a href="N02PushStaff.html">← Prev</a><a href="N03aInAppBanner.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:1440px;max-width:100%">
+
+<div class="k" style="width:1440px;height:1000px;background:#FFFFFF;padding:44px 80px;display:flex;flex-direction:column;gap:24px;overflow:hidden;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <header style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px">
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <p class="sg-title">Notifications</p>
+      <h1 class="sg-h">In-app notifications</h1>
+    </div>
+    <p class="sg-sub" style="max-width:520px">What people see while the app is open: the inbox, toasts, banners and badges — plus which channel each event uses.</p>
+  </header>
+
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;align-items:start">
+    <section style="display:flex;flex-direction:column;gap:10px" aria-labelledby="n03-inbox">
+      <p class="t-label" id="n03-inbox">Inbox rows</p>
+      <div class="card list" style="overflow:hidden">
+        <a href="#" class="li" style="align-items:flex-start;padding:12px 14px">
+          <span class="li-ic" style="background:#E0F2FE;color:#025A91"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg></span>
+          <span class="li-main"><span class="strong" style="font-size:14px">Your order is on the way</span><span class="t-sm" style="color:#334155">#K-10248 · Arriving in about 18 min.</span><span class="t-xs muted">1:42 PM</span></span>
+          <span class="udot" style="margin-top:6px" role="img" aria-label="Unread"></span>
+        </a>
+        <a href="#" class="li" style="align-items:flex-start;padding:12px 14px">
+          <span class="li-ic"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5z"></path><path d="m3 8 9 5 9-5M12 13v8"></path></svg></span>
+          <span class="li-main"><span class="semi" style="font-size:14px">Order delivered</span><span class="t-sm muted">#K-10231 was received by Dara Sok.</span><span class="t-xs muted">21 Oct</span></span>
+        </a>
+      </div>
+      <p class="t-xs muted">Unread: bold title and blue dot. Read: regular title. Tapping opens the related screen and marks it read.</p>
+      <div class="card" style="display:flex;align-items:center;gap:14px;padding:14px 16px">
+        <span style="width:48px;height:48px;border-radius:50%;background:#F0F9FF;color:#0EA5E9;display:grid;place-items:center;flex:none"><svg class="ic s24" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg></span>
+        <span style="display:flex;flex-direction:column;gap:2px"><span class="semi">You’re all caught up</span><span class="t-sm muted">Empty inbox: we’ll let you know when something changes.</span></span>
+      </div>
+    </section>
+
+    <section style="display:flex;flex-direction:column;gap:10px" aria-labelledby="n03-toasts">
+      <p class="t-label" id="n03-toasts">Toasts · bottom of screen, 4 seconds</p>
+      <div class="toast" role="status" style="position:relative;left:auto;right:auto;bottom:auto"><svg class="ic t-ok" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg><span style="flex:1">Added to cart</span><a href="#" class="act">View cart</a></div>
+      <div class="toast" role="status" style="position:relative;left:auto;right:auto;bottom:auto"><svg class="ic t-info" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2M6 6l1 15h10l1-15"></path></svg><span style="flex:1">Removed from wishlist</span><button class="act" type="button">Undo</button></div>
+      <div class="toast" role="alert" style="position:relative;left:auto;right:auto;bottom:auto"><svg class="ic t-bad" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m15 9-6 6M9 9l6 6"></path></svg><span style="flex:1">Message not sent. Check your connection.</span><button class="act" type="button">Retry</button></div>
+      <p class="t-xs muted">One toast at a time. An action is optional and is never the only way to do something.</p>
+    </section>
+
+    <section style="display:flex;flex-direction:column;gap:10px" aria-labelledby="n03-banners">
+      <p class="t-label" id="n03-banners">Banners · while the app is open</p>
+      <div class="push" role="status" style="border-radius:16px;box-shadow:0 8px 24px rgba(15,23,42,.10);align-items:center">
+        <span class="p-icon" style="background:#E0F2FE;color:#025A91;border-radius:12px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg></span>
+        <span class="p-main"><span class="p-title">Out for delivery</span><span class="p-body">#K-10248 · Vuthy is on the way</span></span>
+        <a href="#" class="btn btn-tonal btn-sm">Track</a>
+      </div>
+      <div class="banner warn"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg><span>Return window for <b>#K-10231</b> closes in 2 days.</span></div>
+      <div class="banner info"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><span>Order within <b>4h 35m</b> for delivery today.</span></div>
+      <p class="t-xs muted">Top banners slide in for 5 seconds and can be swiped away. Inline banners stay until the situation changes.</p>
+    </section>
+  </div>
+
+  <div style="display:grid;grid-template-columns:392px minmax(0,1fr);gap:40px;align-items:start">
+    <section style="display:flex;flex-direction:column;gap:10px" aria-labelledby="n03-badges">
+      <p class="t-label" id="n03-badges">Badges on navigation</p>
+      <p class="t-xs muted">Customer · red badge counts items in the cart</p>
+      <div style="width:390px;height:80px;border-radius:14px;overflow:hidden;box-shadow:0 0 0 1px #E2E8F0"><div class="dc-imp">
+
+<nav class="k botnav" aria-label="Main navigation" style="width:390px;grid-template-columns:repeat(5,minmax(0,1fr));font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <a href="#" class="navi is-on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M10 21v-6h4v6"></path></svg><span>Home</span></a>
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg><span>Categories</span></a>
+  
+    <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l1 14H5L6 7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg><span>Cart</span><span class="badge">3</span></a>
+  
+  
+  
+    <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 7h6M9 11h6M9 15h4"></path></svg><span>Orders</span></a>
+  
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span>Account</span></a>
+</nav>
+</div></div>
+      <p class="t-xs muted" style="margin-top:6px">Business buyer · blue badge counts items in the quote list</p>
+      <div style="width:390px;height:80px;border-radius:14px;overflow:hidden;box-shadow:0 0 0 1px #E2E8F0"><div class="dc-imp">
+
+<nav class="k botnav" aria-label="Main navigation" style="width:390px;grid-template-columns:repeat(5,minmax(0,1fr));font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <a href="#" class="navi is-on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M10 21v-6h4v6"></path></svg><span>Home</span></a>
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg><span>Categories</span></a>
+  
+  
+    <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"></rect><path d="M9 2h6v4H9zM9 11h6M9 15h6"></path></svg><span>Quote list</span><span class="badge blue">4</span></a>
+  
+  
+    <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 7h6M9 11h6M9 15h4"></path></svg><span>Orders &amp; quotes</span></a>
+  
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span>Account</span></a>
+</nav>
+</div></div>
+      <p class="t-xs muted" style="margin-top:6px">The bell in each header shows a red dot for unread inbox items.</p>
+    </section>
+
+    <section style="display:flex;flex-direction:column;gap:10px" aria-labelledby="n03-matrix">
+      <p class="t-label" id="n03-matrix">Channels by event</p>
+      <div class="card" style="overflow:hidden">
+        <table style="width:100%;border-collapse:collapse;font-size:13px;line-height:18px">
+          <thead>
+            <tr style="background:#F8FAFC"><th style="text-align:left;padding:9px 14px;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:#475569;border-bottom:1px solid #E2E8F0">Event</th><th style="text-align:left;padding:9px 14px;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:#475569;border-bottom:1px solid #E2E8F0">Recipient</th><th style="text-align:left;padding:9px 14px;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:#475569;border-bottom:1px solid #E2E8F0">Channel</th><th style="text-align:left;padding:9px 14px;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:#475569;border-bottom:1px solid #E2E8F0">Opens</th></tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">Order confirmed · payment received</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">Customer</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0"><span style="display:flex;gap:6px"><span class="pill p-blue">Push</span><span class="pill p-gray">Email</span></span></td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">C-12</td></tr>
+            <tr><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">KHQR payment expired</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">Customer</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0"><span class="pill p-blue">Push</span></td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">C-09 · C-12</td></tr>
+            <tr><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">Packing · out for delivery · delivered</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">Customer</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0"><span class="pill p-blue">Push</span></td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">C-12 · live map</td></tr>
+            <tr><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">Delivery failed</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">Customer · Admin</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0"><span class="pill p-blue">Push</span></td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">C-12 · A-02</td></tr>
+            <tr><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">Review reminder · return updates</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">Customer</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0"><span class="pill p-blue">Push</span></td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">C-15 · C-14</td></tr>
+            <tr><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">Business account approved · rejected</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">Business buyer</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0"><span style="display:flex;gap:6px"><span class="pill p-blue">Push</span><span class="pill p-gray">Email</span></span></td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">B-01</td></tr>
+            <tr><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">Quote ready · revised · expiring in 24 h</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">Business buyer</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0"><span style="display:flex;gap:6px"><span class="pill p-blue">Push</span><span class="pill p-gray">Email</span></span></td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">B-05</td></tr>
+            <tr><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">Bank slip confirmed · rejected</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">Business buyer</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0"><span class="pill p-blue">Push</span></td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">C-12 · B-06</td></tr>
+            <tr><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">New chat message</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">Customer · Agent</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0"><span class="pill p-blue">Push when app closed</span></td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">C-17 · A-11</td></tr>
+            <tr><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">New job assigned</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">Rider</td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0"><span style="display:flex;gap:6px"><span class="pill p-blue">Push</span><span class="pill p-violet">Sound</span></span></td><td style="padding:6px 14px;border-bottom:1px solid #E2E8F0">R-02</td></tr>
+            <tr><td style="padding:6px 14px">New orders, RFQs, returns, slips, low stock</td><td style="padding:6px 14px">Admin (by permission)</td><td style="padding:6px 14px"><span style="display:flex;gap:6px"><span class="pill p-blue">Push</span><span class="pill p-amber">Badge</span></span></td><td style="padding:6px 14px">A-01 lists</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</div>
+</div></div></body></html>

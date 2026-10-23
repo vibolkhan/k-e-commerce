@@ -1,0 +1,87 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C-11 · Orders · Active · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">C-11 · Orders · Active <span class="pg">· Orders &amp; Support</span></span><a href="C10bOrderSuccessCod.html">← Prev</a><a href="C11aOrdersCompleted.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <header class="appbar">
+    <h1 class="title left">My orders</h1>
+    <button class="iconbtn" type="button" aria-label="Search orders"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></button>
+  </header>
+  <div class="tabs fill" role="tablist" aria-label="Order status" style="flex:none">
+    <button class="tab is-on" type="button" role="tab" aria-selected="true">Active<span class="count">2</span></button>
+    <button class="tab" type="button" role="tab" aria-selected="false">Completed</button>
+    <button class="tab" type="button" role="tab" aria-selected="false">Cancelled</button>
+  </div>
+
+  <main role="tabpanel" aria-label="Active orders" style="flex:1 1 auto;min-height:0;overflow:hidden;padding:16px;display:flex;flex-direction:column;gap:12px">
+    <article class="card" style="padding:16px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="display:flex;flex-direction:column;gap:2px"><p class="strong">#K-10248</p><p class="t-xs muted">Today, 10:24 AM · KHQR paid</p></div>
+        <span class="pill dot p-ink">Out for delivery</span>
+      </div>
+      <div class="tint" style="padding:12px 14px;display:flex;align-items:center;gap:12px;border-radius:14px">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="color:#025A91"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg>
+        <div style="display:flex;flex-direction:column;gap:1px"><p class="strong" style="font-size:15px">Arriving in ~18 min</p><p class="t-sm" style="color:#475569">Vuthy is on the way to Toul Kork</p></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <div class="pimg tA" style="width:48px;border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg></div>
+        <div class="pimg tE" style="width:48px;border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h12v9a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"></path><path d="M16 9h2a3 3 0 0 1 0 6h-2M8 3v2M12 3v2"></path></svg></div>
+        <div class="pimg tA" style="width:48px;border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2h4v3l1.5 2.5V20a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2V7.5L10 5z"></path><path d="M8.5 11h7"></path></svg></div>
+        <span class="t-sm muted" style="margin-left:4px">3 items · 4 units</span>
+      </div>
+      <div class="divider"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <div style="display:flex;flex-direction:column"><span class="t-xs muted">Total</span><span class="strong" style="font-size:17px">$92.00</span></div>
+        <a href="#" class="btn btn-tonal" style="height:44px"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>Track</a>
+      </div>
+    </article>
+
+    <article class="card" style="padding:16px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+        <div style="display:flex;flex-direction:column;gap:2px"><p class="strong">#K-10250</p><p class="t-xs muted">Today, 9:10 AM · Cash on delivery</p></div>
+        <span class="pill dot p-blue">Confirmed</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px" class="t-sm">
+        <svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true" style="color:#0272B6"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+        <span><span class="semi">Today by 8:00 PM</span><span class="muted"> · Anytime slot</span></span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="pimg tD" style="width:48px;border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z"></path><path d="M9 5V3h6v2M8 14h8v4H8z"></path></svg></div>
+        <div style="display:flex;flex-direction:column;gap:1px;min-width:0"><span class="semi ellipsis" style="font-size:14px">Everyday Backpack 22L</span><span class="t-xs muted">1 item</span></div>
+      </div>
+      <div class="divider"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <div style="display:flex;flex-direction:column"><span class="t-xs muted">Pay the rider in cash</span><span class="strong" style="font-size:17px">$36.50</span></div>
+        <a href="#" class="btn btn-outline" style="height:44px">Details</a>
+      </div>
+    </article>
+
+    <a href="#" class="card" style="padding:14px 16px;display:flex;align-items:center;gap:12px;text-decoration:none;color:#0F172A">
+      <span class="li-ic" style="width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:#F1F5F9;color:#334155;flex:none"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14v-2a9 9 0 0 1 18 0v2"></path><path d="M21 16a2 2 0 0 1-2 2h-1v-6h3zM3 16a2 2 0 0 0 2 2h1v-6H3z"></path></svg></span>
+      <span style="flex:1;min-width:0;display:flex;flex-direction:column"><span class="semi">Need help with an order?</span><span class="t-sm muted">Chat with K Support</span></span>
+      <svg class="ic s20 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+    </a>
+  </main>
+
+  <div style="flex:none;height:80px"><div class="dc-imp">
+
+<nav class="k botnav" aria-label="Main navigation" style="width:390px;grid-template-columns:repeat(5,minmax(0,1fr));font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M10 21v-6h4v6"></path></svg><span>Home</span></a>
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg><span>Categories</span></a>
+  
+    <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l1 14H5L6 7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg><span>Cart</span><span class="badge">3</span></a>
+  
+  
+  
+    <a href="#" class="navi is-on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 7h6M9 11h6M9 15h4"></path></svg><span>Orders</span></a>
+  
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span>Account</span></a>
+</nav>
+</div></div>
+</div>
+</div></div></body></html>

@@ -1,0 +1,76 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>B-05 · Cancel request (confirm) · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">B-05 · Cancel request (confirm) <span class="pg">· Business Buyer (B2B)</span></span><a href="B05RfqInReview.html">← Prev</a><a href="B05bQuoteDetail.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden"><div class="dc-imp">
+
+<div class="k phone" style="height:1000px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <header class="appbar line">
+    <a href="#" class="iconbtn" aria-label="Back"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+    <h1 class="title">RFQ-0315</h1>
+    <a href="#" class="iconbtn" aria-label="Messages with sales"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg></a>
+  </header>
+
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;padding:16px;display:flex;flex-direction:column;gap:14px">
+    <section class="card" style="padding:16px;display:flex;flex-direction:column;gap:14px" aria-labelledby="b05-status">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+        <h2 id="b05-status" class="t-h3">Quote request</h2>
+        <span class="pill dot p-blue lg">In review</span>
+      </div>
+      <ol class="tl">
+        <li class="tl-item done"><span class="tl-dot"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true" style="stroke-width:3"><path d="M20 6 9 17l-5-5"></path></svg></span><div><p class="tl-title">Submitted</p><p class="tl-sub">Today, 10:42 AM</p></div></li>
+        <li class="tl-item now"><span class="tl-dot"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true" style="stroke-width:2.6"><rect x="5" y="4" width="14" height="18" rx="2"></rect><path d="M9 2h6v4H9z"></path></svg></span><div><p class="tl-title">In review</p><p class="tl-sub">Sales is preparing your quote</p></div></li>
+        <li class="tl-item todo"><span class="tl-dot"></span><div><p class="tl-title">Quote ready</p><p class="tl-sub">You’ll get a notification</p></div></li>
+      </ol>
+    </section>
+
+    <section class="card" style="padding:16px;display:flex;flex-direction:column;gap:12px" aria-labelledby="b05-items">
+      <h2 id="b05-items" class="t-label">Requested items · 265 units</h2>
+      <ul style="display:flex;flex-direction:column;gap:10px">
+        <li style="display:flex;align-items:center;gap:12px"><span class="pimg tC" style="width:44px;border-radius:10px;flex:none"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"></path></svg></span><span style="flex:1;min-width:0;display:flex;flex-direction:column"><span class="t-sm semi">A4 Copy Paper, 80 gsm</span><span class="t-xs muted">500 sheets per ream</span></span><span class="t-sm strong num">200 reams</span></li>
+        <li style="display:flex;align-items:center;gap:12px"><span class="pimg tE" style="width:44px;border-radius:10px;flex:none"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h12v9a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"></path><path d="M16 9h2a3 3 0 0 1 0 6h-2M8 3v2M12 3v2"></path></svg></span><span style="flex:1;min-width:0;display:flex;flex-direction:column"><span class="t-sm semi">Ceramic Coffee Mug Set</span><span class="t-xs muted">Sand · 4 pcs per set</span></span><span class="t-sm strong num">40 sets</span></li>
+        <li style="display:flex;align-items:center;gap:12px"><span class="pimg tF" style="width:44px;border-radius:10px;flex:none"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l3 7H5z"></path><path d="M12 10v8M8 21h8M12 18v3"></path></svg></span><span style="flex:1;min-width:0;display:flex;flex-direction:column"><span class="t-sm semi">LED Desk Lamp</span><span class="t-xs muted">White</span></span><span class="t-sm strong num">25 lamps</span></li>
+      </ul>
+    </section>
+
+    <section class="card" style="padding:16px;display:flex;flex-direction:column;gap:10px" aria-label="Request details">
+      <dl style="display:flex;flex-direction:column;gap:8px">
+        <div class="kv"><dt>Required by</dt><dd>Fri 30 Oct 2026</dd></div>
+        <div class="kv"><dt>Deliver to</dt><dd>Mekong Desk · Daun Penh</dd></div>
+      </dl>
+      <div class="divider"></div>
+      <p class="t-xs muted">Notes</p>
+      <p class="t-sm" style="color:#334155">Deliver to 3rd floor, invoice under company name.</p>
+      <div class="filechip" style="padding:10px">
+        <span class="f-ic">PDF</span>
+        <span style="flex:1;min-width:0;display:flex;flex-direction:column"><span class="semi ellipsis" style="font-size:14px">office_order_spec.pdf</span><span class="t-xs muted">340 KB</span></span>
+        <a href="#" class="iconbtn" aria-label="Open office_order_spec.pdf"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M4 20h16"></path></svg></a>
+      </div>
+    </section>
+
+    <div class="card" style="overflow:hidden">
+      <a href="#" class="li"><span class="li-ic"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg></span><span class="li-main"><span class="li-title">Messages with sales</span><span class="li-sub">Ask about stock, delivery or pricing</span></span><svg class="ic s20 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></a>
+    </div>
+
+    <button class="btn btn-danger-outline btn-block" type="button">Cancel request</button>
+  </main>
+</div>
+</div></div>
+  <div class="scrim"></div>
+  <div class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="b05a-title" aria-describedby="b05a-desc">
+    <span class="dlg-icon bad"><svg class="ic s28" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m15 9-6 6M9 9l6 6"></path></svg></span>
+    <h2 id="b05a-title">Cancel quote request?</h2>
+    <p id="b05a-desc">Sales will stop working on RFQ-0315. You can send a new request any time.</p>
+    <div class="dlg-actions">
+      <button class="btn btn-outline" type="button">Keep request</button>
+      <button class="btn btn-danger" type="button">Cancel request</button>
+    </div>
+  </div>
+</div>
+</div></div></body></html>

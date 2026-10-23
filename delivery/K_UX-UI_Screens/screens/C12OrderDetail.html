@@ -1,0 +1,71 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C-12 · Order detail (confirmed) · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">C-12 · Order detail (confirmed) <span class="pg">· Orders &amp; Support</span></span><a href="C11bOrdersCancelled.html">← Prev</a><a href="C12aOrderTracking.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone" style="height:1300px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <header class="appbar line">
+    <a href="#" class="iconbtn" aria-label="Back"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+    <h1 class="title">Order #K-10248</h1>
+    <a href="#" class="iconbtn" aria-label="Help with this order"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9a2.5 2.5 0 0 1 4.9.7c0 1.8-2.4 2.3-2.4 3.8M12 17h.01"></path></svg></a>
+  </header>
+
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;padding:16px;display:flex;flex-direction:column;gap:12px">
+    <section class="card" style="padding:16px;display:flex;flex-direction:column;gap:6px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="pill dot p-blue lg">Confirmed</span><span class="t-xs muted">Placed today, 10:24 AM</span></div>
+      <h2 class="t-h2" style="margin-top:6px">Arriving today by 8:00 PM</h2>
+      <p class="t-sm muted">We’ll notify you when your order is packed and on its way.</p>
+    </section>
+
+    <section class="card" style="padding:16px;display:flex;flex-direction:column;gap:14px" aria-labelledby="c12-status">
+      <h2 id="c12-status" class="t-h3">Order status</h2>
+      <ol class="tl">
+        <li class="tl-item done"><span class="tl-dot"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true" style="stroke-width:3"><path d="M20 6 9 17l-5-5"></path></svg></span><div><p class="tl-title">Order placed</p><p class="tl-sub">Today, 10:24 AM</p></div></li>
+        <li class="tl-item now"><span class="tl-dot"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true" style="stroke-width:3"><path d="M20 6 9 17l-5-5"></path></svg></span><div><p class="tl-title">Confirmed · paid with KHQR</p><p class="tl-sub">Today, 10:26 AM</p></div></li>
+        <li class="tl-item todo"><span class="tl-dot"></span><div><p class="tl-title">Packing</p></div></li>
+        <li class="tl-item todo"><span class="tl-dot"></span><div><p class="tl-title">Out for delivery</p></div></li>
+        <li class="tl-item todo"><span class="tl-dot"></span><div><p class="tl-title">Delivered</p><p class="tl-sub">By 8:00 PM</p></div></li>
+      </ol>
+    </section>
+
+    <section class="card" style="padding:16px;display:flex;flex-direction:column;gap:12px" aria-labelledby="c12-del">
+      <h2 id="c12-del" class="t-h3">Delivery</h2>
+      <div style="display:flex;gap:12px;align-items:flex-start"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true" style="color:#0272B6;margin-top:1px"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg><div style="display:flex;flex-direction:column;gap:2px"><p class="semi" style="font-size:14px">Home · Dara Sok</p><p class="t-sm muted">#24, St. 315, Boeung Kak 1, Toul Kork, Phnom Penh · +855 12 345 678</p></div></div>
+      <div style="display:flex;gap:12px;align-items:flex-start"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true" style="color:#0272B6;margin-top:1px"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><div style="display:flex;flex-direction:column;gap:2px"><p class="semi" style="font-size:14px">Today, Anytime by 8 PM</p><p class="t-sm muted">Same-day — ordered before 3:00 PM</p></div></div>
+      <div class="greybox" style="padding:10px 12px" ><p class="t-sm" style="color:#475569"><span class="semi" style="color:#0F172A">Note to rider:</span> Blue gate, please call when outside.</p></div>
+    </section>
+
+    <section class="card" style="padding:16px;display:flex;flex-direction:column;gap:12px" aria-labelledby="c12-items">
+      <h2 id="c12-items" class="t-h3">Items (3)</h2>
+      <div style="display:flex;align-items:center;gap:12px"><div class="pimg tA" style="width:52px;flex:none;border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg></div><div style="flex:1;min-width:0;display:flex;flex-direction:column"><span class="semi ellipsis" style="font-size:14px">Wireless Headphones Pro</span><span class="t-xs muted">Black · Qty 1</span></div><span class="semi num">$49.00</span></div>
+      <div style="display:flex;align-items:center;gap:12px"><div class="pimg tE" style="width:52px;flex:none;border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h12v9a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"></path><path d="M16 9h2a3 3 0 0 1 0 6h-2M8 3v2M12 3v2"></path></svg></div><div style="flex:1;min-width:0;display:flex;flex-direction:column"><span class="semi ellipsis" style="font-size:14px">Ceramic Coffee Mug Set (4 pcs)</span><span class="t-xs muted">Sand · Qty 1</span></div><span class="semi num">$18.00</span></div>
+      <div style="display:flex;align-items:center;gap:12px"><div class="pimg tA" style="width:52px;flex:none;border-radius:10px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2h4v3l1.5 2.5V20a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2V7.5L10 5z"></path><path d="M8.5 11h7"></path></svg></div><div style="flex:1;min-width:0;display:flex;flex-direction:column"><span class="semi ellipsis" style="font-size:14px">Stainless Water Bottle 750 ml</span><span class="t-xs muted">Qty 2 · $12.50 each</span></div><span class="semi num">$25.00</span></div>
+    </section>
+
+    <section class="card" style="padding:16px;display:flex;flex-direction:column;gap:10px" aria-labelledby="c12-pay">
+      <div style="display:flex;justify-content:space-between;align-items:center"><h2 id="c12-pay" class="t-h3">Payment</h2><span class="pill p-green">Paid</span></div>
+      <div style="display:flex;align-items:center;gap:12px"><span style="width:40px;height:40px;border-radius:12px;background:#E0F2FE;color:#025A91;display:grid;place-items:center;flex:none"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"></path></svg></span><div style="display:flex;flex-direction:column"><span class="semi" style="font-size:14px">KHQR</span><span class="t-xs muted">Ref. KQ-7F3A92 · today, 10:26 AM</span></div></div>
+      <div class="divider"></div>
+      <dl style="display:flex;flex-direction:column;gap:8px">
+        <div class="kv"><dt>Subtotal</dt><dd class="num">$92.00</dd></div>
+        <div class="kv"><dt>Delivery</dt><dd class="c-ok">Free</dd></div>
+        <div class="kv total"><dt>Total</dt><dd class="num">$92.00</dd></div>
+      </dl>
+      <p class="t-xs muted">VAT included: $8.36 · ≈ KHR 377,200</p>
+    </section>
+
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+      <a href="#" class="btn btn-outline"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h5"></path></svg>Invoice</a>
+      <a href="#" class="btn btn-outline"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>Chat with us</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <button class="btn btn-danger-outline btn-block" type="button">Cancel order</button>
+      <p class="help" style="text-align:center">You can cancel until we start packing.</p>
+    </div>
+  </main>
+</div>
+</div></div></body></html>

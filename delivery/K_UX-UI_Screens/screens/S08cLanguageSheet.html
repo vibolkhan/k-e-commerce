@@ -1,0 +1,101 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>S-08 · Language (sheet) · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">S-08 · Language (sheet) <span class="pg">· Onboarding &amp; Account</span></span><a href="S08bEditProfile.html">← Prev</a><a href="S08dNotifSettings.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden"><div class="dc-imp">
+
+<div class="k phone" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <header style="flex:none;background:#FFFFFF;padding:8px 16px 14px;display:flex;flex-direction:column;gap:12px;border-bottom:1px solid #E2E8F0">
+    <div style="display:flex;align-items:center;justify-content:space-between;min-height:44px">
+      <h1 style="font-size:22px;line-height:28px;font-weight:800">Account</h1>
+      <a href="#" class="iconbtn soft" aria-label="Notifications, 3 unread"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg><span class="dot"></span></a>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px">
+      <span class="avatar" style="width:52px;height:52px;font-size:18px">DS</span>
+      <div style="flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:2px">
+        <p class="t-h3">Dara Sok</p>
+        <p class="t-sm muted">+855 12 345 678</p>
+      </div>
+      <a href="#" class="btn btn-outline btn-sm" style="height:44px">Edit</a>
+    </div>
+  </header>
+
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;padding:14px 16px;display:flex;flex-direction:column;gap:12px">
+    <a href="#" class="tint" style="display:flex;align-items:center;gap:14px;padding:12px 14px;text-decoration:none;color:#0F172A">
+      <span style="width:40px;height:40px;border-radius:12px;background:#FFFFFF;display:grid;place-items:center;color:#025A91;flex:none"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M2 13h20"></path></svg></span>
+      <span style="flex:1 1 auto;min-width:0;display:flex;flex-direction:column"><span class="strong" style="font-size:14px">Buying for a business?</span><span class="t-sm" style="color:#475569">Become a business buyer</span></span>
+      <svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true" style="color:#025A91"><path d="m9 18 6-6-6-6"></path></svg>
+    </a>
+
+    <section style="display:flex;flex-direction:column;gap:6px" aria-labelledby="s08-act">
+      <p class="t-over" id="s08-act" style="padding:0 4px">My activity</p>
+      <nav class="card list" style="overflow:hidden" aria-labelledby="s08-act">
+        <a href="#" class="li" style="min-height:46px;padding:5px 16px"><span class="li-ic" style="width:36px;height:36px"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 7h6M9 11h6M9 15h4"></path></svg></span><span class="li-main"><span class="li-title">Orders</span></span><svg class="ic s18 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></a>
+        <a href="#" class="li" style="min-height:46px;padding:5px 16px"><span class="li-ic" style="width:36px;height:36px"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></span><span class="li-main"><span class="li-title">Wishlist</span></span><span class="t-sm muted">5</span><svg class="ic s18 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></a>
+        <a href="#" class="li" style="min-height:46px;padding:5px 16px"><span class="li-ic" style="width:36px;height:36px"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg></span><span class="li-main"><span class="li-title">Returns</span></span><svg class="ic s18 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></a>
+        <a href="#" class="li" style="min-height:46px;padding:5px 16px"><span class="li-ic" style="width:36px;height:36px"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span><span class="li-main"><span class="li-title">Addresses</span></span><span class="t-sm muted">2</span><svg class="ic s18 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></a>
+      </nav>
+    </section>
+
+    <section style="display:flex;flex-direction:column;gap:6px" aria-labelledby="s08-set">
+      <p class="t-over" id="s08-set" style="padding:0 4px">Settings</p>
+      <nav class="card list" style="overflow:hidden" aria-labelledby="s08-set">
+        <a href="#" class="li" style="min-height:46px;padding:5px 16px"><span class="li-ic" style="width:36px;height:36px"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg></span><span class="li-main"><span class="li-title">Language</span></span><span class="t-sm muted">English</span><svg class="ic s18 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></a>
+        <a href="#" class="li" style="min-height:46px;padding:5px 16px"><span class="li-ic" style="width:36px;height:36px"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg></span><span class="li-main"><span class="li-title">Notifications</span></span><svg class="ic s18 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></a>
+        <a href="#" class="li" style="min-height:46px;padding:5px 16px"><span class="li-ic" style="width:36px;height:36px"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14v-2a9 9 0 0 1 18 0v2"></path><path d="M21 16a2 2 0 0 1-2 2h-1v-6h3zM3 16a2 2 0 0 0 2 2h1v-6H3z"></path></svg></span><span class="li-main"><span class="li-title">Help &amp; support</span></span><svg class="ic s18 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></a>
+        <a href="#" class="li" style="min-height:46px;padding:5px 16px"><span class="li-ic" style="width:36px;height:36px"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h5"></path></svg></span><span class="li-main"><span class="li-title">Terms &amp; privacy</span></span><svg class="ic s18 muted" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></a>
+        <button class="li" type="button" style="min-height:46px;padding:5px 16px;color:#B91C1C"><span class="li-ic" style="width:36px;height:36px;background:#FEF2F2;color:#B91C1C"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path></svg></span><span class="li-main"><span class="li-title">Sign out</span></span></button>
+      </nav>
+    </section>
+
+    <a href="#" class="t-sm" style="align-self:center;color:#475569;font-weight:600;text-decoration:underline;min-height:44px;display:flex;align-items:center;padding:0 12px">Delete account</a>
+  </main>
+
+  <div style="flex:none;height:80px"><div class="dc-imp">
+
+<nav class="k botnav" aria-label="Main navigation" style="width:390px;grid-template-columns:repeat(5,minmax(0,1fr));font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5 9.5V21h14V9.5"></path><path d="M10 21v-6h4v6"></path></svg><span>Home</span></a>
+  <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg><span>Categories</span></a>
+  
+    <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l1 14H5L6 7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg><span>Cart</span><span class="badge">3</span></a>
+  
+  
+  
+    <a href="#" class="navi " aria-current="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2z"></path><path d="M9 7h6M9 11h6M9 15h4"></path></svg><span>Orders</span></a>
+  
+  <a href="#" class="navi is-on" aria-current="page"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span>Account</span></a>
+</nav>
+</div></div>
+</div>
+</div></div>
+  <div class="scrim"></div>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="s08c-title">
+    <span class="grab"></span>
+    <div class="sheet-head">
+      <h2 id="s08c-title">Language</h2>
+      <button class="iconbtn soft" type="button" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+    </div>
+    <fieldset style="border:0;margin:0;padding:0;min-width:0">
+      <legend style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">App language</legend>
+      <div class="list" style="border:1px solid #E2E8F0;border-radius:14px;overflow:hidden">
+        <label class="li" style="min-height:64px">
+          <span class="li-main"><span class="li-title">Khmer</span><span class="li-sub" lang="km" style="font-family:'Kantumruy Pro',system-ui,sans-serif;font-size:14px">ខ្មែរ</span></span>
+          <input type="radio" name="s08c-lang" value="km">
+        </label>
+        <label class="li" style="min-height:64px">
+          <span class="li-main"><span class="li-title">English</span><span class="li-sub">Current language</span></span>
+          <input type="radio" name="s08c-lang" value="en" checked>
+        </label>
+      </div>
+    </fieldset>
+    <p class="help">Menus, receipts and notifications switch to the language you choose.</p>
+    <button class="btn btn-primary btn-block btn-lg" type="button">Save</button>
+  </div>
+</div>
+</div></div></body></html>

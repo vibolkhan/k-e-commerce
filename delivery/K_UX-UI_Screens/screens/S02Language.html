@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>S-02 · Choose language · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">S-02 · Choose language <span class="pg">· Onboarding &amp; Account</span></span><a href="S01Splash.html">← Prev</a><a href="S03aIntro.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone white" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;padding:64px 24px 24px;display:flex;flex-direction:column;gap:32px">
+    <svg viewBox="0 0 48 48" width="52" height="52" role="img" aria-label="K"><rect x="10" y="9" width="7.5" height="30" rx="3.75" fill="#0EA5E9"></rect><path d="M35 9.5 23.5 24 35 38.5" fill="none" stroke="#0EA5E9" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <h1 class="t-h1" style="font-size:28px;line-height:36px">Choose your language</h1>
+      <p class="t-body muted">You can change this anytime in Account.</p>
+    </div>
+    <fieldset style="border:0;margin:0;padding:0;min-width:0;display:flex;flex-direction:column;gap:12px">
+      <legend style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">App language</legend>
+      <label class="opt" style="min-height:80px;padding:16px 18px">
+        <span class="opt-ic" lang="km" style="width:48px;height:48px;border-radius:14px;font-family:'Kantumruy Pro',system-ui,sans-serif;font-size:22px;font-weight:600">ក</span>
+        <span style="flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:2px">
+          <span class="strong" style="font-size:16px">Khmer</span>
+          <span lang="km" style="font-family:'Kantumruy Pro',system-ui,sans-serif;font-size:15px;line-height:22px;color:#64748B">ខ្មែរ</span>
+        </span>
+        <input type="radio" name="s02-lang" value="km" aria-label="Khmer">
+      </label>
+      <label class="opt is-on" style="min-height:80px;padding:16px 18px">
+        <span class="opt-ic" style="width:48px;height:48px;border-radius:14px;font-size:18px;font-weight:800;background:#FFFFFF">A</span>
+        <span style="flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:2px">
+          <span class="strong" style="font-size:16px">English</span>
+          <span style="font-size:15px;line-height:22px;color:#475569">English</span>
+        </span>
+        <input type="radio" name="s02-lang" value="en" checked aria-label="English">
+      </label>
+    </fieldset>
+  </main>
+  <div class="actionbar" style="border-top:0;padding:12px 24px 36px">
+    <button class="btn btn-primary btn-block btn-lg" type="button">Continue</button>
+  </div>
+</div>
+</div></div></body></html>

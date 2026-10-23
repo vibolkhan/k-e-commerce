@@ -1,0 +1,79 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>R-03 · Cash mismatch (dialog) · K design</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kantumruy+Pro:wght@400;600&display=swap"><link rel="stylesheet" href="../k-ui.css"><style>body{margin:0;background:#E2E8F0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+.pbar{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 16px;background:#0F172A;color:#fff;font-size:14px}
+.pbar a{color:#7DD3FC;font-weight:700;text-decoration:none}.pbar .t{flex:1;font-weight:700;min-width:200px}.pbar .pg{color:#CBD5E1;font-weight:500}
+.stage{padding:32px 16px;display:flex;justify-content:center}.stage.fluid{padding:0}.frame{box-shadow:0 18px 48px rgba(15,23,42,.18);border-radius:24px;overflow:hidden;background:#fff}
+.stage.fluid .frame{border-radius:0;box-shadow:none;width:100%}.dc-imp{display:contents}</style></head><body>
+<nav class="pbar"><a href="../index.html">☰ All screens</a><span class="t">R-03 · Cash mismatch (dialog) <span class="pg">· Rider App</span></span><a href="R03ProofOfDelivery.html">← Prev</a><a href="R03bDelivered.html">Next →</a></nav>
+<div class="stage"><div class="frame" style="width:390px;max-width:100%">
+
+<div class="k phone" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden"><div class="dc-imp">
+
+<div class="k phone white" style="height:1050px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#0F172A">
+  <div class="appbar line">
+    <a href="#" class="iconbtn" aria-label="Back"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></a>
+    <h1 class="title left">Proof of delivery · #K-10262</h1>
+  </div>
+
+  <main style="flex:1 1 auto;min-height:0;overflow:hidden;padding:16px;display:flex;flex-direction:column;gap:18px">
+    <p class="t-sm muted">Bopha Lim · Sen Sok · Running Sneakers Air ×1</p>
+
+    <section style="display:flex;flex-direction:column;gap:8px" aria-labelledby="r03-photo">
+      <h2 id="r03-photo" class="label">Delivery photo</h2>
+      <div style="position:relative;height:210px;border-radius:16px;overflow:hidden;background:#E2E8F0">
+        <div class="pimg tG" style="position:absolute;inset:0;aspect-ratio:auto;border-radius:0"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:34%;height:auto"><path d="M21 8 12 3 3 8v8l9 5 9-5z"></path><path d="m3 8 9 5 9-5M12 13v8"></path></svg></div>
+        <span class="pill p-white" style="position:absolute;left:12px;top:12px;height:28px"><svg class="ic s14" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"></path><circle cx="12" cy="13.5" r="3.5"></circle></svg>Photo taken 2:31 PM</span>
+        <button class="btn btn-white btn-sm" type="button" style="position:absolute;right:12px;bottom:12px;height:44px;box-shadow:0 1px 3px rgba(15,23,42,.18)"><svg class="ic s18" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path></svg>Retake</button>
+      </div>
+      <p class="help">Show the parcel at the door or in the customer’s hands.</p>
+    </section>
+
+    <div class="field">
+      <label class="label" for="r03-name">Received by</label>
+      <input class="input" id="r03-name" value="Bopha Lim">
+    </div>
+
+    <section aria-labelledby="r03-cash" style="background:#FFF7ED;border:1px solid #FED7AA;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <h2 id="r03-cash" style="display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:#7C2D12"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle><path d="M6 12h.01M18 12h.01"></path></svg>Collect in cash</h2>
+        <span style="font-size:26px;line-height:32px;font-weight:800">$59.00</span>
+      </div>
+      <div class="field">
+        <label class="label" for="r03-cashin" style="color:#7C2D12">Cash collected</label>
+        <div class="inputbox" style="height:56px;color:#0F172A"><span class="prefix" style="font-size:18px">$</span><input id="r03-cashin" value="59.00" inputmode="decimal" style="font-size:20px;font-weight:800"></div>
+      </div>
+      <p class="t-xs" style="color:#7C2D12">Count the cash in front of the customer before you finish.</p>
+    </section>
+
+    <div class="field">
+      <label class="label" for="r03-note">Note for the store <span class="opt">(optional)</span></label>
+      <textarea class="textarea" id="r03-note" placeholder="Anything the store should know" style="min-height:84px"></textarea>
+    </div>
+  </main>
+
+  <div class="actionbar">
+    <button class="btn btn-primary btn-lg btn-block" type="button"><svg class="ic s20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Complete delivery</button>
+  </div>
+</div>
+</div></div>
+  <div class="scrim"></div>
+  <div class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="r03a-title" aria-describedby="r03a-desc">
+    <span class="dlg-icon warn"><svg class="ic s28" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4M12 17h.01"></path></svg></span>
+    <h2 id="r03a-title">Cash doesn’t match</h2>
+    <p id="r03a-desc">Expected <b>$59.00</b>, you entered <b>$50.00</b>. Add a note for the store.</p>
+    <div class="greybox" style="padding:12px 14px;display:flex;flex-direction:column;gap:6px">
+      <div class="kv"><span class="k-key" style="color:#475569">Expected</span><span class="k-val">$59.00</span></div>
+      <div class="kv"><span class="k-key" style="color:#475569">Entered</span><span class="k-val c-bad">$50.00 · $9.00 short</span></div>
+    </div>
+    <div class="field">
+      <label class="label" for="r03a-note">Note for the store</label>
+      <textarea class="textarea is-focus" id="r03a-note" style="min-height:84px">Customer only had $50 in cash. Will pay $9.00 by KHQR.</textarea>
+    </div>
+    <div class="dlg-actions stack">
+      <button class="btn btn-primary" type="button">Confirm with note</button>
+      <button class="btn btn-outline" type="button">Edit amount</button>
+    </div>
+  </div>
+</div>
+</div></div></body></html>
