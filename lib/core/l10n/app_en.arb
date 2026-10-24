@@ -1,0 +1,23 @@
+{
+  "@@locale": "en",
+  "appTitle": "K E-Commerce",
+  "loading": "Loading…",
+  "goHome": "Go home",
+  "notFoundTitle": "Page not found",
+  "notFoundMessage": "The page you're looking for doesn't exist or has moved.",
+  "forbiddenTitle": "No access",
+  "forbiddenMessage": "Your account can't open this page.",
+  "errorTitle": "Something went wrong",
+  "errorMessage": "Please try again in a moment.",
+  "roleCustomer": "Customer",
+  "roleBusiness": "Business",
+  "roleRider": "Rider",
+  "roleAdmin": "Admin",
+  "roleHomeTitle": "{role} home",
+  "@roleHomeTitle": {
+    "placeholders": { "role": { "type": "String" } }
+  },
+  "shellPlaceholder": "This is a placeholder. Screens arrive in later tasks.",
+  "devRoleSwitcher": "Switch role (debug only)",
+  "supabaseNotConfigured": "Supabase not configured — running offline"
+}

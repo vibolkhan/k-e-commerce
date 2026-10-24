@@ -1,0 +1,20 @@
+{
+  "@@locale": "km",
+  "appTitle": "K E-Commerce",
+  "loading": "កំពុងផ្ទុក…",
+  "goHome": "ទៅទំព័រដើម",
+  "notFoundTitle": "រកមិនឃើញទំព័រ",
+  "notFoundMessage": "ទំព័រដែលអ្នកកំពុងស្វែងរកមិនមាន ឬត្រូវបានផ្លាស់ទី។",
+  "forbiddenTitle": "គ្មានសិទ្ធិចូល",
+  "forbiddenMessage": "គណនីរបស់អ្នកមិនអាចបើកទំព័រនេះបានទេ។",
+  "errorTitle": "មានបញ្ហាកើតឡើង",
+  "errorMessage": "សូមព្យាយាមម្តងទៀតបន្តិចក្រោយ។",
+  "roleCustomer": "អតិថិជន",
+  "roleBusiness": "អាជីវកម្ម",
+  "roleRider": "អ្នកដឹកជញ្ជូន",
+  "roleAdmin": "អ្នកគ្រប់គ្រង",
+  "roleHomeTitle": "ទំព័រដើម {role}",
+  "shellPlaceholder": "នេះជាទំព័របណ្តោះអាសន្ន។ អេក្រង់នឹងមកដល់ក្នុងកិច្ចការបន្ទាប់។",
+  "devRoleSwitcher": "ប្តូរតួនាទី (សម្រាប់តែការអភិវឌ្ឍ)",
+  "supabaseNotConfigured": "មិនទាន់កំណត់ Supabase — ដំណើរការក្រៅបណ្តាញ"
+}
