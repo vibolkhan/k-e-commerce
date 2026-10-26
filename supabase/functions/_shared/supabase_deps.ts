@@ -43,8 +43,9 @@ export function supabaseDeps(): AuthDeps {
     auth: {
       async sendOtp(phone) {
         const { error } = await anon().auth.signInWithOtp({ phone });
-        if (error) console.error("signInWithOtp", error.status, error.code);
-        return !error;
+        if (!error) return null;
+        console.error("signInWithOtp", error.status, error.code, error.message);
+        return error.code ?? `http_${error.status ?? "unknown"}`;
       },
       async verifyOtp(phone, token) {
         const { data, error } = await anon().auth.verifyOtp({ phone, token, type: "sms" });

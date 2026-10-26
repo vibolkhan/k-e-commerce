@@ -86,7 +86,7 @@ class FakeWorld implements AuthDeps {
   auth = {
     sendOtp: (phone: string) => {
       if (this.smsWorks) this.sent.push(phone);
-      return Promise.resolve(this.smsWorks);
+      return Promise.resolve(this.smsWorks ? null : "phone_provider_disabled");
     },
     verifyOtp: (phone: string, token: string) =>
       Promise.resolve(token === GOOD_CODE ? this.session(this.userFor(phone)) : null),
@@ -145,7 +145,10 @@ Deno.test("send: refuses blocked numbers before texting", async () => {
 Deno.test("send: provider failure does not start the resend clock", async () => {
   const w = new FakeWorld();
   w.smsWorks = false;
-  assertEquals(await sendOtp(w, { phone: "12345678" }), { status: "send_failed" });
+  assertEquals(await sendOtp(w, { phone: "12345678" }), {
+    status: "send_failed",
+    reason: "phone_provider_disabled",
+  });
   w.smsWorks = true;
   assertEquals((await sendOtp(w, { phone: "12345678" })).status, "sent");
 });

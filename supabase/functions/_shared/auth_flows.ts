@@ -31,8 +31,11 @@ export interface AuthSession {
 }
 
 export interface AuthGateway {
-  /** Sends an SMS code; resolves false when Auth refuses (provider/rate limit). */
-  sendOtp(phone: string): Promise<boolean>;
+  /**
+   * Sends an SMS code. Resolves null on success, or Auth's error code when it
+   * refuses (e.g. `phone_provider_disabled`, `sms_send_failed`).
+   */
+  sendOtp(phone: string): Promise<string | null>;
   /** The session for a right code, null for a wrong or expired one. */
   verifyOtp(phone: string, token: string): Promise<AuthSession | null>;
   /** The session for a right password, null otherwise. */
@@ -62,7 +65,7 @@ export type FlowResult =
   | { status: "invalid_credentials"; tries_left: number }
   | { status: "blocked" }
   | { status: "signed_in"; session: AuthSession; is_new_user: boolean }
-  | { status: "send_failed" };
+  | { status: "send_failed"; reason: string };
 
 export class BadRequest extends Error {}
 
@@ -105,7 +108,8 @@ export async function sendOtp(deps: AuthDeps, body: Record<string, unknown>): Pr
   if (state.resend_in > 0) return { status: "resend_too_soon", resend_in: state.resend_in };
   if (await deps.profiles.isPhoneBlocked(phone)) return { status: "blocked" };
 
-  if (!(await deps.auth.sendOtp(phone))) return { status: "send_failed" };
+  const refused = await deps.auth.sendOtp(phone);
+  if (refused) return { status: "send_failed", reason: refused };
   await deps.attempts.markSent("otp", phone);
   return { status: "sent", resend_in: (await deps.attempts.status("otp", phone)).resend_in };
 }
