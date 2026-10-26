@@ -447,3 +447,8 @@ verify_jwt = false
 
 [functions.auth-password-sign-in]
 verify_jwt = false
+
+# F06: needs a signed-in user; the gateway checks the JWT and the function
+# reads the user id from it again with the service role.
+[functions.account-delete]
+verify_jwt = true

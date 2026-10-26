@@ -6,6 +6,7 @@
 //
 // Every outcome is HTTP 200 with a `status`; only malformed requests are 400.
 
+import { BadRequest } from "./errors.ts";
 import { normalizeEmail, normalizeKhPhone } from "./phone.ts";
 
 export type AttemptKind = "otp" | "password";
@@ -67,7 +68,7 @@ export type FlowResult =
   | { status: "signed_in"; session: AuthSession; is_new_user: boolean }
   | { status: "send_failed"; reason: string };
 
-export class BadRequest extends Error {}
+export { BadRequest } from "./errors.ts";
 
 function requireString(body: Record<string, unknown>, key: string): string {
   const value = body[key];

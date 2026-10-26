@@ -1,6 +1,6 @@
 // JSON + CORS plumbing shared by every Edge Function.
 
-import { type AuthDeps, BadRequest, type FlowResult } from "./auth_flows.ts";
+import { BadRequest, Unauthorized } from "./errors.ts";
 
 export const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -15,10 +15,10 @@ export function json(body: unknown, status = 200): Response {
   });
 }
 
-type Flow = (deps: AuthDeps, body: Record<string, unknown>) => Promise<FlowResult>;
+type Flow<D> = (deps: D, body: Record<string, unknown>, req: Request) => Promise<unknown>;
 
-/** Wraps a flow as a request handler: CORS, JSON body, 400/500 mapping. */
-export function handler(flow: Flow, deps: () => AuthDeps) {
+/** Wraps a flow as a request handler: CORS, JSON body, 400/401/500 mapping. */
+export function handler<D>(flow: Flow<D>, deps: () => D) {
   return async (req: Request): Promise<Response> => {
     if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
     if (req.method !== "POST") return json({ error: "method_not_allowed" }, 405);
@@ -34,9 +34,10 @@ export function handler(flow: Flow, deps: () => AuthDeps) {
     }
 
     try {
-      return json(await flow(deps(), body as Record<string, unknown>));
+      return json(await flow(deps(), body as Record<string, unknown>, req));
     } catch (e) {
       if (e instanceof BadRequest) return json({ error: "bad_request", message: e.message }, 400);
+      if (e instanceof Unauthorized) return json({ error: "unauthorized" }, 401);
       console.error(e);
       return json({ error: "server_error" }, 500);
     }
