@@ -29,14 +29,16 @@ class KBadge extends StatelessWidget {
               ? const [BoxShadow(color: Colors.white, spreadRadius: 2)]
               : null,
         ),
-        alignment: Alignment.center,
-        child: Text(
-          count > 99 ? '99+' : '$count',
-          style: context.k.text.caption.copyWith(
-            fontSize: 11,
-            height: 1,
-            fontWeight: FontWeight.w800,
-            color: Colors.white,
+        child: Center(
+          widthFactor: 1,
+          child: Text(
+            count > 99 ? '99+' : '$count',
+            style: context.k.text.caption.copyWith(
+              fontSize: 11,
+              height: 1,
+              fontWeight: FontWeight.w800,
+              color: Colors.white,
+            ),
           ),
         ),
       ),

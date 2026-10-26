@@ -363,7 +363,9 @@ class _Heart extends StatelessWidget {
     final k = context.k;
     final c = k.colors;
     final l10n = AppLocalizations.of(context);
+    // Own node, so it stays a separate control from the card's tap.
     return Semantics(
+      container: true,
       button: true,
       toggled: on,
       label: on ? l10n.uiWishlistRemove : l10n.uiWishlistAdd,

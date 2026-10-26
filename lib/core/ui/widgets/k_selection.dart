@@ -211,10 +211,14 @@ class KTabs extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  t.label,
-                  style: k.text.button.copyWith(
-                    color: on ? c.primary : c.muted,
+                Flexible(
+                  child: Text(
+                    t.label,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: k.text.button.copyWith(
+                      color: on ? c.primary : c.muted,
+                    ),
                   ),
                 ),
                 if (t.count != null) ...[
@@ -354,7 +358,7 @@ class KOptionTile extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  _RadioDot(selected: selected),
+                  KRadioMark(selected: selected),
                   const SizedBox(width: 12),
                   if (icon != null) ...[
                     Container(
@@ -397,8 +401,9 @@ class KOptionTile extends StatelessWidget {
   }
 }
 
-class _RadioDot extends StatelessWidget {
-  const _RadioDot({required this.selected});
+/// Radio indicator for custom rows (sheets, option tiles).
+class KRadioMark extends StatelessWidget {
+  const KRadioMark({super.key, required this.selected});
   final bool selected;
 
   @override

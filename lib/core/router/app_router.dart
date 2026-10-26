@@ -1,7 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/design_gallery/presentation/design_gallery_page.dart';
 import '../../features/shell/presentation/role_home_page.dart';
+import '../config/bootstrap.dart';
 import '../ui/pages/error_page.dart';
 import '../ui/pages/loading_page.dart';
 import 'app_role.dart';
@@ -20,6 +22,7 @@ String? roleRedirect(AppRole role, String path) {
 }
 
 final routerProvider = Provider<GoRouter>((ref) {
+  final config = ref.watch(appConfigProvider);
   final router = GoRouter(
     initialLocation: AppRoutes.root,
     redirect: (context, state) =>
@@ -36,6 +39,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         GoRoute(
           path: role.homePath,
           builder: (_, _) => RoleHomePage(role: role),
+        ),
+      if (!config.isProd)
+        GoRoute(
+          path: AppRoutes.designGallery,
+          builder: (_, _) => const DesignGalleryPage(),
         ),
     ],
   );

@@ -269,12 +269,13 @@ class KTheme extends ThemeExtension<KTheme> {
   @override
   KTheme lerp(KTheme? other, double t) {
     if (other == null) return this;
+    // Shadow lists can differ in length; they switch at the midpoint.
     return KTheme(
       colors: KPalette.lerp(colors, other.colors, t),
       text: KTextTheme.lerp(text, other.text, t),
-      shadow1: BoxShadow.lerpList(shadow1, other.shadow1, t)!,
-      shadow2: BoxShadow.lerpList(shadow2, other.shadow2, t)!,
-      shadow3: BoxShadow.lerpList(shadow3, other.shadow3, t)!,
+      shadow1: t < 0.5 ? shadow1 : other.shadow1,
+      shadow2: t < 0.5 ? shadow2 : other.shadow2,
+      shadow3: t < 0.5 ? shadow3 : other.shadow3,
     );
   }
 }

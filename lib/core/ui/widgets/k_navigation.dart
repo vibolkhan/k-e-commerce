@@ -262,16 +262,19 @@ class _NavButton extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 3),
-            Text(
-              item.label,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.center,
-              style: k.text.caption.copyWith(
-                fontSize: 11,
-                height: 14 / 11,
-                fontWeight: FontWeight.w600,
-                color: color,
+            // Long labels ("Orders & quotes") shrink rather than truncate.
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                item.label,
+                maxLines: 1,
+                textAlign: TextAlign.center,
+                style: k.text.caption.copyWith(
+                  fontSize: 11,
+                  height: 14 / 11,
+                  fontWeight: FontWeight.w600,
+                  color: color,
+                ),
               ),
             ),
           ],

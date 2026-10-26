@@ -7,4 +7,7 @@ abstract final class AppRoutes {
   static const business = '/business';
   static const rider = '/rider';
   static const admin = '/admin';
+
+  /// Every K component; dev and staging builds only, not linked anywhere.
+  static const designGallery = '/design-gallery';
 }
