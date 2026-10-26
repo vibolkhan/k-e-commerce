@@ -452,3 +452,10 @@ verify_jwt = false
 # reads the user id from it again with the service role.
 [functions.account-delete]
 verify_jwt = true
+
+# F07: called by other server code with the service role key, or (when
+# NOTIFY_SELF_TEST is on) by a signed-in user sending a test to themselves.
+# The service key may be a non-JWT secret key, so the gateway check is off
+# and the function checks the caller itself.
+[functions.notify]
+verify_jwt = false
