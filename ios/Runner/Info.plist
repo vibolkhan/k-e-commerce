@@ -14,6 +14,18 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<!-- F05: kshop://login-callback for OAuth and password-reset links. -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>login-callback</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kshop</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleName</key>
 	<string>k_e_commerce</string>
 	<key>CFBundlePackageType</key>
