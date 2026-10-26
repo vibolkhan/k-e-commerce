@@ -5,6 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/config/bootstrap.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/router/app_role.dart';
+import '../../../core/ui/k_ui.dart';
+import '../../settings/presentation/language_sheet.dart';
 
 /// Placeholder home for each role's shell until its real screens are built.
 class RoleHomePage extends ConsumerWidget {
@@ -29,6 +31,21 @@ class RoleHomePage extends ConsumerWidget {
               style: TextStyle(color: Theme.of(context).colorScheme.error),
             ),
           ],
+          const SizedBox(height: 16),
+          // Until the Account area (F06): live language switch and a sample
+          // retail price in USD + KHR.
+          if (role != AppRole.business) ...[
+            const KPrice(cents: 4900),
+            const SizedBox(height: 16),
+          ],
+          Align(
+            alignment: Alignment.centerLeft,
+            child: KButton.outline(
+              label: l10n.languageTitle,
+              icon: KIcons.language,
+              onPressed: () => showLanguageSheet(context),
+            ),
+          ),
           if (kDebugMode) ...[
             const SizedBox(height: 24),
             Text(l10n.devRoleSwitcher),
