@@ -8,6 +8,7 @@ import '../../../core/router/app_role.dart';
 import '../../../core/router/app_routes.dart';
 import '../../../core/time/date_format.dart';
 import '../../../core/ui/k_ui.dart';
+import '../data/auth_repository.dart';
 import '../domain/auth_intent.dart';
 import '../domain/auth_outcome.dart';
 import '../domain/phone_number.dart';
@@ -90,14 +91,20 @@ class _SignInPageState extends ConsumerState<SignInPage> {
     }
   }
 
-  Future<void> _run(_Busy which, Future<void> Function() body) async {
-    if (_busy != _Busy.none) return;
+  /// Runs one server call with [which] button spinning. The spinner stops
+  /// before the outcome is handled, so it never runs behind a dialog or
+  /// the next screen. Null when another call is running or the page left.
+  Future<AuthOutcome?> _call(
+    _Busy which,
+    Future<AuthOutcome> Function(AuthRepository repo) call,
+  ) async {
+    if (_busy != _Busy.none) return null;
     setState(() {
       _busy = which;
       _notice = null;
     });
     try {
-      await body();
+      return await call(ref.read(authRepositoryProvider));
     } finally {
       if (mounted) setState(() => _busy = _Busy.none);
     }
@@ -117,24 +124,22 @@ class _SignInPageState extends ConsumerState<SignInPage> {
       setState(() => _phoneError = _l10n.authPhoneInvalid);
       return;
     }
-    await _run(_Busy.phone, () async {
-      final outcome = await ref.read(authRepositoryProvider).sendOtp(phone);
-      if (!mounted) return;
-      switch (outcome) {
-        case OtpSent(:final resendIn) || ResendTooSoon(:final resendIn):
-          await _openOtp(phone, resendIn);
-        case Locked():
-          if (await showLockedDialog(context, ref, outcome, viaPhone: true)) {
-            _switchTo(SignInMethod.email);
-          }
-        case Blocked():
-          await showBlockedDialog(context, ref);
-        case SendFailed():
-          setState(() => _phoneError = _l10n.authSendFailed);
-        default:
-          _failed();
-      }
-    });
+    final outcome = await _call(_Busy.phone, (repo) => repo.sendOtp(phone));
+    if (outcome == null || !mounted) return;
+    switch (outcome) {
+      case OtpSent(:final resendIn) || ResendTooSoon(:final resendIn):
+        await _openOtp(phone, resendIn);
+      case Locked():
+        if (await showLockedDialog(context, ref, outcome, viaPhone: true)) {
+          _switchTo(SignInMethod.email);
+        }
+      case Blocked():
+        await showBlockedDialog(context, ref);
+      case SendFailed():
+        setState(() => _phoneError = _l10n.authSendFailed);
+      default:
+        _failed();
+    }
   }
 
   Future<void> _openOtp(String phone, Duration resendIn) async {
@@ -168,64 +173,63 @@ class _SignInPageState extends ConsumerState<SignInPage> {
     });
     if (email == null || _passwordError != null) return;
 
-    await _run(_Busy.email, () async {
-      final repo = ref.read(authRepositoryProvider);
-      final outcome = _creatingAccount
-          ? await repo.signUpWithPassword(email, password)
-          : await repo.signInWithPassword(email, password);
-      if (!mounted) return;
-      switch (outcome) {
-        case SignedIn():
-          await _signedIn(outcome);
-        case WrongCredentials(:final triesLeft):
-          setState(() => _passwordError = _l10n.authWrongPassword(triesLeft));
-        case Locked(:final until):
-          setState(
-            () => _passwordError = _l10n.authLockedInline(
-              formatTime(_l10n, until),
-            ),
-          );
-          if (await showLockedDialog(context, ref, outcome, viaPhone: false)) {
-            _switchTo(SignInMethod.phone);
-          }
-        case Blocked():
-          await showBlockedDialog(context, ref);
-        case ConfirmEmail():
-          setState(() => _notice = _l10n.authConfirmEmail);
-        case EmailInUse():
-          setState(() => _emailError = _l10n.authEmailInUse);
-        default:
-          _failed();
-      }
-    });
+    final outcome = await _call(
+      _Busy.email,
+      (repo) => _creatingAccount
+          ? repo.signUpWithPassword(email, password)
+          : repo.signInWithPassword(email, password),
+    );
+    if (outcome == null || !mounted) return;
+    switch (outcome) {
+      case SignedIn():
+        await _signedIn(outcome);
+      case WrongCredentials(:final triesLeft):
+        setState(() => _passwordError = _l10n.authWrongPassword(triesLeft));
+      case Locked(:final until):
+        setState(
+          () =>
+              _passwordError = _l10n.authLockedInline(formatTime(_l10n, until)),
+        );
+        if (await showLockedDialog(context, ref, outcome, viaPhone: false)) {
+          _switchTo(SignInMethod.phone);
+        }
+      case Blocked():
+        await showBlockedDialog(context, ref);
+      case ConfirmEmail():
+        setState(() => _notice = _l10n.authConfirmEmail);
+      case EmailInUse():
+        setState(() => _emailError = _l10n.authEmailInUse);
+      default:
+        _failed();
+    }
   }
 
   // ---------------------------------------------------------------- social
 
   Future<void> _social(_Busy which) async {
-    await _run(which, () async {
-      final repo = ref.read(authRepositoryProvider);
-      final outcome = which == _Busy.google
-          ? await repo.signInWithGoogle()
-          : await repo.signInWithApple();
-      if (!mounted) return;
-      switch (outcome) {
-        case SignedIn():
-          await _signedIn(outcome);
-        case Redirecting():
-          _awaitingRedirect = true;
-        case Blocked():
-          await showBlockedDialog(context, ref);
-        case Cancelled():
-          break;
-        default:
-          showKToast(
-            context,
-            message: _l10n.authSocialFailed,
-            tone: KToastTone.bad,
-          );
-      }
-    });
+    final outcome = await _call(
+      which,
+      (repo) => which == _Busy.google
+          ? repo.signInWithGoogle()
+          : repo.signInWithApple(),
+    );
+    if (outcome == null || !mounted) return;
+    switch (outcome) {
+      case SignedIn():
+        await _signedIn(outcome);
+      case Redirecting():
+        _awaitingRedirect = true;
+      case Blocked():
+        await showBlockedDialog(context, ref);
+      case Cancelled():
+        break;
+      default:
+        showKToast(
+          context,
+          message: _l10n.authSocialFailed,
+          tone: KToastTone.bad,
+        );
+    }
   }
 
   Future<void> _resumeAfterRedirect() async {

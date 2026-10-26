@@ -2,12 +2,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../features/auth/domain/auth_intent.dart';
 import '../../features/auth/domain/profile.dart';
 import '../../features/auth/presentation/auth_providers.dart';
-import '../../features/auth/presentation/complete_profile_page.dart';
-import '../../features/auth/presentation/otp_page.dart';
-import '../../features/auth/presentation/sign_in_page.dart';
+import '../../features/auth/presentation/auth_routes.dart';
 import '../../features/design_gallery/presentation/design_gallery_page.dart';
 import '../../features/shell/presentation/role_home_page.dart';
 import '../config/bootstrap.dart';
@@ -60,32 +57,7 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: AppRoutes.forbidden,
         builder: (_, _) => const ErrorPage.forbidden(),
       ),
-      GoRoute(
-        path: AppRoutes.signIn,
-        builder: (_, state) => SignInPage(
-          intent: AuthIntent.tryParse(state.uri.queryParameters['intent']),
-          from: state.uri.queryParameters['from'],
-          blocked: state.uri.queryParameters['blocked'] == '1',
-        ),
-        routes: [
-          GoRoute(
-            path: 'verify',
-            redirect: (_, state) => state.uri.queryParameters['phone'] == null
-                ? AppRoutes.signIn
-                : null,
-            builder: (_, state) => OtpPage(
-              phone: state.uri.queryParameters['phone']!,
-              resendIn: state.extra is Duration
-                  ? state.extra! as Duration
-                  : const Duration(seconds: 60),
-            ),
-          ),
-          GoRoute(
-            path: 'profile',
-            builder: (_, _) => const CompleteProfilePage(),
-          ),
-        ],
-      ),
+      ...signInRoutes(),
       for (final role in AppRole.values)
         GoRoute(
           path: role.homePath,
