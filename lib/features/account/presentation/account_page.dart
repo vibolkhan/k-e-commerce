@@ -247,27 +247,47 @@ class _SignedInAccount extends ConsumerWidget {
               if (role == AppRole.customer) ...[
                 KCard(
                   style: KCardStyle.tint,
-                  padding: EdgeInsets.zero,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 14,
+                    vertical: 12,
+                  ),
                   onTap: soon,
-                  child: KListRow(
-                    title: l10n.accountBusinessTitle,
-                    subtitle: l10n.accountBusinessAction,
-                    leading: Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: c.surface,
-                        borderRadius: BorderRadius.circular(KRadius.input),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 40,
+                        height: 40,
+                        decoration: BoxDecoration(
+                          color: c.surface,
+                          borderRadius: BorderRadius.circular(KRadius.input),
+                        ),
+                        alignment: Alignment.center,
+                        child: KIcon(
+                          KIcons.business,
+                          size: 20,
+                          color: c.primaryInk,
+                        ),
                       ),
-                      alignment: Alignment.center,
-                      child: KIcon(
-                        KIcons.business,
-                        size: 20,
-                        color: c.primaryInk,
+                      const SizedBox(width: 14),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              l10n.accountBusinessTitle,
+                              style: k.text.body.copyWith(
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            Text(
+                              l10n.accountBusinessAction,
+                              style: k.text.small.copyWith(color: c.ink3),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    showChevron: true,
-                    onTap: soon,
+                      KIcon(KIcons.chevronRight, size: 20, color: c.muted),
+                    ],
                   ),
                 ),
                 const SizedBox(height: 12),
