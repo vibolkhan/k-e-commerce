@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/domain/statuses.dart';
+import '../../../core/l10n/generated/app_localizations.dart';
+import '../../../core/money/money_format.dart';
 import '../../../core/ui/k_ui.dart';
 
 // Developer-only page (not registered in prod). The copy below is sample
@@ -1028,8 +1030,8 @@ class _ProductCardsCardState extends State<_ProductCardsCard> {
           KProductCard(
             name: 'Wireless Headphones Pro',
             image: const KProductArt(icon: KIcons.headphones, radius: 0),
-            price: r'$49.00',
-            khrAmount: '200,900',
+            price: formatUsd(4900),
+            khrAmount: formatKhrAmount(usdCentsToKhr(4900, kDefaultKhrRate)),
             rating: 4.6,
             ratingCount: 128,
             wishlisted: _wish,
@@ -1168,9 +1170,16 @@ class _CartLineCardState extends State<_CartLineCard> {
           crossAxisAlignment: CrossAxisAlignment.baseline,
           textBaseline: TextBaseline.alphabetic,
           children: [
-            Text(r'$49.00', style: k.text.price),
+            Text(formatUsd(4900), style: k.text.price),
             const SizedBox(width: 10),
-            Text('≈ KHR 200,900', style: k.text.small.copyWith(color: c.muted)),
+            Text(
+              formatKhr(
+                AppLocalizations.of(context),
+                4900,
+                rate: kDefaultKhrRate,
+              ),
+              style: k.text.small.copyWith(color: c.muted),
+            ),
           ],
         ),
         Column(

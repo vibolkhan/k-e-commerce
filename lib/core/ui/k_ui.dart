@@ -15,6 +15,7 @@ export 'widgets/k_feedback.dart';
 export 'widgets/k_logo.dart';
 export 'widgets/k_navigation.dart';
 export 'widgets/k_overlays.dart';
+export 'widgets/k_price.dart';
 export 'widgets/k_selection.dart';
 export 'widgets/k_status_pill.dart';
 export 'widgets/k_text_field.dart';
