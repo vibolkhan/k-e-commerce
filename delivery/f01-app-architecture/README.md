@@ -11,7 +11,7 @@ lib/
   core/
     config/            AppConfig (env + Supabase keys), bootstrap(), appConfigProvider
     router/            AppRoutes, AppRole + currentRoleProvider, routerProvider (role guard)
-    ui/                shared UI — pages/ (loading, error), theme/ (placeholder until F02)
+    ui/                K design system (F02) — theme/, icons/, widgets/, pages/; import ui/k_ui.dart
     utils/             log() — use instead of print
     l10n/              app_en.arb, app_km.arb → generated/ (gitignored, built on pub get)
   features/<feature>/{data,domain,presentation}
@@ -55,6 +55,6 @@ Defines are compiled in: a plain `flutter run` (no define file) has no Supabase 
 
 ```
 flutter analyze
-flutter test
+flutter test                # all, incl. goldens (Windows)
 flutter run -d chrome       # check: customer home, role switcher, /#/nope shows not found
 ```

@@ -32,5 +32,7 @@ jobs:
       - name: Analyze
         run: flutter analyze
 
+      # Goldens are generated on Windows; Linux text rendering differs, so CI
+      # skips them. Run them locally with `flutter test --tags golden`.
       - name: Test
-        run: flutter test
+        run: flutter test --exclude-tags golden
