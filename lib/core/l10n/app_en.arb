@@ -164,5 +164,152 @@
         "type": "String"
       }
     }
-  }
+  },
+  "authSignIn": "Sign in",
+  "authSignOut": "Sign out",
+  "authSignedInAs": "Signed in as {name}",
+  "@authSignedInAs": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "authSignInTitle": "Sign in to K",
+  "authSignInSubtitle": "Check out faster, track orders and save favourites.",
+  "authMethodLabel": "Sign-in method",
+  "authMethodPhone": "Phone",
+  "authMethodEmail": "Email",
+  "authPhoneLabel": "Phone number",
+  "authPhoneHelp": "We'll text you a 6-digit code.",
+  "authPhoneInvalid": "Enter a Cambodian mobile number, like 12 345 678.",
+  "authOr": "or",
+  "authContinueWithGoogle": "Continue with Google",
+  "authContinueWithApple": "Continue with Apple",
+  "authLegal": "By continuing you agree to our {terms} and {privacy}.",
+  "@authLegal": {
+    "placeholders": {
+      "terms": {
+        "type": "String"
+      },
+      "privacy": {
+        "type": "String"
+      }
+    }
+  },
+  "authTerms": "Terms",
+  "authPrivacy": "Privacy Policy",
+  "authEmailLabel": "Email",
+  "authPasswordLabel": "Password",
+  "authShowPassword": "Show password",
+  "authHidePassword": "Hide password",
+  "authEmailInvalid": "Enter a valid email address.",
+  "authPasswordRequired": "Enter your password.",
+  "authPasswordTooShort": "Use at least {min} characters.",
+  "@authPasswordTooShort": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "authWrongPassword": "Incorrect email or password. {count, plural, =1{1 try left.} other{{count} tries left.}}",
+  "@authWrongPassword": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "authForgotPassword": "Forgot password?",
+  "authNewToK": "New to K?",
+  "authCreateAccount": "Create an account",
+  "authCreateAccountButton": "Create account",
+  "authHaveAccount": "Already have an account?",
+  "authEmailInUse": "An account with this email already exists. Sign in instead.",
+  "authResetTitle": "Reset your password",
+  "authResetBody": "We'll email you a link to choose a new password.",
+  "authResetSend": "Send link",
+  "authResetSent": "Check your inbox for the reset link.",
+  "authOtpTitle": "Enter the 6-digit code",
+  "authOtpSentTo": "Sent to {phone}",
+  "@authOtpSentTo": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "authOtpChange": "Change",
+  "authOtpResendIn": "Resend code in {time}",
+  "@authOtpResendIn": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "authOtpDidntGet": "Didn't get it?",
+  "authOtpResend": "Resend code",
+  "authOtpResent": "We sent a new code.",
+  "authOtpExpiry": "Codes expire after {minutes} minutes.",
+  "@authOtpExpiry": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "authOtpVerify": "Verify",
+  "authOtpWrong": "That code isn't right. {count, plural, =1{1 try left.} other{{count} tries left.}}",
+  "@authOtpWrong": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "authSendFailed": "We couldn't send the code. Check the number and try again.",
+  "authNetworkError": "Couldn't connect. Check your internet and try again.",
+  "authSocialFailed": "Sign-in didn't finish. Please try again.",
+  "authLockedTitle": "Too many attempts",
+  "authLockedBodyPhone": "For your security, wait {minutes} minutes or sign in with email instead.",
+  "@authLockedBodyPhone": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "authLockedBodyEmail": "For your security, wait {minutes} minutes or sign in with your phone instead.",
+  "@authLockedBodyEmail": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "authLockedUseEmail": "Use email",
+  "authLockedUsePhone": "Use phone",
+  "authLockedInline": "Too many attempts. Try again after {time}.",
+  "@authLockedInline": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "authOk": "OK",
+  "authBlockedTitle": "This account is unavailable",
+  "authBlockedBody": "Please contact our support team to restore access.",
+  "authContactSupport": "Contact support",
+  "authSupportComingSoon": "Support chat is on its way. Please try again later.",
+  "authProfileProgress": "Almost done",
+  "authProfileProgressLabel": "Sign-up progress",
+  "authProfileTitle": "What should we call you?",
+  "authProfileSubtitle": "Your name appears on orders, receipts and delivery labels.",
+  "authFullName": "Full name",
+  "authFullNameRequired": "Enter your name.",
+  "authProfileEmailHelp": "For receipts. We never share it.",
+  "authEmailReceipts": "Email me receipts and order updates"
 }
