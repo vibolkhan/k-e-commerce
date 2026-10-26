@@ -133,5 +133,36 @@
   "reviewPending": "Pending review",
   "reviewHidden": "Hidden",
   "riderJobAssigned": "Assigned",
-  "riderJobReturnPickup": "Return pickup"
+  "riderJobReturnPickup": "Return pickup",
+  "uiContinue": "Continue",
+  "languageTitle": "Language",
+  "languageAppLanguage": "App language",
+  "languageCurrent": "Current language",
+  "languageHint": "Menus, receipts and notifications switch to the language you choose.",
+  "languageSave": "Save",
+  "languageChooseTitle": "Choose your language",
+  "languageChooseSubtitle": "You can change this anytime in Account.",
+  "languageKhmer": "Khmer",
+  "languageEnglish": "English",
+  "dateToday": "Today",
+  "dateTomorrow": "Tomorrow",
+  "dateRelativeDay": "{day}, {date}",
+  "@dateRelativeDay": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "timeBy": "by {time}",
+  "@timeBy": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  }
 }

@@ -81,5 +81,19 @@
   "reviewPending": "រង់ចាំការពិនិត្យ",
   "reviewHidden": "បានលាក់",
   "riderJobAssigned": "បានចាត់តាំង",
-  "riderJobReturnPickup": "មកយកទំនិញប្រគល់វិញ"
+  "riderJobReturnPickup": "មកយកទំនិញប្រគល់វិញ",
+  "uiContinue": "បន្ត",
+  "languageTitle": "ភាសា",
+  "languageAppLanguage": "ភាសាកម្មវិធី",
+  "languageCurrent": "ភាសាបច្ចុប្បន្ន",
+  "languageHint": "ម៉ឺនុយ បង្កាន់ដៃ និងការជូនដំណឹង នឹងប្តូរទៅភាសាដែលអ្នកជ្រើសរើស។",
+  "languageSave": "រក្សាទុក",
+  "languageChooseTitle": "ជ្រើសរើសភាសារបស់អ្នក",
+  "languageChooseSubtitle": "អ្នកអាចប្តូរវាបានគ្រប់ពេលនៅក្នុងគណនី។",
+  "languageKhmer": "ខ្មែរ",
+  "languageEnglish": "អង់គ្លេស",
+  "dateToday": "ថ្ងៃនេះ",
+  "dateTomorrow": "ថ្ងៃស្អែក",
+  "dateRelativeDay": "{day} {date}",
+  "timeBy": "មុនម៉ោង {time}"
 }
