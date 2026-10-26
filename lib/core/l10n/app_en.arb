@@ -15,9 +15,123 @@
   "roleAdmin": "Admin",
   "roleHomeTitle": "{role} home",
   "@roleHomeTitle": {
-    "placeholders": { "role": { "type": "String" } }
+    "placeholders": {
+      "role": {
+        "type": "String"
+      }
+    }
   },
   "shellPlaceholder": "This is a placeholder. Screens arrive in later tasks.",
   "devRoleSwitcher": "Switch role (debug only)",
-  "supabaseNotConfigured": "Supabase not configured — running offline"
+  "supabaseNotConfigured": "Supabase not configured — running offline",
+  "uiBack": "Back",
+  "uiClose": "Close",
+  "uiOptional": "(optional)",
+  "uiLoading": "Loading",
+  "uiQuantity": "Quantity",
+  "uiDecrease": "Decrease",
+  "uiIncrease": "Increase",
+  "uiOtpGroup": "{length}-digit code",
+  "@uiOtpGroup": {
+    "placeholders": {
+      "length": {
+        "type": "int"
+      }
+    }
+  },
+  "uiOtpDigit": "Digit {index}",
+  "@uiOtpDigit": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "uiRatedOutOf5": "Rated {rating} out of 5",
+  "@uiRatedOutOf5": {
+    "placeholders": {
+      "rating": {
+        "type": "String"
+      }
+    }
+  },
+  "uiBadgeCount": "{label}, {count} new",
+  "@uiBadgeCount": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "uiWishlistAdd": "Add to wishlist",
+  "uiWishlistRemove": "Remove from wishlist",
+  "uiSoldOut": "Sold out",
+  "uiPriceOnQuote": "Price on quote",
+  "uiMinQuantity": "Min. {quantity}",
+  "@uiMinQuantity": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      }
+    }
+  },
+  "uiKhrApprox": "≈ KHR {amount}",
+  "@uiKhrApprox": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "navMain": "Main navigation",
+  "navHome": "Home",
+  "navCategories": "Categories",
+  "navCart": "Cart",
+  "navOrders": "Orders",
+  "navAccount": "Account",
+  "navQuoteList": "Quote list",
+  "navOrdersQuotes": "Orders & quotes",
+  "navJobs": "Jobs",
+  "navHistory": "History",
+  "navCash": "Cash",
+  "navDashboard": "Dashboard",
+  "navRfqs": "RFQs",
+  "navChat": "Chat",
+  "navMore": "More",
+  "orderPendingPayment": "Pending payment",
+  "orderAwaitingBankTransfer": "Awaiting bank transfer",
+  "orderConfirmed": "Confirmed",
+  "orderPacking": "Packing",
+  "orderReady": "Ready",
+  "orderOutForDelivery": "Out for delivery",
+  "orderDelivered": "Delivered",
+  "orderFailedDelivery": "Failed delivery",
+  "orderCancelled": "Cancelled",
+  "orderReturned": "Returned",
+  "paymentPaid": "Paid",
+  "paymentWaitingForKhqr": "Waiting for KHQR",
+  "paymentAwaitingConfirmation": "Awaiting confirmation",
+  "paymentCashOnDelivery": "Cash on delivery",
+  "paymentExpired": "Expired",
+  "paymentSlipRejected": "Slip rejected",
+  "paymentRefunded": "Refunded",
+  "quoteSubmitted": "Submitted",
+  "quoteInReview": "In review",
+  "quoteReady": "Quote ready",
+  "quoteRevisionRequested": "Revision requested",
+  "quoteAccepted": "Accepted",
+  "quoteRejected": "Rejected",
+  "quoteExpired": "Expired",
+  "returnRequested": "Return requested",
+  "returnPickupScheduled": "Pickup scheduled",
+  "returnRefunded": "Refunded",
+  "businessPendingVerification": "Pending verification",
+  "businessVerified": "Verified business",
+  "reviewPending": "Pending review",
+  "reviewHidden": "Hidden",
+  "riderJobAssigned": "Assigned",
+  "riderJobReturnPickup": "Return pickup"
 }
