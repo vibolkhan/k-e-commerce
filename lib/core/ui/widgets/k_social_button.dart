@@ -34,6 +34,8 @@ class KSocialButton extends StatelessWidget {
       button: true,
       enabled: enabled,
       label: label,
+      // The label is the whole button; keep the tap for screen readers.
+      onTap: enabled ? onPressed : null,
       excludeSemantics: true,
       child: SizedBox(
         height: 48,
