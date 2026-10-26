@@ -8,6 +8,8 @@ import 'package:k_e_commerce/core/router/app_router.dart';
 import 'package:k_e_commerce/core/router/app_routes.dart';
 import 'package:k_e_commerce/features/design_gallery/presentation/design_gallery_page.dart';
 
+import '../../helpers.dart';
+
 void main() {
   group('roleRedirect', () {
     test('root goes to the role home', () {
@@ -48,6 +50,7 @@ void main() {
           appConfigProvider.overrideWithValue(
             AppConfig(env: env, supabaseUrl: '', supabaseAnonKey: ''),
           ),
+          onboardedDevice,
         ],
       );
       addTearDown(container.dispose);

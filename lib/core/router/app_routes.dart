@@ -2,6 +2,20 @@
 abstract final class AppRoutes {
   static const root = '/';
   static const loading = '/loading';
+
+  /// F0 launch: S-01, then S-02 and S-03 on first launch only. [from] is a
+  /// deep link to open once launch is done.
+  static const splash = '/splash';
+  static const welcomeLanguage = '/welcome/language';
+  static const welcomeIntro = '/welcome/intro';
+
+  static bool isLaunch(String path) =>
+      path == root || path == splash || path.startsWith('/welcome/');
+
+  static String launchStep(String path, {String? from}) => Uri(
+    path: path,
+    queryParameters: {'from': ?from},
+  ).toString().replaceFirst(RegExp(r'\?$'), '');
   static const forbidden = '/forbidden';
   static const customer = '/customer';
   static const business = '/business';
@@ -34,6 +48,11 @@ abstract final class AppRoutes {
 
   static bool isSignInFlow(String path) =>
       path == signIn || path.startsWith('$signIn/');
+
+  /// S-08 family, inside the customer and business shells.
+  static String account(String shell) => '$shell/account';
+  static String accountEdit(String shell) => '$shell/account/edit';
+  static String accountDelete(String shell) => '$shell/account/delete';
 
   /// Every K component; dev and staging builds only, not linked anywhere.
   static const designGallery = '/design-gallery';

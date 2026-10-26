@@ -6,9 +6,8 @@ import '../../../core/config/bootstrap.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/router/app_role.dart';
 import '../../../core/ui/k_ui.dart';
-import '../../auth/domain/auth_intent.dart';
+import '../../account/presentation/account_actions.dart';
 import '../../auth/presentation/auth_providers.dart';
-import '../../auth/presentation/require_sign_in.dart';
 import '../../settings/presentation/language_sheet.dart';
 
 /// Placeholder home for each role's shell until its real screens are built.
@@ -36,45 +35,34 @@ class RoleHomePage extends ConsumerWidget {
             ),
           ],
           const SizedBox(height: 16),
-          // Until the Account area (F06): Account › Sign in / Sign out.
-          if (profile == null)
-            Align(
-              alignment: Alignment.centerLeft,
-              child: KButton(
-                label: l10n.authSignIn,
-                icon: KIcons.account,
-                onPressed: () =>
-                    requireSignIn(context, ref, AuthIntent.account),
-              ),
-            )
-          else
-            Row(
-              children: [
-                Expanded(
-                  child: Text(l10n.authSignedInAs(profile.fullName ?? '')),
-                ),
-                KButton.outline(
-                  label: l10n.authSignOut,
-                  size: KButtonSize.sm,
-                  onPressed: () => ref.read(authRepositoryProvider).signOut(),
-                ),
-              ],
-            ),
-          const SizedBox(height: 16),
-          // Until the Account area (F06): live language switch and a sample
-          // retail price in USD + KHR.
           if (role != AppRole.business) ...[
             const KPrice(cents: 4900),
             const SizedBox(height: 16),
           ],
-          Align(
-            alignment: Alignment.centerLeft,
-            child: KButton.outline(
-              label: l10n.languageTitle,
-              icon: KIcons.language,
-              onPressed: () => showLanguageSheet(context),
+          // Customers and business buyers have the Account tab (S-08). Until
+          // the rider and admin apps get theirs: language and sign out.
+          if (!role.hasAccountTab) ...[
+            if (profile != null) ...[
+              Text(l10n.authSignedInAs(profile.fullName ?? '')),
+              const SizedBox(height: 8),
+            ],
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                KButton.outline(
+                  label: l10n.languageTitle,
+                  icon: KIcons.language,
+                  onPressed: () => showLanguageSheet(context),
+                ),
+                if (profile != null)
+                  KButton.outline(
+                    label: l10n.authSignOut,
+                    onPressed: () => confirmSignOut(context, ref),
+                  ),
+              ],
             ),
-          ),
+          ],
           if (kDebugMode) ...[
             const SizedBox(height: 24),
             Text(l10n.devRoleSwitcher),

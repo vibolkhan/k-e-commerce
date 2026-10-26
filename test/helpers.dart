@@ -3,6 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:k_e_commerce/core/l10n/generated/app_localizations.dart';
 import 'package:k_e_commerce/core/ui/theme/app_theme.dart';
+import 'package:k_e_commerce/features/onboarding/data/onboarding_store.dart';
+
+/// A device that has already been through first launch (S-02, S-03), for
+/// tests that pump the whole app and expect to land on a home.
+final onboardedDevice = onboardingStoreProvider.overrideWithValue(
+  MemoryOnboardingStore.done(),
+);
 
 /// Wraps [child] in a MaterialApp with the app's theme and localizations.
 Widget localized(Widget child, {Locale locale = const Locale('en')}) {

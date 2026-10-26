@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -6,7 +6,12 @@ import '../../features/auth/domain/profile.dart';
 import '../../features/auth/presentation/auth_providers.dart';
 import '../../features/auth/presentation/auth_routes.dart';
 import '../../features/design_gallery/presentation/design_gallery_page.dart';
+import '../../features/onboarding/data/onboarding_store.dart';
+import '../../features/onboarding/presentation/intro_page.dart';
+import '../../features/onboarding/presentation/language_step_page.dart';
+import '../../features/onboarding/presentation/splash_page.dart';
 import '../../features/shell/presentation/role_home_page.dart';
+import '../../features/shell/presentation/shopper_shell.dart';
 import '../config/bootstrap.dart';
 import '../ui/pages/error_page.dart';
 import '../ui/pages/loading_page.dart';
@@ -35,15 +40,75 @@ String? accountRedirect(Profile? profile, String path) {
   return null;
 }
 
+/// Where App Flow F0 stands on this device.
+class LaunchState {
+  const LaunchState({
+    required this.sessionReady,
+    required this.languageChosen,
+    required this.introSeen,
+    required this.role,
+  });
+
+  /// The saved session (and its profile) has loaded.
+  final bool sessionReady;
+  final bool languageChosen;
+  final bool introSeen;
+  final AppRole role;
+}
+
+/// Redirect rule for launch (F0): S-01 until the session and profile have
+/// loaded, then S-02 and S-03 on first launch, then the role's home — or
+/// the in-app link that opened the app, carried along as `from`. Riders and
+/// staff skip the shopping intro. Sign-in is never held back. Pure for tests.
+String? launchRedirect(LaunchState state, Uri uri) {
+  final path = uri.path;
+  if (AppRoutes.isSignInFlow(path)) return null;
+  final inLaunch = AppRoutes.isLaunch(path);
+  final link = inLaunch ? uri.queryParameters['from'] : uri.toString();
+  final from = link != null && link.startsWith('/') && !link.startsWith('//')
+      ? link
+      : null;
+  String? step(String target) =>
+      path == target ? null : AppRoutes.launchStep(target, from: from);
+
+  if (!state.sessionReady) return step(AppRoutes.splash);
+  if (!state.languageChosen) return step(AppRoutes.welcomeLanguage);
+  final shopper =
+      state.role == AppRole.customer || state.role == AppRole.business;
+  if (shopper && !state.introSeen) return step(AppRoutes.welcomeIntro);
+  if (inLaunch) return from ?? state.role.homePath;
+  return null;
+}
+
 final routerProvider = Provider<GoRouter>((ref) {
   final config = ref.watch(appConfigProvider);
-  // Re-run redirects when the account changes (sign-in, block, S-06).
-  final accountChanged = ValueNotifier(0);
-  ref.listen(currentProfileProvider, (_, _) => accountChanged.value++);
+  final rootKey = GlobalKey<NavigatorState>();
+  // Re-run redirects when the account or launch progress changes (session
+  // restored, sign-in, block, S-06, onboarding steps).
+  final refresh = ValueNotifier(0);
+  void bump(Object? _, Object? _) => refresh.value++;
+  ref.listen(currentProfileProvider, bump);
+  ref.listen(onboardingProgressProvider, bump);
+
+  LaunchState launchState() {
+    final profile = ref.read(currentProfileProvider);
+    final done = ref.read(onboardingProgressProvider);
+    return LaunchState(
+      sessionReady: profile.hasValue || profile.hasError,
+      languageChosen: done.contains(OnboardingStep.language),
+      introSeen: done.contains(OnboardingStep.intro),
+      role: ref.read(currentRoleProvider),
+    );
+  }
+
+  bool isSignedIn() => ref.read(currentProfileProvider).value != null;
+
   final router = GoRouter(
+    navigatorKey: rootKey,
     initialLocation: AppRoutes.root,
-    refreshListenable: accountChanged,
+    refreshListenable: refresh,
     redirect: (context, state) =>
+        launchRedirect(launchState(), state.uri) ??
         accountRedirect(
           ref.read(currentProfileProvider).value,
           state.matchedLocation,
@@ -52,13 +117,24 @@ final routerProvider = Provider<GoRouter>((ref) {
     errorBuilder: (context, state) => const ErrorPage.notFound(),
     routes: [
       GoRoute(path: AppRoutes.root, redirect: (_, _) => null),
+      GoRoute(path: AppRoutes.splash, builder: (_, _) => const SplashPage()),
+      GoRoute(
+        path: AppRoutes.welcomeLanguage,
+        builder: (_, _) => const LanguageStepPage(),
+      ),
+      GoRoute(
+        path: AppRoutes.welcomeIntro,
+        builder: (_, _) => const IntroPage(),
+      ),
       GoRoute(path: AppRoutes.loading, builder: (_, _) => const LoadingPage()),
       GoRoute(
         path: AppRoutes.forbidden,
         builder: (_, _) => const ErrorPage.forbidden(),
       ),
       ...signInRoutes(),
-      for (final role in AppRole.values)
+      for (final role in [AppRole.customer, AppRole.business])
+        shopperShell(role, rootKey: rootKey, isSignedIn: isSignedIn),
+      for (final role in [AppRole.rider, AppRole.admin])
         GoRoute(
           path: role.homePath,
           builder: (_, _) => RoleHomePage(role: role),
@@ -70,11 +146,18 @@ final routerProvider = Provider<GoRouter>((ref) {
         ),
     ],
   );
-  // Re-run redirects when the role changes.
-  ref.listen(currentRoleProvider, (_, role) => router.go(role.homePath));
+  // A role change (sign-in, sign-out, debug switcher) opens the new role's
+  // home unless they are already inside it. During launch the redirect
+  // decides, so a deep link survives the profile loading.
+  ref.listen(currentRoleProvider, (_, role) {
+    final path = router.routerDelegate.currentConfiguration.uri.path;
+    final inOwnShell =
+        path == role.homePath || path.startsWith('${role.homePath}/');
+    if (!AppRoutes.isLaunch(path) && !inOwnShell) router.go(role.homePath);
+  });
   ref.onDispose(() {
     router.dispose();
-    accountChanged.dispose();
+    refresh.dispose();
   });
   return router;
 });

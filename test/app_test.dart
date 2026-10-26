@@ -3,11 +3,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:k_e_commerce/app.dart';
 
+import 'helpers.dart';
+
 void main() {
   testWidgets('app shell starts and flags missing Supabase config', (
     tester,
   ) async {
-    await tester.pumpWidget(const ProviderScope(child: KApp()));
+    await tester.pumpWidget(
+      ProviderScope(overrides: [onboardedDevice], child: const KApp()),
+    );
     await tester.pumpAndSettle();
     expect(find.text('Customer home'), findsOneWidget);
     expect(
@@ -18,7 +22,10 @@ void main() {
 
   testWidgets('app shell renders in Khmer', (tester) async {
     await tester.pumpWidget(
-      const ProviderScope(child: KApp(locale: Locale('km'))),
+      ProviderScope(
+        overrides: [onboardedDevice],
+        child: const KApp(locale: Locale('km')),
+      ),
     );
     await tester.pumpAndSettle();
     expect(find.text('ទំព័រដើម អតិថិជន'), findsOneWidget);

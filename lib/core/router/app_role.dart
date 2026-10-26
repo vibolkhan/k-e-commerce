@@ -13,6 +13,9 @@ enum AppRole {
   const AppRole(this.homePath);
 
   final String homePath;
+
+  /// Customers and business buyers get the Account tab (S-08).
+  bool get hasAccountTab => this == customer || this == business;
 }
 
 /// Current user's role, from their profile; guests browse as customers.

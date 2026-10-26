@@ -8,6 +8,8 @@ import 'package:k_e_commerce/core/l10n/locale_store.dart';
 import 'package:k_e_commerce/core/ui/k_ui.dart';
 import 'package:k_e_commerce/features/settings/presentation/language_select_view.dart';
 
+import '../../helpers.dart';
+
 /// An app whose language follows [localeControllerProvider], like [KApp].
 class _LiveApp extends ConsumerWidget {
   const _LiveApp(this.home);
@@ -32,7 +34,10 @@ void main() {
       final store = MemoryLocaleStore('en');
       await tester.pumpWidget(
         ProviderScope(
-          overrides: [localeStoreProvider.overrideWithValue(store)],
+          overrides: [
+            localeStoreProvider.overrideWithValue(store),
+            onboardedDevice,
+          ],
           child: const KApp(),
         ),
       );
@@ -40,6 +45,8 @@ void main() {
       expect(find.text('Customer home'), findsOneWidget);
       expect(find.text('≈ KHR 200,900'), findsOneWidget);
 
+      await tester.tap(find.text('Account'));
+      await tester.pumpAndSettle();
       await tester.tap(find.text('Language'));
       await tester.pumpAndSettle();
       expect(find.text('App language'), findsNothing); // a11y label only
@@ -51,8 +58,11 @@ void main() {
       await tester.tap(find.text('Save'));
       await tester.pumpAndSettle();
 
-      expect(find.text('ទំព័រដើម អតិថិជន'), findsOneWidget);
+      expect(find.text('គណនី'), findsWidgets); // Account title and tab
       expect(find.text('ភាសា'), findsOneWidget);
+      await tester.tap(find.text('ទំព័រដើម'));
+      await tester.pumpAndSettle();
+      expect(find.text('ទំព័រដើម អតិថិជន'), findsOneWidget);
       expect(find.text(r'$49.00'), findsOneWidget);
       expect(find.text('≈ 200,900 រៀល'), findsOneWidget);
       expect(store.read(), 'km');
@@ -62,10 +72,15 @@ void main() {
       final store = MemoryLocaleStore('en');
       await tester.pumpWidget(
         ProviderScope(
-          overrides: [localeStoreProvider.overrideWithValue(store)],
+          overrides: [
+            localeStoreProvider.overrideWithValue(store),
+            onboardedDevice,
+          ],
           child: const KApp(),
         ),
       );
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Account'));
       await tester.pumpAndSettle();
       await tester.tap(find.text('Language'));
       await tester.pumpAndSettle();
@@ -73,7 +88,8 @@ void main() {
       await tester.pump();
       await tester.tap(find.bySemanticsLabel('Close'));
       await tester.pumpAndSettle();
-      expect(find.text('Customer home'), findsOneWidget);
+      expect(find.text('Account'), findsWidgets);
+      expect(find.text('English'), findsOneWidget); // the row's value
       expect(store.read(), 'en');
     });
   });

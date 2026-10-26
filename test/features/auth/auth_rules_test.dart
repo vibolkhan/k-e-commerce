@@ -12,6 +12,7 @@ import 'package:k_e_commerce/features/auth/domain/profile.dart';
 import 'package:k_e_commerce/features/auth/presentation/auth_flow.dart';
 import 'package:k_e_commerce/features/auth/presentation/auth_providers.dart';
 
+import '../../helpers.dart';
 import 'fake_auth_repository.dart';
 
 void main() {
@@ -137,6 +138,7 @@ void main() {
             ),
           ),
           authRepositoryProvider.overrideWithValue(repo),
+          onboardedDevice,
         ],
       );
       addTearDown(container.dispose);
@@ -187,8 +189,10 @@ void main() {
       expect(repo.signOuts, 1);
     });
 
-    testWidgets('guests see Sign in on the customer home', (tester) async {
+    testWidgets('guests see Sign in on the Account tab', (tester) async {
       await pumpApp(tester, FakeAuthRepository());
+      await tester.tap(find.text('Account'));
+      await tester.pumpAndSettle();
       await tester.tap(find.text('Sign in'));
       await tester.pumpAndSettle();
       expect(find.text('Sign in to K'), findsOneWidget);

@@ -6,6 +6,7 @@ import 'app.dart';
 import 'core/config/app_config.dart';
 import 'core/config/bootstrap.dart';
 import 'core/l10n/locale_store.dart';
+import 'features/onboarding/data/onboarding_store.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,6 +18,9 @@ Future<void> main() async {
       overrides: [
         appConfigProvider.overrideWithValue(config),
         localeStoreProvider.overrideWithValue(SharedPrefsLocaleStore(prefs)),
+        onboardingStoreProvider.overrideWithValue(
+          SharedPrefsOnboardingStore(prefs),
+        ),
       ],
       child: const KApp(),
     ),
