@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- F07: notification channels shown in Android settings. -->
+    <string name="channel_default">Notifications</string>
+    <string name="channel_jobs">New delivery jobs</string>
+</resources>

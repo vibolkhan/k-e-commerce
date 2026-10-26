@@ -1,3 +1,5 @@
+import 'firebase_config.dart';
+
 /// Deployment environment, chosen at build time with `--dart-define`.
 enum AppEnv {
   dev,
@@ -19,6 +21,7 @@ class AppConfig {
     required this.supabaseAnonKey,
     this.googleWebClientId = '',
     this.googleIosClientId = '',
+    this.firebase = const FirebaseConfig(),
   });
 
   factory AppConfig.fromEnvironment() => AppConfig(
@@ -27,6 +30,7 @@ class AppConfig {
     supabaseAnonKey: const String.fromEnvironment('SUPABASE_ANON_KEY'),
     googleWebClientId: const String.fromEnvironment('GOOGLE_WEB_CLIENT_ID'),
     googleIosClientId: const String.fromEnvironment('GOOGLE_IOS_CLIENT_ID'),
+    firebase: FirebaseConfig.fromEnvironment(),
   );
 
   final AppEnv env;
@@ -38,6 +42,13 @@ class AppConfig {
   /// native flow and falls back to the browser.
   final String googleWebClientId;
   final String googleIosClientId;
+
+  /// Push (FCM). Without it the inbox and in-app banners still work.
+  final FirebaseConfig firebase;
+
+  /// Push needs Firebase for this platform and a backend to register with.
+  bool get isPushConfigured =>
+      isSupabaseConfigured && firebase.currentOptions != null;
 
   bool get isSupabaseConfigured =>
       supabaseUrl.isNotEmpty && supabaseAnonKey.isNotEmpty;

@@ -132,3 +132,6 @@ app.*.symbols
 
 # Edge Function secrets — only the example is committed
 /supabase/functions/.env
+
+# Web push config, generated per environment by tool/web_push_config.dart
+/web/firebase-config.js
