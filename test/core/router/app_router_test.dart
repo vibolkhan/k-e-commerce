@@ -34,9 +34,105 @@ void main() {
       );
     });
 
+    test('no role opens another role\'s pages, account area included', () {
+      for (final role in AppRole.values) {
+        for (final other in AppRole.values.where((r) => r != role)) {
+          for (final path in [
+            other.homePath,
+            AppRoutes.account(other.homePath),
+            AppRoutes.accountEdit(other.homePath),
+            AppRoutes.accountDelete(other.homePath),
+          ]) {
+            expect(
+              roleRedirect(role, path),
+              AppRoutes.forbidden,
+              reason: '$role → $path',
+            );
+          }
+        }
+        expect(roleRedirect(role, AppRoutes.account(role.homePath)), isNull);
+      }
+    });
+
     test('shared pages are open to every role', () {
       expect(roleRedirect(AppRole.rider, AppRoutes.loading), isNull);
       expect(roleRedirect(AppRole.rider, AppRoutes.forbidden), isNull);
+    });
+  });
+
+  group('launchRedirect (F0)', () {
+    LaunchState state({
+      bool ready = true,
+      bool language = true,
+      bool intro = true,
+      AppRole role = AppRole.customer,
+    }) => LaunchState(
+      sessionReady: ready,
+      languageChosen: language,
+      introSeen: intro,
+      role: role,
+    );
+    String? at(LaunchState s, String location) =>
+        launchRedirect(s, Uri.parse(location));
+
+    test('splash until the session has loaded, keeping the link', () {
+      final loading = state(ready: false);
+      expect(at(loading, '/'), AppRoutes.splash);
+      expect(at(loading, AppRoutes.splash), isNull);
+      expect(at(loading, '/admin'), '/splash?from=%2Fadmin');
+    });
+
+    test('first launch: language, then intro, then home', () {
+      expect(at(state(language: false), '/'), AppRoutes.welcomeLanguage);
+      expect(at(state(language: false), AppRoutes.welcomeLanguage), isNull);
+      expect(
+        at(state(intro: false), AppRoutes.welcomeLanguage),
+        AppRoutes.welcomeIntro,
+      );
+      expect(at(state(), AppRoutes.welcomeIntro), AppRoutes.customer);
+    });
+
+    test('the opening link survives every step', () {
+      final link = AppRoutes.launchStep(
+        AppRoutes.splash,
+        from: '/customer/account',
+      );
+      final next = at(state(language: false), link)!;
+      expect(next, startsWith(AppRoutes.welcomeLanguage));
+      final intro = at(state(intro: false), next)!;
+      expect(intro, startsWith(AppRoutes.welcomeIntro));
+      expect(at(state(), intro), '/customer/account');
+    });
+
+    test('only in-app links are followed', () {
+      expect(
+        at(state(), '/splash?from=https%3A%2F%2Fevil.example'),
+        AppRoutes.customer,
+      );
+      expect(
+        at(state(), '/splash?from=%2F%2Fevil.example'),
+        AppRoutes.customer,
+      );
+    });
+
+    test('riders and staff skip the shopping intro', () {
+      for (final role in [AppRole.rider, AppRole.admin]) {
+        expect(at(state(intro: false, role: role), '/'), role.homePath);
+      }
+      expect(
+        at(state(intro: false, role: AppRole.business), '/'),
+        AppRoutes.welcomeIntro,
+      );
+    });
+
+    test('launch is done: other pages pass, launch pages go home', () {
+      expect(at(state(), '/customer/account'), isNull);
+      expect(at(state(role: AppRole.rider), AppRoutes.splash), AppRoutes.rider);
+    });
+
+    test('sign-in is never held back', () {
+      expect(at(state(ready: false), AppRoutes.signIn), isNull);
+      expect(at(state(language: false), AppRoutes.signInProfile), isNull);
     });
   });
 

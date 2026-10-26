@@ -83,11 +83,12 @@ String? launchRedirect(LaunchState state, Uri uri) {
 final routerProvider = Provider<GoRouter>((ref) {
   final config = ref.watch(appConfigProvider);
   final rootKey = GlobalKey<NavigatorState>();
-  // Re-run redirects when the account or launch progress changes (session
-  // restored, sign-in, block, S-06, onboarding steps).
+  // Re-run redirects when the account, role or launch progress changes
+  // (session restored, sign-in, block, S-06, onboarding steps).
   final refresh = ValueNotifier(0);
   void bump(Object? _, Object? _) => refresh.value++;
   ref.listen(currentProfileProvider, bump);
+  ref.listen(currentRoleProvider, bump);
   ref.listen(onboardingProgressProvider, bump);
 
   LaunchState launchState() {
