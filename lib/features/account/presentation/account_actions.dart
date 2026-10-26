@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/ui/k_ui.dart';
 import '../../auth/presentation/auth_providers.dart';
+import '../../notifications/presentation/notifications_providers.dart';
 
 /// S-08e. Signs out after confirmation; the router then moves a rider or
 /// staff member to the guest Customer Home.
@@ -18,6 +19,8 @@ Future<void> confirmSignOut(BuildContext context, WidgetRef ref) async {
     icon: KIcons.account,
   );
   if (!ok) return;
+  // While still signed in: this device stops getting the account's pushes.
+  await ref.read(pushControllerProvider).signOut();
   await ref.read(authRepositoryProvider).signOut();
 }
 

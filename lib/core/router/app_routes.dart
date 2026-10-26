@@ -54,6 +54,18 @@ abstract final class AppRoutes {
   static String accountEdit(String shell) => '$shell/account/edit';
   static String accountDelete(String shell) => '$shell/account/delete';
 
+  /// S-08d.
+  static String accountNotifications(String shell) =>
+      '$shell/account/notifications';
+
+  /// F07 S-07 inbox, and the screens notifications open. Order (C-12),
+  /// quote (B-05) and chat (C-17) are placeholders until their tasks land;
+  /// the paths are final because pushes already link to them.
+  static String inbox(String shell) => '$shell/inbox';
+  static String order(String shell, String id) => '$shell/orders/$id';
+  static String quote(String id) => '$business/quotes/$id';
+  static String chat(String shell, String id) => '$shell/chat/$id';
+
   /// Every K component; dev and staging builds only, not linked anywhere.
   static const designGallery = '/design-gallery';
 }

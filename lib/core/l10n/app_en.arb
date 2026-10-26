@@ -385,5 +385,78 @@
   "deleteDone": "Your account has been deleted.",
   "deleteActiveTitle": "Finish your orders first",
   "deleteActiveBody": "You have orders or returns in progress. You can delete your account once they're delivered, cancelled or closed.",
-  "deleteNotAllowed": "This account can't be deleted in the app. Please contact support."
+  "deleteNotAllowed": "This account can't be deleted in the app. Please contact support.",
+  "dateYesterday": "Yesterday",
+  "notifTitle": "Notifications",
+  "notifMarkAllRead": "Mark all read",
+  "notifTabsLabel": "Filter notifications",
+  "notifTabAll": "All",
+  "notifTabOrders": "Orders",
+  "notifTabQuotes": "Quotes",
+  "notifTabChat": "Chat",
+  "notifToday": "Today",
+  "notifEarlier": "Earlier",
+  "notifUnread": "Unread",
+  "notifEmptyTitle": "You’re all caught up",
+  "notifEmptyBody": "We’ll let you know when something changes.",
+  "notifLoadFailed": "We couldn’t load your notifications. Check your connection and try again.",
+  "notifRetry": "Try again",
+  "notifMarkAllFailed": "Couldn’t mark them read. Try again.",
+  "notifBell": "{count, plural, =0{Notifications} other{Notifications, {count} unread}}",
+  "@notifBell": {
+    "description": "Accessible label of the header bell with the unread count.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "notifBannerView": "View",
+  "notifBannerTrack": "Track",
+  "notifBannerDismiss": "Swipe up to dismiss",
+  "notifSettingsOrdersTitle": "Orders & delivery",
+  "notifSettingsOrdersBody": "Confirmations, rider updates and delivery",
+  "notifSettingsQuotesTitle": "Quotes",
+  "notifSettingsQuotesBody": "For business buyers · quote ready, revised, expiring",
+  "notifSettingsChatTitle": "Chat messages",
+  "notifSettingsChatBody": "Replies from K Support and your rider",
+  "notifSettingsReviewsTitle": "Review reminders",
+  "notifSettingsReviewsBody": "A nudge to rate items after delivery",
+  "notifSettingsPush": "Push notifications",
+  "notifSettingsEmail": "Email",
+  "notifSettingsAlwaysOn": "Payment and security messages are always sent.",
+  "notifSettingsSaveFailed": "Couldn’t save that change. Check your connection and try again.",
+  "notifTestTitle": "Test push (dev only)",
+  "@notifTestTitle": {
+    "description": "Dev and staging builds only; not in the design."
+  },
+  "notifTestBody": "Sends this account a test notification in 10 seconds. Put the app in the background or close it to see the push, then tap it.",
+  "notifTestTarget": "Opens",
+  "notifTestTargetInbox": "Inbox",
+  "notifTestTargetOrder": "Order K-10248",
+  "notifTestTargetChat": "Support chat",
+  "notifTestTargetQuote": "Quote RFQ-0312",
+  "notifTestSend": "Send test push",
+  "notifTestSent": "Test sent. It arrives in about 10 seconds.",
+  "notifTestFailed": "Couldn’t send the test. Is NOTIFY_SELF_TEST on?",
+  "placeholderOrderTitle": "Order",
+  "placeholderQuoteTitle": "Quote",
+  "placeholderChatTitle": "Support chat",
+  "placeholderBody": "This screen ({screen}) arrives in a later update.",
+  "@placeholderBody": {
+    "description": "Stand-in page for a screen a later task builds; screen is a design id like C-12.",
+    "placeholders": {
+      "screen": {
+        "type": "String"
+      }
+    }
+  },
+  "placeholderReference": "Reference: {id}",
+  "@placeholderReference": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  }
 }

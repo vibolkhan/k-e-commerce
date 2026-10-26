@@ -8,6 +8,7 @@ import '../../../core/router/app_role.dart';
 import '../../../core/ui/k_ui.dart';
 import '../../account/presentation/account_actions.dart';
 import '../../auth/presentation/auth_providers.dart';
+import '../../notifications/presentation/notification_bell.dart';
 import '../../settings/presentation/language_sheet.dart';
 
 /// Placeholder home for each role's shell until its real screens are built.
@@ -22,7 +23,16 @@ class RoleHomePage extends ConsumerWidget {
     final config = ref.watch(appConfigProvider);
     final profile = ref.watch(currentProfileProvider).value;
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.roleHomeTitle(roleLabel(l10n, role)))),
+      appBar: AppBar(
+        title: Text(l10n.roleHomeTitle(roleLabel(l10n, role))),
+        // C-01 / B-00 header bell; riders and staff get theirs with F21/F37.
+        actions: [
+          if (profile != null && role.hasAccountTab) ...[
+            NotificationBell(shell: role.homePath),
+            const SizedBox(width: 8),
+          ],
+        ],
+      ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [

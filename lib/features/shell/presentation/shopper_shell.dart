@@ -5,6 +5,7 @@ import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/router/app_role.dart';
 import '../../../core/ui/k_ui.dart';
 import '../../account/presentation/account_routes.dart';
+import '../../notifications/presentation/notifications_routes.dart';
 import 'role_home_page.dart';
 
 /// Customer and business shells: Home and Account tabs for now. Categories,
@@ -22,6 +23,11 @@ StatefulShellRoute shopperShell(
           GoRoute(
             path: role.homePath,
             builder: (_, _) => RoleHomePage(role: role),
+            routes: notificationRoutes(
+              role,
+              rootKey: rootKey,
+              isSignedIn: isSignedIn,
+            ),
           ),
         ],
       ),

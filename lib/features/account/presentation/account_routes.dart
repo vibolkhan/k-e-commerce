@@ -3,11 +3,12 @@ import 'package:go_router/go_router.dart';
 
 import '../../../core/router/app_role.dart';
 import '../../../core/router/app_routes.dart';
+import '../../notifications/presentation/notification_settings_page.dart';
 import 'account_page.dart';
 import 'delete_account_page.dart';
 import 'edit_profile_page.dart';
 
-/// `<shell>/account` (S-08 / S-08a) with S-08b and S-08f on the root
+/// `<shell>/account` (S-08 / S-08a) with S-08b, S-08d and S-08f on the root
 /// navigator, over the bottom navigation. Guests asking for edit or delete
 /// land on the account tab instead.
 GoRoute accountRoute(
@@ -27,6 +28,12 @@ GoRoute accountRoute(
         parentNavigatorKey: rootKey,
         redirect: signedInOnly,
         builder: (_, _) => const EditProfilePage(),
+      ),
+      GoRoute(
+        path: 'notifications',
+        parentNavigatorKey: rootKey,
+        redirect: signedInOnly,
+        builder: (_, _) => NotificationSettingsPage(role: role),
       ),
       GoRoute(
         path: 'delete',

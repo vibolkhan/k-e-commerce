@@ -12,6 +12,7 @@ import '../../auth/domain/phone_number.dart';
 import '../../auth/domain/profile.dart';
 import '../../auth/presentation/auth_providers.dart';
 import '../../auth/presentation/require_sign_in.dart';
+import '../../notifications/presentation/notification_bell.dart';
 import '../../settings/presentation/language_sheet.dart';
 import 'account_actions.dart';
 
@@ -37,9 +38,12 @@ class AccountPage extends ConsumerWidget {
 }
 
 class _Header extends StatelessWidget {
-  const _Header({this.child});
+  const _Header({this.child, this.shell});
 
   final Widget? child;
+
+  /// Shows the S-07 bell for this shell (signed in only).
+  final String? shell;
 
   @override
   Widget build(BuildContext context) {
@@ -55,15 +59,19 @@ class _Header extends StatelessWidget {
         children: [
           SizedBox(
             height: kMinTap,
-            child: Align(
-              alignment: AlignmentDirectional.centerStart,
-              child: Semantics(
-                header: true,
-                child: Text(
-                  AppLocalizations.of(context).accountTitle,
-                  style: k.text.h2.copyWith(fontWeight: FontWeight.w800),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Semantics(
+                    header: true,
+                    child: Text(
+                      AppLocalizations.of(context).accountTitle,
+                      style: k.text.h2.copyWith(fontWeight: FontWeight.w800),
+                    ),
+                  ),
                 ),
-              ),
+                if (shell != null) NotificationBell(shell: shell!),
+              ],
             ),
           ),
           if (child != null) ...[const SizedBox(height: 12), child!],
@@ -198,6 +206,7 @@ class _SignedInAccount extends ConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         _Header(
+          shell: role.homePath,
           child: Row(
             children: [
               SizedBox.square(
@@ -323,9 +332,12 @@ class _SignedInAccount extends ConsumerWidget {
                 rows: [
                   const _LanguageRow(),
                   KListRow(
+                    key: const Key('account-notifications'),
                     title: l10n.accountNotifications,
                     icon: KIcons.notifications,
-                    onTap: soon,
+                    onTap: () => context.push(
+                      AppRoutes.accountNotifications(role.homePath),
+                    ),
                   ),
                   KListRow(
                     title: l10n.accountHelp,
