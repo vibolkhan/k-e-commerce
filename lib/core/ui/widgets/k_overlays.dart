@@ -9,6 +9,7 @@ import '../icons/k_icons.dart';
 import '../theme/k_theme.dart';
 import '../theme/k_tokens.dart';
 import 'k_button.dart';
+import 'k_feedback.dart' show KBannerTone;
 
 // ---------------------------------------------------------------- toast
 
@@ -296,6 +297,7 @@ class KConfirmDialog extends StatelessWidget {
     required this.cancelLabel,
     this.tone = KConfirmTone.neutral,
     this.icon,
+    this.iconTone,
     this.alternativeLabel,
     this.onConfirm,
     this.onCancel,
@@ -311,6 +313,10 @@ class KConfirmDialog extends StatelessWidget {
   /// Defaults to info (neutral) or delete (destructive).
   final KIconData? icon;
 
+  /// Colours the icon disc only (e.g. warn for "Too many attempts", bad for
+  /// a blocked account) without making the confirm button destructive.
+  final KBannerTone? iconTone;
+
   /// Optional ghost action under the buttons ("Move to wishlist instead").
   final String? alternativeLabel;
   final VoidCallback? onConfirm;
@@ -323,9 +329,13 @@ class KConfirmDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     final k = context.k;
     final c = k.colors;
-    final (iconBg, iconFg) = _destructive
-        ? (c.badBg, c.bad)
-        : (c.tint2, c.primaryInk);
+    final (iconBg, iconFg) = switch (iconTone) {
+      KBannerTone.warn => (KColors.warnBg, KColors.warnText),
+      KBannerTone.bad => (c.badBg, c.bad),
+      KBannerTone.ok => (KColors.okBg, KColors.okText),
+      KBannerTone.info => (c.tint2, c.primaryInk),
+      null => _destructive ? (c.badBg, c.bad) : (c.tint2, c.primaryInk),
+    };
     return Semantics(
       scopesRoute: true,
       namesRoute: true,
@@ -420,12 +430,15 @@ Future<bool> showKConfirm(
   required String cancelLabel,
   KConfirmTone tone = KConfirmTone.neutral,
   KIconData? icon,
+  KBannerTone? iconTone,
   String? alternativeLabel,
   VoidCallback? onAlternative,
+  bool barrierDismissible = true,
 }) async {
   final result = await showDialog<bool>(
     context: context,
     barrierColor: KColors.scrim,
+    barrierDismissible: barrierDismissible,
     builder: (context) => Dialog(
       backgroundColor: Colors.transparent,
       elevation: 0,
@@ -439,6 +452,7 @@ Future<bool> showKConfirm(
           cancelLabel: cancelLabel,
           tone: tone,
           icon: icon,
+          iconTone: iconTone,
           alternativeLabel: alternativeLabel,
           onConfirm: () => Navigator.of(context).pop(true),
           onCancel: () => Navigator.of(context).pop(false),

@@ -252,4 +252,26 @@ abstract final class KIcons {
     KRectShape(6, 2, 12, 20, 2.5),
     KPathShape('M11 18h2'),
   ]);
+
+  // F05 sign-in (S-04b, S-05c, S-06b); eye and lock copied from the screens.
+  static const eye = KIconData([
+    KPathShape('M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z'),
+    KCircleShape(12, 12, 3),
+  ]);
+  static const eyeOff = KIconData([
+    KPathShape(
+      'M10.6 5.1A10.7 10.7 0 0 1 12 5c6.4 0 10 7 10 7a17.6 17.6 0 0 1-3.2 4.1',
+    ),
+    KPathShape('M6.6 6.6C3.8 8.4 2 12 2 12s3.6 7 10 7a9.7 9.7 0 0 0 5.4-1.6'),
+    KPathShape('M9.9 9.9a3 3 0 0 0 4.2 4.2'),
+    KPathShape('m3 3 18 18'),
+  ]);
+  static const lock = KIconData([
+    KRectShape(4, 11, 16, 10, 2),
+    KPathShape('M8 11V7a4 4 0 0 1 8 0v4'),
+  ]);
+  static const blocked = KIconData([
+    KCircleShape(12, 12, 9),
+    KPathShape('M5.6 5.6l12.8 12.8'),
+  ]);
 }

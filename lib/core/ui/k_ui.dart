@@ -17,5 +17,6 @@ export 'widgets/k_navigation.dart';
 export 'widgets/k_overlays.dart';
 export 'widgets/k_price.dart';
 export 'widgets/k_selection.dart';
+export 'widgets/k_social_button.dart';
 export 'widgets/k_status_pill.dart';
 export 'widgets/k_text_field.dart';
