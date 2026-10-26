@@ -36,3 +36,20 @@ jobs:
       # skips them. Run them locally with `flutter test --tags golden`.
       - name: Test
         run: flutter test --exclude-tags golden
+
+  # F04: build the database from migrations + seed and run the pgTAP RLS tests.
+  database:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: 2.120.0
+
+      - name: Start database (applies migrations and seed)
+        run: supabase db start
+
+      - name: Schema and RLS tests
+        run: supabase test db
