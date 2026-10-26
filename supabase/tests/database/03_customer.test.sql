@@ -144,7 +144,7 @@ select is(
 -- Notifications: read flag only.
 select is(
   tests.rows($$ update public.notifications set read_at = now() $$),
-  2,
+  5,
   'Dara can mark her notifications read'
 );
 select throws_ok(

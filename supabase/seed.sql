@@ -536,16 +536,39 @@ insert into public.messages (conversation_id, sender_id, body, created_at) value
   ('91000000-0000-4000-8000-000000000002', 'a0000000-0000-4000-8000-000000000002',
    'Your quote is ready. The mug price includes a 14% bulk discount.', '2026-10-25 11:00+07');
 
-insert into public.notifications (profile_id, type, title, body, payload) values
-  ('a0000000-0000-4000-8000-000000000021', 'order_status',
-   '{"en": "Order delivered"}', '{"en": "K-10248 was delivered. How was it?"}',
-   '{"order_id": "d0000000-0000-4000-8000-000000010248"}'),
-  ('a0000000-0000-4000-8000-000000000021', 'order_status',
-   '{"en": "Out for delivery"}', '{"en": "Vuthy is on the way with K-10250."}',
-   '{"order_id": "d0000000-0000-4000-8000-000000010250"}'),
-  ('a0000000-0000-4000-8000-000000000031', 'rfq',
-   '{"en": "Quote ready"}', '{"en": "Your quote for RFQ-0312 is ready."}',
-   '{"rfq_id": "b0000000-0000-4000-8000-000000000312"}');
+-- Inbox (S-07): Dara's rows match the design, newest first; three unread.
+-- Copy is stored in both languages, as notify() writes it.
+insert into public.notifications (profile_id, type, category, title, body, payload, read_at, created_at) values
+  ('a0000000-0000-4000-8000-000000000021', 'chat_message', 'chat',
+   '{"en": "K Support replied", "km": "K Support បានឆ្លើយតប"}',
+   '{"en": "Sophea: I''ve asked Vuthy to arrive after 5 PM.", "km": "Sophea: I''ve asked Vuthy to arrive after 5 PM."}',
+   '{"route": "/customer/chat/91000000-0000-4000-8000-000000000001", "conversation_id": "91000000-0000-4000-8000-000000000001"}',
+   null, now() - interval '8 minutes'),
+  ('a0000000-0000-4000-8000-000000000021', 'order_out_for_delivery', 'orders',
+   '{"en": "Your order is on the way", "km": "ការបញ្ជាទិញរបស់អ្នកកំពុងដឹកមក"}',
+   '{"en": "Vuthy is delivering #K-10250. Arriving in about 18 min.", "km": "Vuthy កំពុងដឹក #K-10250។ នឹងមកដល់ក្នុងរយៈពេលប្រហែល 18 នាទី។"}',
+   '{"route": "/customer/orders/d0000000-0000-4000-8000-000000010250", "order_id": "d0000000-0000-4000-8000-000000010250"}',
+   null, now() - interval '16 minutes'),
+  ('a0000000-0000-4000-8000-000000000021', 'payment_received', 'orders',
+   '{"en": "Payment received", "km": "បានទទួលការទូទាត់"}',
+   '{"en": "We got $92.00 by KHQR for #K-10248. Your order is confirmed.", "km": "យើងបានទទួល $92.00 តាម KHQR សម្រាប់ #K-10248។ ការបញ្ជាទិញរបស់អ្នកត្រូវបានបញ្ជាក់។"}',
+   '{"route": "/customer/orders/d0000000-0000-4000-8000-000000010248", "order_id": "d0000000-0000-4000-8000-000000010248"}',
+   null, now() - interval '3 hours'),
+  ('a0000000-0000-4000-8000-000000000021', 'review_reminder', 'orders',
+   '{"en": "How were your headphones?", "km": "តើកាសរបស់អ្នកយ៉ាងម៉េចដែរ?"}',
+   '{"en": "Rate Wireless Headphones Pro from #K-10248 and help other shoppers.", "km": "វាយតម្លៃ Wireless Headphones Pro ពី #K-10248 ដើម្បីជួយអ្នកទិញផ្សេងទៀត។"}',
+   '{"route": "/customer/orders/d0000000-0000-4000-8000-000000010248", "order_id": "d0000000-0000-4000-8000-000000010248"}',
+   now() - interval '1 day', now() - interval '1 day 2 hours'),
+  ('a0000000-0000-4000-8000-000000000021', 'order_delivered', 'orders',
+   '{"en": "Delivered", "km": "បានដឹកជូនរួចរាល់"}',
+   '{"en": "#K-10248 was delivered at 4:40 PM. Returns are open for 3 days.", "km": "#K-10248 ត្រូវបានដឹកជូននៅម៉ោង 4:40 PM។ អាចប្តូរ/ត្រឡប់ទំនិញបានក្នុងរយៈពេល 3 ថ្ងៃ។"}',
+   '{"route": "/customer/orders/d0000000-0000-4000-8000-000000010248", "order_id": "d0000000-0000-4000-8000-000000010248"}',
+   now() - interval '3 days', now() - interval '4 days'),
+  ('a0000000-0000-4000-8000-000000000031', 'quote_ready', 'quotes',
+   '{"en": "Your quote is ready", "km": "សម្រង់តម្លៃរបស់អ្នករួចរាល់ហើយ"}',
+   '{"en": "RFQ-0312 · $2,260.50 · valid until 5 Nov. Review and accept.", "km": "RFQ-0312 · $2,260.50 · មានសុពលភាពដល់ 5 វិច្ឆិកា។ ពិនិត្យ និងទទួលយក។"}',
+   '{"route": "/business/quotes/b0000000-0000-4000-8000-000000000312", "rfq_id": "b0000000-0000-4000-8000-000000000312"}',
+   null, now() - interval '2 hours');
 
 -- Display ratings and sales counts from the design (A-05, C-05b). The reviews
 -- trigger keeps them in step from here on.
