@@ -9,6 +9,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../../core/config/app_config.dart';
 import '../../../core/utils/log.dart';
+import '../../notifications/domain/notification_prefs.dart';
 import '../domain/auth_outcome.dart';
 import '../domain/profile.dart';
 import 'auth_repository.dart';
@@ -272,15 +273,19 @@ class SupabaseAuthRepository implements AuthRepository {
         .select('notification_prefs')
         .eq('id', userId)
         .single();
-    final prefs = Map<String, dynamic>.from(
-      (current['notification_prefs'] as Map?) ?? const {},
-    )..['email_receipts'] = emailReceipts;
+    // S-06 "email me receipts" is the Orders email switch on S-08d.
+    final prefs = NotificationPrefs.fromJson(current['notification_prefs'])
+        .withValue(
+          NotificationGroup.orders,
+          NotificationChannel.email,
+          emailReceipts,
+        );
     await _client
         .from('profiles')
         .update({
           'full_name': fullName.trim(),
           if (email != null && email.isNotEmpty) 'email': email,
-          'notification_prefs': prefs,
+          'notification_prefs': prefs.toJson(),
         })
         .eq('id', userId);
   }
