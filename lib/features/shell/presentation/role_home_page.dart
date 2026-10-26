@@ -6,6 +6,9 @@ import '../../../core/config/bootstrap.dart';
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/router/app_role.dart';
 import '../../../core/ui/k_ui.dart';
+import '../../auth/domain/auth_intent.dart';
+import '../../auth/presentation/auth_providers.dart';
+import '../../auth/presentation/require_sign_in.dart';
 import '../../settings/presentation/language_sheet.dart';
 
 /// Placeholder home for each role's shell until its real screens are built.
@@ -18,6 +21,7 @@ class RoleHomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context);
     final config = ref.watch(appConfigProvider);
+    final profile = ref.watch(currentProfileProvider).value;
     return Scaffold(
       appBar: AppBar(title: Text(l10n.roleHomeTitle(roleLabel(l10n, role)))),
       body: ListView(
@@ -31,6 +35,31 @@ class RoleHomePage extends ConsumerWidget {
               style: TextStyle(color: Theme.of(context).colorScheme.error),
             ),
           ],
+          const SizedBox(height: 16),
+          // Until the Account area (F06): Account › Sign in / Sign out.
+          if (profile == null)
+            Align(
+              alignment: Alignment.centerLeft,
+              child: KButton(
+                label: l10n.authSignIn,
+                icon: KIcons.account,
+                onPressed: () =>
+                    requireSignIn(context, ref, AuthIntent.account),
+              ),
+            )
+          else
+            Row(
+              children: [
+                Expanded(
+                  child: Text(l10n.authSignedInAs(profile.fullName ?? '')),
+                ),
+                KButton.outline(
+                  label: l10n.authSignOut,
+                  size: KButtonSize.sm,
+                  onPressed: () => ref.read(authRepositoryProvider).signOut(),
+                ),
+              ],
+            ),
           const SizedBox(height: 16),
           // Until the Account area (F06): live language switch and a sample
           // retail price in USD + KHR.

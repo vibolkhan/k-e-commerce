@@ -311,5 +311,6 @@
   "authFullName": "Full name",
   "authFullNameRequired": "Enter your name.",
   "authProfileEmailHelp": "For receipts. We never share it.",
-  "authEmailReceipts": "Email me receipts and order updates"
+  "authEmailReceipts": "Email me receipts and order updates",
+  "authConfirmEmail": "Check your inbox to confirm your email, then sign in."
 }

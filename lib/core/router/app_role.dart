@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../features/auth/presentation/auth_providers.dart';
 import 'app_routes.dart';
 
 /// Who is using the app; decides which shell they can open.
@@ -14,11 +15,12 @@ enum AppRole {
   final String homePath;
 }
 
-/// Current user's role. Placeholder until sign-in (F05/F06) resolves the role
-/// from the Supabase session.
+/// Current user's role, from their profile; guests browse as customers.
+/// [set] overrides it until the profile changes (debug role switcher).
 class CurrentRole extends Notifier<AppRole> {
   @override
-  AppRole build() => AppRole.customer;
+  AppRole build() =>
+      ref.watch(currentProfileProvider).value?.role ?? AppRole.customer;
 
   void set(AppRole role) => state = role;
 }
