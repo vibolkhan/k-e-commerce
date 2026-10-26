@@ -37,11 +37,14 @@ Config comes from `--dart-define`s; no secrets are committed.
 | `SUPABASE_ANON_KEY` | anon / publishable key (never the service-role key) | empty |
 
 ```
-cp config/env.example.json config/dev.json   # fill in; config/*.json is gitignored
-flutter run --dart-define-from-file=config/dev.json
+cp config/env.example.json config/env.json   # fill in; config/*.json is gitignored
+flutter run --dart-define-from-file=config/env.json
+flutter run -d chrome --dart-define-from-file=config/env.json
 ```
 
-Without Supabase keys the app runs offline and shows a notice. In `prod`, missing keys stop startup.
+In VS Code, run the **K (dev)** or **K (dev, Chrome)** launch config (`.vscode/launch.json`), which passes the same file.
+
+Defines are compiled in: a plain `flutter run` (no define file) has no Supabase keys, so the app runs offline and shows a notice. After editing `env.json`, do a full restart, not a hot reload. In `prod`, missing keys stop startup.
 
 ## Lints and CI
 
