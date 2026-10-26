@@ -18,6 +18,7 @@ dependencies:
   flutter_riverpod: 3.3.2
   go_router: 17.5.0
   intl: 0.20.2
+  path_parsing: 1.1.0
   supabase_flutter: 2.18.3
 
 dev_dependencies:
@@ -28,3 +29,29 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+
+  # Bundled (not fetched at runtime) so the app works offline and goldens are
+  # deterministic. SIL OFL 1.1 — licences in assets/fonts/.
+  fonts:
+    - family: PlusJakartaSans
+      fonts:
+        - asset: assets/fonts/PlusJakartaSans-400.ttf
+          weight: 400
+        - asset: assets/fonts/PlusJakartaSans-500.ttf
+          weight: 500
+        - asset: assets/fonts/PlusJakartaSans-600.ttf
+          weight: 600
+        - asset: assets/fonts/PlusJakartaSans-700.ttf
+          weight: 700
+        - asset: assets/fonts/PlusJakartaSans-800.ttf
+          weight: 800
+    - family: KantumruyPro
+      fonts:
+        - asset: assets/fonts/KantumruyPro-400.ttf
+          weight: 400
+        - asset: assets/fonts/KantumruyPro-500.ttf
+          weight: 500
+        - asset: assets/fonts/KantumruyPro-600.ttf
+          weight: 600
+        - asset: assets/fonts/KantumruyPro-700.ttf
+          weight: 700
