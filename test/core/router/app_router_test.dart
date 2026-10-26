@@ -1,9 +1,12 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:k_e_commerce/app.dart';
+import 'package:k_e_commerce/core/config/app_config.dart';
+import 'package:k_e_commerce/core/config/bootstrap.dart';
 import 'package:k_e_commerce/core/router/app_role.dart';
 import 'package:k_e_commerce/core/router/app_router.dart';
 import 'package:k_e_commerce/core/router/app_routes.dart';
+import 'package:k_e_commerce/features/design_gallery/presentation/design_gallery_page.dart';
 
 void main() {
   group('roleRedirect', () {
@@ -36,8 +39,17 @@ void main() {
   });
 
   group('router', () {
-    Future<ProviderContainer> pumpApp(WidgetTester tester) async {
-      final container = ProviderContainer();
+    Future<ProviderContainer> pumpApp(
+      WidgetTester tester, {
+      AppEnv env = AppEnv.dev,
+    }) async {
+      final container = ProviderContainer(
+        overrides: [
+          appConfigProvider.overrideWithValue(
+            AppConfig(env: env, supabaseUrl: '', supabaseAnonKey: ''),
+          ),
+        ],
+      );
       addTearDown(container.dispose);
       await tester.pumpWidget(
         UncontrolledProviderScope(container: container, child: const KApp()),
@@ -83,6 +95,26 @@ void main() {
         await tester.pumpAndSettle();
         expect(find.text('$label home'), findsOneWidget);
       }
+    });
+
+    testWidgets('design gallery opens for any role outside prod', (
+      tester,
+    ) async {
+      final container = await pumpApp(tester, env: AppEnv.staging);
+      container.read(currentRoleProvider.notifier).set(AppRole.rider);
+      await tester.pumpAndSettle();
+      container.read(routerProvider).go(AppRoutes.designGallery);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+      expect(find.byType(DesignGalleryPage), findsOneWidget);
+    });
+
+    testWidgets('design gallery is not found in prod', (tester) async {
+      final container = await pumpApp(tester, env: AppEnv.prod);
+      container.read(routerProvider).go(AppRoutes.designGallery);
+      await tester.pumpAndSettle();
+      expect(find.byType(DesignGalleryPage), findsNothing);
+      expect(find.text('Page not found'), findsOneWidget);
     });
   });
 }

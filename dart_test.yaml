@@ -1,0 +1,4 @@
+tags:
+  # Pixel comparisons; generated on Windows. Run with --tags golden,
+  # update with --update-goldens --tags golden. CI excludes them.
+  golden:
