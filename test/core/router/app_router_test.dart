@@ -184,7 +184,7 @@ void main() {
       final container = await pumpApp(tester);
       container.read(currentRoleProvider.notifier).set(AppRole.admin);
       await tester.pumpAndSettle();
-      expect(find.text('Admin home'), findsOneWidget);
+      expect(find.text(adminHome), findsOneWidget);
     });
 
     testWidgets('debug role switcher opens each shell', (tester) async {
@@ -192,7 +192,10 @@ void main() {
       for (final label in ['Business', 'Rider', 'Admin', 'Customer']) {
         await tester.tap(find.text(label));
         await tester.pumpAndSettle();
-        expect(find.text('$label home'), findsOneWidget);
+        expect(
+          find.text(label == 'Admin' ? adminHome : '$label home'),
+          findsOneWidget,
+        );
       }
     });
 

@@ -9,11 +9,13 @@ import 'package:k_e_commerce/core/config/bootstrap.dart';
 import 'package:k_e_commerce/core/l10n/locale_store.dart';
 import 'package:k_e_commerce/core/router/app_role.dart';
 import 'package:k_e_commerce/core/router/app_router.dart';
+import 'package:k_e_commerce/features/admin/domain/staff_role.dart';
 import 'package:k_e_commerce/features/auth/domain/profile.dart';
 import 'package:k_e_commerce/features/auth/presentation/auth_providers.dart';
 import 'package:k_e_commerce/features/onboarding/data/onboarding_store.dart';
 import 'package:k_e_commerce/features/onboarding/presentation/splash_page.dart';
 
+import '../../helpers.dart';
 import '../auth/fake_auth_repository.dart';
 
 /// Holds the profile back until [release], like a slow network at launch.
@@ -51,6 +53,8 @@ final _users = {
     id: 's',
     role: AppRole.admin,
     fullName: 'Chenda Lim',
+    staffRole: StaffRole.superAdmin,
+    staffStatus: StaffStatus.active,
   ),
 };
 
@@ -171,9 +175,9 @@ void main() {
         AppRole.customer => 'Customer home',
         AppRole.business => 'Business home',
         AppRole.rider => 'Rider home',
-        AppRole.admin => 'Admin home',
+        AppRole.admin => adminHome,
       };
-      testWidgets('${user.role.name} lands on $home and nowhere else', (
+      testWidgets('${user.role.name} lands on their home and nowhere else', (
         tester,
       ) async {
         final repo = FakeAuthRepository(accounts: {..._users});
@@ -222,7 +226,7 @@ void main() {
 
       repo.release();
       await tester.pumpAndSettle();
-      expect(find.text('Admin home'), findsOneWidget);
+      expect(find.text(adminHome), findsOneWidget);
     });
   });
 }

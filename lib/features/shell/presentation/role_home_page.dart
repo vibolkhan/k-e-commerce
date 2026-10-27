@@ -75,23 +75,41 @@ class RoleHomePage extends ConsumerWidget {
           ],
           if (kDebugMode) ...[
             const SizedBox(height: 24),
-            Text(l10n.devRoleSwitcher),
-            const SizedBox(height: 8),
-            Wrap(
-              spacing: 8,
-              children: [
-                for (final r in AppRole.values)
-                  ChoiceChip(
-                    label: Text(roleLabel(l10n, r)),
-                    selected: r == role,
-                    onSelected: (_) =>
-                        ref.read(currentRoleProvider.notifier).set(r),
-                  ),
-              ],
-            ),
+            DevRoleSwitcher(current: role),
           ],
         ],
       ),
+    );
+  }
+}
+
+/// Debug builds only: switch the shell without signing in as that role.
+class DevRoleSwitcher extends ConsumerWidget {
+  const DevRoleSwitcher({super.key, required this.current});
+
+  final AppRole current;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(l10n.devRoleSwitcher),
+        const SizedBox(height: 8),
+        Wrap(
+          spacing: 8,
+          children: [
+            for (final r in AppRole.values)
+              ChoiceChip(
+                label: Text(roleLabel(l10n, r)),
+                selected: r == current,
+                onSelected: (_) =>
+                    ref.read(currentRoleProvider.notifier).set(r),
+              ),
+          ],
+        ),
+      ],
     );
   }
 }

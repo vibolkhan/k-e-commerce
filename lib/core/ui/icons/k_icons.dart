@@ -184,6 +184,38 @@ abstract final class KIcons {
     KCircleShape(12, 12, 1.2),
     KCircleShape(19, 12, 1.2),
   ]);
+
+  // Admin sidebar (CmpAdminSidebar): Products, Content, Customers, Settings.
+  static const tag = KIconData([
+    KPathShape(
+      'M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z',
+    ),
+    KCircleShape(7.5, 7.5, 1.5),
+  ]);
+  static const image = KIconData([
+    KRectShape(3, 3, 18, 18, 2),
+    KCircleShape(9, 9, 2),
+    KPathShape('m21 15-5-5L5 21'),
+  ]);
+  static const people = KIconData([
+    KCircleShape(9, 8, 4),
+    KPathShape('M2 21a7 7 0 0 1 14 0'),
+    KPathShape('M16 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3'),
+  ]);
+  static const settings = KIconData([
+    KCircleShape(12, 12, 3),
+    KPathShape(
+      'M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 '
+      '1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 '
+      '0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 '
+      '1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 '
+      '1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 '
+      '0 0 0 1.82.33h.08a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 '
+      '1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 '
+      '0 0-.33 1.82v.08a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 '
+      '0-1.51 1z',
+    ),
+  ]);
   static const help = KIconData([
     KCircleShape(12, 12, 9),
     KPathShape('M9.5 9a2.5 2.5 0 0 1 4.9.7c0 1.8-2.4 2.3-2.4 3.8M12 17h.01'),

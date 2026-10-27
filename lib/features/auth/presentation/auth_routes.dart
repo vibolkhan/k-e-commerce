@@ -4,9 +4,11 @@ import '../../../core/router/app_routes.dart';
 import '../domain/auth_intent.dart';
 import 'complete_profile_page.dart';
 import 'otp_page.dart';
+import 'set_password_page.dart';
 import 'sign_in_page.dart';
 
-/// S-04 → S-05 → S-06 (`/sign-in`, `/sign-in/verify`, `/sign-in/profile`).
+/// S-04 → S-05 → S-06 (`/sign-in`, `/sign-in/verify`, `/sign-in/profile`),
+/// and the one-time password step for staff invited by email.
 List<RouteBase> signInRoutes() => [
   GoRoute(
     path: AppRoutes.signIn,
@@ -29,6 +31,7 @@ List<RouteBase> signInRoutes() => [
         ),
       ),
       GoRoute(path: 'profile', builder: (_, _) => const CompleteProfilePage()),
+      GoRoute(path: 'set-password', builder: (_, _) => const SetPasswordPage()),
     ],
   ),
 ];

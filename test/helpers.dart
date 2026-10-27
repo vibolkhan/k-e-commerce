@@ -11,6 +11,9 @@ final onboardedDevice = onboardingStoreProvider.overrideWithValue(
   MemoryOnboardingStore.done(),
 );
 
+/// Text on the back-office dashboard (A-01) until its task builds it.
+const adminHome = 'This screen (A-01) arrives in a later update.';
+
 /// Wraps [child] in a MaterialApp with the app's theme and localizations.
 Widget localized(Widget child, {Locale locale = const Locale('en')}) {
   return ProviderScope(

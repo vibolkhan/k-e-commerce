@@ -2,6 +2,11 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/admin/domain/admin_section.dart';
+import '../../features/admin/domain/staff_permissions.dart';
+import '../../features/admin/domain/staff_role.dart';
+import '../../features/admin/presentation/admin_providers.dart';
+import '../../features/admin/presentation/admin_routes.dart';
 import '../../features/auth/domain/profile.dart';
 import '../../features/auth/presentation/auth_providers.dart';
 import '../../features/auth/presentation/auth_routes.dart';
@@ -32,11 +37,32 @@ String? roleRedirect(AppRole role, String path) {
 
 /// Redirect rule for the signed-in account: a blocked account lands on S-04
 /// with S-06b (and is signed out there); an account without a name finishes
-/// S-06 first. The sign-in flow itself is never redirected. Pure for tests.
+/// S-06 first; staff invited by email set a password first. The sign-in flow
+/// itself is never redirected. Pure for tests.
 String? accountRedirect(Profile? profile, String path) {
   if (profile == null || AppRoutes.isSignInFlow(path)) return null;
   if (profile.isBlocked) return AppRoutes.signInFor(blocked: true);
   if (profile.needsName) return AppRoutes.signInProfile;
+  if (profile.needsPassword) return AppRoutes.signInSetPassword;
+  return null;
+}
+
+/// Redirect rule inside the back office (F08): a staff member without an
+/// active membership ([staffRole] null) only gets the pending page; a
+/// section the role may not open is "No access", like another role's
+/// shell. The server refuses the same data either way. Pure for tests.
+String? adminRedirect(StaffRole? staffRole, String path) {
+  final inAdmin =
+      path == AppRoutes.admin || path.startsWith('${AppRoutes.admin}/');
+  if (!inAdmin) return null;
+  if (staffRole == null) {
+    return path == AppRoutes.adminPending ? null : AppRoutes.adminPending;
+  }
+  if (path == AppRoutes.adminPending) return AppRoutes.admin;
+  final section = AdminSection.forPath(path);
+  if (section != null && !canOpen(staffRole, section)) {
+    return AppRoutes.forbidden;
+  }
   return null;
 }
 
@@ -89,6 +115,7 @@ final routerProvider = Provider<GoRouter>((ref) {
   void bump(Object? _, Object? _) => refresh.value++;
   ref.listen(currentProfileProvider, bump);
   ref.listen(currentRoleProvider, bump);
+  ref.listen<StaffRole?>(currentStaffRoleProvider, bump);
   ref.listen(onboardingProgressProvider, bump);
 
   LaunchState launchState() {
@@ -114,7 +141,11 @@ final routerProvider = Provider<GoRouter>((ref) {
           ref.read(currentProfileProvider).value,
           state.matchedLocation,
         ) ??
-        roleRedirect(ref.read(currentRoleProvider), state.matchedLocation),
+        roleRedirect(ref.read(currentRoleProvider), state.matchedLocation) ??
+        adminRedirect(
+          ref.read(currentStaffRoleProvider),
+          state.matchedLocation,
+        ),
     errorBuilder: (context, state) => const ErrorPage.notFound(),
     routes: [
       GoRoute(path: AppRoutes.root, redirect: (_, _) => null),
@@ -135,11 +166,11 @@ final routerProvider = Provider<GoRouter>((ref) {
       ...signInRoutes(),
       for (final role in [AppRole.customer, AppRole.business])
         shopperShell(role, rootKey: rootKey, isSignedIn: isSignedIn),
-      for (final role in [AppRole.rider, AppRole.admin])
-        GoRoute(
-          path: role.homePath,
-          builder: (_, _) => RoleHomePage(role: role),
-        ),
+      GoRoute(
+        path: AppRole.rider.homePath,
+        builder: (_, _) => const RoleHomePage(role: AppRole.rider),
+      ),
+      ...adminRoutes(rootKey: rootKey),
       if (!config.isProd)
         GoRoute(
           path: AppRoutes.designGallery,

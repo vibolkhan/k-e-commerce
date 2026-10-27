@@ -458,5 +458,223 @@
         "type": "String"
       }
     }
-  }
+  },
+  "adminTitle": "K Admin",
+  "adminStoreName": "Phnom Penh store",
+  "adminNavLabel": "Admin sections",
+  "adminGroupSales": "Sales",
+  "adminGroupCatalog": "Catalog",
+  "adminGroupPeople": "People",
+  "adminGroupInsights": "Insights",
+  "adminGroupInsightsSettings": "Insights & settings",
+  "adminSectionDashboard": "Dashboard",
+  "adminSectionOrders": "Orders",
+  "adminSectionRfqs": "RFQs & quotes",
+  "adminSectionReturns": "Returns",
+  "adminSectionCatalog": "Products",
+  "adminSectionInventory": "Inventory",
+  "adminSectionContent": "Content",
+  "adminSectionCustomers": "Customers",
+  "adminSectionRiders": "Riders",
+  "adminSectionReviews": "Reviews",
+  "adminSectionChat": "Support chat",
+  "adminSectionReports": "Reports",
+  "adminSectionSettings": "Settings",
+  "adminSearchHint": "Search orders, customers, products, RFQs",
+  "adminSearchLabel": "Search the back office",
+  "adminCutoffIn": "Same-day cut-off in {time}",
+  "@adminCutoffIn": {
+    "description": "Top bar countdown; time is like 4h 35m.",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "adminCutoffPassed": "Cut-off passed · next-day delivery",
+  "adminDurationHm": "{hours}h {minutes}m",
+  "@adminDurationHm": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "adminDurationM": "{minutes}m",
+  "@adminDurationM": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "adminHelp": "Help",
+  "adminAccountMenu": "Account menu",
+  "adminMoreTitle": "More",
+  "adminMoreDesktopTip": "Catalog editing and settings work best on desktop.",
+  "adminPendingTitle": "Your staff access isn't active",
+  "adminPendingBody": "Your invite has expired or your access was removed. Ask a super admin to send you a new invite.",
+  "adminSettingsStoreSetup": "Store setup",
+  "adminSettingsZones": "Delivery zones",
+  "adminSettingsPayments": "Payments",
+  "adminSettingsStore": "Store & rules",
+  "adminSettingsStaff": "Staff & roles",
+  "adminSettingsAudit": "Audit log",
+  "staffRoleSuperAdmin": "Super admin",
+  "staffRoleSales": "Sales",
+  "staffRoleSupport": "Support",
+  "staffRoleCatalog": "Catalog",
+  "staffRoleSalesDesc": "RFQs, quotes, business orders and verifications",
+  "staffRoleSupportDesc": "Chat, returns, refunds and order help",
+  "staffRoleCatalogDesc": "Products, stock and home-screen content",
+  "staffRoleSuperAdminDesc": "Everything, including payments and settings",
+  "staffCount": "Staff ({count})",
+  "@staffCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "staffInvite": "Invite staff",
+  "staffColName": "Name",
+  "staffColRole": "Role",
+  "staffColLastActive": "Last active",
+  "staffColStatus": "Status",
+  "staffColActions": "Actions",
+  "staffYou": "you",
+  "staffActive": "Active",
+  "staffPending": "Pending",
+  "staffExpired": "Expired",
+  "staffEdit": "Edit",
+  "staffResend": "Resend",
+  "staffNow": "Now",
+  "staffMinutesAgo": "{minutes} min ago",
+  "@staffMinutesAgo": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "staffHoursAgo": "{hours} h ago",
+  "@staffHoursAgo": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "staffYesterday": "Yesterday",
+  "staffNeverSignedIn": "Not signed in yet",
+  "staffInviteSent": "Invite sent {date}",
+  "@staffInviteSent": {
+    "description": "date is like 21 Oct.",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "staffLoadFailed": "Couldn't load the staff list.",
+  "staffRetry": "Try again",
+  "staffMatrixTitle": "Roles & permissions",
+  "staffMatrixSubtitle": "What each role can open and change",
+  "staffMatrixArea": "Area",
+  "accessFull": "Full",
+  "accessView": "View",
+  "accessNone": "No access",
+  "accessReviews": "Reviews",
+  "accessContent": "Content",
+  "accessSalesRfq": "Sales & RFQ",
+  "accessStock": "Stock",
+  "areaOrders": "Orders",
+  "areaRfqs": "RFQs & quotes",
+  "areaReturns": "Returns & refunds",
+  "areaProducts": "Products & inventory",
+  "areaCustomers": "Customers & verification",
+  "areaRiders": "Riders & cash",
+  "areaReviewsContent": "Reviews & content",
+  "areaChat": "Support chat",
+  "areaReports": "Reports",
+  "areaSettings": "Settings",
+  "staffServerNote": "Permissions are enforced on the server for every request, not only hidden in the menu.",
+  "staffInviteTitle": "Invite staff",
+  "staffFullName": "Full name",
+  "staffContact": "Email or phone",
+  "staffContactHelp": "They'll get a link to set up sign-in. The invite expires in 7 days.",
+  "staffRoleLabel": "Role",
+  "staffSendInvite": "Send invite",
+  "staffNameRequired": "Enter their full name.",
+  "staffContactInvalid": "Enter an email or a Cambodian mobile number.",
+  "staffInvited": "Invite sent to {contact}.",
+  "@staffInvited": {
+    "placeholders": {
+      "contact": {
+        "type": "String"
+      }
+    }
+  },
+  "staffResent": "Invite sent again. It's valid for 7 days.",
+  "staffUpdated": "Role updated.",
+  "staffRemoved": "{name} no longer has staff access.",
+  "@staffRemoved": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "staffErrForbidden": "Only a super admin can manage staff.",
+  "staffErrAccountExists": "This email or phone already belongs to a customer, business or rider account.",
+  "staffErrAlreadyStaff": "This person is already on the staff list.",
+  "staffErrNotFound": "This staff member is no longer on the list. Refresh and try again.",
+  "staffErrNotInvited": "This person has already accepted their invite.",
+  "staffErrSelf": "You can't change your own role or remove yourself.",
+  "staffErrLastSuperAdmin": "Keep at least one active super admin.",
+  "staffErrSendFailed": "The invite couldn't be sent. Check the email or phone and try again.",
+  "staffErrUnknown": "Something went wrong. Please try again.",
+  "staffEditTitle": "Edit {name}",
+  "@staffEditTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "staffSaveRole": "Save role",
+  "staffRemove": "Remove from staff",
+  "staffRoleConfirmTitle": "Change role?",
+  "staffRoleConfirmBody": "{name} becomes {role} and can only open what that role allows.",
+  "@staffRoleConfirmBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "role": {
+        "type": "String"
+      }
+    }
+  },
+  "staffRoleConfirm": "Change role",
+  "staffRemoveConfirmTitle": "Remove {name}?",
+  "@staffRemoveConfirmTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "staffRemoveConfirmBody": "They lose back-office access at once and can't sign in until they're invited again.",
+  "staffRemoveConfirm": "Remove",
+  "setPasswordTitle": "Set your password",
+  "setPasswordBody": "You've been invited to the K back office. Choose a password to sign in with your email from now on.",
+  "setPasswordLabel": "New password",
+  "setPasswordConfirmLabel": "Confirm password",
+  "setPasswordMismatch": "The passwords don't match.",
+  "setPasswordSave": "Save password",
+  "setPasswordFailed": "Couldn't save your password. Please try again."
 }
