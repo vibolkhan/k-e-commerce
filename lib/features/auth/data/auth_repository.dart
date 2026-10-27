@@ -31,6 +31,10 @@ abstract interface class AuthRepository {
   Future<AuthOutcome> signInWithGoogle();
   Future<AuthOutcome> signInWithApple();
 
+  /// Staff invited by email set their password once (F08).
+  /// [SignedIn] or [AuthFailure].
+  Future<AuthOutcome> setPassword(String password);
+
   /// The signed-in user's profile, or null for a guest.
   Future<Profile?> fetchProfile();
 

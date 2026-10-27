@@ -7,6 +7,9 @@ import 'package:k_e_commerce/core/money/khr_rate_provider.dart';
 import 'package:k_e_commerce/core/ui/k_ui.dart';
 
 class _FixedRate implements SettingsRepository {
+  @override
+  Future<String?> sameDayCutoff() async => null;
+
   const _FixedRate(this.rate);
 
   final int rate;

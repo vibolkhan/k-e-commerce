@@ -22,6 +22,14 @@ abstract final class AppRoutes {
   static const rider = '/rider';
   static const admin = '/admin';
 
+  /// F08 back-office. Each `AdminSection` lives under `/admin/<segment>`;
+  /// More (M-05) and the pending-invite page are open to every staff member.
+  static String adminSection(String segment) =>
+      segment.isEmpty ? admin : '$admin/$segment';
+  static const adminMore = '$admin/more';
+  static const adminPending = '$admin/pending';
+  static const adminStaff = '$admin/settings/staff';
+
   /// F05 sign-in flow: S-04 → S-05 → S-06.
   static const signIn = '/sign-in';
   static const signInVerify = '/sign-in/verify';
@@ -45,6 +53,9 @@ abstract final class AppRoutes {
 
   static String signInVerifyFor(String phone) =>
       Uri(path: signInVerify, queryParameters: {'phone': phone}).toString();
+
+  /// Staff invited by email set a password once after the link signs them in.
+  static const signInSetPassword = '/sign-in/set-password';
 
   static bool isSignInFlow(String path) =>
       path == signIn || path.startsWith('$signIn/');

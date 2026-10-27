@@ -32,3 +32,7 @@ String formatTime(AppLocalizations l10n, DateTime instant) =>
 /// "by 8:00 PM".
 String formatByTime(AppLocalizations l10n, DateTime instant) =>
     l10n.timeBy(formatTime(l10n, instant));
+
+/// "21 Oct".
+String formatDayMonth(AppLocalizations l10n, DateTime instant) =>
+    DateFormat('d MMM', l10n.localeName).format(toPhnomPenh(instant));

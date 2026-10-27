@@ -254,10 +254,30 @@ class SupabaseAuthRepository implements AuthRepository {
     if (userId == null) return null;
     final row = await _client
         .from('profiles')
-        .select('id, role, full_name, email, phone, is_blocked')
+        .select(
+          'id, role, full_name, email, phone, is_blocked, '
+          'staff_members(staff_role, status)',
+        )
         .eq('id', userId)
         .maybeSingle();
-    return row == null ? null : Profile.fromRow(row);
+    if (row == null) return null;
+    final metadata = _auth.currentUser?.userMetadata;
+    return Profile.fromRow(
+      row,
+      needsPassword: metadata?['needs_password'] == true,
+    );
+  }
+
+  @override
+  Future<AuthOutcome> setPassword(String password) async {
+    try {
+      await _auth.updateUser(
+        UserAttributes(password: password, data: {'needs_password': false}),
+      );
+      return const SignedIn(isNewUser: false);
+    } catch (e) {
+      return AuthFailure(e);
+    }
   }
 
   @override

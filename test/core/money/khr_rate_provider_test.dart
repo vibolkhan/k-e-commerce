@@ -3,6 +3,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:k_e_commerce/core/money/khr_rate_provider.dart';
 
 class _FakeSettings implements SettingsRepository {
+  @override
+  Future<String?> sameDayCutoff() async => null;
+
   _FakeSettings(this._read);
 
   final Future<int?> Function() _read;

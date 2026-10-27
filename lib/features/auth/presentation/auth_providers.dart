@@ -67,6 +67,9 @@ class OfflineAuthRepository implements AuthRepository {
   Future<AuthOutcome> signInWithApple() async => _offline;
 
   @override
+  Future<AuthOutcome> setPassword(String password) async => _offline;
+
+  @override
   Future<Profile?> fetchProfile() async => null;
 
   @override

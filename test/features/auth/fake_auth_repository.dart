@@ -139,6 +139,25 @@ class FakeAuthRepository implements AuthRepository {
     return scripted ?? _success(key);
   }
 
+  final passwordsSet = <String>[];
+
+  @override
+  Future<AuthOutcome> setPassword(String password) async {
+    passwordsSet.add(password);
+    final key = accounts.entries.firstWhere((e) => e.value.id == _userId).key;
+    final old = accounts[key]!;
+    accounts[key] = Profile(
+      id: old.id,
+      role: old.role,
+      fullName: old.fullName,
+      email: old.email,
+      phone: old.phone,
+      staffRole: old.staffRole,
+      staffStatus: old.staffStatus,
+    );
+    return const SignedIn(isNewUser: false);
+  }
+
   @override
   Future<Profile?> fetchProfile() async {
     for (final account in accounts.values) {
@@ -166,6 +185,8 @@ class FakeAuthRepository implements AuthRepository {
       fullName: fullName,
       email: email ?? old.email,
       phone: old.phone,
+      staffRole: old.staffRole,
+      staffStatus: old.staffStatus,
     );
   }
 

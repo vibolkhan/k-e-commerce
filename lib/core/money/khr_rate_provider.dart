@@ -9,6 +9,9 @@ import 'money_format.dart';
 abstract interface class SettingsRepository {
   /// Riel per US dollar, or null when not set.
   Future<int?> khrPerUsd();
+
+  /// Same-day delivery cut-off as "HH:mm" Phnom Penh time, or null.
+  Future<String?> sameDayCutoff();
 }
 
 /// Offline builds and tests: nothing configured, so defaults apply.
@@ -17,6 +20,9 @@ class DefaultSettingsRepository implements SettingsRepository {
 
   @override
   Future<int?> khrPerUsd() async => null;
+
+  @override
+  Future<String?> sameDayCutoff() async => null;
 }
 
 /// `app_settings` (key text primary key, value jsonb), readable by everyone
@@ -25,16 +31,27 @@ class SupabaseSettingsRepository implements SettingsRepository {
   SupabaseSettingsRepository(this._client);
 
   static const khrRateKey = 'khr_per_usd';
+  static const cutoffKey = 'same_day_cutoff';
   final SupabaseClient _client;
 
-  @override
-  Future<int?> khrPerUsd() async {
+  Future<Object?> _value(String key) async {
     final row = await _client
         .from('app_settings')
         .select('value')
-        .eq('key', khrRateKey)
+        .eq('key', key)
         .maybeSingle();
-    return switch (row?['value']) {
+    return row?['value'];
+  }
+
+  @override
+  Future<String?> sameDayCutoff() async => switch (await _value(cutoffKey)) {
+    final String s => s,
+    _ => null,
+  };
+
+  @override
+  Future<int?> khrPerUsd() async {
+    return switch (await _value(khrRateKey)) {
       final num n => n.round(),
       final String s => num.tryParse(s)?.round(),
       _ => null,
