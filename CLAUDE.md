@@ -15,7 +15,7 @@
 - Flutter (Dart ^3.11), one codebase with role-based entry: customer app (iOS/Android/web), admin back-office (web + mobile), rider app.
 - Riverpod for state; go_router for routing with role guards.
 - Supabase: Postgres with Row-Level Security on every table; Auth (phone OTP, email, Google, Apple); Storage; Realtime; Edge Functions (TypeScript) for anything involving money, stock or status changes.
-- Firebase Cloud Messaging for push.
+- Firebase Cloud Messaging for push. **Skipped for now (decided 2026-10-27):** no Firebase project, keys or FCM secrets yet. The app runs without push (inbox and in-app banner still work). Don't block tasks on Firebase or ask for its setup; owner steps are in `delivery/f07-push-inbox/README.md`.
 
 ## Market rules
 - Cambodia only. Prices in USD incl. 10% VAT; KHR shown at the rate in settings (default 4,100).

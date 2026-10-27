@@ -89,6 +89,8 @@ Firebase starts only when the build has the `FIREBASE_*` keys for its platform (
 
 ## Setup the project owner must do
 
+> **Status (2026-10-27): skipped for now.** The team decided to go ahead without Firebase. The steps below are on hold, and the app runs without push until they are done.
+
 1. **Create a Firebase project** (K, with Analytics off) and add three apps:
    - Android `com.example.k_e_commerce`
    - iOS `com.example.kECommerce`
