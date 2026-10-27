@@ -87,7 +87,7 @@ There are also enums for `user_role`, `staff_role`, `payment_method`, `refund_st
 - **Sign-up:** a trigger on `auth.users` creates a `customer` profile and copies the `locale` (en or km) from the user metadata.
 - **Business verification:** when sales approve a `business_profiles` row, the user becomes `business`; rejecting the row turns them back into a customer. A rejected applicant who edits their details goes back to `pending`.
 - **Blocked users:** `profiles.is_blocked` takes away every role-based right.
-- **Invited staff:** staff whose status is `invited` have no rights until they are made `active`.
+- **Invited staff:** staff whose status is `invited` (or `removed`) have no rights. F08: an invite turns `active` on the first sign-in within 7 days; see `delivery/f08-admin-shell/README.md`.
 
 ## Security model
 
@@ -107,10 +107,10 @@ All policies are in `…001000_rls.sql`.
 | Customer | the above + own profile, addresses, cart, wishlist, orders (+ items, payments, refunds, deliveries), returns, reviews, notifications, chats; the rider's contact and location while the order is out for delivery | own profile (safe columns), addresses, cart, wishlist, device tokens, notification read flags; reviews after a delivered order; support chats and messages; a business application |
 | Business buyer | as customer, but **no `prices` rows**; own RFQs, quotes once sent, RFQ threads | RFQs (only when verified, status `submitted`, minimum quantity enforced), cancel while submitted; no cart |
 | Rider | assigned deliveries and their orders, items and customer contact | own location on a `picked_up` delivery; own on/off duty |
-| Staff: catalog | catalog, stock, content, all profiles | catalog, prices, banners, collections, pages, product images |
-| Staff: sales | + orders, payments, RFQs, quotes, business profiles, RFQ threads | quotes and quote lines while draft, RFQ assignment, business verification, blocking customers |
-| Staff: support | + orders, payments, returns, reviews, support chats | review moderation, chat assignment and replies |
-| Staff: super_admin | everything, including `audit_logs` and `staff_members` | settings, zones, staff, riders, warehouses, plus every other staff right |
+| Staff: catalog | catalog, stock, content, staff profiles only (F08) | catalog, prices, banners, collections, pages, product images |
+| Staff: sales | + customer profiles and addresses, orders, payments, RFQs, quotes, business profiles, RFQ threads, riders on orders | quotes and quote lines while draft, RFQ assignment, business verification, blocking customers |
+| Staff: support | + customer profiles and addresses, orders, payments, returns, reviews, support chats, riders on orders | review moderation, chat assignment and replies |
+| Staff: super_admin | everything, including `audit_logs`, `staff_members` and rider zones | settings, zones, riders, warehouses, plus every other staff right; staff only through `staff-manage` (F08) |
 
 Status, money and stock changes go through Edge Functions even for super admins.
 
