@@ -76,6 +76,10 @@ insert into public.staff_members (profile_id, staff_role, status, invited_by) va
   ('a0000000-0000-4000-8000-000000000003', 'support', 'active', 'a0000000-0000-4000-8000-000000000001'),
   ('a0000000-0000-4000-8000-000000000004', 'catalog', 'active', 'a0000000-0000-4000-8000-000000000001'),
   ('a0000000-0000-4000-8000-000000000005', 'support', 'invited', 'a0000000-0000-4000-8000-000000000001');
+-- A-14d: Rachana's invite was sent on 21 Oct by phone and lasts 7 days.
+update public.staff_members
+   set invited_at = '2026-10-21 10:00+07', invite_expires_at = '2026-10-28 10:00+07'
+ where profile_id = 'a0000000-0000-4000-8000-000000000005';
 
 -- Business buyers (A-07 / A-07b). Approving makes Sokha a business buyer.
 insert into public.business_profiles (
