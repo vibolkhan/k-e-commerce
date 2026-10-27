@@ -459,6 +459,10 @@ verify_jwt = false
 [functions.account-delete]
 verify_jwt = true
 
+# F08: super admins only; the function checks the caller's staff role.
+[functions.staff-manage]
+verify_jwt = true
+
 # F07: called by other server code with the service role key, or (when
 # NOTIFY_SELF_TEST is on) by a signed-in user sending a test to themselves.
 # The service key may be a non-JWT secret key, so the gateway check is off

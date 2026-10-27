@@ -229,3 +229,53 @@ as $$
 $$;
 revoke execute on function public.dev_record_sms(text, text) from public, anon, authenticated;
 grant execute on function public.dev_record_sms(text, text) to service_role;
+
+-- ---------------------------------------------------------------------------
+-- Lookups for staff-manage (service role only)
+-- ---------------------------------------------------------------------------
+
+-- A staff member with their sign-in email and phone (auth.users).
+create function public.staff_member_info(p_uid uuid)
+returns table (
+  profile_id uuid,
+  full_name text,
+  email text,
+  phone text,
+  staff_role public.staff_role,
+  status text
+)
+language sql
+stable
+security definer
+set search_path = ''
+as $$
+  select s.profile_id, p.full_name, u.email::text,
+         case when coalesce(u.phone, '') = '' then null else '+' || ltrim(u.phone, '+') end,
+         s.staff_role, s.status
+    from public.staff_members s
+    join public.profiles p on p.id = s.profile_id
+    left join auth.users u on u.id = s.profile_id
+   where s.profile_id = p_uid;
+$$;
+
+-- The account that signs in with this email or phone (E.164), if any.
+create function public.staff_account_for(p_email text default null, p_phone text default null)
+returns table (profile_id uuid, role public.user_role, staff_status text)
+language sql
+stable
+security definer
+set search_path = ''
+as $$
+  select u.id, p.role, s.status
+    from auth.users u
+    join public.profiles p on p.id = u.id
+    left join public.staff_members s on s.profile_id = u.id
+   where (p_email is not null and lower(u.email) = lower(p_email))
+      or (p_phone is not null and u.phone = ltrim(p_phone, '+'))
+   limit 1;
+$$;
+
+revoke execute on function public.staff_member_info(uuid) from public, anon, authenticated;
+revoke execute on function public.staff_account_for(text, text) from public, anon, authenticated;
+grant execute on function public.staff_member_info(uuid) to service_role;
+grant execute on function public.staff_account_for(text, text) to service_role;
