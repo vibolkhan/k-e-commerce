@@ -293,14 +293,20 @@ max_frequency = "5s"
 
 # Configure one of the supported SMS providers: `twilio`, `twilio_verify`, `messagebird`, `textlocal`, `vonage`.
 # F05: the SMS provider is still TBD (PRD assumption). Locally a placeholder
-# provider is enabled only so the test_otp numbers above work; any other
-# number fails to send. Real credentials live in the hosted project.
+# provider is enabled only to switch phone sign-in on; the Send SMS hook below
+# replaces it, so no SMS is ever sent. Real credentials live in the hosted project.
 [auth.sms.twilio]
 enabled = true
 account_sid = "AClocal-test-only"
 message_service_sid = "MGlocal-test-only"
 # DO NOT commit your Twilio auth token to git. Use environment variable substitution instead:
 auth_token = "env(SUPABASE_AUTH_SMS_TWILIO_AUTH_TOKEN)"
+
+# F05 (local only): numbers outside test_otp get a real code that is kept in
+# private.dev_sms_outbox instead of being sent. Never enable on hosted.
+[auth.hook.send_sms]
+enabled = true
+uri = "pg-functions://postgres/private/dev_send_sms"
 
 # Multi-factor-authentication is available to Supabase Pro plan.
 [auth.mfa]

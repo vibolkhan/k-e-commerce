@@ -69,7 +69,13 @@ Locally no SMS is sent. These numbers take code **123456** (`[auth.sms.test_otp]
 | 012 000 001 | Chenda Lim, staff (super admin) → admin home |
 | 012 999 999 | not registered → new account → S-06 |
 
-Seed emails (`dara@kstore.example`, …) use the password `password123`. Any other phone number returns "We couldn't send the code" until a real SMS provider is set. To clear lockouts locally: `delete from private.auth_attempts;`.
+Seed emails (`dara@kstore.example`, …) use the password `password123`. Any other phone number gets a real 6-digit code. It is not sent: the local Send SMS hook (`[auth.hook.send_sms]` → `private.dev_send_sms`) keeps it, so read it in Studio's SQL editor:
+
+```sql
+select phone, otp, created_at from private.dev_sms_outbox order by id desc limit 5;
+```
+
+To clear lockouts locally: `delete from private.auth_attempts;`.
 
 ## Tests
 
@@ -110,7 +116,7 @@ The repository was also run against the local stack, outside the committed tests
 
 ## Setup the project owner must do
 
-1. **SMS provider** (PRD assumption). Configure it in the hosted project's Auth settings. Locally a placeholder Twilio entry exists only so the test numbers work. Set SMS OTP expiry to 300 s and the "SMS sent" rate limit to suit.
+1. **SMS provider** (PRD assumption). Configure it in the hosted project's Auth settings. Locally a placeholder Twilio entry exists only so the test numbers work. Set SMS OTP expiry to 300 s and the "SMS sent" rate limit to suit. Do **not** enable the Send SMS hook there: `private.dev_send_sms` is for local use and stores codes in plain text.
 2. **Google:**
    - Create OAuth clients for web, iOS and Android.
    - Hosted Auth: client IDs (web first), secret.
