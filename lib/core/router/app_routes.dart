@@ -90,8 +90,9 @@ abstract final class AppRoutes {
 
   /// F11 browsing, inside the customer and business shells: C-02 and C-03
   /// (a category or a collection); F12 search (C-04, `?q=` opens on the
-  /// results). Product detail (C-05) and the business upgrade (B-01) are
-  /// placeholders until their tasks land.
+  /// results); F13 product detail (C-05; B-00a for business buyers is a
+  /// placeholder until F26). The cart (C-06, F16) and the business upgrade
+  /// (B-01) are placeholders until their tasks land.
   static String categories(String shell) => '$shell/categories';
   static String category(String shell, String slug) =>
       '$shell/categories/$slug';
@@ -101,6 +102,7 @@ abstract final class AppRoutes {
       ? '$shell/search'
       : Uri(path: '$shell/search', queryParameters: {'q': query}).toString();
   static String product(String shell, String id) => '$shell/products/$id';
+  static String cart(String shell) => '$shell/cart';
   static String businessUpgrade(String shell) => '$shell/business-upgrade';
 
   /// Every K component; dev and staging builds only, not linked anywhere.

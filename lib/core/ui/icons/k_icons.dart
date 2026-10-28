@@ -227,6 +227,16 @@ abstract final class KIcons {
   static const plus = KIconData([KPathShape('M12 5v14M5 12h14')]);
   static const minus = KIconData([KPathShape('M5 12h14')]);
   static const check = KIconData([KPathShape('M20 6 9 17l-5-5')]);
+  static const share = KIconData([
+    KCircleShape(18, 5, 3),
+    KCircleShape(6, 12, 3),
+    KCircleShape(18, 19, 3),
+    KPathShape('m8.6 13.5 6.8 4M15.4 6.5l-6.8 4'),
+  ]);
+  static const zoomIn = KIconData([
+    KCircleShape(11, 11, 7),
+    KPathShape('m20 20-3.5-3.5M8 11h6M11 8v6'),
+  ]);
 
   // Product art for placeholders and the sample catalogue.
   static const headphones = KIconData([

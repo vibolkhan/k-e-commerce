@@ -2964,5 +2964,488 @@
   "storeSearchStart": "Search products and brands in English or Khmer.",
   "@storeSearchStart": {
     "description": "F12 search"
+  },
+  "pdOnlyLeft": "Only {count} left",
+  "@pdOnlyLeft": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pdOutOfStock": "Out of stock",
+  "@pdOutOfStock": {
+    "description": "F13 product detail"
+  },
+  "pdInStockCount": "{count} in stock",
+  "@pdInStockCount": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pdReviewCount": "{count, plural, =0{No reviews} =1{1 review} other{{count} reviews}}",
+  "@pdReviewCount": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pdRatingA11y": "Rated {rating} out of 5, {count} reviews. Show reviews",
+  "@pdRatingA11y": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "rating": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pdStarsA11y": "{rating} out of 5 stars",
+  "@pdStarsA11y": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "rating": {
+        "type": "String"
+      }
+    }
+  },
+  "pdVatIncluded": "Prices include VAT.",
+  "@pdVatIncluded": {
+    "description": "F13 product detail"
+  },
+  "pdAxisColour": "Colour",
+  "@pdAxisColour": {
+    "description": "F13 product detail"
+  },
+  "pdAxisSize": "Size",
+  "@pdAxisSize": {
+    "description": "F13 product detail"
+  },
+  "pdAxisPack": "Pack",
+  "@pdAxisPack": {
+    "description": "F13 product detail"
+  },
+  "pdAxisChosen": "{axis}: ",
+  "@pdAxisChosen": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "axis": {
+        "type": "String"
+      }
+    }
+  },
+  "pdValueSoldOut": "{value} · sold out",
+  "@pdValueSoldOut": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "pdValueSoldOutA11y": "{value}, out of stock",
+  "@pdValueSoldOutA11y": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "pdGetItToday": "Get it today",
+  "@pdGetItToday": {
+    "description": "F13 product detail"
+  },
+  "pdGetItTomorrow": "Get it tomorrow",
+  "@pdGetItTomorrow": {
+    "description": "F13 product detail"
+  },
+  "pdGetItOn": "Get it on {day}",
+  "@pdGetItOn": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "pdGetItLater": "Delivered in 1–2 days",
+  "@pdGetItLater": {
+    "description": "F13 product detail"
+  },
+  "pdOrderWithinBy": "Order within {remaining} · delivered by {end}",
+  "@pdOrderWithinBy": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "pdOrderWithinByTo": "Order within {remaining} · delivered by {end} to {area}",
+  "@pdOrderWithinByTo": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      },
+      "area": {
+        "type": "String"
+      }
+    }
+  },
+  "pdCutoffPassed": "Today's {cutoff} cut-off has passed",
+  "@pdCutoffPassed": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "cutoff": {
+        "type": "String"
+      }
+    }
+  },
+  "pdCutoffPassedTo": "Today's {cutoff} cut-off has passed · to {area}",
+  "@pdCutoffPassedTo": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "cutoff": {
+        "type": "String"
+      },
+      "area": {
+        "type": "String"
+      }
+    }
+  },
+  "pdDeliveredTo": "Delivered to {area}",
+  "@pdDeliveredTo": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "area": {
+        "type": "String"
+      }
+    }
+  },
+  "pdFreeOver": "Free over {amount}.",
+  "@pdFreeOver": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "pdReturnsTitle": "{days}-day returns.",
+  "@pdReturnsTitle": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "pdReturnsBody": " Return delivery is paid by you.",
+  "@pdReturnsBody": {
+    "description": "F13 product detail"
+  },
+  "pdPayments": "Pay with KHQR or cash on delivery.",
+  "@pdPayments": {
+    "description": "F13 product detail"
+  },
+  "pdTabDescription": "Description",
+  "@pdTabDescription": {
+    "description": "F13 product detail"
+  },
+  "pdTabSpecs": "Specifications",
+  "@pdTabSpecs": {
+    "description": "F13 product detail"
+  },
+  "pdTabReviews": "Reviews",
+  "@pdTabReviews": {
+    "description": "F13 product detail"
+  },
+  "pdReadMore": "Read more",
+  "@pdReadMore": {
+    "description": "F13 product detail"
+  },
+  "pdReadLess": "Show less",
+  "@pdReadLess": {
+    "description": "F13 product detail"
+  },
+  "pdDescriptionEmpty": "No description yet.",
+  "@pdDescriptionEmpty": {
+    "description": "F13 product detail"
+  },
+  "pdSpecBrand": "Brand",
+  "@pdSpecBrand": {
+    "description": "F13 product detail"
+  },
+  "pdSpecsNote": "Details come from the brand and may change. Ask us in chat if you need anything else.",
+  "@pdSpecsNote": {
+    "description": "F13 product detail"
+  },
+  "pdSpecsEmpty": "No specifications yet.",
+  "@pdSpecsEmpty": {
+    "description": "F13 product detail"
+  },
+  "pdReviewsEmptyTitle": "No reviews to show yet",
+  "@pdReviewsEmptyTitle": {
+    "description": "F13 product detail"
+  },
+  "pdReviewsEmptyBody": "Reviews from customers who received this product will show here.",
+  "@pdReviewsEmptyBody": {
+    "description": "F13 product detail"
+  },
+  "pdReviewFilterAll": "All",
+  "@pdReviewFilterAll": {
+    "description": "F13 product detail"
+  },
+  "pdReviewFilterPhotos": "With photos · {count}",
+  "@pdReviewFilterPhotos": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pdReviewFilter3Below": "3 and below",
+  "@pdReviewFilter3Below": {
+    "description": "F13 product detail"
+  },
+  "pdReviewVerified": "{variant} · Verified purchase",
+  "@pdReviewVerified": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "variant": {
+        "type": "String"
+      }
+    }
+  },
+  "pdReviewVerifiedOnly": "Verified purchase",
+  "@pdReviewVerifiedOnly": {
+    "description": "F13 product detail"
+  },
+  "pdReplyFromK": "Reply from K",
+  "@pdReplyFromK": {
+    "description": "F13 product detail"
+  },
+  "pdHelpful": "Helpful ({count})",
+  "@pdHelpful": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pdReviewPhotoA11y": "Open review photo {index} of {count}",
+  "@pdReviewPhotoA11y": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pdSeeAllReviews": "See all {count} reviews",
+  "@pdSeeAllReviews": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pdAddToCart": "Add to cart",
+  "@pdAddToCart": {
+    "description": "F13 product detail"
+  },
+  "pdAddToCartPrice": "Add to cart · {price}",
+  "@pdAddToCartPrice": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "pdSoldOut": "Sold out",
+  "@pdSoldOut": {
+    "description": "F13 product detail"
+  },
+  "pdSaveWishlist": "Save to wishlist",
+  "@pdSaveWishlist": {
+    "description": "F13 product detail"
+  },
+  "pdWishlistSoon": "Saving to your wishlist is coming soon.",
+  "@pdWishlistSoon": {
+    "description": "F13 product detail"
+  },
+  "pdShare": "Share",
+  "@pdShare": {
+    "description": "F13 product detail"
+  },
+  "pdLinkCopied": "Link copied",
+  "@pdLinkCopied": {
+    "description": "F13 product detail"
+  },
+  "pdCartA11y": "{count, plural, =0{Cart} =1{Cart, 1 item} other{Cart, {count} items}}",
+  "@pdCartA11y": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pdOpenPhotos": "Open photo viewer, photo {index} of {count}",
+  "@pdOpenPhotos": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pdPhotoCounter": "{index} / {count}",
+  "@pdPhotoCounter": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pdViewerA11y": "Product photos, photo {index} of {count}",
+  "@pdViewerA11y": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pdCloseViewer": "Close photo viewer",
+  "@pdCloseViewer": {
+    "description": "F13 product detail"
+  },
+  "pdSharePhoto": "Share photo",
+  "@pdSharePhoto": {
+    "description": "F13 product detail"
+  },
+  "pdPinchZoom": "Pinch to zoom",
+  "@pdPinchZoom": {
+    "description": "F13 product detail"
+  },
+  "pdPhotoN": "Photo {index}",
+  "@pdPhotoN": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "pdChooseOptions": "Choose options",
+  "@pdChooseOptions": {
+    "description": "F13 product detail"
+  },
+  "pdQuantity": "Quantity",
+  "@pdQuantity": {
+    "description": "F13 product detail"
+  },
+  "pdMaxPerOrder": "Max. {count} per order",
+  "@pdMaxPerOrder": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pdInCartAlready": "{count} already in your cart",
+  "@pdInCartAlready": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pdLimitReached": "You already have the most you can order.",
+  "@pdLimitReached": {
+    "description": "F13 product detail"
+  },
+  "pdSheetWithinPrefix": "Order within ",
+  "@pdSheetWithinPrefix": {
+    "description": "F13 product detail"
+  },
+  "pdSheetWithinSuffix": " to get it today.",
+  "@pdSheetWithinSuffix": {
+    "description": "F13 product detail"
+  },
+  "pdAddedToCart": "Added to cart",
+  "@pdAddedToCart": {
+    "description": "F13 product detail"
+  },
+  "pdAddedDetail": "{name} · {variant} · {qty}",
+  "@pdAddedDetail": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "variant": {
+        "type": "String"
+      },
+      "qty": {
+        "type": "int"
+      }
+    }
+  },
+  "pdAddedDetailPlain": "{name} · {qty}",
+  "@pdAddedDetailPlain": {
+    "description": "F13 product detail",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "qty": {
+        "type": "int"
+      }
+    }
+  },
+  "pdViewCart": "View cart",
+  "@pdViewCart": {
+    "description": "F13 product detail"
+  },
+  "pdAlsoLike": "You may also like",
+  "@pdAlsoLike": {
+    "description": "F13 product detail"
   }
 }

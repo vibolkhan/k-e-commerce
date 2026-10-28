@@ -20,6 +20,7 @@ class KToast extends StatelessWidget {
   const KToast({
     super.key,
     required this.message,
+    this.detail,
     this.tone = KToastTone.ok,
     this.icon,
     this.actionLabel,
@@ -27,6 +28,9 @@ class KToast extends StatelessWidget {
   });
 
   final String message;
+
+  /// A second, quieter line, e.g. "Wireless Headphones Pro · Black · 1".
+  final String? detail;
   final KToastTone tone;
   final KIconData? icon;
   final String? actionLabel;
@@ -63,14 +67,32 @@ class KToast extends StatelessWidget {
               KIcon(icon ?? defaultIcon, color: accent),
               const SizedBox(width: 12),
               Expanded(
-                child: Text(
-                  message,
-                  style: k.text.small.copyWith(
-                    fontSize: 14,
-                    height: 20 / 14,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      message,
+                      style: k.text.small.copyWith(
+                        fontSize: 14,
+                        height: 20 / 14,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
+                    ),
+                    if (detail != null)
+                      Text(
+                        detail!,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: k.text.caption.copyWith(
+                          fontSize: 12,
+                          height: 16 / 12,
+                          fontWeight: FontWeight.w500,
+                          color: KColors.line2,
+                        ),
+                      ),
+                  ],
                 ),
               ),
               if (actionLabel != null) ...[
@@ -108,6 +130,7 @@ Timer? _toastTimer;
 void showKToast(
   BuildContext context, {
   required String message,
+  String? detail,
   KToastTone tone = KToastTone.ok,
   KIconData? icon,
   String? actionLabel,
@@ -131,6 +154,7 @@ void showKToast(
             constraints: const BoxConstraints(maxWidth: 520),
             child: KToast(
               message: message,
+              detail: detail,
               tone: tone,
               icon: icon,
               actionLabel: actionLabel,
@@ -150,7 +174,7 @@ void showKToast(
   overlay.insert(entry);
   SemanticsService.sendAnnouncement(
     View.of(context),
-    message,
+    detail == null ? message : '$message. $detail',
     Directionality.of(context),
   );
   _toastTimer = Timer(duration, hideKToast);

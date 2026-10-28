@@ -20,8 +20,12 @@ import 'storefront_providers.dart';
 
 /// Placeholder art for a product without photos, picked from its name so
 /// the same product always looks the same.
-Widget productArt(BrowseItem item, {double radius = 0}) {
-  final name = item.name.en.toLowerCase();
+Widget productArt(BrowseItem item, {double radius = 0}) =>
+    productArtFor(item.id, item.name.en, radius: radius);
+
+/// [productArt] for a product known by [id] and English [nameEn].
+Widget productArtFor(String id, String nameEn, {double radius = 0}) {
+  final name = nameEn.toLowerCase();
   const byWord = <String, KIconData>{
     'headphone': KIcons.headphones,
     'headset': KIcons.headphones,
@@ -44,9 +48,8 @@ Widget productArt(BrowseItem item, {double radius = 0}) {
   final icon =
       byWord.entries.where((e) => name.contains(e.key)).firstOrNull?.value ??
       KIcons.package;
-  final tone =
-      KArtTone.values[item.id.codeUnits.fold(0, (a, b) => a + b) %
-          KArtTone.values.length];
+  final tone = KArtTone
+      .values[id.codeUnits.fold(0, (a, b) => a + b) % KArtTone.values.length];
   return KProductArt(icon: icon, tone: tone, radius: radius);
 }
 
