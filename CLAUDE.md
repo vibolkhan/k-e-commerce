@@ -3,6 +3,7 @@
 ## Workflow
 - Work on the `dev` branch. Docs you produce go in `delivery/<feature-name>/`.
 - For every task: read the docs and screens it lists, post a short plan and your assumptions, then build, then finish with a summary — what was built, how to test it, anything left or blocked.
+- When a task is built, run the `restart-app` skill before the summary. It rebuilds the database if migrations or seed changed, relaunches the app against the local stack, and tells the user it is ready to test.
 - Build plan: tasks F01–F42 come from the "K Build Plan" tracker. Only build what the current task asks.
 
 ## Source of truth
