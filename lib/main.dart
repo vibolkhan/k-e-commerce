@@ -6,6 +6,7 @@ import 'app.dart';
 import 'core/config/app_config.dart';
 import 'core/config/bootstrap.dart';
 import 'core/l10n/locale_store.dart';
+import 'features/cart/data/cart_repository.dart';
 import 'features/onboarding/data/onboarding_store.dart';
 import 'features/storefront/data/recent_search_store.dart';
 
@@ -24,6 +25,9 @@ Future<void> main() async {
         ),
         recentSearchStoreProvider.overrideWithValue(
           SharedPrefsRecentSearchStore(prefs),
+        ),
+        cartRepositoryProvider.overrideWithValue(
+          SharedPrefsCartRepository(prefs),
         ),
       ],
       child: const KApp(),
