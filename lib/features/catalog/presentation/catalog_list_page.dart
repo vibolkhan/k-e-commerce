@@ -469,13 +469,13 @@ class _Table extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       child: Table(
         defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+        // The product column takes the room left; the others fit their pills.
         columnWidths: {
           if (canEdit) 0: const FixedColumnWidth(52),
-          for (var i = canEdit ? 1 : 0; i < (canEdit ? 10 : 9); i++)
-            i: i == (canEdit ? 1 : 0)
-                ? const FlexColumnWidth(3)
-                : const FlexColumnWidth(),
+          for (var i = canEdit ? 2 : 1; i < (canEdit ? 10 : 9); i++)
+            i: const IntrinsicColumnWidth(),
         },
+        defaultColumnWidth: const FlexColumnWidth(),
         children: [
           TableRow(
             decoration: BoxDecoration(

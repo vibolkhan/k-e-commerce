@@ -102,7 +102,7 @@ class ProductPreview extends ConsumerWidget {
                       image: image(value),
                       minQuantity: value.rfqMinQty == null
                           ? null
-                          : l10n.catalogMinPieces(value.rfqMinQty!),
+                          : l10n.catalogPiecesCount(value.rfqMinQty!),
                       soldOut: value.soldOut,
                     ),
                   ),

@@ -621,7 +621,7 @@
   "catalogPreviewDraftNote": "អតិថិជនឃើញវានៅពេលផលិតផលសកម្ម។",
   "catalogPreviewUnsaved": "រក្សាទុកផលិតផលដើម្បីមើលជាមុន។",
   "catalogPreviewUnsavedChanges": "ការមើលជាមុនបង្ហាញផលិតផលដែលបានរក្សាទុក។ រក្សាទុកដើម្បីមើលការផ្លាស់ប្តូរចុងក្រោយ។",
-  "catalogMinPieces": "អប្បបរមា {qty} ដុំ",
+  "catalogPiecesCount": "{qty} ដុំ",
   "catalogScanTitle": "ស្កេនបាកូដ",
   "catalogScanHint": "តម្រង់កាមេរ៉ាទៅបាកូដ។",
   "catalogScanUnavailable": "កាមេរ៉ាមិនអាចប្រើបានទេ។ សូមវាយបាកូដជំនួសវិញ។",

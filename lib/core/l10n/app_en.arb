@@ -1781,9 +1781,9 @@
   "@catalogPreviewUnsavedChanges": {
     "description": "F09 catalog admin: PreviewUnsavedChanges"
   },
-  "catalogMinPieces": "Min {qty} pieces",
-  "@catalogMinPieces": {
-    "description": "F09 catalog admin: MinPieces",
+  "catalogPiecesCount": "{qty} pieces",
+  "@catalogPiecesCount": {
+    "description": "F09 catalog admin: a quantity in pieces",
     "placeholders": {
       "qty": {
         "type": "int"
