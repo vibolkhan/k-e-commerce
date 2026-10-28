@@ -88,6 +88,18 @@ abstract final class AppRoutes {
   static String quote(String id) => '$business/quotes/$id';
   static String chat(String shell, String id) => '$shell/chat/$id';
 
+  /// F11 browsing, inside the customer and business shells: C-02 and C-03
+  /// (a category or a collection). Search (C-04), product detail (C-05) and
+  /// the business upgrade (B-01) are placeholders until their tasks land.
+  static String categories(String shell) => '$shell/categories';
+  static String category(String shell, String slug) =>
+      '$shell/categories/$slug';
+  static String collection(String shell, String slug) =>
+      '$shell/collections/$slug';
+  static String search(String shell) => '$shell/search';
+  static String product(String shell, String id) => '$shell/products/$id';
+  static String businessUpgrade(String shell) => '$shell/business-upgrade';
+
   /// Every K component; dev and staging builds only, not linked anywhere.
   static const designGallery = '/design-gallery';
 }

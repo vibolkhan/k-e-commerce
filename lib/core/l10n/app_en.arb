@@ -2510,5 +2510,353 @@
   "inventoryErrUnknown": "Couldn’t save the adjustment. Check your connection and try again.",
   "@inventoryErrUnknown": {
     "description": "F10 inventory: ErrUnknown"
+  },
+  "storeSearchHint": "Search products and brands",
+  "@storeSearchHint": {
+    "description": "F11 storefront"
+  },
+  "storeSearchHintBusiness": "Search products for your business",
+  "@storeSearchHintBusiness": {
+    "description": "F11 storefront"
+  },
+  "storeSearchTitle": "Search",
+  "@storeSearchTitle": {
+    "description": "F11 storefront"
+  },
+  "storeSearchProducts": "Search products",
+  "@storeSearchProducts": {
+    "description": "F11 storefront"
+  },
+  "storeSearchIn": "Search in {place}",
+  "@storeSearchIn": {
+    "description": "F11 storefront",
+    "placeholders": {
+      "place": {
+        "type": "String"
+      }
+    }
+  },
+  "storeProductTitle": "Product",
+  "@storeProductTitle": {
+    "description": "F11 storefront"
+  },
+  "storeBusinessUpgradeTitle": "Business account",
+  "@storeBusinessUpgradeTitle": {
+    "description": "F11 storefront"
+  },
+  "storeDeliverTo": "Deliver to",
+  "@storeDeliverTo": {
+    "description": "F11 storefront"
+  },
+  "storeDeliverToLabel": "Deliver to {place}. Change address",
+  "@storeDeliverToLabel": {
+    "description": "F11 storefront",
+    "placeholders": {
+      "place": {
+        "type": "String"
+      }
+    }
+  },
+  "storeDefaultCity": "Phnom Penh",
+  "@storeDefaultCity": {
+    "description": "F11 storefront"
+  },
+  "storeDeliverToTitle": "Deliver to",
+  "@storeDeliverToTitle": {
+    "description": "F11 storefront"
+  },
+  "storeDeliverToGuest": "Sign in to choose one of your saved addresses. You can browse and shop without one.",
+  "@storeDeliverToGuest": {
+    "description": "F11 storefront"
+  },
+  "storeDeliverToSignIn": "Sign in",
+  "@storeDeliverToSignIn": {
+    "description": "F11 storefront"
+  },
+  "storeDeliverToNone": "No saved addresses yet. You'll add one at checkout.",
+  "@storeDeliverToNone": {
+    "description": "F11 storefront"
+  },
+  "storeOutsideZone": "Outside our delivery area",
+  "@storeOutsideZone": {
+    "description": "F11 storefront"
+  },
+  "storeOrderWithinPrefix": "Order within ",
+  "@storeOrderWithinPrefix": {
+    "description": "F11 storefront"
+  },
+  "storeOrderWithinSuffix": " for delivery today",
+  "@storeOrderWithinSuffix": {
+    "description": "F11 storefront"
+  },
+  "storeCutoffPassedTomorrow": "Today's {time} cut-off has passed. Order now for delivery tomorrow.",
+  "@storeCutoffPassedTomorrow": {
+    "description": "F11 storefront",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "storeCutoffPassedOn": "Order now for delivery on {day}.",
+  "@storeCutoffPassedOn": {
+    "description": "F11 storefront",
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "storeSameDayBefore": "Delivered today if you order before {time}",
+  "@storeSameDayBefore": {
+    "description": "F11 storefront",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "storeBusinessPricesNote": "You'll see prices after sales sends your quote.",
+  "@storeBusinessPricesNote": {
+    "description": "F11 storefront"
+  },
+  "storeShopByCategory": "Shop by category",
+  "@storeShopByCategory": {
+    "description": "F11 storefront"
+  },
+  "storeSeeAll": "See all",
+  "@storeSeeAll": {
+    "description": "F11 storefront"
+  },
+  "storeBestSellers": "Best sellers",
+  "@storeBestSellers": {
+    "description": "F11 storefront"
+  },
+  "storePopularForOffices": "Popular for offices",
+  "@storePopularForOffices": {
+    "description": "F11 storefront"
+  },
+  "storeNewArrivals": "New arrivals",
+  "@storeNewArrivals": {
+    "description": "F11 storefront"
+  },
+  "storeNew": "New",
+  "@storeNew": {
+    "description": "F11 storefront"
+  },
+  "storeBusinessPromoTitle": "Buying for a business?",
+  "@storeBusinessPromoTitle": {
+    "description": "F11 storefront"
+  },
+  "storeBusinessPromoBody": "Request bulk quotes and pay by bank transfer.",
+  "@storeBusinessPromoBody": {
+    "description": "F11 storefront"
+  },
+  "storePopularIn": "Popular in {category}",
+  "@storePopularIn": {
+    "description": "F11 storefront",
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "storeLoadFailed": "Couldn't load this. Check your connection and try again.",
+  "@storeLoadFailed": {
+    "description": "F11 storefront"
+  },
+  "storeRetry": "Try again",
+  "@storeRetry": {
+    "description": "F11 storefront"
+  },
+  "storeNoCategories": "No categories yet",
+  "@storeNoCategories": {
+    "description": "F11 storefront"
+  },
+  "storeNoCategoriesBody": "Check back soon — we're stocking the shelves.",
+  "@storeNoCategoriesBody": {
+    "description": "F11 storefront"
+  },
+  "storeCategoryEmpty": "Nothing here yet",
+  "@storeCategoryEmpty": {
+    "description": "F11 storefront"
+  },
+  "storeCategoryEmptyBody": "New products arrive often. Try another category for now.",
+  "@storeCategoryEmptyBody": {
+    "description": "F11 storefront"
+  },
+  "storeCategoryMissing": "This category isn't available",
+  "@storeCategoryMissing": {
+    "description": "F11 storefront"
+  },
+  "storeBrowseCategories": "Browse categories",
+  "@storeBrowseCategories": {
+    "description": "F11 storefront"
+  },
+  "storeFilterAndSort": "Filter and sort",
+  "@storeFilterAndSort": {
+    "description": "F11 storefront"
+  },
+  "storeFilters": "Filters",
+  "@storeFilters": {
+    "description": "F11 storefront"
+  },
+  "storeSortChip": "Sort: {sort}",
+  "@storeSortChip": {
+    "description": "F11 storefront",
+    "placeholders": {
+      "sort": {
+        "type": "String"
+      }
+    }
+  },
+  "storeInStock": "In stock",
+  "@storeInStock": {
+    "description": "F11 storefront"
+  },
+  "storeUnderPrice": "Under {price}",
+  "@storeUnderPrice": {
+    "description": "F11 storefront",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "storeRatingAndUp": "{stars} & up",
+  "@storeRatingAndUp": {
+    "description": "F11 storefront",
+    "placeholders": {
+      "stars": {
+        "type": "String"
+      }
+    }
+  },
+  "storeProductCount": "{count, plural, =0{No products} =1{1 product} other{{count} products}}",
+  "@storeProductCount": {
+    "description": "F11 storefront",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "storeAllSameDay": "All ship same day",
+  "@storeAllSameDay": {
+    "description": "F11 storefront"
+  },
+  "storeNoMatches": "No products match",
+  "@storeNoMatches": {
+    "description": "F11 storefront"
+  },
+  "storeNoMatchesBody": "Try removing a filter or widening the price range.",
+  "@storeNoMatchesBody": {
+    "description": "F11 storefront"
+  },
+  "storeClearFilters": "Clear filters",
+  "@storeClearFilters": {
+    "description": "F11 storefront"
+  },
+  "storeReset": "Reset",
+  "@storeReset": {
+    "description": "F11 storefront"
+  },
+  "storePrice": "Price",
+  "@storePrice": {
+    "description": "F11 storefront"
+  },
+  "storeMinPrefix": "Min $",
+  "@storeMinPrefix": {
+    "description": "F11 storefront"
+  },
+  "storeMaxPrefix": "Max $",
+  "@storeMaxPrefix": {
+    "description": "F11 storefront"
+  },
+  "storeMinPriceLabel": "Minimum price in dollars",
+  "@storeMinPriceLabel": {
+    "description": "F11 storefront"
+  },
+  "storeMaxPriceLabel": "Maximum price in dollars",
+  "@storeMaxPriceLabel": {
+    "description": "F11 storefront"
+  },
+  "storePriceTo": "to",
+  "@storePriceTo": {
+    "description": "F11 storefront"
+  },
+  "storeBrand": "Brand",
+  "@storeBrand": {
+    "description": "F11 storefront"
+  },
+  "storeRating": "Rating",
+  "@storeRating": {
+    "description": "F11 storefront"
+  },
+  "storeInStockOnly": "In stock only",
+  "@storeInStockOnly": {
+    "description": "F11 storefront"
+  },
+  "storeSameDayDelivery": "Same-day delivery",
+  "@storeSameDayDelivery": {
+    "description": "F11 storefront"
+  },
+  "storeSameDayDeliveryHint": "Delivered today if ordered before {time}",
+  "@storeSameDayDeliveryHint": {
+    "description": "F11 storefront",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "storeShowResults": "{count, plural, =0{No results} =1{Show 1 result} other{Show {count} results}}",
+  "@storeShowResults": {
+    "description": "F11 storefront",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "storeShowResultsPending": "Show results",
+  "@storeShowResultsPending": {
+    "description": "F11 storefront"
+  },
+  "storeSortBy": "Sort by",
+  "@storeSortBy": {
+    "description": "F11 storefront"
+  },
+  "storeSortPopular": "Most popular",
+  "@storeSortPopular": {
+    "description": "F11 storefront"
+  },
+  "storeSortPopularShort": "Popular",
+  "@storeSortPopularShort": {
+    "description": "F11 storefront"
+  },
+  "storeSortPopularHint": "Best sellers first",
+  "@storeSortPopularHint": {
+    "description": "F11 storefront"
+  },
+  "storeSortNewest": "Newest",
+  "@storeSortNewest": {
+    "description": "F11 storefront"
+  },
+  "storeSortPriceAsc": "Price: low to high",
+  "@storeSortPriceAsc": {
+    "description": "F11 storefront"
+  },
+  "storeSortPriceDesc": "Price: high to low",
+  "@storeSortPriceDesc": {
+    "description": "F11 storefront"
+  },
+  "storeSortRating": "Top rated",
+  "@storeSortRating": {
+    "description": "F11 storefront"
+  },
+  "storeApply": "Apply",
+  "@storeApply": {
+    "description": "F11 storefront"
   }
 }

@@ -6,10 +6,11 @@ import '../../../core/router/app_role.dart';
 import '../../../core/ui/k_ui.dart';
 import '../../account/presentation/account_routes.dart';
 import '../../notifications/presentation/notifications_routes.dart';
-import 'role_home_page.dart';
+import '../../storefront/presentation/home_page.dart';
+import '../../storefront/presentation/storefront_routes.dart';
 
-/// Customer and business shells: Home and Account tabs for now. Categories,
-/// cart / quote list and orders join the bar as their tasks land.
+/// Customer and business shells: Home, Categories and Account tabs for now.
+/// Cart / quote list and orders join the bar as their tasks land.
 StatefulShellRoute shopperShell(
   AppRole role, {
   required GlobalKey<NavigatorState> rootKey,
@@ -22,15 +23,19 @@ StatefulShellRoute shopperShell(
         routes: [
           GoRoute(
             path: role.homePath,
-            builder: (_, _) => RoleHomePage(role: role),
-            routes: notificationRoutes(
-              role,
-              rootKey: rootKey,
-              isSignedIn: isSignedIn,
-            ),
+            builder: (_, _) => HomePage(role: role),
+            routes: [
+              ...notificationRoutes(
+                role,
+                rootKey: rootKey,
+                isSignedIn: isSignedIn,
+              ),
+              ...homeBrowseRoutes(role, rootKey: rootKey),
+            ],
           ),
         ],
       ),
+      StatefulShellBranch(routes: [categoriesRoute(role)]),
       StatefulShellBranch(
         routes: [accountRoute(role, rootKey: rootKey, isSignedIn: isSignedIn)],
       ),
@@ -55,6 +60,7 @@ class ShopperShell extends StatelessWidget {
             shell.goBranch(i, initialLocation: i == shell.currentIndex),
         items: [
           KNavItem(icon: KIcons.home, label: l10n.navHome),
+          KNavItem(icon: KIcons.categories, label: l10n.navCategories),
           KNavItem(icon: KIcons.account, label: l10n.navAccount),
         ],
       ),
