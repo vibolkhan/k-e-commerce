@@ -49,6 +49,7 @@ const account = (_: Record<string, unknown>, to: Recipient) => `${shell(to)}/acc
 // tap opens the role's home.
 const riderHome = () => "/rider";
 const adminHome = () => "/admin";
+const adminInventory = () => "/admin/inventory";
 
 /** Where a `test` notification opens (S-08d dev tool, README). */
 const TEST_TARGETS: Record<string, (d: Record<string, unknown>, to: Recipient) => string> = {
@@ -366,7 +367,7 @@ export const NOTIFICATION_TYPES: Record<string, NotificationType> = {
   admin_low_stock: {
     category: "orders",
     pref: null,
-    route: adminHome,
+    route: adminInventory,
     title: { en: "Low stock", km: "ស្តុកជិតអស់" },
     body: {
       en: "{product_name} has {stock} left. Low-stock level is {threshold}.",

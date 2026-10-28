@@ -471,6 +471,11 @@ verify_jwt = true
 [functions.catalog-import]
 verify_jwt = true
 
+# F10: catalog staff and super admins adjust stock (A-06a); the function
+# checks the caller's staff role and writes through adjust_stock.
+[functions.inventory-manage]
+verify_jwt = true
+
 # F07: called by other server code with the service role key, or (when
 # NOTIFY_SELF_TEST is on) by a signed-in user sending a test to themselves.
 # The service key may be a non-JWT secret key, so the gateway check is off
