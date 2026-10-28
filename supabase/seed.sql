@@ -662,5 +662,23 @@ update public.products p
   ) as r (slug, avg, n, sold)
  where p.slug = r.slug;
 
+-- The product page from the design (C-05, C-05a): description, highlights
+-- and specifications in the F09 editor's shape.
+update public.products
+   set description = '{"en": "Quiet, comfortable over-ear headphones for commuting and calls. Soft memory-foam cushions, a folding design and a battery that lasts the whole week."}',
+       highlights = '[{"en": "Active noise cancelling with transparency mode"},
+                      {"en": "Up to 30 hours of battery life"},
+                      {"en": "Bluetooth 5.3, connects to two devices"},
+                      {"en": "12-month warranty"}]',
+       specs = '[{"name": "Model", "value": "WH-PRO"},
+                 {"name": "Connectivity", "value": "Bluetooth 5.3, multipoint"},
+                 {"name": "Battery", "value": "Up to 30 h"},
+                 {"name": "Charging", "value": "USB-C, 10 min = 5 h"},
+                 {"name": "Noise cancelling", "value": "Active (ANC)"},
+                 {"name": "Weight", "value": "250 g"},
+                 {"name": "In the box", "value": "Headphones, USB-C cable, travel pouch"},
+                 {"name": "Warranty", "value": "12 months"}]'
+ where slug = 'wireless-headphones-pro';
+
 -- Seeding is not an admin action: start the audit log empty.
 truncate public.audit_logs;
