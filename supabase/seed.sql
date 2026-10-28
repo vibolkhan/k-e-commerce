@@ -250,6 +250,37 @@ select p.slug, c.id, p.brand, jsonb_build_object('en', p.name), jsonb_build_obje
           max_per_order, tags, best_seller, specs)
   join public.categories c on c.slug = p.category;
 
+-- Khmer names (C-04: search in Khmer). The clear phone case stays
+-- untranslated on purpose: Khmer may be missing until it is translated.
+update public.products p
+   set name = p.name || jsonb_build_object('km', k.km)
+  from (values
+    ('wireless-headphones-pro', 'កាសឥតខ្សែ Pro'),
+    ('smart-watch-active-2', 'នាឡិកាឆ្លាតវៃ Active 2'),
+    ('running-sneakers-air', 'ស្បែកជើងរត់ Air'),
+    ('everyday-backpack-22l', 'កាបូបស្ពាយប្រចាំថ្ងៃ 22L'),
+    ('ceramic-coffee-mug-set', 'ឈុតពែងកាហ្វេសេរ៉ាមិច (៤ ពែង)'),
+    ('led-desk-lamp', 'ចង្កៀងតុ LED'),
+    ('a4-copy-paper-80gsm', 'ក្រដាស A4 80 gsm (៥០០ សន្លឹក)'),
+    ('bluetooth-speaker-mini', 'ឧបករណ៍បំពងសំឡេងប៊្លូធូស Mini'),
+    ('rice-cooker-1-8l', 'ឆ្នាំងដាំបាយ 1.8 លីត្រ'),
+    ('stainless-water-bottle-750', 'ដបទឹកដែកអ៊ីណុក 750 ml'),
+    ('cotton-crew-tshirt', 'អាវយឺតកប្បាស'),
+    ('studio-headphones-wired', 'កាសស្ទូឌីយោ មានខ្សែ'),
+    ('party-speaker-light', 'ឧបករណ៍បំពងសំឡេងពិធីជប់លៀង មានភ្លើង'),
+    ('kids-headphones', 'កាសសម្រាប់កុមារ'),
+    ('outdoor-speaker-waterproof', 'ឧបករណ៍បំពងសំឡេងក្រៅផ្ទះ ការពារទឹក'),
+    ('sport-earbuds', 'កាសត្រចៀកកីឡា'),
+    ('bookshelf-speakers-pair', 'ឧបករណ៍បំពងសំឡេងធ្នើសៀវភៅ (មួយគូ)'),
+    ('gaming-headset-mic', 'កាសហ្គេម មានមីក្រូ'),
+    ('smart-speaker-voice', 'ឧបករណ៍បំពងសំឡេងឆ្លាតវៃ'),
+    ('travel-earbuds-case', 'កាសត្រចៀកធ្វើដំណើរ មានប្រអប់'),
+    ('soundbar-compact', 'របារសំឡេងតូច'),
+    ('nimbus-sport-earbuds', 'កាសត្រចៀកកីឡា Nimbus'),
+    ('headphone-travel-case', 'ប្រអប់កាសធ្វើដំណើរ')
+  ) as k (slug, km)
+ where p.slug = k.slug;
+
 -- Variants with price (cents) and stock (qty, reserved, low-stock alert).
 create temporary table seed_variants (
   product_slug text, sku text, attributes jsonb, price_cents integer,
