@@ -300,7 +300,7 @@ class _AdjustStockFormState extends ConsumerState<AdjustStockForm> {
           optional: true,
           controller: _note,
           hint: l10n.inventoryNoteHint,
-          maxLines: 2,
+          maxLines: 3,
           maxLength: maxAdjustNote,
         ),
         const SizedBox(height: 16),

@@ -2448,7 +2448,7 @@
   "@inventoryErrTooLarge": {
     "description": "F10 inventory: ErrTooLarge"
   },
-  "inventoryErrBelowReserved": "{reserved} units are held for open orders, so on hand can’t go below {reserved}.",
+  "inventoryErrBelowReserved": "{reserved, plural, =1{1 unit is held for an open order, so on hand can’t go below 1.} other{{reserved} units are held for open orders, so on hand can’t go below {reserved}.}}",
   "@inventoryErrBelowReserved": {
     "description": "F10 inventory: ErrBelowReserved",
     "placeholders": {

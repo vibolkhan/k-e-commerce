@@ -751,7 +751,7 @@
   "inventoryRecent": "ការប្តូរថ្មីៗ",
   "inventoryErrQty": "បញ្ចូលចំនួនឯកតាជាលេខគត់។",
   "inventoryErrTooLarge": "នោះលើសពី 100,000 ឯកតា។",
-  "inventoryErrBelowReserved": "មាន {reserved} ឯកតាកក់សម្រាប់ការបញ្ជាទិញ ដូច្នេះចំនួនក្នុងដៃមិនអាចតិចជាង {reserved} ទេ។",
+  "inventoryErrBelowReserved": "{reserved, plural, other{មាន {reserved} ឯកតាកក់សម្រាប់ការបញ្ជាទិញ ដូច្នេះចំនួនក្នុងដៃមិនអាចតិចជាង {reserved} ទេ។}}",
   "inventoryErrNoChange": "នេះមិនប្តូរចំនួនក្នុងដៃទេ។",
   "inventoryConfirmTitle": "រក្សាទុកការកែប្រែនេះ?",
   "inventoryConfirmBody": "{sku}៖ ចំនួនក្នុងដៃប្តូរពី {from} ទៅ {to}។ {reason}។",
