@@ -123,7 +123,7 @@ void main() {
 
       await tester.tap(find.text('Start shopping'));
       await tester.pumpAndSettle();
-      expect(find.text('Customer home'), findsOneWidget);
+      expect(storeHome('customer'), findsOneWidget);
       expect(onboarding.isDone(OnboardingStep.intro), isTrue);
     });
 
@@ -146,14 +146,14 @@ void main() {
       await launch(tester);
       await tester.tap(find.text('Skip'));
       await tester.pumpAndSettle();
-      expect(find.text('Customer home'), findsOneWidget);
+      expect(storeHome('customer'), findsOneWidget);
     });
 
     testWidgets('the next launch opens the home directly', (tester) async {
       onboarding = MemoryOnboardingStore.done();
       await launch(tester);
       expect(find.text('Choose your language'), findsNothing);
-      expect(find.text('Customer home'), findsOneWidget);
+      expect(storeHome('customer'), findsOneWidget);
     });
 
     testWidgets('a restored rider session skips the shopping intro', (
@@ -172,10 +172,10 @@ void main() {
 
     for (final MapEntry(key: email, value: user) in _users.entries) {
       final home = switch (user.role) {
-        AppRole.customer => 'Customer home',
-        AppRole.business => 'Business home',
-        AppRole.rider => 'Rider home',
-        AppRole.admin => adminHome,
+        AppRole.customer => storeHome('customer'),
+        AppRole.business => storeHome('business'),
+        AppRole.rider => find.text('Rider home'),
+        AppRole.admin => find.text(adminHome),
       };
       testWidgets('${user.role.name} lands on their home and nowhere else', (
         tester,
@@ -183,7 +183,7 @@ void main() {
         final repo = FakeAuthRepository(accounts: {..._users});
         await repo.signInWithPassword(email, 'password123');
         final container = await launch(tester, auth: repo);
-        expect(find.text(home), findsOneWidget);
+        expect(home, findsOneWidget);
 
         final router = container.read(routerProvider);
         for (final other in AppRole.values.where((r) => r != user.role)) {
@@ -202,7 +202,7 @@ void main() {
     ) async {
       final repo = FakeAuthRepository(accounts: {..._users});
       await launch(tester, auth: repo);
-      expect(find.text('Customer home'), findsOneWidget);
+      expect(storeHome('customer'), findsOneWidget);
       await repo.signInWithPassword('rider@k.example', 'password123');
       await tester.pumpAndSettle();
       expect(find.text('Rider home'), findsOneWidget);

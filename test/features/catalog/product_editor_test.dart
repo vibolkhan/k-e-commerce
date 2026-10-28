@@ -407,9 +407,7 @@ void main() {
             categoryId: 'c-audio',
             name: I18nText(en: 'Old Speaker'),
             status: ProductStatus.archived,
-            variants: [
-              VariantDraft(id: 'v-1', sku: 'OLD-1', priceCents: 1000),
-            ],
+            variants: [VariantDraft(id: 'v-1', sku: 'OLD-1', priceCents: 1000)],
           ),
         },
       );

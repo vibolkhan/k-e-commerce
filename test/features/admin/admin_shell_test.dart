@@ -140,7 +140,7 @@ void main() {
       await tester.tap(find.text('Sign out').last);
       await tester.pumpAndSettle();
       expect(auth.signOuts, 1);
-      expect(find.text('Customer home'), findsOneWidget);
+      expect(storeHome('customer'), findsOneWidget);
     });
   });
 

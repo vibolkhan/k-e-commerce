@@ -159,7 +159,7 @@ void main() {
 
     testWidgets('opens the customer shell by default', (tester) async {
       await pumpApp(tester);
-      expect(find.text('Customer home'), findsOneWidget);
+      expect(storeHome('customer'), findsOneWidget);
     });
 
     testWidgets('unknown path shows not found', (tester) async {
@@ -177,7 +177,7 @@ void main() {
 
       await tester.tap(find.text('Go home'));
       await tester.pumpAndSettle();
-      expect(find.text('Customer home'), findsOneWidget);
+      expect(storeHome('customer'), findsOneWidget);
     });
 
     testWidgets('changing role moves to that shell', (tester) async {
@@ -190,12 +190,14 @@ void main() {
     testWidgets('debug role switcher opens each shell', (tester) async {
       await pumpApp(tester);
       for (final label in ['Business', 'Rider', 'Admin', 'Customer']) {
+        await tester.ensureVisible(find.text(label));
         await tester.tap(find.text(label));
         await tester.pumpAndSettle();
-        expect(
-          find.text(label == 'Admin' ? adminHome : '$label home'),
-          findsOneWidget,
-        );
+        expect(switch (label) {
+          'Admin' => find.text(adminHome),
+          'Rider' => find.text('Rider home'),
+          _ => storeHome(label.toLowerCase()),
+        }, findsOneWidget);
       }
     });
 

@@ -250,7 +250,7 @@ void main() {
       expect(account.deleteReasons, ['not_using']);
       expect(auth.signOuts, 1);
       expect(auth.currentUserId, isNull);
-      expect(find.text('Customer home'), findsOneWidget);
+      expect(storeHome('customer'), findsOneWidget);
       expect(find.text('Your account has been deleted.'), findsOneWidget);
       await settleToasts(tester);
     });

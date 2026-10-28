@@ -13,7 +13,7 @@ void main() {
       ProviderScope(overrides: [onboardedDevice], child: const KApp()),
     );
     await tester.pumpAndSettle();
-    expect(find.text('Customer home'), findsOneWidget);
+    expect(storeHome('customer'), findsOneWidget);
     expect(
       find.text('Supabase not configured — running offline'),
       findsOneWidget,
@@ -28,6 +28,7 @@ void main() {
       ),
     );
     await tester.pumpAndSettle();
-    expect(find.text('ទំព័រដើម អតិថិជន'), findsOneWidget);
+    expect(storeHome('customer'), findsOneWidget);
+    expect(find.text('ទិញតាមប្រភេទ'), findsOneWidget);
   });
 }

@@ -9,6 +9,7 @@ import 'package:k_e_commerce/core/ui/k_ui.dart';
 import 'package:k_e_commerce/features/settings/presentation/language_select_view.dart';
 
 import '../../helpers.dart';
+import '../storefront/fakes.dart';
 
 /// An app whose language follows [localeControllerProvider], like [KApp].
 class _LiveApp extends ConsumerWidget {
@@ -37,12 +38,16 @@ void main() {
           overrides: [
             localeStoreProvider.overrideWithValue(store),
             onboardedDevice,
+            // Home's best sellers show one $49.00 card.
+            ...storefrontOverrides(
+              FakeStorefrontRepository(products: const [headphonesPro]),
+            ),
           ],
           child: const KApp(),
         ),
       );
       await tester.pumpAndSettle();
-      expect(find.text('Customer home'), findsOneWidget);
+      expect(storeHome('customer'), findsOneWidget);
       expect(find.text('≈ KHR 200,900'), findsOneWidget);
 
       await tester.tap(find.text('Account'));
@@ -62,7 +67,7 @@ void main() {
       expect(find.text('ភាសា'), findsOneWidget);
       await tester.tap(find.text('ទំព័រដើម'));
       await tester.pumpAndSettle();
-      expect(find.text('ទំព័រដើម អតិថិជន'), findsOneWidget);
+      expect(find.text('ទិញតាមប្រភេទ'), findsOneWidget);
       expect(find.text(r'$49.00'), findsOneWidget);
       expect(find.text('≈ 200,900 រៀល'), findsOneWidget);
       expect(store.read(), 'km');

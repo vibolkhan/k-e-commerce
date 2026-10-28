@@ -11,6 +11,9 @@ final onboardedDevice = onboardingStoreProvider.overrideWithValue(
   MemoryOnboardingStore.done(),
 );
 
+/// The storefront home (C-01 / B-00) of the `customer` or `business` shell.
+Finder storeHome(String role) => find.byKey(ValueKey('store-home-$role'));
+
 /// Text on the back-office dashboard (A-01) until its task builds it.
 const adminHome = 'This screen (A-01) arrives in a later update.';
 
