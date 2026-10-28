@@ -1,63 +1,54 @@
 ---
 name: restart-app
-description: Restart the K app locally so the user can test right away. Brings the Supabase stack up, rebuilds the database when migrations or seed.sql changed, checks the Edge Functions, relaunches the Flutter app (Chrome by default) against the local stack, and reports when it is ready with the logins to use. Use when the user asks to restart, run, relaunch or "let me test" the app, and at the end of every build task (F01–F42) before the summary.
+description: Give the user the exact commands to bring the local stack up to date and launch the K app, so they can test. Claude does not run them. Use when the user asks to restart, run, relaunch or "let me test" the app, and at the end of every build task (F01–F42) before the summary.
 ---
 
-# Restart the app for testing
+# Commands to test the app
 
-Goal: the user opens nothing and runs nothing. When you finish, the app is
-running against an up-to-date local backend and you have told them so.
+Goal: the user gets a short, copy-paste list of commands that brings the
+local backend up to date and starts the app. **Do not run these commands
+yourself** (not `stack.sh`, not `app.sh`, not `flutter run`, not
+`supabase db reset`). Only print them.
 
-Run every step yourself. Don't ask for confirmation, except before `--reset`
-when the user has said they have test data they want to keep.
+## 1. Decide what to list
 
-## 1. Backend
+- **Backend:** always list `stack.sh`. It starts Docker's Supabase stack if
+  needed and rebuilds the database only when `supabase/migrations` or
+  `seed.sql` changed since its last run.
+- **`--reset`:** add it only if the user asked for a clean database or seed
+  data. If the current task changed migrations or the seed, say that the
+  database will be rebuilt and manual test data cleared. `stack.sh` does
+  that on its own, with no flag.
+- **Edge Functions:** if the task changed `supabase/functions`, add
+  `docker restart supabase_edge_runtime_k-e-commerce` before the app
+  command.
+- **Device:** Chrome by default. Use `-d windows` or a device id only when
+  the user asks for it.
 
-Run in the foreground (allow up to 10 minutes on a cold start):
+## 2. Report
+
+Keep it short. Use this shape:
+
+````
+Run these from the repo root in Git Bash (or type each with `!` in front here in Claude Code):
 
 ```
 bash .claude/skills/restart-app/scripts/stack.sh
+flutter run -d chrome --dart-define-from-file=config/env.local.json --web-port 8686
 ```
 
-- Add `--reset` when the user asks for a fresh database or clean seed data.
-- Every `STATUS` line goes into your report.
-- Exit codes:
-  - **2:** Docker isn't running. Tell the user to start Docker Desktop and stop here.
-  - **3:** the stack failed to start. Show the error and stop.
-  - **4:** a migration or the seed failed. Show the SQL error, fix it if it is from the current task, then run the step again.
-- `functions: NOT ANSWERING`: restart the runtime with `docker restart supabase_edge_runtime_k-e-commerce`, then run the script once more. If a function still fails, report it; don't block on it.
+1. Brings the Supabase stack up and rebuilds the database if migrations or seed changed. Needs Docker Desktop running; each step prints a `STATUS` line.
+2. Starts the app at http://localhost:8686 (`r` hot reload, `R` restart, `q` quit).
 
-## 2. App
+Log in with (password password123):
+- customer dara@kstore.example
+- business sokha@kstore.example
 
-1. Start the relaunch with the Bash tool, `run_in_background: true`:
+Then follow the local-stack checks in delivery/<feature>/README.md.
+````
 
-   ```
-   bash .claude/skills/restart-app/scripts/app.sh
-   ```
-
-   The argument is the device: `chrome` (default), `windows`, or a device id. Use another device only when the user asks for it.
-
-   The script stops the previous run first (including its Chrome window) and writes the log to `.dart_tool/k_dev/app.log`.
-2. Wait until the log shows the app is up or has failed. Start this with Bash, also `run_in_background: true`; you are notified once it ends:
-
-   ```
-   until grep -qE "Flutter run key commands|is being served at|Error:|Failed to|Exception" .dart_tool/k_dev/app.log 2>/dev/null; do sleep 1; done; tail -15 .dart_tool/k_dev/app.log
-   ```
-
-   The first build takes about a minute; later ones are faster.
-3. Then read the log's last 40 lines.
-   - **Compile error:** if it is in code from the current task, fix it and repeat step 2. Otherwise report it.
-   - **Up:** go on to the report.
-
-## 3. Report
-
-Keep the report short:
-
-```
-App is ready: Chrome window opened (http://localhost:8686).
-- Database: <STATUS database line, in plain words>
-- Edge Functions: <ok / which failed>
-- Log in with (password password123):
+- Only list the logins that matter for what was just built. All seeded
+  logins (password `password123`):
   - customer dara@kstore.example
   - business sokha@kstore.example
   - rider vuthy@kstore.example
@@ -66,16 +57,33 @@ App is ready: Chrome window opened (http://localhost:8686).
     - sales dalin@kstore.example
     - support sophea@kstore.example
     - catalog visal@kstore.example
-- Studio (to look at data): http://127.0.0.1:54323
-```
-
-- Only list the logins that matter for what was just built.
 - When the task has a "local-stack check" table in its README, point at it.
-- If the database was rebuilt, say that manual test data was cleared.
+- Studio, to look at data: http://127.0.0.1:54323
+
+## If the user reports a problem
+
+Explain what the output means and what to run next; still don't run it.
+
+- `STATUS docker: NOT RUNNING`: start Docker Desktop, then run `stack.sh`
+  again.
+- Exit 3 (stack failed to start): show the error they pasted and suggest
+  `npx supabase stop` then `stack.sh`.
+- Exit 4 (migration or seed failed): if the SQL error comes from the
+  current task, fix the migration or seed (editing files is fine), then
+  give the command again.
+- `functions: NOT ANSWERING`: `docker restart supabase_edge_runtime_k-e-commerce`,
+  then `stack.sh` once more.
+- A compile error in `flutter run` from the current task's code: fix the
+  code, then tell them to press `R` or run the command again.
 
 ## Notes
 
-- **Push notifications:** Firebase is skipped (CLAUDE.md), so push is off locally. The inbox and in-app banner still work.
-- **Why a restart, not a hot reload:** a code change only needs a restart of the app, but changes to defines, ARB files or migrations need this full run.
-- **To stop the app:** `bash .claude/skills/restart-app/scripts/app.sh stop`.
-- **Saved state:** the database fingerprint is in `.dart_tool/k_dev/db.sha`. Delete it to force a reset on the next run.
+- **Push notifications:** Firebase is skipped (CLAUDE.md), so push is off
+  locally. The inbox and in-app banner still work.
+- **Hot reload isn't enough** after changes to defines, ARB files or
+  migrations: quit with `q` and run both commands again.
+- **Saved state:** the database fingerprint is in `.dart_tool/k_dev/db.sha`.
+  Deleting it forces a rebuild on the next `stack.sh`.
+- `scripts/app.sh` (background run with a log in `.dart_tool/k_dev/app.log`)
+  is kept for unattended use, but the list above uses `flutter run` so the
+  user sees the output and keeps hot reload.
