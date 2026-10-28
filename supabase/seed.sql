@@ -398,6 +398,9 @@ select 'a0000000-0000-4000-8000-000000000021', id from public.products
 --   K-10248  Dara  delivered, KHQR paid (free delivery; $8.36 VAT included)
 --   K-10250  Dara  out for delivery, COD, rider Vuthy
 --   K-10251  Bopha ready, KHQR paid, rider Sokun assigned
+--   K-10252  Bopha confirmed, COD (stock held: 2 × SW-ACT2-GRY)
+--   K-10253  Bopha packing, KHQR paid (stock held: HP-PRO-BLK, LMP-LED-WHT, 2 × BTL-750-SKY)
+--   The held units are the `reserved` numbers in the stock seed (A-06, F10).
 -- ---------------------------------------------------------------------------
 insert into public.orders (
   id, number, profile_id, status, payment_method, payment_status,
@@ -417,7 +420,13 @@ select o.id::uuid, o.number, o.profile_id::uuid, o.status::public.order_status,
      '2026-10-26', '15-18', '2026-10-26 09:05+07', null),
     ('d0000000-0000-4000-8000-000000010251', 'K-10251', 'a0000000-0000-4000-8000-000000000022',
      'ready', 'khqr', 'paid', 7900, 0, 718, 7900, 'Home',
-     '2026-10-26', 'anytime', '2026-10-26 08:30+07', null)
+     '2026-10-26', 'anytime', '2026-10-26 08:30+07', null),
+    ('d0000000-0000-4000-8000-000000010252', 'K-10252', 'a0000000-0000-4000-8000-000000000022',
+     'confirmed', 'cod', 'unpaid_cod', 15800, 150, 1450, 15950, 'Home',
+     '2026-10-27', '15-18', '2026-10-27 09:40+07', null),
+    ('d0000000-0000-4000-8000-000000010253', 'K-10253', 'a0000000-0000-4000-8000-000000000022',
+     'packing', 'khqr', 'paid', 9800, 0, 891, 9800, 'Home',
+     '2026-10-27', 'anytime', '2026-10-27 10:24+07', null)
   ) as o (id, number, profile_id, status, method, pay_status, subtotal, fee, tax, total,
           address_label, delivery_date, slot, placed_at, delivered_at)
   join public.addresses a on a.profile_id = o.profile_id::uuid and a.label = o.address_label;
@@ -429,7 +438,11 @@ select i.order_id::uuid, pv.id, p.id, p.name, pv.sku, pv.attributes, i.unit_pric
     ('d0000000-0000-4000-8000-000000010248', 'MUG-4-SND', 1800, 1),
     ('d0000000-0000-4000-8000-000000010248', 'BTL-750-SKY', 1250, 2),
     ('d0000000-0000-4000-8000-000000010250', 'LMP-LED-WHT', 2400, 1),
-    ('d0000000-0000-4000-8000-000000010251', 'SW-ACT2-GRY', 7900, 1)
+    ('d0000000-0000-4000-8000-000000010251', 'SW-ACT2-GRY', 7900, 1),
+    ('d0000000-0000-4000-8000-000000010252', 'SW-ACT2-GRY', 7900, 2),
+    ('d0000000-0000-4000-8000-000000010253', 'HP-PRO-BLK', 4900, 1),
+    ('d0000000-0000-4000-8000-000000010253', 'LMP-LED-WHT', 2400, 1),
+    ('d0000000-0000-4000-8000-000000010253', 'BTL-750-SKY', 1250, 2)
   ) as i (order_id, sku, unit_price, qty)
   join public.product_variants pv on pv.sku = i.sku
   join public.products p on p.id = pv.product_id;
@@ -437,7 +450,22 @@ select i.order_id::uuid, pv.id, p.id, p.name, pv.sku, pv.attributes, i.unit_pric
 insert into public.payments (order_id, provider, method, status, amount_cents, provider_ref, confirmed_at) values
   ('d0000000-0000-4000-8000-000000010248', 'khqr', 'khqr', 'paid', 9200, 'KQ-7F3A92', '2026-10-22 10:14+07'),
   ('d0000000-0000-4000-8000-000000010250', 'cod', 'cod', 'unpaid_cod', 2550, null, null),
-  ('d0000000-0000-4000-8000-000000010251', 'khqr', 'khqr', 'paid', 7900, 'KQ-8B21C4', '2026-10-26 08:32+07');
+  ('d0000000-0000-4000-8000-000000010251', 'khqr', 'khqr', 'paid', 7900, 'KQ-8B21C4', '2026-10-26 08:32+07'),
+  ('d0000000-0000-4000-8000-000000010252', 'cod', 'cod', 'unpaid_cod', 15950, null, null),
+  ('d0000000-0000-4000-8000-000000010253', 'khqr', 'khqr', 'paid', 9800, 'KQ-9C40D7', '2026-10-27 10:25+07');
+
+-- Stock held for the two orders not yet out of the door (F10). The stock seed
+-- already counts these units in `reserved`.
+insert into public.stock_reservations (order_id, variant_id, warehouse_id, qty)
+select i.order_id, i.variant_id, w.id, i.qty
+  from public.order_items i
+  cross join public.warehouses w
+ where i.order_id in ('d0000000-0000-4000-8000-000000010252', 'd0000000-0000-4000-8000-000000010253');
+
+insert into public.stock_movements (variant_id, warehouse_id, delta, reason, order_id, created_at)
+select r.variant_id, r.warehouse_id, -r.qty, 'reserved', r.order_id, o.placed_at
+  from public.stock_reservations r
+  join public.orders o on o.id = r.order_id;
 
 insert into public.deliveries (
   id, order_id, rider_id, status, assigned_at, picked_up_at, delivered_at,
