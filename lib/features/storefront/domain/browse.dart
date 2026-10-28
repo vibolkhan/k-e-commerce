@@ -10,9 +10,11 @@ enum Audience {
   List<String> get visible => ['all', name];
 }
 
-/// C-03b sort options. [curated] keeps a collection's own order (home rails);
-/// it is not offered in the sheet.
+/// C-03b sort options. [curated] keeps a collection's own order (home rails)
+/// and [relevance] is "Best match" for search results (C-04a); neither is
+/// offered outside its own list.
 enum BrowseSort {
+  relevance('relevance'),
   popular('popular'),
   newest('newest'),
   priceAsc('price_asc'),
@@ -26,9 +28,14 @@ enum BrowseSort {
 
   bool get isPrice => this == priceAsc || this == priceDesc;
 
-  /// The options in the sort sheet. Business buyers never see prices, so
-  /// they can't sort by them either (App Flow F3).
-  static List<BrowseSort> options({required bool business}) => [
+  /// The options in the sort sheet, with Best match first for search
+  /// results. Business buyers never see prices, so they can't sort by them
+  /// either (App Flow F3).
+  static List<BrowseSort> options({
+    required bool business,
+    bool search = false,
+  }) => [
+    if (search) relevance,
     popular,
     newest,
     if (!business) ...[priceAsc, priceDesc],
@@ -36,12 +43,14 @@ enum BrowseSort {
   ];
 }
 
-/// What the product list (C-03) shows: one category or collection, the
-/// filters from the chips and the C-03a sheet, the sort, and the page.
+/// What the product list (C-03) and search results (C-04a) show: one
+/// category or collection and/or a search, the filters from the chips and
+/// the C-03a sheet, the sort, and the page.
 class BrowseQuery {
   const BrowseQuery({
     this.categoryId,
     this.collection,
+    this.search,
     this.brands = const {},
     this.minCents,
     this.maxCents,
@@ -62,6 +71,9 @@ class BrowseQuery {
 
   /// Collection slug, e.g. `best-sellers`.
   final String? collection;
+
+  /// What the shopper searched for (C-04), as typed.
+  final String? search;
   final Set<String> brands;
   final int? minCents;
   final int? maxCents;
@@ -96,6 +108,7 @@ class BrowseQuery {
   }) => BrowseQuery(
     categoryId: categoryId,
     collection: collection,
+    search: search,
     brands: brands ?? this.brands,
     minCents: minCents == null ? this.minCents : minCents(),
     maxCents: maxCents == null ? this.maxCents : maxCents(),
@@ -109,6 +122,7 @@ class BrowseQuery {
   BrowseQuery atPage(int page) => BrowseQuery(
     categoryId: categoryId,
     collection: collection,
+    search: search,
     brands: brands,
     minCents: minCents,
     maxCents: maxCents,
@@ -124,6 +138,7 @@ class BrowseQuery {
   BrowseQuery cleared() => BrowseQuery(
     categoryId: categoryId,
     collection: collection,
+    search: search,
     sort: sort,
     pageSize: pageSize,
   );
@@ -132,6 +147,7 @@ class BrowseQuery {
   BrowseQuery forBusiness() => BrowseQuery(
     categoryId: categoryId,
     collection: collection,
+    search: search,
     brands: brands,
     minRating: minRating,
     inStock: inStock,
@@ -154,6 +170,7 @@ class BrowseQuery {
     'p_sort': sort.wire,
     'p_limit': pageSize,
     'p_offset': offset,
+    'p_q': search,
   };
 
   @override
@@ -161,6 +178,7 @@ class BrowseQuery {
       other is BrowseQuery &&
       other.categoryId == categoryId &&
       other.collection == collection &&
+      other.search == search &&
       _sameSet(other.brands, brands) &&
       other.minCents == minCents &&
       other.maxCents == maxCents &&
@@ -175,6 +193,7 @@ class BrowseQuery {
   int get hashCode => Object.hash(
     categoryId,
     collection,
+    search,
     Object.hashAllUnordered(brands),
     minCents,
     maxCents,

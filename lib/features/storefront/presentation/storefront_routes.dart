@@ -6,9 +6,11 @@ import '../../../core/router/app_role.dart';
 import '../../../core/ui/pages/placeholder_page.dart';
 import 'categories_page.dart';
 import 'product_list_page.dart';
+import 'search_page.dart';
 
 /// Under the shell's home: collections from home rails and banners (C-03),
-/// and the placeholders home links to, on the root navigator.
+/// search (C-04), and the placeholders home links to, on the root
+/// navigator.
 List<GoRoute> homeBrowseRoutes(
   AppRole role, {
   required GlobalKey<NavigatorState> rootKey,
@@ -35,7 +37,12 @@ List<GoRoute> homeBrowseRoutes(
       builder: (_, state) =>
           ProductListPage(role: role, collection: state.pathParameters['slug']),
     ),
-    placeholder('search', 'C-04', (l10n) => l10n.storeSearchTitle),
+    GoRoute(
+      path: 'search',
+      parentNavigatorKey: rootKey,
+      builder: (_, state) =>
+          SearchPage(role: role, initialQuery: state.uri.queryParameters['q']),
+    ),
     placeholder(
       'products/:id',
       role == AppRole.business ? 'B-00a' : 'C-05',

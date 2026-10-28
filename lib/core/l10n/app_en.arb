@@ -2858,5 +2858,111 @@
   "storeApply": "Apply",
   "@storeApply": {
     "description": "F11 storefront"
+  },
+  "storeSortRelevance": "Best match",
+  "@storeSortRelevance": {
+    "description": "F12 search"
+  },
+  "storeSearchClear": "Clear search",
+  "@storeSearchClear": {
+    "description": "F12 search"
+  },
+  "storeSuggestions": "Suggestions",
+  "@storeSuggestions": {
+    "description": "F12 search"
+  },
+  "storeInCategory": "in {category}",
+  "@storeInCategory": {
+    "description": "F12 search",
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "storeRecentSearches": "Recent searches",
+  "@storeRecentSearches": {
+    "description": "F12 search"
+  },
+  "storeClearRecent": "Clear",
+  "@storeClearRecent": {
+    "description": "F12 search"
+  },
+  "storeClearRecentTitle": "Clear recent searches?",
+  "@storeClearRecentTitle": {
+    "description": "F12 search"
+  },
+  "storeClearRecentBody": "Your recent searches will be removed. This can't be undone.",
+  "@storeClearRecentBody": {
+    "description": "F12 search"
+  },
+  "storePopularCategories": "Popular categories",
+  "@storePopularCategories": {
+    "description": "F12 search"
+  },
+  "storeResultCount": "{count, plural, =1{1 result} other{{count} results}}",
+  "@storeResultCount": {
+    "description": "F12 search",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "storeResultsFor": "for “{query}”",
+  "@storeResultsFor": {
+    "description": "F12 search",
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "storeShowMoreResults": "{count, plural, =1{Show 1 more result} other{Show {count} more results}}",
+  "@storeShowMoreResults": {
+    "description": "F12 search",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "storeNoResultsFor": "No results for “{query}”",
+  "@storeNoResultsFor": {
+    "description": "F12 search",
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "storeDidYouMean": "Did you mean {suggestion}?",
+  "@storeDidYouMean": {
+    "description": "F12 search",
+    "placeholders": {
+      "suggestion": {
+        "type": "String"
+      }
+    }
+  },
+  "storeTryThis": "Try this",
+  "@storeTryThis": {
+    "description": "F12 search"
+  },
+  "storeTipSpelling": "Check the spelling",
+  "@storeTipSpelling": {
+    "description": "F12 search"
+  },
+  "storeTipFewerWords": "Use fewer or more general words",
+  "@storeTipFewerWords": {
+    "description": "F12 search"
+  },
+  "storeTipBrowse": "Browse by category instead",
+  "@storeTipBrowse": {
+    "description": "F12 search"
+  },
+  "storeSearchStart": "Search products and brands in English or Khmer.",
+  "@storeSearchStart": {
+    "description": "F12 search"
   }
 }

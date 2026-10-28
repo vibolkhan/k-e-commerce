@@ -10,6 +10,7 @@ String sortLabel(
   BrowseSort sort, {
   bool short = false,
 }) => switch (sort) {
+  BrowseSort.relevance => l10n.storeSortRelevance,
   BrowseSort.popular || BrowseSort.curated =>
     short ? l10n.storeSortPopularShort : l10n.storeSortPopular,
   BrowseSort.newest => l10n.storeSortNewest,
@@ -18,25 +19,34 @@ String sortLabel(
   BrowseSort.rating => l10n.storeSortRating,
 };
 
-/// C-03b Sort by. Business buyers get no price options. Resolves with the
-/// chosen sort, or null if closed.
+/// C-03b Sort by. Business buyers get no price options; search results
+/// ([search]) add Best match. Resolves with the chosen sort, or null if
+/// closed.
 Future<BrowseSort?> showSortSheet(
   BuildContext context, {
   required BrowseSort current,
   required bool business,
+  bool search = false,
 }) {
   return showKBottomSheet<BrowseSort>(
     context,
     title: AppLocalizations.of(context).storeSortBy,
-    builder: (_) => SortSheet(current: current, business: business),
+    builder: (_) =>
+        SortSheet(current: current, business: business, search: search),
   );
 }
 
 class SortSheet extends StatefulWidget {
-  const SortSheet({super.key, required this.current, required this.business});
+  const SortSheet({
+    super.key,
+    required this.current,
+    required this.business,
+    this.search = false,
+  });
 
   final BrowseSort current;
   final bool business;
+  final bool search;
 
   @override
   State<SortSheet> createState() => _SortSheetState();
@@ -58,7 +68,10 @@ class _SortSheetState extends State<SortSheet> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                for (final s in BrowseSort.options(business: widget.business))
+                for (final s in BrowseSort.options(
+                  business: widget.business,
+                  search: widget.search,
+                ))
                   Padding(
                     padding: const EdgeInsets.only(bottom: 8),
                     child: KOptionTile(
