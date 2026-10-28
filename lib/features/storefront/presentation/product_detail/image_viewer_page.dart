@@ -84,6 +84,7 @@ class _ImageViewerPageState extends ConsumerState<ImageViewerPage> {
       child: Scaffold(
         key: const Key('pd-viewer'),
         body: Semantics(
+          explicitChildNodes: true,
           scopesRoute: true,
           namesRoute: true,
           label: l10n.pdViewerA11y(index + 1, slides),

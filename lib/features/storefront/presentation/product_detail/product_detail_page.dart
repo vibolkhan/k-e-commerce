@@ -44,7 +44,9 @@ class ProductDetailPage extends ConsumerWidget {
         product: product,
       ),
       AsyncData() => const ErrorPage.notFound(),
-      AsyncError() => Scaffold(
+      // Also while Riverpod retries in the background, so a failed read
+      // doesn't sit on the skeleton.
+      AsyncValue(hasError: true) => Scaffold(
         appBar: const KAppBar(),
         body: Center(
           child: KEmptyState(
@@ -268,6 +270,7 @@ class _ProductViewState extends ConsumerState<_ProductView> {
       body: Stack(
         children: [
           SingleChildScrollView(
+            key: const Key('pd-scroll'),
             controller: _scroll,
             child: Center(
               child: ConstrainedBox(
@@ -346,14 +349,18 @@ class _TopBar extends ConsumerWidget {
               ),
               const SizedBox(width: 8),
               Expanded(
-                child: AnimatedOpacity(
-                  duration: const Duration(milliseconds: 150),
-                  opacity: solid ? 1 : 0,
-                  child: Text(
-                    title,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: k.text.body.copyWith(fontWeight: FontWeight.w700),
+                // Hidden over the gallery, where taps belong to the photos.
+                child: IgnorePointer(
+                  ignoring: !solid,
+                  child: AnimatedOpacity(
+                    duration: const Duration(milliseconds: 150),
+                    opacity: solid ? 1 : 0,
+                    child: Text(
+                      title,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: k.text.body.copyWith(fontWeight: FontWeight.w700),
+                    ),
                   ),
                 ),
               ),
