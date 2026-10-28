@@ -463,6 +463,14 @@ verify_jwt = true
 [functions.staff-manage]
 verify_jwt = true
 
+# F09: catalog staff and super admins; the functions check the caller's
+# staff role and write through service-role SQL functions that act as them.
+[functions.catalog-manage]
+verify_jwt = true
+
+[functions.catalog-import]
+verify_jwt = true
+
 # F07: called by other server code with the service role key, or (when
 # NOTIFY_SELF_TEST is on) by a signed-in user sending a test to themselves.
 # The service key may be a non-JWT secret key, so the gateway check is off
