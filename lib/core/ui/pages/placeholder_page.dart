@@ -11,7 +11,7 @@ class PlaceholderPage extends StatelessWidget {
     super.key,
     required this.title,
     required this.screenId,
-    required this.reference,
+    this.reference,
     required this.parent,
   });
 
@@ -20,8 +20,8 @@ class PlaceholderPage extends StatelessWidget {
   /// Design screen id, e.g. C-12.
   final String screenId;
 
-  /// The order, quote or conversation id from the link.
-  final String reference;
+  /// The order, quote or conversation id from the link, if any.
+  final String? reference;
 
   /// Where back goes when the page was opened directly (a push tap).
   final String parent;
@@ -44,11 +44,12 @@ class PlaceholderPage extends StatelessWidget {
             title: title,
             message: l10n.placeholderBody(screenId),
           ),
-          Text(
-            l10n.placeholderReference(reference),
-            textAlign: TextAlign.center,
-            style: k.text.caption.copyWith(color: k.colors.muted),
-          ),
+          if (reference != null)
+            Text(
+              l10n.placeholderReference(reference!),
+              textAlign: TextAlign.center,
+              style: k.text.caption.copyWith(color: k.colors.muted),
+            ),
         ],
       ),
     );

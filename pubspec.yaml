@@ -28,6 +28,7 @@ dependencies:
   firebase_messaging: 17.0.1
   file_picker: 13.3.0
   mobile_scanner: 7.4.2
+  cached_network_image: 3.4.1
 
 dev_dependencies:
   flutter_test:
@@ -63,3 +64,12 @@ flutter:
           weight: 600
         - asset: assets/fonts/KantumruyPro-700.ttf
           weight: 700
+
+# cached_network_image → path_provider. From path_provider_foundation 2.6 and
+# path_provider_android 2.3 the platform code is built by FFI/JNI build
+# hooks, which fail when the Flutter SDK path contains a space (Windows user
+# folders like "C:\Users\first last"). Hold the last plugin-based versions
+# until that is fixed upstream (F11).
+dependency_overrides:
+  path_provider_foundation: 2.5.1
+  path_provider_android: 2.2.22

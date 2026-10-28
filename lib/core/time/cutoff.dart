@@ -1,4 +1,4 @@
-import '../../../core/time/phnom_penh_time.dart';
+import 'phnom_penh_time.dart';
 
 /// Same-day delivery cut-off (market rule: 3:00 PM Phnom Penh). Orders placed
 /// after it deliver the next day; the server decides, this is for display.

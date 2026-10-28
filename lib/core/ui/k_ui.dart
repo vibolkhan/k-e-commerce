@@ -12,6 +12,7 @@ export 'widgets/k_button.dart';
 export 'widgets/k_card.dart';
 export 'widgets/k_commerce.dart';
 export 'widgets/k_feedback.dart';
+export 'widgets/k_image.dart';
 export 'widgets/k_logo.dart';
 export 'widgets/k_navigation.dart';
 export 'widgets/k_overlays.dart';
