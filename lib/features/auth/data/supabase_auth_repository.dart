@@ -256,7 +256,9 @@ class SupabaseAuthRepository implements AuthRepository {
         .from('profiles')
         .select(
           'id, role, full_name, email, phone, is_blocked, '
-          'staff_members(staff_role, status)',
+          // staff_members references profiles twice (profile_id and
+          // invited_by); name the link to the member's own row.
+          'staff_members!staff_members_profile_id_fkey(staff_role, status)',
         )
         .eq('id', userId)
         .maybeSingle();
