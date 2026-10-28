@@ -38,6 +38,9 @@ abstract final class AppRoutes {
   static const adminCatalogImport = '$adminCatalog/import';
   static String adminProduct(String id) => '$adminCatalog/$id';
 
+  /// F10 A-06 Inventory.
+  static const adminInventory = '$admin/inventory';
+
   /// F05 sign-in flow: S-04 → S-05 → S-06.
   static const signIn = '/sign-in';
   static const signInVerify = '/sign-in/verify';

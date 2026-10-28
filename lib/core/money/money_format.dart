@@ -23,6 +23,13 @@ String formatUsd(int cents) {
   return cents < 0 ? '-$text' : text;
 }
 
+/// Whole dollars for totals and tiles, rounded half up: `4821049` →
+/// `$48,210`.
+String formatUsdWhole(int cents) {
+  final dollars = (cents.abs() + 50) ~/ 100;
+  return cents < 0 ? '-\$${_group(dollars)}' : '\$${_group(dollars)}';
+}
+
 /// US cents to riel at [rate] riel per dollar, rounded half away from zero
 /// to the nearest [kKhrRounding] riel. `usdCentsToKhr(4900, 4100)` → 200900.
 int usdCentsToKhr(int cents, int rate) {

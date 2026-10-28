@@ -2058,5 +2058,457 @@
   "catalogImpUnreadable": "Couldn't read the file. Save it as CSV (UTF-8) and try again.",
   "@catalogImpUnreadable": {
     "description": "F09 catalog admin: ImpUnreadable"
+  },
+  "inventoryBreadcrumb": "Catalog · Phnom Penh store",
+  "@inventoryBreadcrumb": {
+    "description": "F10 inventory: Breadcrumb"
+  },
+  "inventoryExport": "Export",
+  "@inventoryExport": {
+    "description": "F10 inventory: Export"
+  },
+  "inventoryExportSoon": "CSV export arrives with Reports.",
+  "@inventoryExportSoon": {
+    "description": "F10 inventory: ExportSoon"
+  },
+  "inventoryAdjust": "Adjust stock",
+  "@inventoryAdjust": {
+    "description": "F10 inventory: Adjust"
+  },
+  "inventoryAdjustShort": "Adjust",
+  "@inventoryAdjustShort": {
+    "description": "F10 inventory: AdjustShort"
+  },
+  "inventoryAdjustRow": "Adjust stock of {name}",
+  "@inventoryAdjustRow": {
+    "description": "F10 inventory: AdjustRow",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "inventoryReadOnly": "You can view stock. Only catalog staff and super admins can adjust it.",
+  "@inventoryReadOnly": {
+    "description": "F10 inventory: ReadOnly"
+  },
+  "inventoryTileLow": "Low stock",
+  "@inventoryTileLow": {
+    "description": "F10 inventory: TileLow"
+  },
+  "inventoryTileLowFoot": "Below their alert level",
+  "@inventoryTileLowFoot": {
+    "description": "F10 inventory: TileLowFoot"
+  },
+  "inventoryTileOut": "Out of stock",
+  "@inventoryTileOut": {
+    "description": "F10 inventory: TileOut"
+  },
+  "inventoryTileOutFoot": "Hidden from “In stock” filters",
+  "@inventoryTileOutFoot": {
+    "description": "F10 inventory: TileOutFoot"
+  },
+  "inventoryTileReserved": "Reserved",
+  "@inventoryTileReserved": {
+    "description": "F10 inventory: TileReserved"
+  },
+  "inventoryTileReservedFoot": "Units in unpaid or packing orders",
+  "@inventoryTileReservedFoot": {
+    "description": "F10 inventory: TileReservedFoot"
+  },
+  "inventoryTileValue": "Stock value",
+  "@inventoryTileValue": {
+    "description": "F10 inventory: TileValue"
+  },
+  "inventoryTileValueFoot": "At retail price",
+  "@inventoryTileValueFoot": {
+    "description": "F10 inventory: TileValueFoot"
+  },
+  "inventorySearchHint": "Search product or SKU",
+  "@inventorySearchHint": {
+    "description": "F10 inventory: SearchHint"
+  },
+  "inventoryFilterLabel": "Filter stock",
+  "@inventoryFilterLabel": {
+    "description": "F10 inventory: FilterLabel"
+  },
+  "inventoryFilterRestock": "Needs restock",
+  "@inventoryFilterRestock": {
+    "description": "F10 inventory: FilterRestock"
+  },
+  "inventoryFilterOut": "Out of stock",
+  "@inventoryFilterOut": {
+    "description": "F10 inventory: FilterOut"
+  },
+  "inventoryFilterAll": "All SKUs",
+  "@inventoryFilterAll": {
+    "description": "F10 inventory: FilterAll"
+  },
+  "inventoryHoldNote": "Reserved stock is released after 15 min if KHQR isn’t paid",
+  "@inventoryHoldNote": {
+    "description": "F10 inventory: HoldNote"
+  },
+  "inventoryColSku": "SKU",
+  "@inventoryColSku": {
+    "description": "F10 inventory: ColSku"
+  },
+  "inventoryColProduct": "Product · variant",
+  "@inventoryColProduct": {
+    "description": "F10 inventory: ColProduct"
+  },
+  "inventoryColOnHand": "On hand",
+  "@inventoryColOnHand": {
+    "description": "F10 inventory: ColOnHand"
+  },
+  "inventoryColReserved": "Reserved",
+  "@inventoryColReserved": {
+    "description": "F10 inventory: ColReserved"
+  },
+  "inventoryColAvailable": "Available",
+  "@inventoryColAvailable": {
+    "description": "F10 inventory: ColAvailable"
+  },
+  "inventoryColAlertAt": "Alert at",
+  "@inventoryColAlertAt": {
+    "description": "F10 inventory: ColAlertAt"
+  },
+  "inventoryColStatus": "Status",
+  "@inventoryColStatus": {
+    "description": "F10 inventory: ColStatus"
+  },
+  "inventoryColLastChange": "Last change",
+  "@inventoryColLastChange": {
+    "description": "F10 inventory: ColLastChange"
+  },
+  "inventoryColActions": "Actions",
+  "@inventoryColActions": {
+    "description": "F10 inventory: ColActions"
+  },
+  "inventoryNumbers": "On hand {onHand} · Reserved {reserved} · Available {available}",
+  "@inventoryNumbers": {
+    "description": "F10 inventory: Numbers",
+    "placeholders": {
+      "onHand": {
+        "type": "int"
+      },
+      "reserved": {
+        "type": "int"
+      },
+      "available": {
+        "type": "int"
+      }
+    }
+  },
+  "inventoryChange": "{reason} {delta}",
+  "@inventoryChange": {
+    "description": "F10 inventory: Change",
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      },
+      "delta": {
+        "type": "String"
+      }
+    }
+  },
+  "inventoryWhen": "{date}, {time}",
+  "@inventoryWhen": {
+    "description": "F10 inventory: When",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "inventoryByWho": "{when} · {who}",
+  "@inventoryByWho": {
+    "description": "F10 inventory: ByWho",
+    "placeholders": {
+      "when": {
+        "type": "String"
+      },
+      "who": {
+        "type": "String"
+      }
+    }
+  },
+  "inventoryNoChanges": "No changes yet",
+  "@inventoryNoChanges": {
+    "description": "F10 inventory: NoChanges"
+  },
+  "inventoryLedgerReceived": "Received",
+  "@inventoryLedgerReceived": {
+    "description": "F10 inventory: LedgerReceived"
+  },
+  "inventoryLedgerAdjustment": "Adjusted",
+  "@inventoryLedgerAdjustment": {
+    "description": "F10 inventory: LedgerAdjustment"
+  },
+  "inventoryLedgerDamaged": "Damaged",
+  "@inventoryLedgerDamaged": {
+    "description": "F10 inventory: LedgerDamaged"
+  },
+  "inventoryLedgerReserved": "Held for order",
+  "@inventoryLedgerReserved": {
+    "description": "F10 inventory: LedgerReserved"
+  },
+  "inventoryLedgerReleased": "Released",
+  "@inventoryLedgerReleased": {
+    "description": "F10 inventory: LedgerReleased"
+  },
+  "inventoryLedgerSold": "Sold",
+  "@inventoryLedgerSold": {
+    "description": "F10 inventory: LedgerSold"
+  },
+  "inventoryLedgerReturned": "Returned",
+  "@inventoryLedgerReturned": {
+    "description": "F10 inventory: LedgerReturned"
+  },
+  "inventoryFooter": "{count, plural, =0{Nothing needs restocking} =1{1 SKU needs restocking} other{{count} SKUs need restocking}} · alert levels are set per variant",
+  "@inventoryFooter": {
+    "description": "F10 inventory: Footer",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "inventoryViewHistory": "View adjustment history",
+  "@inventoryViewHistory": {
+    "description": "F10 inventory: ViewHistory"
+  },
+  "inventoryEmptyTitle": "No SKUs here",
+  "@inventoryEmptyTitle": {
+    "description": "F10 inventory: EmptyTitle"
+  },
+  "inventoryEmptyRestock": "Nothing is low or out of stock right now.",
+  "@inventoryEmptyRestock": {
+    "description": "F10 inventory: EmptyRestock"
+  },
+  "inventoryEmptyBody": "Try another search or filter.",
+  "@inventoryEmptyBody": {
+    "description": "F10 inventory: EmptyBody"
+  },
+  "inventoryShowAll": "Show all SKUs",
+  "@inventoryShowAll": {
+    "description": "F10 inventory: ShowAll"
+  },
+  "inventoryLoadFailed": "Couldn’t load inventory",
+  "@inventoryLoadFailed": {
+    "description": "F10 inventory: LoadFailed"
+  },
+  "inventoryHistoryTitle": "Adjustment history",
+  "@inventoryHistoryTitle": {
+    "description": "F10 inventory: HistoryTitle"
+  },
+  "inventoryHistoryEmpty": "No stock changes yet.",
+  "@inventoryHistoryEmpty": {
+    "description": "F10 inventory: HistoryEmpty"
+  },
+  "inventoryHistoryFailed": "Couldn’t load the history.",
+  "@inventoryHistoryFailed": {
+    "description": "F10 inventory: HistoryFailed"
+  },
+  "inventoryOrderRef": "Order {number}",
+  "@inventoryOrderRef": {
+    "description": "F10 inventory: OrderRef",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "inventoryPickTitle": "Choose a SKU",
+  "@inventoryPickTitle": {
+    "description": "F10 inventory: PickTitle"
+  },
+  "inventoryAdjustTitle": "Adjust stock",
+  "@inventoryAdjustTitle": {
+    "description": "F10 inventory: AdjustTitle"
+  },
+  "inventoryItemSub": "{sku} · On hand {onHand} · Reserved {reserved}",
+  "@inventoryItemSub": {
+    "description": "F10 inventory: ItemSub",
+    "placeholders": {
+      "sku": {
+        "type": "String"
+      },
+      "onHand": {
+        "type": "int"
+      },
+      "reserved": {
+        "type": "int"
+      }
+    }
+  },
+  "inventoryAdjustment": "Adjustment",
+  "@inventoryAdjustment": {
+    "description": "F10 inventory: Adjustment"
+  },
+  "inventoryModeAdd": "Add stock",
+  "@inventoryModeAdd": {
+    "description": "F10 inventory: ModeAdd"
+  },
+  "inventoryModeAddHelp": "New delivery or items returned to stock",
+  "@inventoryModeAddHelp": {
+    "description": "F10 inventory: ModeAddHelp"
+  },
+  "inventoryModeRemove": "Remove stock",
+  "@inventoryModeRemove": {
+    "description": "F10 inventory: ModeRemove"
+  },
+  "inventoryModeRemoveHelp": "Damaged, lost or used",
+  "@inventoryModeRemoveHelp": {
+    "description": "F10 inventory: ModeRemoveHelp"
+  },
+  "inventoryModeSet": "Set exact count",
+  "@inventoryModeSet": {
+    "description": "F10 inventory: ModeSet"
+  },
+  "inventoryModeSetHelp": "After a stock count",
+  "@inventoryModeSetHelp": {
+    "description": "F10 inventory: ModeSetHelp"
+  },
+  "inventoryQtyAdd": "Quantity to add",
+  "@inventoryQtyAdd": {
+    "description": "F10 inventory: QtyAdd"
+  },
+  "inventoryQtyRemove": "Quantity to remove",
+  "@inventoryQtyRemove": {
+    "description": "F10 inventory: QtyRemove"
+  },
+  "inventoryQtySet": "Counted on hand",
+  "@inventoryQtySet": {
+    "description": "F10 inventory: QtySet"
+  },
+  "inventoryUnits": "units",
+  "@inventoryUnits": {
+    "description": "F10 inventory: Units"
+  },
+  "inventoryReason": "Reason",
+  "@inventoryReason": {
+    "description": "F10 inventory: Reason"
+  },
+  "inventoryReasonReceivedFromSupplier": "Received from supplier",
+  "@inventoryReasonReceivedFromSupplier": {
+    "description": "F10 inventory: ReasonReceivedFromSupplier"
+  },
+  "inventoryReasonReturnedToStock": "Returned to stock",
+  "@inventoryReasonReturnedToStock": {
+    "description": "F10 inventory: ReasonReturnedToStock"
+  },
+  "inventoryReasonDamaged": "Damaged",
+  "@inventoryReasonDamaged": {
+    "description": "F10 inventory: ReasonDamaged"
+  },
+  "inventoryReasonLost": "Lost",
+  "@inventoryReasonLost": {
+    "description": "F10 inventory: ReasonLost"
+  },
+  "inventoryReasonUsed": "Used in store",
+  "@inventoryReasonUsed": {
+    "description": "F10 inventory: ReasonUsed"
+  },
+  "inventoryReasonCountCorrection": "Count correction",
+  "@inventoryReasonCountCorrection": {
+    "description": "F10 inventory: ReasonCountCorrection"
+  },
+  "inventoryNote": "Note",
+  "@inventoryNote": {
+    "description": "F10 inventory: Note"
+  },
+  "inventoryNoteHint": "For example, the delivery note number",
+  "@inventoryNoteHint": {
+    "description": "F10 inventory: NoteHint"
+  },
+  "inventoryAfter": "On hand after saving",
+  "@inventoryAfter": {
+    "description": "F10 inventory: After"
+  },
+  "inventoryAuditHelp": "Saved to the audit log under your name.",
+  "@inventoryAuditHelp": {
+    "description": "F10 inventory: AuditHelp"
+  },
+  "inventorySave": "Save adjustment",
+  "@inventorySave": {
+    "description": "F10 inventory: Save"
+  },
+  "inventoryRecent": "Recent changes",
+  "@inventoryRecent": {
+    "description": "F10 inventory: Recent"
+  },
+  "inventoryErrQty": "Enter a whole number of units.",
+  "@inventoryErrQty": {
+    "description": "F10 inventory: ErrQty"
+  },
+  "inventoryErrTooLarge": "That’s more than 100,000 units.",
+  "@inventoryErrTooLarge": {
+    "description": "F10 inventory: ErrTooLarge"
+  },
+  "inventoryErrBelowReserved": "{reserved} units are held for open orders, so on hand can’t go below {reserved}.",
+  "@inventoryErrBelowReserved": {
+    "description": "F10 inventory: ErrBelowReserved",
+    "placeholders": {
+      "reserved": {
+        "type": "int"
+      }
+    }
+  },
+  "inventoryErrNoChange": "This leaves on hand as it is.",
+  "@inventoryErrNoChange": {
+    "description": "F10 inventory: ErrNoChange"
+  },
+  "inventoryConfirmTitle": "Save this adjustment?",
+  "@inventoryConfirmTitle": {
+    "description": "F10 inventory: ConfirmTitle"
+  },
+  "inventoryConfirmBody": "{sku}: on hand goes from {from} to {to}. {reason}.",
+  "@inventoryConfirmBody": {
+    "description": "F10 inventory: ConfirmBody",
+    "placeholders": {
+      "sku": {
+        "type": "String"
+      },
+      "from": {
+        "type": "int"
+      },
+      "to": {
+        "type": "int"
+      },
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "inventorySaved": "Stock updated. {sku} now has {count} on hand.",
+  "@inventorySaved": {
+    "description": "F10 inventory: Saved",
+    "placeholders": {
+      "sku": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "inventoryErrForbidden": "Only catalog staff and super admins can adjust stock.",
+  "@inventoryErrForbidden": {
+    "description": "F10 inventory: ErrForbidden"
+  },
+  "inventoryErrNotFound": "This SKU no longer exists. Refresh the list.",
+  "@inventoryErrNotFound": {
+    "description": "F10 inventory: ErrNotFound"
+  },
+  "inventoryErrInvalid": "Check the quantity and reason, then try again.",
+  "@inventoryErrInvalid": {
+    "description": "F10 inventory: ErrInvalid"
+  },
+  "inventoryErrUnknown": "Couldn’t save the adjustment. Check your connection and try again.",
+  "@inventoryErrUnknown": {
+    "description": "F10 inventory: ErrUnknown"
   }
 }

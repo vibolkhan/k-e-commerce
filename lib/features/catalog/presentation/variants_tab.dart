@@ -2,10 +2,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../core/l10n/generated/app_localizations.dart';
 import '../../../core/money/khr_rate_provider.dart';
 import '../../../core/money/money_format.dart';
+import '../../../core/router/app_routes.dart';
 import '../../../core/time/date_format.dart';
 import '../../../core/ui/k_ui.dart';
 import '../../admin/presentation/admin_shell.dart';
@@ -643,6 +645,11 @@ class _StockOverview extends StatelessWidget {
     final most = saved.fold(1, (m, v) => v.onHand > m ? v.onHand : m);
     return EditorCard(
       title: l10n.catalogStockOverview,
+      trailing: KButton.ghost(
+        label: l10n.adminSectionInventory,
+        size: KButtonSize.sm,
+        onPressed: () => context.go(AppRoutes.adminInventory),
+      ),
       children: [
         for (final v in saved)
           MergeSemantics(
