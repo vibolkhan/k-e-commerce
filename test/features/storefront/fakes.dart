@@ -2,8 +2,10 @@ import 'package:flutter_riverpod/misc.dart' show Override;
 import 'package:k_e_commerce/core/money/khr_rate_provider.dart';
 import 'package:k_e_commerce/core/time/cutoff.dart';
 import 'package:k_e_commerce/features/catalog/domain/i18n_text.dart';
+import 'package:k_e_commerce/features/storefront/data/search_repository.dart';
 import 'package:k_e_commerce/features/storefront/data/storefront_repository.dart';
 import 'package:k_e_commerce/features/storefront/domain/browse.dart';
+import 'package:k_e_commerce/features/storefront/domain/search.dart';
 import 'package:k_e_commerce/features/storefront/domain/storefront.dart';
 
 /// 2026-10-27 10:25 in Phnom Penh: 4h 35m before the 3 PM cut-off.
@@ -47,6 +49,7 @@ class FakeProduct {
     required this.name,
     required this.categoryId,
     required this.cents,
+    this.km,
     this.brand = 'Sonora',
     this.rating = 4.5,
     this.ratingCount = 10,
@@ -59,6 +62,9 @@ class FakeProduct {
 
   final String id;
   final String name;
+
+  /// Khmer name, if translated.
+  final String? km;
   final String categoryId;
   final int cents;
   final String brand;
@@ -72,10 +78,20 @@ class FakeProduct {
   /// Higher is newer.
   final int created;
 
+  /// Like `search_matches` without typos: the query inside the English or
+  /// Khmer name or the brand.
+  bool matches(String query) {
+    final q = normalizeSearch(query);
+    return q.isNotEmpty &&
+        (name.toLowerCase().contains(q) ||
+            (km?.contains(q) ?? false) ||
+            brand.toLowerCase().contains(q));
+  }
+
   BrowseItem item({required bool business}) => BrowseItem(
     id: id,
     slug: id,
-    name: I18nText(en: name),
+    name: I18nText(en: name, km: km ?? ''),
     brand: brand,
     ratingAvg: rating,
     ratingCount: ratingCount,
@@ -89,6 +105,7 @@ class FakeProduct {
 const headphonesPro = FakeProduct(
   id: 'p-hp',
   name: 'Wireless Headphones Pro',
+  km: 'កាសឥតខ្សែ Pro',
   categoryId: 'c-audio',
   cents: 4900,
   rating: 4.6,
@@ -203,6 +220,7 @@ class FakeStorefrontRepository implements StorefrontRepository {
         : collections[query.collection] ?? const [];
     final scoped = products.where(
       (p) =>
+          (query.search == null || p.matches(query.search!)) &&
           (inCategory == null || inCategory.contains(p.categoryId)) &&
           (collection == null || collection.contains(p.id)) &&
           (!query.inStock || p.available > 0) &&
@@ -258,12 +276,110 @@ class FakeStorefrontRepository implements StorefrontRepository {
   }
 }
 
-/// Overrides for a storefront test: [repo], a fixed KHR rate and no
+/// Overrides for a storefront test: [repo], search over the same products
+/// ([search], or a fresh [FakeSearchRepository]), a fixed KHR rate and no
 /// network clock surprises.
-List<Override> storefrontOverrides(FakeStorefrontRepository repo) => [
+List<Override> storefrontOverrides(
+  FakeStorefrontRepository repo, {
+  FakeSearchRepository? search,
+}) => [
   storefrontRepositoryProvider.overrideWithValue(repo),
+  searchRepositoryProvider.overrideWithValue(
+    search ?? FakeSearchRepository(repo),
+  ),
   khrRateProvider.overrideWith((ref) async => 4100),
 ];
+
+/// Search over a [FakeStorefrontRepository]'s products: words of their
+/// names complete what is typed, [corrections] stand in for the
+/// trigram "Did you mean", and recent searches live in memory. Records
+/// every finished search.
+class FakeSearchRepository implements SearchRepository {
+  FakeSearchRepository(
+    this.store, {
+    this.corrections = const {'hedfones': 'headphones'},
+    this.popular = const [audioCat, kitchenCat],
+    List<String> recent = const [],
+  }) : recent = [...recent];
+
+  final FakeStorefrontRepository store;
+  final Map<String, String> corrections;
+  final List<StoreCategory> popular;
+  List<String> recent;
+  final recorded = <({String query, int results, Duration took})>[];
+  final suggested = <String>[];
+
+  @override
+  Future<SearchSuggestions> suggest(String query) async {
+    suggested.add(query);
+    final q = normalizeSearch(query);
+    if (q.length < minSuggestChars) return SearchSuggestions.empty;
+    final words = <String>{
+      for (final p in store.products)
+        for (final w in [
+          ...p.name.toLowerCase().split(RegExp(r'[^a-z0-9]+')),
+          ...?p.km?.split(' '),
+        ])
+          if (w.startsWith(q)) w,
+    }.take(4).toList();
+    final terms = words.isNotEmpty
+        ? [for (final w in words) SuggestedTerm(w)]
+        : [
+            if (corrections[q] != null)
+              SuggestedTerm(corrections[q]!, fuzzy: true),
+          ];
+    final hits = store.products.where((p) => p.matches(q)).take(3).toList();
+    final first = terms.isEmpty
+        ? null
+        : store.products.where((p) => p.matches(terms.first.term)).firstOrNull;
+    final category = first == null
+        ? null
+        : store.categoryList.where((c) => c.id == first.categoryId).firstOrNull;
+    return SearchSuggestions(
+      terms: terms,
+      scope: category == null
+          ? null
+          : SuggestedScope(term: terms.first.term, category: category),
+      products: [
+        for (final p in hits)
+          SuggestedProduct(
+            id: p.id,
+            name: I18nText(en: p.name, km: p.km ?? ''),
+            brand: p.brand,
+            priceCents: store.business ? null : p.cents,
+            category: store.categoryList
+                .where((c) => c.id == p.categoryId)
+                .firstOrNull
+                ?.name,
+          ),
+      ],
+    );
+  }
+
+  @override
+  Future<String?> didYouMean(String query) async =>
+      corrections[normalizeSearch(query)];
+
+  @override
+  Future<List<StoreCategory>> popularCategories() async => popular;
+
+  @override
+  Future<List<String>> recentSearches() async =>
+      recent.take(recentSearchLimit).toList();
+
+  @override
+  Future<void> recordSearch(
+    String query, {
+    required int results,
+    required Duration took,
+  }) async {
+    recorded.add((query: query, results: results, took: took));
+    recent = pushRecent(recent, query);
+  }
+
+  @override
+  Future<void> clearRecentSearches() async => recent = [];
+}
 
 /// Many audio products, for paging.
 List<FakeProduct> manyProducts(int n) => [
