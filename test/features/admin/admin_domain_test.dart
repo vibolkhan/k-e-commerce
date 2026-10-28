@@ -113,6 +113,24 @@ void main() {
       }
     });
 
+    test('F09: viewers open products; only editors create or import', () {
+      for (final role in StaffRole.values) {
+        final edits = role == StaffRole.superAdmin || role == StaffRole.catalog;
+        expect(adminRedirect(role, AppRoutes.adminCatalog), isNull);
+        expect(adminRedirect(role, AppRoutes.adminProduct('p-1')), isNull);
+        for (final path in [
+          AppRoutes.adminProductNew,
+          AppRoutes.adminCatalogImport,
+        ]) {
+          expect(
+            adminRedirect(role, path),
+            edits ? isNull : AppRoutes.adminCatalog,
+            reason: '$role $path',
+          );
+        }
+      }
+    });
+
     test('no active membership: only the pending page', () {
       expect(adminRedirect(null, AppRoutes.admin), AppRoutes.adminPending);
       expect(adminRedirect(null, '/admin/orders'), AppRoutes.adminPending);

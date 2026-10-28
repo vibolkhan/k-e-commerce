@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/misc.dart' show Override;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:k_e_commerce/app.dart';
 import 'package:k_e_commerce/core/config/app_config.dart';
@@ -17,7 +18,7 @@ const desktop = Size(1440, 900);
 const phone = Size(390, 844);
 
 /// The whole app, signed in as [email] (one of [staffAccounts]), opened at
-/// [location].
+/// [location]. [overrides] swap in more fakes (e.g. the catalogue, F09).
 Future<ProviderContainer> pumpAdmin(
   WidgetTester tester, {
   required String email,
@@ -26,6 +27,7 @@ Future<ProviderContainer> pumpAdmin(
   FakeAdminRepository? admin,
   FakeAuthRepository? auth,
   DateTime? now,
+  List<Override> overrides = const [],
 }) async {
   setViewSize(tester, size);
   final repo = auth ?? FakeAuthRepository(accounts: {...staffAccounts});
@@ -40,6 +42,7 @@ Future<ProviderContainer> pumpAdmin(
       authRepositoryProvider.overrideWithValue(repo),
       adminRepositoryProvider.overrideWithValue(admin ?? FakeAdminRepository()),
       clockProvider.overrideWithValue(() => now ?? adminNow),
+      ...overrides,
     ],
   );
   addTearDown(container.dispose);
