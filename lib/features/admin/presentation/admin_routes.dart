@@ -2,6 +2,9 @@ import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/router/app_routes.dart';
+import '../../catalog/presentation/catalog_list_page.dart';
+import '../../catalog/presentation/import_wizard.dart';
+import '../../catalog/presentation/product_editor_page.dart';
 import '../../notifications/presentation/inbox_page.dart';
 import '../domain/admin_section.dart';
 import 'admin_pages.dart';
@@ -23,11 +26,31 @@ List<RouteBase> adminRoutes({required GlobalKey<NavigatorState> rootKey}) => [
         routes: [
           for (final section in AdminSection.values)
             if (section != AdminSection.dashboard &&
+                section != AdminSection.catalog &&
                 section != AdminSection.settings)
               GoRoute(
                 path: section.segment,
                 builder: (_, _) => AdminSectionPage(section: section),
               ),
+          GoRoute(
+            path: AdminSection.catalog.segment,
+            builder: (_, _) => const CatalogListPage(),
+            routes: [
+              GoRoute(
+                path: 'new',
+                builder: (_, _) => const ProductEditorPage(),
+              ),
+              GoRoute(
+                path: 'import',
+                builder: (_, _) => const ImportWizardPage(),
+              ),
+              GoRoute(
+                path: ':id',
+                builder: (_, state) =>
+                    ProductEditorPage(id: state.pathParameters['id']),
+              ),
+            ],
+          ),
           GoRoute(
             path: AdminSection.settings.segment,
             builder: (_, _) => const AdminSettingsPage(),

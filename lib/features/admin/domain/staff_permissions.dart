@@ -120,3 +120,8 @@ List<AdminSection> sectionsFor(StaffRole role) => [
   for (final section in AdminSection.values)
     if (canOpen(role, section)) section,
 ];
+
+/// Whether [role] may change things in [area] (a "Full" cell on A-14d), not
+/// just look. The Edge Functions check the same before writing.
+bool canEdit(StaffRole role, PermissionArea area) =>
+    accessFor(role, area).level == AccessLevel.full;

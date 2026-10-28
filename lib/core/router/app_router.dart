@@ -63,6 +63,12 @@ String? adminRedirect(StaffRole? staffRole, String path) {
   if (section != null && !canOpen(staffRole, section)) {
     return AppRoutes.forbidden;
   }
+  // Read-only roles can browse the catalogue but not create or import.
+  if ((path == AppRoutes.adminProductNew ||
+          path == AppRoutes.adminCatalogImport) &&
+      !canEdit(staffRole, PermissionArea.products)) {
+    return AppRoutes.adminCatalog;
+  }
   return null;
 }
 

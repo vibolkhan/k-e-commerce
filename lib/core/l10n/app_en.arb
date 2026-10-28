@@ -676,5 +676,1387 @@
   "setPasswordConfirmLabel": "Confirm password",
   "setPasswordMismatch": "The passwords don't match.",
   "setPasswordSave": "Save password",
-  "setPasswordFailed": "Couldn't save your password. Please try again."
+  "setPasswordFailed": "Couldn't save your password. Please try again.",
+  "catalogImport": "Import CSV",
+  "@catalogImport": {
+    "description": "F09 catalog admin: Import"
+  },
+  "catalogAdd": "Add product",
+  "@catalogAdd": {
+    "description": "F09 catalog admin: Add"
+  },
+  "catalogTabAll": "All",
+  "@catalogTabAll": {
+    "description": "F09 catalog admin: TabAll"
+  },
+  "catalogTabActive": "Active",
+  "@catalogTabActive": {
+    "description": "F09 catalog admin: TabActive"
+  },
+  "catalogTabDraft": "Draft",
+  "@catalogTabDraft": {
+    "description": "F09 catalog admin: TabDraft"
+  },
+  "catalogTabArchived": "Archived",
+  "@catalogTabArchived": {
+    "description": "F09 catalog admin: TabArchived"
+  },
+  "catalogSearchHint": "Search name or SKU",
+  "@catalogSearchHint": {
+    "description": "F09 catalog admin: SearchHint"
+  },
+  "catalogFilterCategory": "Category",
+  "@catalogFilterCategory": {
+    "description": "F09 catalog admin: FilterCategory"
+  },
+  "catalogAllCategories": "All categories",
+  "@catalogAllCategories": {
+    "description": "F09 catalog admin: AllCategories"
+  },
+  "catalogFilterStock": "Stock",
+  "@catalogFilterStock": {
+    "description": "F09 catalog admin: FilterStock"
+  },
+  "catalogStockAny": "Any",
+  "@catalogStockAny": {
+    "description": "F09 catalog admin: StockAny"
+  },
+  "catalogStockIn": "In stock",
+  "@catalogStockIn": {
+    "description": "F09 catalog admin: StockIn"
+  },
+  "catalogStockLow": "Low stock",
+  "@catalogStockLow": {
+    "description": "F09 catalog admin: StockLow"
+  },
+  "catalogStockOut": "Out of stock",
+  "@catalogStockOut": {
+    "description": "F09 catalog admin: StockOut"
+  },
+  "catalogQuoteEnabled": "Quote enabled",
+  "@catalogQuoteEnabled": {
+    "description": "F09 catalog admin: QuoteEnabled"
+  },
+  "catalogShowing": "Showing {shown} of {total}",
+  "@catalogShowing": {
+    "description": "F09 catalog admin: Showing",
+    "placeholders": {
+      "shown": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogColProduct": "Product",
+  "@catalogColProduct": {
+    "description": "F09 catalog admin: ColProduct"
+  },
+  "catalogColCategory": "Category",
+  "@catalogColCategory": {
+    "description": "F09 catalog admin: ColCategory"
+  },
+  "catalogColVariants": "Variants",
+  "@catalogColVariants": {
+    "description": "F09 catalog admin: ColVariants"
+  },
+  "catalogColPrice": "Price",
+  "@catalogColPrice": {
+    "description": "F09 catalog admin: ColPrice"
+  },
+  "catalogColStock": "Stock",
+  "@catalogColStock": {
+    "description": "F09 catalog admin: ColStock"
+  },
+  "catalogColQuotes": "Quotes",
+  "@catalogColQuotes": {
+    "description": "F09 catalog admin: ColQuotes"
+  },
+  "catalogColStatus": "Status",
+  "@catalogColStatus": {
+    "description": "F09 catalog admin: ColStatus"
+  },
+  "catalogColUpdated": "Updated",
+  "@catalogColUpdated": {
+    "description": "F09 catalog admin: ColUpdated"
+  },
+  "catalogEdit": "Edit",
+  "@catalogEdit": {
+    "description": "F09 catalog admin: Edit"
+  },
+  "catalogView": "View",
+  "@catalogView": {
+    "description": "F09 catalog admin: View"
+  },
+  "catalogStockSomeOut": "{count} · {out} out",
+  "@catalogStockSomeOut": {
+    "description": "F09 catalog admin: StockSomeOut",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "out": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogStockLowPill": "{count} · low",
+  "@catalogStockLowPill": {
+    "description": "F09 catalog admin: StockLowPill",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogNotStocked": "Not stocked",
+  "@catalogNotStocked": {
+    "description": "F09 catalog admin: NotStocked"
+  },
+  "catalogQuoteMin": "Min {qty}",
+  "@catalogQuoteMin": {
+    "description": "F09 catalog admin: QuoteMin",
+    "placeholders": {
+      "qty": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogQuoteOff": "Off",
+  "@catalogQuoteOff": {
+    "description": "F09 catalog admin: QuoteOff"
+  },
+  "catalogStatusActive": "Active",
+  "@catalogStatusActive": {
+    "description": "F09 catalog admin: StatusActive"
+  },
+  "catalogStatusDraft": "Draft",
+  "@catalogStatusDraft": {
+    "description": "F09 catalog admin: StatusDraft"
+  },
+  "catalogStatusArchived": "Archived",
+  "@catalogStatusArchived": {
+    "description": "F09 catalog admin: StatusArchived"
+  },
+  "catalogSelected": "{count} selected",
+  "@catalogSelected": {
+    "description": "F09 catalog admin: Selected",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogArchive": "Archive",
+  "@catalogArchive": {
+    "description": "F09 catalog admin: Archive"
+  },
+  "catalogChangeCategory": "Change category",
+  "@catalogChangeCategory": {
+    "description": "F09 catalog admin: ChangeCategory"
+  },
+  "catalogSelectAll": "Select all on this page",
+  "@catalogSelectAll": {
+    "description": "F09 catalog admin: SelectAll"
+  },
+  "catalogSelectRow": "Select {name}",
+  "@catalogSelectRow": {
+    "description": "F09 catalog admin: SelectRow",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogArchiveManyTitle": "Archive {count, plural, =1{1 product} other{{count} products}}?",
+  "@catalogArchiveManyTitle": {
+    "description": "F09 catalog admin: ArchiveManyTitle",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogArchiveManyBody": "They disappear from the app, the web store and quote requests. Orders already placed aren't affected, and you can restore them from the Archived tab.",
+  "@catalogArchiveManyBody": {
+    "description": "F09 catalog admin: ArchiveManyBody"
+  },
+  "catalogArchiveManyConfirm": "Archive products",
+  "@catalogArchiveManyConfirm": {
+    "description": "F09 catalog admin: ArchiveManyConfirm"
+  },
+  "catalogArchivedMany": "{count, plural, =1{1 product archived.} other{{count} products archived.}}",
+  "@catalogArchivedMany": {
+    "description": "F09 catalog admin: ArchivedMany",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogMovedMany": "{count, plural, =1{1 product moved to {category}.} other{{count} products moved to {category}.}}",
+  "@catalogMovedMany": {
+    "description": "F09 catalog admin: MovedMany",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogMoveTitle": "Move to category",
+  "@catalogMoveTitle": {
+    "description": "F09 catalog admin: MoveTitle"
+  },
+  "catalogRange": "{from}–{to} of {total}",
+  "@catalogRange": {
+    "description": "F09 catalog admin: Range",
+    "placeholders": {
+      "from": {
+        "type": "int"
+      },
+      "to": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogPrev": "Previous page",
+  "@catalogPrev": {
+    "description": "F09 catalog admin: Prev"
+  },
+  "catalogNext": "Next page",
+  "@catalogNext": {
+    "description": "F09 catalog admin: Next"
+  },
+  "catalogEmptyTitle": "No products here",
+  "@catalogEmptyTitle": {
+    "description": "F09 catalog admin: EmptyTitle"
+  },
+  "catalogEmptyBody": "Try another tab or clear the filters.",
+  "@catalogEmptyBody": {
+    "description": "F09 catalog admin: EmptyBody"
+  },
+  "catalogClearFilters": "Clear filters",
+  "@catalogClearFilters": {
+    "description": "F09 catalog admin: ClearFilters"
+  },
+  "catalogLoadFailed": "Couldn't load products.",
+  "@catalogLoadFailed": {
+    "description": "F09 catalog admin: LoadFailed"
+  },
+  "catalogRetry": "Try again",
+  "@catalogRetry": {
+    "description": "F09 catalog admin: Retry"
+  },
+  "catalogReadOnly": "You can view products. Only catalog staff and super admins can change them.",
+  "@catalogReadOnly": {
+    "description": "F09 catalog admin: ReadOnly"
+  },
+  "catalogPriceRange": "{from} – {to}",
+  "@catalogPriceRange": {
+    "description": "F09 catalog admin: PriceRange",
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogNewProduct": "New product",
+  "@catalogNewProduct": {
+    "description": "F09 catalog admin: NewProduct"
+  },
+  "catalogPreview": "Preview",
+  "@catalogPreview": {
+    "description": "F09 catalog admin: Preview"
+  },
+  "catalogSave": "Save changes",
+  "@catalogSave": {
+    "description": "F09 catalog admin: Save"
+  },
+  "catalogCreate": "Create product",
+  "@catalogCreate": {
+    "description": "F09 catalog admin: Create"
+  },
+  "catalogRestore": "Restore",
+  "@catalogRestore": {
+    "description": "F09 catalog admin: Restore"
+  },
+  "catalogTabGeneral": "General",
+  "@catalogTabGeneral": {
+    "description": "F09 catalog admin: TabGeneral"
+  },
+  "catalogTabVariants": "Variants & pricing",
+  "@catalogTabVariants": {
+    "description": "F09 catalog admin: TabVariants"
+  },
+  "catalogTabImages": "Images",
+  "@catalogTabImages": {
+    "description": "F09 catalog admin: TabImages"
+  },
+  "catalogVariantCount": "{count, plural, =1{1 variant} other{{count} variants}}",
+  "@catalogVariantCount": {
+    "description": "F09 catalog admin: VariantCount",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogBreadcrumb": "Products",
+  "@catalogBreadcrumb": {
+    "description": "F09 catalog admin: Breadcrumb"
+  },
+  "catalogBasicInfo": "Basic information",
+  "@catalogBasicInfo": {
+    "description": "F09 catalog admin: BasicInfo"
+  },
+  "catalogBasicInfoSub": "Shown to customers in English and Khmer",
+  "@catalogBasicInfoSub": {
+    "description": "F09 catalog admin: BasicInfoSub"
+  },
+  "catalogNameEn": "Name (English)",
+  "@catalogNameEn": {
+    "description": "F09 catalog admin: NameEn"
+  },
+  "catalogNameKm": "Name (Khmer)",
+  "@catalogNameKm": {
+    "description": "F09 catalog admin: NameKm"
+  },
+  "catalogNameKmHint": "Add the Khmer name",
+  "@catalogNameKmHint": {
+    "description": "F09 catalog admin: NameKmHint"
+  },
+  "catalogTranslationMissing": "Translation missing",
+  "@catalogTranslationMissing": {
+    "description": "F09 catalog admin: TranslationMissing"
+  },
+  "catalogDescEn": "Description (English)",
+  "@catalogDescEn": {
+    "description": "F09 catalog admin: DescEn"
+  },
+  "catalogDescKm": "Description (Khmer)",
+  "@catalogDescKm": {
+    "description": "F09 catalog admin: DescKm"
+  },
+  "catalogDescKmHint": "Add the Khmer description",
+  "@catalogDescKmHint": {
+    "description": "F09 catalog admin: DescKmHint"
+  },
+  "catalogCharCount": "{count} / {max} characters",
+  "@catalogCharCount": {
+    "description": "F09 catalog admin: CharCount",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogHighlights": "Highlights",
+  "@catalogHighlights": {
+    "description": "F09 catalog admin: Highlights"
+  },
+  "catalogHighlightEn": "Highlight (English)",
+  "@catalogHighlightEn": {
+    "description": "F09 catalog admin: HighlightEn"
+  },
+  "catalogHighlightKm": "Highlight (Khmer)",
+  "@catalogHighlightKm": {
+    "description": "F09 catalog admin: HighlightKm"
+  },
+  "catalogAddHighlight": "Add highlight",
+  "@catalogAddHighlight": {
+    "description": "F09 catalog admin: AddHighlight"
+  },
+  "catalogRemoveHighlight": "Remove highlight",
+  "@catalogRemoveHighlight": {
+    "description": "F09 catalog admin: RemoveHighlight"
+  },
+  "catalogSpecs": "Specifications",
+  "@catalogSpecs": {
+    "description": "F09 catalog admin: Specs"
+  },
+  "catalogSpecName": "Name",
+  "@catalogSpecName": {
+    "description": "F09 catalog admin: SpecName"
+  },
+  "catalogSpecValue": "Value",
+  "@catalogSpecValue": {
+    "description": "F09 catalog admin: SpecValue"
+  },
+  "catalogAddSpec": "Add row",
+  "@catalogAddSpec": {
+    "description": "F09 catalog admin: AddSpec"
+  },
+  "catalogRemoveSpec": "Remove row",
+  "@catalogRemoveSpec": {
+    "description": "F09 catalog admin: RemoveSpec"
+  },
+  "catalogOrganisation": "Organisation",
+  "@catalogOrganisation": {
+    "description": "F09 catalog admin: Organisation"
+  },
+  "catalogCategory": "Category",
+  "@catalogCategory": {
+    "description": "F09 catalog admin: Category"
+  },
+  "catalogChooseCategory": "Choose a category",
+  "@catalogChooseCategory": {
+    "description": "F09 catalog admin: ChooseCategory"
+  },
+  "catalogBrand": "Brand",
+  "@catalogBrand": {
+    "description": "F09 catalog admin: Brand"
+  },
+  "catalogTags": "Tags",
+  "@catalogTags": {
+    "description": "F09 catalog admin: Tags"
+  },
+  "catalogTagHint": "Type a tag and press Enter",
+  "@catalogTagHint": {
+    "description": "F09 catalog admin: TagHint"
+  },
+  "catalogRemoveTag": "Remove {tag}",
+  "@catalogRemoveTag": {
+    "description": "F09 catalog admin: RemoveTag",
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogVisibility": "Visibility",
+  "@catalogVisibility": {
+    "description": "F09 catalog admin: Visibility"
+  },
+  "catalogActive": "Active",
+  "@catalogActive": {
+    "description": "F09 catalog admin: Active"
+  },
+  "catalogActiveSub": "Visible in the app and web store",
+  "@catalogActiveSub": {
+    "description": "F09 catalog admin: ActiveSub"
+  },
+  "catalogBestSeller": "Show in Best sellers",
+  "@catalogBestSeller": {
+    "description": "F09 catalog admin: BestSeller"
+  },
+  "catalogBestSellerSub": "Home screen collection",
+  "@catalogBestSellerSub": {
+    "description": "F09 catalog admin: BestSellerSub"
+  },
+  "catalogSameDay": "Same-day delivery",
+  "@catalogSameDay": {
+    "description": "F09 catalog admin: SameDay"
+  },
+  "catalogSameDaySub": "Ships from the Phnom Penh store",
+  "@catalogSameDaySub": {
+    "description": "F09 catalog admin: SameDaySub"
+  },
+  "catalogSummary": "Summary",
+  "@catalogSummary": {
+    "description": "F09 catalog admin: Summary"
+  },
+  "catalogCreatedLabel": "Created",
+  "@catalogCreatedLabel": {
+    "description": "F09 catalog admin: CreatedLabel"
+  },
+  "catalogLastUpdated": "Last updated",
+  "@catalogLastUpdated": {
+    "description": "F09 catalog admin: LastUpdated"
+  },
+  "catalogSoldCount": "Sold",
+  "@catalogSoldCount": {
+    "description": "F09 catalog admin: SoldCount"
+  },
+  "catalogRating": "Rating",
+  "@catalogRating": {
+    "description": "F09 catalog admin: Rating"
+  },
+  "catalogByOn": "{date} · {name}",
+  "@catalogByOn": {
+    "description": "F09 catalog admin: ByOn",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogRatingValue": "{rating} · {count, plural, =1{1 review} other{{count} reviews}}",
+  "@catalogRatingValue": {
+    "description": "F09 catalog admin: RatingValue",
+    "placeholders": {
+      "rating": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogOptions": "Options",
+  "@catalogOptions": {
+    "description": "F09 catalog admin: Options"
+  },
+  "catalogOptionsSub": "Like colour or size. Every combination becomes a variant.",
+  "@catalogOptionsSub": {
+    "description": "F09 catalog admin: OptionsSub"
+  },
+  "catalogOptionName": "Option name",
+  "@catalogOptionName": {
+    "description": "F09 catalog admin: OptionName"
+  },
+  "catalogOptionNameHint": "e.g. Colour",
+  "@catalogOptionNameHint": {
+    "description": "F09 catalog admin: OptionNameHint"
+  },
+  "catalogValueHint": "Type a value and press Enter",
+  "@catalogValueHint": {
+    "description": "F09 catalog admin: ValueHint"
+  },
+  "catalogAddOption": "Add option",
+  "@catalogAddOption": {
+    "description": "F09 catalog admin: AddOption"
+  },
+  "catalogRemoveOption": "Remove option",
+  "@catalogRemoveOption": {
+    "description": "F09 catalog admin: RemoveOption"
+  },
+  "catalogRemoveValue": "Remove {value}",
+  "@catalogRemoveValue": {
+    "description": "F09 catalog admin: RemoveValue",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogVariants": "Variants",
+  "@catalogVariants": {
+    "description": "F09 catalog admin: Variants"
+  },
+  "catalogPricesIncludeVat": "Prices include VAT",
+  "@catalogPricesIncludeVat": {
+    "description": "F09 catalog admin: PricesIncludeVat"
+  },
+  "catalogVariant": "Variant",
+  "@catalogVariant": {
+    "description": "F09 catalog admin: Variant"
+  },
+  "catalogSku": "SKU",
+  "@catalogSku": {
+    "description": "F09 catalog admin: Sku"
+  },
+  "catalogBarcode": "Barcode",
+  "@catalogBarcode": {
+    "description": "F09 catalog admin: Barcode"
+  },
+  "catalogScanBarcode": "Scan barcode",
+  "@catalogScanBarcode": {
+    "description": "F09 catalog admin: ScanBarcode"
+  },
+  "catalogPriceUsd": "Price (USD)",
+  "@catalogPriceUsd": {
+    "description": "F09 catalog admin: PriceUsd"
+  },
+  "catalogPriceKhr": "Price (KHR)",
+  "@catalogPriceKhr": {
+    "description": "F09 catalog admin: PriceKhr"
+  },
+  "catalogOnHand": "On hand",
+  "@catalogOnHand": {
+    "description": "F09 catalog admin: OnHand"
+  },
+  "catalogReserved": "Reserved",
+  "@catalogReserved": {
+    "description": "F09 catalog admin: Reserved"
+  },
+  "catalogOpeningStock": "Opening stock",
+  "@catalogOpeningStock": {
+    "description": "F09 catalog admin: OpeningStock"
+  },
+  "catalogSell": "Sell",
+  "@catalogSell": {
+    "description": "F09 catalog admin: Sell"
+  },
+  "catalogAddVariant": "Add variant",
+  "@catalogAddVariant": {
+    "description": "F09 catalog admin: AddVariant"
+  },
+  "catalogRemoveVariant": "Remove variant",
+  "@catalogRemoveVariant": {
+    "description": "F09 catalog admin: RemoveVariant"
+  },
+  "catalogKhrNote": "KHR prices use today's rate of {rate} · change it in Settings › Payments.",
+  "@catalogKhrNote": {
+    "description": "F09 catalog admin: KhrNote",
+    "placeholders": {
+      "rate": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogStockOk": "OK",
+  "@catalogStockOk": {
+    "description": "F09 catalog admin: StockOk"
+  },
+  "catalogStockLowShort": "Low",
+  "@catalogStockLowShort": {
+    "description": "F09 catalog admin: StockLowShort"
+  },
+  "catalogStockOutShort": "Out",
+  "@catalogStockOutShort": {
+    "description": "F09 catalog admin: StockOutShort"
+  },
+  "catalogOpeningStockNote": "Opening stock is added once when you save. Later changes are made in Inventory.",
+  "@catalogOpeningStockNote": {
+    "description": "F09 catalog admin: OpeningStockNote"
+  },
+  "catalogQuotes": "Business quotes",
+  "@catalogQuotes": {
+    "description": "F09 catalog admin: Quotes"
+  },
+  "catalogQuoteSwitch": "Available for quote requests",
+  "@catalogQuoteSwitch": {
+    "description": "F09 catalog admin: QuoteSwitch"
+  },
+  "catalogQuoteSwitchSub": "Business buyers can add it to a quote request",
+  "@catalogQuoteSwitchSub": {
+    "description": "F09 catalog admin: QuoteSwitchSub"
+  },
+  "catalogMinQuoteQty": "Minimum quote quantity",
+  "@catalogMinQuoteQty": {
+    "description": "F09 catalog admin: MinQuoteQty"
+  },
+  "catalogMultiples": "Order in multiples of",
+  "@catalogMultiples": {
+    "description": "F09 catalog admin: Multiples"
+  },
+  "catalogPieces": "pieces",
+  "@catalogPieces": {
+    "description": "F09 catalog admin: Pieces"
+  },
+  "catalogQuoteInfo": "Business buyers never see the retail price. Sales sets a unit price for each request in the quote editor.",
+  "@catalogQuoteInfo": {
+    "description": "F09 catalog admin: QuoteInfo"
+  },
+  "catalogStockOverview": "Stock overview",
+  "@catalogStockOverview": {
+    "description": "F09 catalog admin: StockOverview"
+  },
+  "catalogStockAlertAt": "{qty} · alert at {at}",
+  "@catalogStockAlertAt": {
+    "description": "F09 catalog admin: StockAlertAt",
+    "placeholders": {
+      "qty": {
+        "type": "int"
+      },
+      "at": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogSoldOutQty": "{qty} · sold out",
+  "@catalogSoldOutQty": {
+    "description": "F09 catalog admin: SoldOutQty",
+    "placeholders": {
+      "qty": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogGoInventory": "Inventory",
+  "@catalogGoInventory": {
+    "description": "F09 catalog admin: GoInventory"
+  },
+  "catalogPriceHistory": "Price history",
+  "@catalogPriceHistory": {
+    "description": "F09 catalog admin: PriceHistory"
+  },
+  "catalogPriceChanged": "{sku}: {from} → {to}",
+  "@catalogPriceChanged": {
+    "description": "F09 catalog admin: PriceChanged",
+    "placeholders": {
+      "sku": {
+        "type": "String"
+      },
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogPriceLaunched": "{sku} launched at {price}",
+  "@catalogPriceLaunched": {
+    "description": "F09 catalog admin: PriceLaunched",
+    "placeholders": {
+      "sku": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogPriceHistoryEmpty": "No price changes yet.",
+  "@catalogPriceHistoryEmpty": {
+    "description": "F09 catalog admin: PriceHistoryEmpty"
+  },
+  "catalogUnknownStaff": "Staff",
+  "@catalogUnknownStaff": {
+    "description": "F09 catalog admin: UnknownStaff"
+  },
+  "catalogProductImages": "Product images",
+  "@catalogProductImages": {
+    "description": "F09 catalog admin: ProductImages"
+  },
+  "catalogImagesSub": "Reorder with the arrows · the first image is shown in lists",
+  "@catalogImagesSub": {
+    "description": "F09 catalog admin: ImagesSub"
+  },
+  "catalogMainImage": "Main image",
+  "@catalogMainImage": {
+    "description": "F09 catalog admin: MainImage"
+  },
+  "catalogSetMain": "Set as main",
+  "@catalogSetMain": {
+    "description": "F09 catalog admin: SetMain"
+  },
+  "catalogDeleteImage": "Delete image",
+  "@catalogDeleteImage": {
+    "description": "F09 catalog admin: DeleteImage"
+  },
+  "catalogMoveEarlier": "Move earlier",
+  "@catalogMoveEarlier": {
+    "description": "F09 catalog admin: MoveEarlier"
+  },
+  "catalogMoveLater": "Move later",
+  "@catalogMoveLater": {
+    "description": "F09 catalog admin: MoveLater"
+  },
+  "catalogAddImages": "Add images",
+  "@catalogAddImages": {
+    "description": "F09 catalog admin: AddImages"
+  },
+  "catalogImagesHint": "JPG, PNG or WebP, up to 5 MB each · square images work best · {used} of {max} used",
+  "@catalogImagesHint": {
+    "description": "F09 catalog admin: ImagesHint",
+    "placeholders": {
+      "used": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogImageDescriptions": "Image descriptions",
+  "@catalogImageDescriptions": {
+    "description": "F09 catalog admin: ImageDescriptions"
+  },
+  "catalogImageDescriptionsSub": "Read aloud by screen readers",
+  "@catalogImageDescriptionsSub": {
+    "description": "F09 catalog admin: ImageDescriptionsSub"
+  },
+  "catalogAltLabel": "Image {n}",
+  "@catalogAltLabel": {
+    "description": "F09 catalog admin: AltLabel",
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogAltHint": "Describe this image",
+  "@catalogAltHint": {
+    "description": "F09 catalog admin: AltHint"
+  },
+  "catalogAltRequired": "Add a short description",
+  "@catalogAltRequired": {
+    "description": "F09 catalog admin: AltRequired"
+  },
+  "catalogAltKmHint": "Description in Khmer (optional)",
+  "@catalogAltKmHint": {
+    "description": "F09 catalog admin: AltKmHint"
+  },
+  "catalogImageVariant": "Shows",
+  "@catalogImageVariant": {
+    "description": "F09 catalog admin: ImageVariant"
+  },
+  "catalogAllVariants": "All variants",
+  "@catalogAllVariants": {
+    "description": "F09 catalog admin: AllVariants"
+  },
+  "catalogPhotoGuidelines": "Photo guidelines",
+  "@catalogPhotoGuidelines": {
+    "description": "F09 catalog admin: PhotoGuidelines"
+  },
+  "catalogGuideSquare": "Square 1:1, at least 1200 × 1200 px",
+  "@catalogGuideSquare": {
+    "description": "F09 catalog admin: GuideSquare"
+  },
+  "catalogGuideBackground": "Plain white or light background",
+  "@catalogGuideBackground": {
+    "description": "F09 catalog admin: GuideBackground"
+  },
+  "catalogGuidePerColour": "At least one photo per colour",
+  "@catalogGuidePerColour": {
+    "description": "F09 catalog admin: GuidePerColour"
+  },
+  "catalogGuideNoText": "No text, watermarks or prices on the image",
+  "@catalogGuideNoText": {
+    "description": "F09 catalog admin: GuideNoText"
+  },
+  "catalogAltMissing": "{count, plural, =1{1 image has no description. Add it before saving.} other{{count} images have no description. Add them before saving.}}",
+  "@catalogAltMissing": {
+    "description": "F09 catalog admin: AltMissing",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogUploading": "Uploading…",
+  "@catalogUploading": {
+    "description": "F09 catalog admin: Uploading"
+  },
+  "catalogUploadFailed": "Couldn't upload {name}. Try again.",
+  "@catalogUploadFailed": {
+    "description": "F09 catalog admin: UploadFailed",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogImageTooBig": "{name} is larger than 5 MB.",
+  "@catalogImageTooBig": {
+    "description": "F09 catalog admin: ImageTooBig",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogImageWrongType": "{name} isn't a JPG, PNG or WebP image.",
+  "@catalogImageWrongType": {
+    "description": "F09 catalog admin: ImageWrongType",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogImagesFull": "A product can have up to 10 images.",
+  "@catalogImagesFull": {
+    "description": "F09 catalog admin: ImagesFull"
+  },
+  "catalogDeleteImageTitle": "Delete this image?",
+  "@catalogDeleteImageTitle": {
+    "description": "F09 catalog admin: DeleteImageTitle"
+  },
+  "catalogDeleteImageBody": "It's removed from the product when you save.",
+  "@catalogDeleteImageBody": {
+    "description": "F09 catalog admin: DeleteImageBody"
+  },
+  "catalogImagesEmpty": "No images yet",
+  "@catalogImagesEmpty": {
+    "description": "F09 catalog admin: ImagesEmpty"
+  },
+  "catalogImagesEmptyBody": "Customers see a placeholder until you add one.",
+  "@catalogImagesEmptyBody": {
+    "description": "F09 catalog admin: ImagesEmptyBody"
+  },
+  "catalogSaved": "Product saved.",
+  "@catalogSaved": {
+    "description": "F09 catalog admin: Saved"
+  },
+  "catalogSavedNew": "Product created.",
+  "@catalogSavedNew": {
+    "description": "F09 catalog admin: SavedNew"
+  },
+  "catalogFixErrors": "Check the highlighted fields.",
+  "@catalogFixErrors": {
+    "description": "F09 catalog admin: FixErrors"
+  },
+  "catalogSkuTaken": "SKU {sku} is already used by another product.",
+  "@catalogSkuTaken": {
+    "description": "F09 catalog admin: SkuTaken",
+    "placeholders": {
+      "sku": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogNotFound": "This product no longer exists.",
+  "@catalogNotFound": {
+    "description": "F09 catalog admin: NotFound"
+  },
+  "catalogForbidden": "You don't have permission to change products.",
+  "@catalogForbidden": {
+    "description": "F09 catalog admin: Forbidden"
+  },
+  "catalogErrUnknown": "Something went wrong. Please try again.",
+  "@catalogErrUnknown": {
+    "description": "F09 catalog admin: ErrUnknown"
+  },
+  "catalogErrRequired": "Required.",
+  "@catalogErrRequired": {
+    "description": "F09 catalog admin: ErrRequired"
+  },
+  "catalogErrTooLong": "Too long.",
+  "@catalogErrTooLong": {
+    "description": "F09 catalog admin: ErrTooLong"
+  },
+  "catalogErrTooMany": "Too many.",
+  "@catalogErrTooMany": {
+    "description": "F09 catalog admin: ErrTooMany"
+  },
+  "catalogErrInvalid": "Check this value.",
+  "@catalogErrInvalid": {
+    "description": "F09 catalog admin: ErrInvalid"
+  },
+  "catalogErrDuplicate": "Used twice.",
+  "@catalogErrDuplicate": {
+    "description": "F09 catalog admin: ErrDuplicate"
+  },
+  "catalogErrSku": "Use letters, numbers, dot, dash or underscore.",
+  "@catalogErrSku": {
+    "description": "F09 catalog admin: ErrSku"
+  },
+  "catalogErrPrice": "Enter a price above $0.00.",
+  "@catalogErrPrice": {
+    "description": "F09 catalog admin: ErrPrice"
+  },
+  "catalogErrCategory": "Choose a category.",
+  "@catalogErrCategory": {
+    "description": "F09 catalog admin: ErrCategory"
+  },
+  "catalogErrName": "Enter the English name.",
+  "@catalogErrName": {
+    "description": "F09 catalog admin: ErrName"
+  },
+  "catalogErrMinQty": "Enter the minimum quantity for quotes.",
+  "@catalogErrMinQty": {
+    "description": "F09 catalog admin: ErrMinQty"
+  },
+  "catalogLeaveTitle": "Leave without saving?",
+  "@catalogLeaveTitle": {
+    "description": "F09 catalog admin: LeaveTitle"
+  },
+  "catalogLeaveBody": "Your changes to this product will be lost.",
+  "@catalogLeaveBody": {
+    "description": "F09 catalog admin: LeaveBody"
+  },
+  "catalogLeave": "Leave",
+  "@catalogLeave": {
+    "description": "F09 catalog admin: Leave"
+  },
+  "catalogKeepEditing": "Keep editing",
+  "@catalogKeepEditing": {
+    "description": "F09 catalog admin: KeepEditing"
+  },
+  "catalogPriceConfirmTitle": "Change prices?",
+  "@catalogPriceConfirmTitle": {
+    "description": "F09 catalog admin: PriceConfirmTitle"
+  },
+  "catalogPriceConfirmBody": "{count, plural, =1{1 variant gets a new price.} other{{count} variants get a new price.}} It applies to orders placed from now on and is recorded in the audit log.",
+  "@catalogPriceConfirmBody": {
+    "description": "F09 catalog admin: PriceConfirmBody",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogPriceConfirm": "Save new prices",
+  "@catalogPriceConfirm": {
+    "description": "F09 catalog admin: PriceConfirm"
+  },
+  "catalogArchiveTitle": "Archive {name}?",
+  "@catalogArchiveTitle": {
+    "description": "F09 catalog admin: ArchiveTitle",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogArchiveBody": "It disappears from the app, the web store and quote requests. Orders already placed aren't affected, and you can restore it from the Archived tab.",
+  "@catalogArchiveBody": {
+    "description": "F09 catalog admin: ArchiveBody"
+  },
+  "catalogArchiveVariants": "Variants",
+  "@catalogArchiveVariants": {
+    "description": "F09 catalog admin: ArchiveVariants"
+  },
+  "catalogArchiveVariantsValue": "{count} · {stock} in stock",
+  "@catalogArchiveVariantsValue": {
+    "description": "F09 catalog admin: ArchiveVariantsValue",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "stock": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogArchiveOpenOrders": "Open orders",
+  "@catalogArchiveOpenOrders": {
+    "description": "F09 catalog admin: ArchiveOpenOrders"
+  },
+  "catalogArchiveOpenOrdersValue": "{count} (will still ship)",
+  "@catalogArchiveOpenOrdersValue": {
+    "description": "F09 catalog admin: ArchiveOpenOrdersValue",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogArchiveOpenRfqs": "Open quote requests",
+  "@catalogArchiveOpenRfqs": {
+    "description": "F09 catalog admin: ArchiveOpenRfqs"
+  },
+  "catalogArchiveConfirm": "Archive product",
+  "@catalogArchiveConfirm": {
+    "description": "F09 catalog admin: ArchiveConfirm"
+  },
+  "catalogArchived": "{name} archived.",
+  "@catalogArchived": {
+    "description": "F09 catalog admin: Archived",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogRestored": "{name} restored as a draft.",
+  "@catalogRestored": {
+    "description": "F09 catalog admin: Restored",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogPreviewTitle": "Customer preview",
+  "@catalogPreviewTitle": {
+    "description": "F09 catalog admin: PreviewTitle"
+  },
+  "catalogPreviewRetail": "Shoppers see",
+  "@catalogPreviewRetail": {
+    "description": "F09 catalog admin: PreviewRetail"
+  },
+  "catalogPreviewBusiness": "Business buyers see",
+  "@catalogPreviewBusiness": {
+    "description": "F09 catalog admin: PreviewBusiness"
+  },
+  "catalogPreviewDraftNote": "Customers see this once the product is active.",
+  "@catalogPreviewDraftNote": {
+    "description": "F09 catalog admin: PreviewDraftNote"
+  },
+  "catalogPreviewUnsaved": "Save the product to preview it.",
+  "@catalogPreviewUnsaved": {
+    "description": "F09 catalog admin: PreviewUnsaved"
+  },
+  "catalogPreviewUnsavedChanges": "The preview shows the saved product. Save to see your latest changes.",
+  "@catalogPreviewUnsavedChanges": {
+    "description": "F09 catalog admin: PreviewUnsavedChanges"
+  },
+  "catalogMinPieces": "Min {qty} pieces",
+  "@catalogMinPieces": {
+    "description": "F09 catalog admin: MinPieces",
+    "placeholders": {
+      "qty": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogScanTitle": "Scan barcode",
+  "@catalogScanTitle": {
+    "description": "F09 catalog admin: ScanTitle"
+  },
+  "catalogScanHint": "Point the camera at the barcode.",
+  "@catalogScanHint": {
+    "description": "F09 catalog admin: ScanHint"
+  },
+  "catalogScanUnavailable": "The camera isn't available. Type the barcode instead.",
+  "@catalogScanUnavailable": {
+    "description": "F09 catalog admin: ScanUnavailable"
+  },
+  "catalogImportTitle": "Import products",
+  "@catalogImportTitle": {
+    "description": "F09 catalog admin: ImportTitle"
+  },
+  "catalogStepUpload": "Upload",
+  "@catalogStepUpload": {
+    "description": "F09 catalog admin: StepUpload"
+  },
+  "catalogStepMatch": "Match columns",
+  "@catalogStepMatch": {
+    "description": "F09 catalog admin: StepMatch"
+  },
+  "catalogStepReview": "Review & import",
+  "@catalogStepReview": {
+    "description": "F09 catalog admin: StepReview"
+  },
+  "catalogImportChoose": "Choose a CSV file",
+  "@catalogImportChoose": {
+    "description": "F09 catalog admin: ImportChoose"
+  },
+  "catalogImportUploadBody": "One row per variant. Required columns: name, sku, price_usd (incl. VAT) and category. Optional: name_km, description, brand, barcode, qty, tags, handle (rows with the same handle become one product) and variant (e.g. \"Colour: Black\"). Products are imported as drafts.",
+  "@catalogImportUploadBody": {
+    "description": "F09 catalog admin: ImportUploadBody"
+  },
+  "catalogImportFileMeta": "{rows, plural, =1{1 row} other{{rows} rows}} · {columns} columns",
+  "@catalogImportFileMeta": {
+    "description": "F09 catalog admin: ImportFileMeta",
+    "placeholders": {
+      "rows": {
+        "type": "int"
+      },
+      "columns": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogReplaceFile": "Replace file",
+  "@catalogReplaceFile": {
+    "description": "F09 catalog admin: ReplaceFile"
+  },
+  "catalogColumnInFile": "Column in your file",
+  "@catalogColumnInFile": {
+    "description": "F09 catalog admin: ColumnInFile"
+  },
+  "catalogExampleValue": "Example value",
+  "@catalogExampleValue": {
+    "description": "F09 catalog admin: ExampleValue"
+  },
+  "catalogImportAs": "Import as",
+  "@catalogImportAs": {
+    "description": "F09 catalog admin: ImportAs"
+  },
+  "catalogEmptyInRows": "(empty in {count} rows)",
+  "@catalogEmptyInRows": {
+    "description": "F09 catalog admin: EmptyInRows",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogFieldDescEn": "Description (English)",
+  "@catalogFieldDescEn": {
+    "description": "F09 catalog admin: FieldDescEn"
+  },
+  "catalogFieldDescKm": "Description (Khmer)",
+  "@catalogFieldDescKm": {
+    "description": "F09 catalog admin: FieldDescKm"
+  },
+  "catalogFieldPrice": "Price (USD, incl. VAT)",
+  "@catalogFieldPrice": {
+    "description": "F09 catalog admin: FieldPrice"
+  },
+  "catalogFieldHandle": "Product handle (groups variants)",
+  "@catalogFieldHandle": {
+    "description": "F09 catalog admin: FieldHandle"
+  },
+  "catalogFieldVariant": "Variant options",
+  "@catalogFieldVariant": {
+    "description": "F09 catalog admin: FieldVariant"
+  },
+  "catalogFieldIgnore": "Don't import",
+  "@catalogFieldIgnore": {
+    "description": "F09 catalog admin: FieldIgnore"
+  },
+  "catalogImportMissing": "Match a column to: {fields}",
+  "@catalogImportMissing": {
+    "description": "F09 catalog admin: ImportMissing",
+    "placeholders": {
+      "fields": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogImportCheck": "Check rows",
+  "@catalogImportCheck": {
+    "description": "F09 catalog admin: ImportCheck"
+  },
+  "catalogImportBack": "Back",
+  "@catalogImportBack": {
+    "description": "F09 catalog admin: ImportBack"
+  },
+  "catalogImportErrorsTitle": "{count, plural, =1{1 row has errors and will be skipped} other{{count} rows have errors and will be skipped}}",
+  "@catalogImportErrorsTitle": {
+    "description": "F09 catalog admin: ImportErrorsTitle",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogImportAllGood": "{count, plural, =1{The row is ready to import.} other{All {count} rows are ready to import.}}",
+  "@catalogImportAllGood": {
+    "description": "F09 catalog admin: ImportAllGood",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogImportProducts": "{count, plural, =1{They make 1 product.} other{They make {count} products.}}",
+  "@catalogImportProducts": {
+    "description": "F09 catalog admin: ImportProducts",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogImportContinue": "Continue with {count, plural, =1{1 row} other{{count} rows}}",
+  "@catalogImportContinue": {
+    "description": "F09 catalog admin: ImportContinue",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogImportErrorReport": "Error report",
+  "@catalogImportErrorReport": {
+    "description": "F09 catalog admin: ImportErrorReport"
+  },
+  "catalogImportReportCopied": "Error report copied.",
+  "@catalogImportReportCopied": {
+    "description": "F09 catalog admin: ImportReportCopied"
+  },
+  "catalogImported": "{count, plural, =1{1 product imported as a draft.} other{{count} products imported as drafts.}} Add images and set them active when ready.",
+  "@catalogImported": {
+    "description": "F09 catalog admin: Imported",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "catalogImportNothing": "No rows can be imported. Fix the file and try again.",
+  "@catalogImportNothing": {
+    "description": "F09 catalog admin: ImportNothing"
+  },
+  "catalogRowError": "Row {row}: {message}",
+  "@catalogRowError": {
+    "description": "F09 catalog admin: RowError",
+    "placeholders": {
+      "row": {
+        "type": "int"
+      },
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogImpNameMissing": "name is empty",
+  "@catalogImpNameMissing": {
+    "description": "F09 catalog admin: ImpNameMissing"
+  },
+  "catalogImpSkuMissing": "SKU is empty",
+  "@catalogImpSkuMissing": {
+    "description": "F09 catalog admin: ImpSkuMissing"
+  },
+  "catalogImpSkuInvalid": "SKU \"{value}\" has characters that aren't allowed",
+  "@catalogImpSkuInvalid": {
+    "description": "F09 catalog admin: ImpSkuInvalid",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogImpSkuDuplicate": "SKU \"{value}\" appears more than once",
+  "@catalogImpSkuDuplicate": {
+    "description": "F09 catalog admin: ImpSkuDuplicate",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogImpSkuExists": "SKU \"{value}\" already exists",
+  "@catalogImpSkuExists": {
+    "description": "F09 catalog admin: ImpSkuExists",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogImpPriceMissing": "price is empty",
+  "@catalogImpPriceMissing": {
+    "description": "F09 catalog admin: ImpPriceMissing"
+  },
+  "catalogImpPriceInvalid": "price \"{value}\" isn't a valid amount",
+  "@catalogImpPriceInvalid": {
+    "description": "F09 catalog admin: ImpPriceInvalid",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogImpQtyInvalid": "quantity \"{value}\" isn't a whole number",
+  "@catalogImpQtyInvalid": {
+    "description": "F09 catalog admin: ImpQtyInvalid",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogImpCategoryMissing": "category is empty",
+  "@catalogImpCategoryMissing": {
+    "description": "F09 catalog admin: ImpCategoryMissing"
+  },
+  "catalogImpCategoryUnknown": "unknown category \"{value}\"",
+  "@catalogImpCategoryUnknown": {
+    "description": "F09 catalog admin: ImpCategoryUnknown",
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "catalogImpTooLong": "a text is too long",
+  "@catalogImpTooLong": {
+    "description": "F09 catalog admin: ImpTooLong"
+  },
+  "catalogImpEmpty": "The file has no rows.",
+  "@catalogImpEmpty": {
+    "description": "F09 catalog admin: ImpEmpty"
+  },
+  "catalogImpTooLarge": "The file is too big. Import up to 5,000 rows (2 MB) at a time.",
+  "@catalogImpTooLarge": {
+    "description": "F09 catalog admin: ImpTooLarge"
+  },
+  "catalogImpUnreadable": "Couldn't read the file. Save it as CSV (UTF-8) and try again.",
+  "@catalogImpUnreadable": {
+    "description": "F09 catalog admin: ImpUnreadable"
+  }
 }

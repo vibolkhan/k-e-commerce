@@ -30,6 +30,14 @@ abstract final class AppRoutes {
   static const adminPending = '$admin/pending';
   static const adminStaff = '$admin/settings/staff';
 
+  /// F09 catalogue (A-05 – A-05e). Creating and importing are for roles
+  /// that may edit products; everyone who sees the section can open a
+  /// product read-only.
+  static const adminCatalog = '$admin/catalog';
+  static const adminProductNew = '$adminCatalog/new';
+  static const adminCatalogImport = '$adminCatalog/import';
+  static String adminProduct(String id) => '$adminCatalog/$id';
+
   /// F05 sign-in flow: S-04 → S-05 → S-06.
   static const signIn = '/sign-in';
   static const signInVerify = '/sign-in/verify';

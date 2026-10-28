@@ -11,6 +11,7 @@ import '../domain/staff_permissions.dart';
 import '../domain/staff_role.dart';
 import 'admin_labels.dart';
 import 'admin_pages.dart';
+import 'admin_panel.dart';
 import 'admin_providers.dart';
 import 'admin_shell.dart';
 import 'staff_dialogs.dart';
@@ -47,82 +48,6 @@ class StaffRolesPage extends ConsumerWidget {
 }
 
 /// White 16 px-radius panel with a header row (k-ui `.panel`).
-class _Panel extends StatelessWidget {
-  const _Panel({required this.head, required this.child, this.headTrailing});
-
-  final Widget head;
-  final Widget? headTrailing;
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    final c = context.k.colors;
-    return Container(
-      decoration: BoxDecoration(
-        color: c.surface,
-        border: Border.all(color: c.line),
-        borderRadius: BorderRadius.circular(KRadius.card),
-      ),
-      clipBehavior: Clip.antiAlias,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-            decoration: BoxDecoration(
-              border: Border(bottom: BorderSide(color: c.line)),
-            ),
-            child: Row(
-              children: [
-                Expanded(child: head),
-                if (headTrailing != null) ...[
-                  const SizedBox(width: 12),
-                  headTrailing!,
-                ],
-              ],
-            ),
-          ),
-          child,
-        ],
-      ),
-    );
-  }
-}
-
-class _PanelTitle extends StatelessWidget {
-  const _PanelTitle(this.title, {this.subtitle});
-
-  final String title;
-  final String? subtitle;
-
-  @override
-  Widget build(BuildContext context) {
-    final k = context.k;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Semantics(
-          header: true,
-          child: Text(
-            title,
-            style: k.text.title.copyWith(
-              fontSize: 16,
-              height: 22 / 16,
-              fontWeight: FontWeight.w800,
-            ),
-          ),
-        ),
-        if (subtitle != null)
-          Text(
-            subtitle!,
-            style: k.text.caption.copyWith(color: k.colors.muted),
-          ),
-      ],
-    );
-  }
-}
-
 class _StaffPanel extends ConsumerWidget {
   const _StaffPanel();
 
@@ -161,8 +86,8 @@ class _StaffPanel extends ConsumerWidget {
         ],
       );
     }
-    return _Panel(
-      head: _PanelTitle(l10n.staffCount(members.length)),
+    return AdminPanel(
+      head: AdminPanelTitle(l10n.staffCount(members.length)),
       headTrailing: KButton(
         key: const Key('invite-staff'),
         label: l10n.staffInvite,
@@ -470,8 +395,8 @@ class _MatrixPanel extends StatelessWidget {
       ],
     );
 
-    return _Panel(
-      head: _PanelTitle(
+    return AdminPanel(
+      head: AdminPanelTitle(
         l10n.staffMatrixTitle,
         subtitle: l10n.staffMatrixSubtitle,
       ),
