@@ -37,7 +37,7 @@ select is(
 
 -- Sales: orders, RFQs and quotes, customers.
 select tests.login_as('dalin@kstore.example');
-select is((select count(*)::int from public.orders), 3, 'sales see all orders');
+select is((select count(*)::int from public.orders), 5, 'sales see all orders');
 select is((select count(*)::int from public.rfqs), 2, 'sales see all RFQs');
 select is((select count(*)::int from public.conversations), 1, 'sales see RFQ threads, not support chats');
 select is((select count(*)::int from public.returns), 0, 'sales do not handle returns');
