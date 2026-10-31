@@ -5,6 +5,7 @@ import '../../../core/router/app_routes.dart';
 import '../../catalog/presentation/catalog_list_page.dart';
 import '../../catalog/presentation/import_wizard.dart';
 import '../../catalog/presentation/product_editor_page.dart';
+import '../../content/presentation/content_page.dart';
 import '../../inventory/presentation/inventory_list_page.dart';
 import '../../notifications/presentation/inbox_page.dart';
 import '../domain/admin_section.dart';
@@ -29,6 +30,7 @@ List<RouteBase> adminRoutes({required GlobalKey<NavigatorState> rootKey}) => [
             if (section != AdminSection.dashboard &&
                 section != AdminSection.catalog &&
                 section != AdminSection.inventory &&
+                section != AdminSection.content &&
                 section != AdminSection.settings)
               GoRoute(
                 path: section.segment,
@@ -56,6 +58,10 @@ List<RouteBase> adminRoutes({required GlobalKey<NavigatorState> rootKey}) => [
           GoRoute(
             path: AdminSection.inventory.segment,
             builder: (_, _) => const InventoryListPage(),
+          ),
+          GoRoute(
+            path: AdminSection.content.segment,
+            builder: (_, _) => const ContentAdminPage(),
           ),
           GoRoute(
             path: AdminSection.settings.segment,

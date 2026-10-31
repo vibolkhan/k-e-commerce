@@ -256,12 +256,24 @@ class _BannerCarousel extends ConsumerStatefulWidget {
 class _BannerCarouselState extends ConsumerState<_BannerCarousel> {
   final _pages = PageController();
   Timer? _auto;
+  Timer? _scheduleRefresh;
   int _autoCount = 0;
   int _index = 0;
 
   @override
+  void initState() {
+    super.initState();
+    // Visibility is decided by Postgres `now()`. Requery regularly so a
+    // scheduled banner appears without requiring a release or app restart.
+    _scheduleRefresh = Timer.periodic(const Duration(seconds: 30), (_) {
+      ref.invalidate(homeBannersProvider);
+    });
+  }
+
+  @override
   void dispose() {
     _auto?.cancel();
+    _scheduleRefresh?.cancel();
     _pages.dispose();
     super.dispose();
   }
