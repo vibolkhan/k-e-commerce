@@ -48,7 +48,7 @@ else
 fi
 
 eval "$($SB status -o env 2>/dev/null | grep -E '^(API_URL|ANON_KEY)=')"
-python - "$API_URL" "$ANON_KEY" <<'PY'
+python3 - "$API_URL" "$ANON_KEY" <<'PY'
 import json, os, sys
 url, key = sys.argv[1], sys.argv[2]
 path = "config/env.local.json"

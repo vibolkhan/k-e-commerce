@@ -471,8 +471,45 @@ let store = null;     // shared db collection (if available)
 const st = id => status[id] || "todo";
 const ready = f => st(f.id) !== "done" && f.deps.every(d => st(d) === "done");
 
-function loadLocal(){ try { status = JSON.parse(localStorage.getItem("k-build-status") || "{}"); } catch(e) { status = {}; } }
-function saveLocal(){ try { localStorage.setItem("k-build-status", JSON.stringify(status)); } catch(e) {} }
+const STATUS_KEY = "k-build-status";
+let statusDb = null;
+
+function validStatusMap(value){
+  if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+  return Object.fromEntries(Object.entries(value).filter(([id, v]) => byId[id] && ["todo", "doing", "done"].includes(v)));
+}
+function loadLocal(){
+  try { status = validStatusMap(JSON.parse(localStorage.getItem(STATUS_KEY) || "{}")); }
+  catch(e) { status = {}; }
+}
+function saveLocal(){
+  const savedAt = new Date().toISOString();
+  try { localStorage.setItem(STATUS_KEY, JSON.stringify(status)); } catch(e) {}
+  if (statusDb) {
+    try {
+      const tx = statusDb.transaction("tracker", "readwrite");
+      tx.objectStore("tracker").put({id: STATUS_KEY, status, savedAt});
+    } catch(e) {}
+  }
+  setSync(`Progress saved on this device · ${new Date(savedAt).toLocaleTimeString([], {hour: "2-digit", minute: "2-digit"})}`);
+}
+function openStatusDb(){
+  return new Promise(resolve => {
+    if (!window.indexedDB) { resolve(null); return; }
+    const request = indexedDB.open("k-build-plan", 1);
+    request.onupgradeneeded = () => request.result.createObjectStore("tracker", {keyPath: "id"});
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => resolve(null);
+  });
+}
+function readStatusDb(db){
+  return new Promise(resolve => {
+    if (!db) { resolve({}); return; }
+    const request = db.transaction("tracker", "readonly").objectStore("tracker").get(STATUS_KEY);
+    request.onsuccess = () => resolve(validStatusMap(request.result && request.result.status));
+    request.onerror = () => resolve({});
+  });
+}
 
 function toast(msg){ const t = document.getElementById("toast"); t.textContent = msg; t.hidden = false; clearTimeout(toast._t); toast._t = setTimeout(() => t.hidden = true, 1800); }
 
@@ -552,8 +589,12 @@ window.addEventListener("hashchange", fromHash);
 loadLocal(); render(); fromHash();
 
 (async () => {
+  statusDb = await openStatusDb();
+  const backupStatus = await readStatusDb(statusDb);
+  status = Object.assign({}, backupStatus, status);
+  saveLocal(); render();
   const db = window.claude && window.claude.use ? await window.claude.use("db") : null;
-  if (!db) { setSync("Progress is saved in this browser."); return; }
+  if (!db) return;
   store = db.collection("progress");
   setSync("Progress is shared with everyone who can open this page.");
   store.onSnapshot(snap => {
