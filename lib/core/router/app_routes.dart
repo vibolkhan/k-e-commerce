@@ -29,6 +29,8 @@ abstract final class AppRoutes {
   static const adminMore = '$admin/more';
   static const adminPending = '$admin/pending';
   static const adminStaff = '$admin/settings/staff';
+  static const adminSettings = '$admin/settings';
+  static const adminZones = '$admin/settings/zones';
 
   /// F09 catalogue (A-05 – A-05e). Creating and importing are for roles
   /// that may edit products; everyone who sees the section can open a
@@ -75,6 +77,10 @@ abstract final class AppRoutes {
   static String account(String shell) => '$shell/account';
   static String accountEdit(String shell) => '$shell/account/edit';
   static String accountDelete(String shell) => '$shell/account/delete';
+  static String addresses(String shell) => '$shell/account/addresses';
+  static String addressNew(String shell) => '$shell/account/addresses/new';
+  static String addressEdit(String shell, String id) =>
+      '$shell/account/addresses/$id';
 
   /// S-08d.
   static String accountNotifications(String shell) =>

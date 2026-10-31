@@ -190,7 +190,9 @@ String settingsPageLabel(AppLocalizations l10n, SettingsPage page) =>
     };
 
 void openSettingsPage(BuildContext context, SettingsPage page) {
-  if (page == SettingsPage.staff) {
+  if (page == SettingsPage.zones) {
+    context.go(AppRoutes.adminZones);
+  } else if (page == SettingsPage.staff) {
     context.go(AppRoutes.adminStaff);
   } else {
     showComingSoon(context);

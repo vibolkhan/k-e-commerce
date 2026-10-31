@@ -6,6 +6,7 @@ import '../../catalog/presentation/catalog_list_page.dart';
 import '../../catalog/presentation/import_wizard.dart';
 import '../../catalog/presentation/product_editor_page.dart';
 import '../../content/presentation/content_page.dart';
+import '../../delivery/presentation/delivery_zones_page.dart';
 import '../../inventory/presentation/inventory_list_page.dart';
 import '../../notifications/presentation/inbox_page.dart';
 import '../domain/admin_section.dart';
@@ -67,6 +68,10 @@ List<RouteBase> adminRoutes({required GlobalKey<NavigatorState> rootKey}) => [
             path: AdminSection.settings.segment,
             builder: (_, _) => const AdminSettingsPage(),
             routes: [
+              GoRoute(
+                path: 'zones',
+                builder: (_, _) => const DeliveryZonesPage(),
+              ),
               GoRoute(path: 'staff', builder: (_, _) => const StaffRolesPage()),
             ],
           ),

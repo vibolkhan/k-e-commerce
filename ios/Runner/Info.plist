@@ -4,6 +4,8 @@
 <dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Scan product barcodes when adding products.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Use your location to place the delivery address pin.</string>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>

@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../core/router/app_role.dart';
 import '../../../core/router/app_routes.dart';
+import '../../delivery/presentation/address_pages.dart';
 import '../../notifications/presentation/notification_settings_page.dart';
 import 'account_page.dart';
 import 'delete_account_page.dart';
@@ -23,6 +24,20 @@ GoRoute accountRoute(
     path: account,
     builder: (_, _) => AccountPage(role: role),
     routes: [
+      GoRoute(
+        path: 'addresses',
+        parentNavigatorKey: rootKey,
+        redirect: signedInOnly,
+        builder: (_, _) => AddressListPage(shell: role.homePath),
+        routes: [
+          GoRoute(path: 'new', builder: (_, _) => const AddressEditorPage()),
+          GoRoute(
+            path: ':id',
+            builder: (_, state) =>
+                AddressEditorPage(id: state.pathParameters['id']),
+          ),
+        ],
+      ),
       GoRoute(
         path: 'edit',
         parentNavigatorKey: rootKey,

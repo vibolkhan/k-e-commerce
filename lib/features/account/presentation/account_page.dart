@@ -320,9 +320,11 @@ class _SignedInAccount extends ConsumerWidget {
                     onTap: soon,
                   ),
                   KListRow(
+                    key: const Key('account-addresses'),
                     title: l10n.accountAddresses,
                     icon: KIcons.location,
-                    onTap: soon,
+                    onTap: () =>
+                        context.push(AppRoutes.addresses(role.homePath)),
                   ),
                 ],
               ),
